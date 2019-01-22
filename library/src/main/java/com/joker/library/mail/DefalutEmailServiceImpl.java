@@ -28,12 +28,6 @@ public class DefalutEmailServiceImpl extends AbstractEmailService
 		super.setEmailProperty(emailProperty);
 		super.config();
 	}
-	public static void main(String[] args) throws UnsupportedEncodingException, MessagingException
-	{
-		DefalutEmailServiceImpl emailServiceImpl=new DefalutEmailServiceImpl();
-		emailServiceImpl.config("smtp", "smtp.163.com", true, "18757883747@163.com", "lvcong1215");
-		emailServiceImpl.sendMessage("623691249@qq.com", "淘宝网", "qqq");
-	}
 	@Override
 	public void config(EmailProperty emailProperty)
 	{
