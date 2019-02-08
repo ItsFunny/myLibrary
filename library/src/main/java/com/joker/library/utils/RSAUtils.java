@@ -6,31 +6,17 @@
 */
 package com.joker.library.utils;
 
-import java.security.Key;
-import java.security.KeyFactory;
-import java.security.KeyPair;
-import java.security.KeyPairGenerator;
-import java.security.NoSuchAlgorithmException;
-import java.security.PrivateKey;
-import java.security.PublicKey;
-import java.security.Signature;
+import org.apache.commons.codec.binary.Base64;
+
+import javax.crypto.Cipher;
+import java.security.*;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.UUID;
-import java.util.Map.Entry;
-
-import javax.crypto.Cipher;
-
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.collections.CollectionUtils;
-
-import net.sf.json.util.NewBeanInstanceStrategy;
 
 /**
  *
@@ -299,7 +285,6 @@ public class RSAUtils
 	/**
 	 * 校验数字签名
 	 *
-	 * @param encryptedStr 原始数据
 	 * @param publicKey	公钥
 	 * @param sign	签名数据
 	 * @return 校验成功返回true，失败返回false

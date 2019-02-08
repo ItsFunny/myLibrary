@@ -1,6 +1,10 @@
 package com.joker.library.model;
 
 
+import lombok.Data;
+
+import java.io.Serializable;
+
 /**
  * @author joker
  * @When
@@ -8,10 +12,15 @@ package com.joker.library.model;
  * @Detail
  * @date 创建时间：2019-02-05 09:18
  */
-public class HttpClientResult
+@Data
+public class HttpClientResult implements Serializable
 {
     private static final long serialVersionUID = 2168152194164783950L;
 
+    public static final int SUCCESS = 0;
+    public static final int FAIL = -1;
+
+    private int status;
     /**
      * 响应状态码
      */
@@ -24,6 +33,33 @@ public class HttpClientResult
 
     public HttpClientResult()
     {
+    }
+
+    public static HttpClientResult buildSuccess(int code, String content)
+    {
+        HttpClientResult result = new HttpClientResult();
+        result.code = code;
+        result.content = content;
+        result.status = SUCCESS;
+        return result;
+    }
+
+    public static HttpClientResult buildSuccess(int code)
+    {
+        HttpClientResult result = new HttpClientResult();
+        result.code = code;
+        result.content = "ok";
+        result.status = SUCCESS;
+        return result;
+    }
+
+    public static HttpClientResult buildSuccess()
+    {
+        HttpClientResult result = new HttpClientResult();
+        result.code = 200;
+        result.content = "ok";
+        result.status = SUCCESS;
+        return result;
     }
 
     public HttpClientResult(int code)
@@ -42,30 +78,9 @@ public class HttpClientResult
         this.content = content;
     }
 
-    public int getCode()
+    public boolean isSuccess()
     {
-        return code;
+        return this.status == SUCCESS;
     }
 
-    public void setCode(int code)
-    {
-        this.code = code;
-    }
-
-    public String getContent()
-    {
-        return content;
-    }
-
-    public void setContent(String content)
-    {
-        this.content = content;
-    }
-
-    @Override
-    public String toString()
-    {
-        return "HttpClientResult [code=" + code + ", content=" + content + "]";
-
-    }
 }

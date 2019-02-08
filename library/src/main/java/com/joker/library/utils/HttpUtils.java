@@ -2,17 +2,20 @@ package com.joker.library.utils;
 
 import com.joker.library.model.HttpClientResult;
 import org.apache.http.HttpStatus;
+import org.apache.http.HttpVersion;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.*;
 import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.entity.SerializableEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.util.*;
 
@@ -86,6 +89,7 @@ public class HttpUtils
 
         // 创建http对象
         HttpGet httpGet = new HttpGet(uriBuilder.build());
+        httpGet.setProtocolVersion(HttpVersion.HTTP_1_0);
         /**
          * setConnectTimeout：设置连接超时时间，单位毫秒。
          * setConnectionRequestTimeout：设置从connect Manager(连接池)获取Connection
@@ -121,7 +125,12 @@ public class HttpUtils
      */
     public static HttpClientResult doPost(String url) throws Exception
     {
-        return doPost(url, null, null);
+        return doPost(url, null, null, null);
+    }
+
+    public static HttpClientResult doPost(String url, Serializable requestBody) throws Exception
+    {
+        return doPost(url, null, null, requestBody);
     }
 
     /**
@@ -134,7 +143,7 @@ public class HttpUtils
      */
     public static HttpClientResult doPost(String url, Map<String, String> params) throws Exception
     {
-        return doPost(url, null, params);
+        return doPost(url, null, params, null);
     }
 
     /**
@@ -146,13 +155,18 @@ public class HttpUtils
      * @return
      * @throws Exception
      */
-    public static HttpClientResult doPost(String url, Map<String, String> headers, Map<String, String> params) throws Exception
+    public static HttpClientResult doPost(String url, Map<String, String> headers, Map<String, String> params, Serializable requestBody) throws Exception
     {
         // 创建httpClient对象
         CloseableHttpClient httpClient = HttpClients.createDefault();
 
         // 创建http对象
         HttpPost httpPost = new HttpPost(url);
+        if (null != requestBody)
+        {
+            SerializableEntity entity = new SerializableEntity(requestBody);
+            httpPost.setEntity(entity);
+        }
         /**
          * setConnectTimeout：设置连接超时时间，单位毫秒。
          * setConnectionRequestTimeout：设置从connect Manager(连接池)获取Connection
