@@ -1,4 +1,4 @@
-package com.basic.reference;
+package com.joker.library.cache;
 
 /**
  * @author joker
@@ -18,7 +18,7 @@ package com.basic.reference;
     TODO:
     []  底层采用无锁的RingBuffer
  */
-public interface ReferenceCache<K, V>
+public interface IReferenceCache<K, V>
 {
     /**
      * 当值不存在的时候会自动添加默认值

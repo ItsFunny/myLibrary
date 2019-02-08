@@ -1,4 +1,4 @@
-package com.basic.reference.soft;
+package com.joker.library.cache.soft;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;

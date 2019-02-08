@@ -1,6 +1,5 @@
-package com.basic.reference;
+package com.joker.library.cache;
 
-import java.util.Map;
 
 /**
  * @author joker

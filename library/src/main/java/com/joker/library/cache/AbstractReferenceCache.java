@@ -1,4 +1,4 @@
-package com.basic.reference;
+package com.joker.library.cache;
 
 /**
  * @author joker
@@ -7,7 +7,7 @@ package com.basic.reference;
  * @Detail
  * @date 创建时间：2019-02-01 07:08
  */
-public abstract class AbstractReferenceCache<K, V> implements ReferenceCache<K, V>
+public abstract class AbstractReferenceCache<K, V> implements IReferenceCache<K, V>
 {
     protected abstract void doPut(K key, V value);
 

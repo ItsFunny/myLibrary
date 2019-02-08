@@ -1,11 +1,11 @@
-package com.basic.reference.soft;
+package com.joker.library.cache.soft;
 
-import com.basic.reference.AbstractReferenceCache;
-import com.basic.reference.ClearStrategy;
-import com.basic.reference.ObjectCreateStrategy;
+
+import com.joker.library.cache.AbstractReferenceCache;
+import com.joker.library.cache.ClearStrategy;
+import com.joker.library.cache.ObjectCreateStrategy;
 
 import java.lang.ref.ReferenceQueue;
-import java.lang.ref.SoftReference;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**

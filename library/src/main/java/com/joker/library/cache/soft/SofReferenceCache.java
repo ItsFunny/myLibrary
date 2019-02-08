@@ -1,7 +1,8 @@
-package com.basic.reference.soft;
+package com.joker.library.cache.soft;
 
-import com.basic.reference.ReferenceCache;
 
-public interface SofReferenceCache<K, V> extends ReferenceCache<K,V>
+import com.joker.library.cache.IReferenceCache;
+
+public interface SofReferenceCache<K, V> extends IReferenceCache<K,V>
 {
 }
