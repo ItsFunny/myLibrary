@@ -10,6 +10,11 @@ package com.joker.library.cache;
  * 底层也提供了不同的选择,
  * 可以通过CHM,也可以通过RingBuffer,
  * 也可以自定义 自定义只需要继承AbstractReferenceCache 实现自定义的底层结构即可
+ *
+ * 原理就是用某种容器存储数据,
+ * 然后当内存不足的时候,gc roots为0的对象会被放入到ReferenceQueue中同时那个对象会被置为null
+ * 这样get的时候判断是否为空,为空则表明要么本来就没有,要么是原先的过期了,
+ * 然后判断队列是否为空,不为空则一个一个取出那么就会先将队列中的取出,然后从map中移除
  * @Detail
  * @date 创建时间 ：2019-02-01 06:16
  */
