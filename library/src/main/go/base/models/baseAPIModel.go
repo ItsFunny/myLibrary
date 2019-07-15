@@ -27,3 +27,5 @@ func (this BaseAPIResponseModel) SetResponseMsg(msg string) {
 func (this BaseAPIResponseModel) GetResponseMsg() string {
 	return this.Msg
 }
+
+

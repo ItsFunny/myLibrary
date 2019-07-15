@@ -2,6 +2,7 @@ package converter
 
 import (
 	. "encoding/binary"
+	"math"
 )
 
 func BigEndianInt642Bytes(i int64) []byte {
@@ -22,4 +23,19 @@ func BigEndianBytes2Int64(bytes []byte) uint64 {
 func LittleEndianBytes2Int64(bytes []byte) uint64 {
 	// return uint64(BigEndian.Uint32(bytes))<<16 | uint64(LittleEndian.Uint16(bytes[4:]))
 	return uint64(LittleEndian.Uint64(bytes))
+}
+
+
+func BigEndianFloat64ToByte(float float64) []byte {
+	bits := math.Float64bits(float)
+	bytes := make([]byte, 8)
+	BigEndian.PutUint64(bytes, bits)
+
+	return bytes
+}
+
+func BigEndianBytesToFloat64(bytes []byte) float64 {
+	bits := BigEndian.Uint64(bytes)
+
+	return math.Float64frombits(bits)
 }

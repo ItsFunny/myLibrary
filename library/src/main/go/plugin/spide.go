@@ -50,14 +50,20 @@ type SpideReqValid = func(spide Spide) (string, error)
 
 // FIXME 更改名字
 type Spide struct {
-	IsDebug     bool   `yaml:"is_debug"`
-	DefaultPath string `yaml:"default_path"`
+	IsDebug bool `yaml:"is_debug"`
+	//
+	// DefaultPath string `yaml:"default_path"`
+	// 存储路径,通常而言是一个绝对路径
+	StorePath string `yaml:"store_path"`
+	// 资源映射路径 供外界访问的
+	MappingPath string
 }
 
-func NewSpider(path string) *Spide {
+func NewSpider(storePath, mappingPath string) *Spide {
 	s := &Spide{
 		IsDebug:     false,
-		DefaultPath: path,
+		StorePath:   storePath,
+		MappingPath: mappingPath,
 	}
 	return s
 }
@@ -77,11 +83,18 @@ type SpideNode struct {
 type SpideList struct {
 	Items []SpideNode `form:"items" json:"items"`
 }
+type SpideResult struct {
+	StorePath   string
+	MappingPath string
+	Url string
+}
 
 // path 存储的位置
 // err 错误位置
-func (this *Spide) SpideOne(spide SpideNode) (path string, err error) {
-	basePath := this.DefaultPath + spide.SpecialUUID
+func (this *Spide) SpideOne(spide SpideNode) (result SpideResult, err error) {
+	var storePath, mappingPath string
+	basePath := this.StorePath + spide.SpecialUUID
+	mappingBasePath := this.MappingPath + spide.SpecialUUID
 	if !utils.IsFileOrDirExists(basePath) {
 		// 创建
 		err = utils.CreateMultiFileDirs(basePath)
@@ -91,29 +104,32 @@ func (this *Spide) SpideOne(spide SpideNode) (path string, err error) {
 		}
 	}
 	if spide.Type == SPIDE_TYPE_ARTICLE {
-		path, err = this.downloadArticle(basePath, spide)
+		storePath, mappingPath, err = this.downloadArticle(basePath, mappingBasePath, spide)
 	} else {
-		path, err = this.downOthers(basePath, spide)
+		storePath, mappingPath, err = this.downOthers(basePath, mappingBasePath, spide)
 	}
+	result.StorePath = storePath
+	result.MappingPath = mappingPath
+	result.Url=spide.Url
 
 	return
 }
 
 // 批量爬取
-func (this *Spide) BatchSpide(list SpideList) (pathes []string, err error) {
+func (this *Spide) BatchSpide(list SpideList) (result []SpideResult, err error) {
 	// FIXME 协程处理
 	for _, sn := range list.Items {
-		path, e := this.SpideOne(sn)
+		res, e := this.SpideOne(sn)
 		if nil != e {
 			log.Printf("爬取[%s]的时候出错:%s", sn.Url, e.Error())
 			return
 		}
-		pathes = append(pathes, path)
+		result = append(result, res)
 	}
 	return
 }
 
-func (this *Spide) downloadArticle(basePath string, spide SpideNode) (path string, err error) {
+func (this *Spide) downloadArticle(basePath string, baseMappingPath string, spide SpideNode) (storePath string, mappingPath string, err error) {
 	resp, err := http.Get(spide.Url)
 	if nil != err {
 		return
@@ -133,24 +149,30 @@ func (this *Spide) downloadArticle(basePath string, spide SpideNode) (path strin
 	if spide.NewName == "" {
 		spide.NewName = utils.GenerateUUID()
 	}
-	path = basePath + string(filepath.Separator) + "articles"
-	if !utils.IsFileOrDirExists(path) {
-		err = utils.CreateMultiFileDirs(path)
+
+	storePath = basePath + string(filepath.Separator) + "articles"
+	mappingPath = baseMappingPath + string(filepath.Separator) + "articles"
+
+	if !utils.IsFileOrDirExists(storePath) {
+		err = utils.CreateMultiFileDirs(storePath)
 		if nil != err {
 			log.Println("无法创建多级目录:", err)
 			return
 		}
 	}
-	tPath := path + string(filepath.Separator) + spide.NewName + suffix
+	tPath := storePath + string(filepath.Separator) + spide.NewName + suffix
+	tmpath := mappingPath + string(filepath.Separator) + spide.NewName + suffix
 	if utils.IsFileOrDirExists(tPath) {
 		log.Println("文件已经存在,重新生成uuid")
 		spide.NewName = utils.GenerateUUID()
-		path = path + string(filepath.Separator) + spide.NewName + suffix
+		storePath = storePath + string(filepath.Separator) + spide.NewName + suffix
+		mappingPath = mappingPath + string(filepath.Separator) + spide.NewName + suffix
 	} else {
-		path = tPath
+		storePath = tPath
+		mappingPath = tmpath
 	}
 
-	err = ioutil.WriteFile(path, bytes, 0777)
+	err = ioutil.WriteFile(storePath, bytes, 0777)
 	if nil != err {
 		// TODO 日志
 		str := fmt.Sprintf("写入到文件失败:%s,结构体为{%+v}", err.Error(), spide)
@@ -160,7 +182,7 @@ func (this *Spide) downloadArticle(basePath string, spide SpideNode) (path strin
 	return
 }
 
-func (this *Spide) downOthers(basePath string, spide SpideNode) (path string, err error) {
+func (this *Spide) downOthers(basePath, baseMappingPath string, spide SpideNode) (path, mappingPath string, err error) {
 	cmds := "you-get "
 	if this.IsDebug {
 		cmds += " -d "
@@ -172,6 +194,7 @@ func (this *Spide) downOthers(basePath string, spide SpideNode) (path string, er
 		suffix += utils.GetLowerSuffixFromUrl(spide.Url)
 	}
 	path = basePath + string(filepath.Separator) + typeName + string(filepath.Separator)
+	mappingPath = baseMappingPath + string(filepath.Separator) + typeName + string(filepath.Separator)
 	if !utils.IsFileOrDirExists(path) {
 		err = utils.CreateMultiFileDirs(path)
 		if nil != err {
@@ -193,6 +216,7 @@ func (this *Spide) downOthers(basePath string, spide SpideNode) (path string, er
 	cmds += " " + spide.Url
 
 	path = path + spide.NewName + suffix
+	mappingPath = mappingPath + spide.NewName + suffix
 
 	err = ExecCmdWithLog(cmds)
 
