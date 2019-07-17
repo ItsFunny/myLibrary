@@ -31,3 +31,10 @@
         -   service层:只需要继承ISQLExtentionBaseCRUDService即可,它继承了PageBaseService 是又分页的,然后service的impl类依据情况是否分库分表了,若分了则继承AbstractMultipartDBPageService 同时impl 刚才的service接口,否则只需要继承ABstractPageService即可,内部的代码都封装了(当然未优化,都是一坨坨的),只需要实现简单的自定的可更改的接口即可:如获取minId,maxId的方法,排序的方法等,至于如果想通过关联表,或无法跳表的形式的话预期采用策略来做
 -   2019-07-10
     -   添加了qr的util 在 go/utils/qr.go 中
+    
+    
+---
+
+TODO
+--- 
+* 代码重构,代码无论是结构还是模式都写的太差了   

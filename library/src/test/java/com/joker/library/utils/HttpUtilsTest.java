@@ -7,11 +7,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
 
+/**
+ * The type Http utils test.
+ */
 public class HttpUtilsTest
 {
+    /**
+     * The type Eureka client request.
+     */
     @Data
     public static class EurekaClientRequest implements Serializable
     {
@@ -36,6 +44,10 @@ public class HttpUtilsTest
         HttpClientResult httpClientResult = HttpUtils.doGet("http://127.0.0.1:8088/test");
         System.out.println(httpClientResult);
     }
+
+    /**
+     * Test do get.
+     */
     @Test
     public void testDoGet()
     {
@@ -43,6 +55,13 @@ public class HttpUtilsTest
         ResponseEntity<String> entity = restTemplate.getForEntity("http://localhost:8088/test", String.class);
         System.out.println(entity.getBody());
     }
+
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     * @throws InterruptedException the interrupted exception
+     */
     public static void main(String[] args) throws InterruptedException
     {
         RestTemplate restTemplate=new RestTemplate();
