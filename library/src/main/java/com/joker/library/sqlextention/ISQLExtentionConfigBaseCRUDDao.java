@@ -14,5 +14,4 @@ public interface ISQLExtentionConfigBaseCRUDDao<T extends AbstractSQLExtentionMo
 {
 	ISQLExtentionBaseCRUDDao<T> getDetailConfigDao(Number uniqueKey);
 	List<? extends ISQLExtentionBaseCRUDDao<T>> getAllDaos();
-	
 }
