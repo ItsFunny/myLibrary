@@ -7,18 +7,27 @@
 */
 package utils
 
-import "strings"
+import (
+	"errors"
+	"net/url"
+	"strings"
+)
 
-func GetLowerSuffixFromUrl(url string)string{
-	index := strings.LastIndex(url, ".")
+func GetLowerSuffixFromUrl(str string) (string, error) {
+	parse, e := url.Parse(str)
+	if nil != e {
+		return "", e
+	}
+	str = parse.Path
+	index := strings.LastIndex(str, ".")
 	if index == -1 {
-		return ""
+		return "", errors.New("格式不正确")
 	}
-	l := len(url)
+	l := len(str)
 	if index == l-1 {
-		return ""
+		return "", nil
 	}
-	suffix := SubStringBetween(url, index, l)
+	suffix := SubStringBetween(str, index, l)
 	suffix = strings.ToLower(suffix)
-	return suffix
+	return suffix, nil
 }

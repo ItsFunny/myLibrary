@@ -86,7 +86,7 @@ type SpideList struct {
 type SpideResult struct {
 	StorePath   string
 	MappingPath string
-	Url string
+	Url         string
 }
 
 // path 存储的位置
@@ -110,7 +110,7 @@ func (this *Spide) SpideOne(spide SpideNode) (result SpideResult, err error) {
 	}
 	result.StorePath = storePath
 	result.MappingPath = mappingPath
-	result.Url=spide.Url
+	result.Url = spide.Url
 
 	return
 }
@@ -191,7 +191,12 @@ func (this *Spide) downOthers(basePath, baseMappingPath string, spide SpideNode)
 	suffix := ""
 	if spide.Type == SPIDE_TYPE_IMAGE {
 		typeName = "images"
-		suffix += utils.GetLowerSuffixFromUrl(spide.Url)
+		s, err := utils.GetLowerSuffixFromUrl(spide.Url)
+		if nil != err {
+			return "", "", err
+		}
+		suffix = s
+
 	}
 	path = basePath + string(filepath.Separator) + typeName + string(filepath.Separator)
 	mappingPath = baseMappingPath + string(filepath.Separator) + typeName + string(filepath.Separator)
