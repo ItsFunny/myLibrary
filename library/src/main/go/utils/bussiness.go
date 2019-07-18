@@ -12,6 +12,7 @@ import (
 	"myLibrary/library/src/main/go/constants"
 )
 
+
 // 用于更新
 // make sure is not empty
 // 用于对2个model之间进行比较,同时返回的map用于更新(gorm会自动对于key-value的map更新)
