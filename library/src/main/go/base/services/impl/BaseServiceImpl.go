@@ -2,6 +2,7 @@ package baseImpl
 
 import (
 	"myLibrary/library/src/main/go/base/services"
+	"myLibrary/library/src/main/go/common/log"
 	"runtime"
 	"strings"
 )
@@ -63,4 +64,7 @@ func (receiver *BaseServiceImpl) SetInitInfo(init services.IBaseServiceInit) {
 // 获取基础信息
 func (receiver *BaseServiceImpl) GetInitInfo() services.IBaseServiceInit {
 	return receiver.BaseInitConifg
+}
+func (this *BaseServiceImpl) GetLogger() *log.Log {
+	return this.GetInitInfo().GetLogger()
 }

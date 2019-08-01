@@ -23,6 +23,11 @@ type SortJobExecutor struct {
 	SortHandler IJobHandler
 }
 
+func (receiver *SortJobExecutor) DoExecute(job IAppEvent) (interface{}, bool, error) {
+	handle, e := receiver.SortHandler.Handle(job)
+	return handle, false, e
+}
+
 func NewSortExecutorMediator(sorter ISorter) *JobExecuteMediator {
 	return NewJobExecuteMediator(NewSortJobExecutor(NewSortJobHandler(sorter)))
 }
@@ -47,10 +52,6 @@ func NewSortJobHandler(sorter ISorter) *BaseSortJobHandler {
 	return &BaseSortJobHandler{Sorter: sorter}
 }
 
-func (receiver *SortJobExecutor) DoExecute(job IAppEvent) (interface{},bool) {
-	return receiver.SortHandler.Handle(job),false
-}
-
 type BaseSortJobHandler struct {
 	Sorter ISorter
 }
@@ -59,10 +60,10 @@ func (receiver *BaseSortJobHandler) ValidJobType(jobType JobType) bool {
 	return jobType == JOB_SORT
 }
 
-func (receiver *BaseSortJobHandler) Handle(job IAppEvent) interface{} {
+func (receiver *BaseSortJobHandler) Handle(job IAppEvent) (interface{}, error) {
 	if nil == receiver.Sorter {
-		return nil
+		return nil, nil
 	} else {
-		return receiver.Sorter.Sort(job)
+		return receiver.Sorter.Sort(job), nil
 	}
 }

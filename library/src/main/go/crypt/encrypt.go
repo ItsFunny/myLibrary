@@ -17,6 +17,7 @@ import (
 	"github.com/ethereum/go-ethereum/crypto/ecies"
 	"github.com/prometheus/common/log"
 	"github.com/wumansgy/goEncrypt"
+	"io"
 	"io/ioutil"
 	"math/big"
 	"os"
@@ -88,10 +89,10 @@ func GenRsaKey(bits int) ([]byte, []byte, error) {
 		// publicK = string(bytes)
 		publicBytes = bytes
 	}
-	go func() {
-		os.Remove("public.pem")
-		os.Remove("private.pem")
-	}()
+	// go func() {
+	// 	os.Remove("public.pem")
+	// 	os.Remove("private.pem")
+	// }()
 	return privateBytes, publicBytes, nil
 }
 
@@ -154,9 +155,14 @@ func RSADecrypt(encryptStr string, key []byte) ([]byte, error) {
 
 func MD5Encrypt(bytes []byte) string {
 	h := md5.New()
-	h.Write(bytes) // 需要加密的字符串为 123456
+	h.Write(bytes)
 	cipherStr := h.Sum(nil)
 	return hex.EncodeToString(cipherStr)
+}
+func MD5EncryptFile(file *os.File) string {
+	h := md5.New()
+	io.Copy(h, file)
+	return hex.EncodeToString(h.Sum(nil))
 }
 
 func HashHMacEncrypt(key string, data string) string {
@@ -179,12 +185,24 @@ func HashHMacEncrypt(key string, data string) string {
 // 结果以hex的形式打印
 // func ECCSignWithHex(msg []byte, prk *ecdsa.PrivateKey) (string, error) {
 func ECCSignWithHex(msgStr string, privateKeyBytes []byte) (string, error) {
-	// 取得私钥
-	prk, e := Bytes2ECDSAPrv(privateKeyBytes)
+	bytes, e := ECCSign(msgStr, privateKeyBytes)
 	if nil != e {
 		return "", e
 	}
+	return hex.EncodeToString(bytes), nil
+}
+
+func ECCSign(msgStr string, privateKeyBytes []byte) ([]byte, error) {
 	msg := []byte(msgStr)
+	return ECCSignWithBytes(msg, privateKeyBytes)
+}
+func ECCSignWithBytes(msgBytes []byte, privateKeyBytes []byte) ([]byte, error) {
+	// 取得私钥
+	prk, e := Bytes2ECDSAPrv(privateKeyBytes)
+
+	if nil != e {
+		return nil, e
+	}
 	// r, s, err := ecdsa.Sign(rand.Reader, prk, msg)
 	// if err != nil {
 	// 	return "", err
@@ -196,18 +214,17 @@ func ECCSignWithHex(msgStr string, privateKeyBytes []byte) (string, error) {
 	// copy(signature[curveOrderByteSize-len(rBytes):], rBytes)
 	// copy(signature[curveOrderByteSize*2-len(sBytes):], sBytes)
 	// return hex.EncodeToString(signature), nil
-
 	//
 	hash := sha256.New()
 	// 计算哈希值
 	// 填入数据
-	hash.Write(msg)
+	hash.Write(msgBytes)
 	bytes := hash.Sum(nil)
 
 	// 对哈希值生成数字签名
 	r, s, err := ecdsa.Sign(rand.Reader, prk, bytes)
 	if err != nil {
-		return "", err
+		return nil, err
 	}
 	params := prk.Curve.Params()
 	curveOrderByteSize := params.P.BitLen() / 8
@@ -216,7 +233,7 @@ func ECCSignWithHex(msgStr string, privateKeyBytes []byte) (string, error) {
 	copy(signature[curveOrderByteSize-len(rBytes):], rBytes)
 	copy(signature[curveOrderByteSize*2-len(sBytes):], sBytes)
 
-	return hex.EncodeToString(signature), nil
+	return signature, nil
 }
 
 // 验证数字签名

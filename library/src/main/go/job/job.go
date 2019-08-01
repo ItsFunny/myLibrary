@@ -36,17 +36,17 @@ type IAppEvent interface {
 }
 
 type IJobExecutor interface {
-	Execute(job IAppEvent) interface{}
+	Execute(job IAppEvent) (interface{}, error)
 }
 
 type IConcreteExecutor interface {
-	DoExecute(job IAppEvent) (interface{}, bool)
+	DoExecute(job IAppEvent) (interface{}, bool, error)
 }
 
 type IJobHandler interface {
 	// INext
 	// IValidator
-	Handle(job IAppEvent) interface{}
+	Handle(job IAppEvent) (interface{}, error)
 }
 type LinkedJobHandler interface {
 	SetNext(next INext) LinkedJobHandler
@@ -62,7 +62,8 @@ func NewJobExecuteMediator(executor IJobExecutor) *JobExecuteMediator {
 	return &JobExecuteMediator{Executor: executor}
 }
 func (receiver *JobExecuteMediator) Execute(job IAppEvent) interface{} {
-	return receiver.Executor.Execute(job)
+	execute, _ := receiver.Executor.Execute(job)
+	return execute
 }
 
 type appEvent struct {

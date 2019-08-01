@@ -5,11 +5,17 @@
 # @File : page.go
 # @Description : 
 */
-package main
+package page
 
 type PageInfo struct {
 	PageNum    int
 	PageSize   int
 	Data       interface{}
 	TotalCount int
+}
+
+type BasePageReq struct {
+	PageSize int    `form:"page_size" json:"page_size"`
+	PageNum  int    `form:"CurrentPage" json:"CurrentPage"`
+	OrderBy  string `form:"order_by" json:"order_by"`
 }

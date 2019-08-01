@@ -2,13 +2,11 @@ package controllers
 
 import (
 	"errors"
-	"github.com/akkagao/citizens/base"
-	"github.com/akkagao/citizens/common"
-	"github.com/akkagao/citizens/common/log"
-	"github.com/akkagao/citizens/utils"
-	"github.com/akkagao/citizens/webbase/impl"
 	"myLibrary/library/src/main/go/base/constants"
 	"myLibrary/library/src/main/go/base/services"
+	"myLibrary/library/src/main/go/base/services/impl"
+	"myLibrary/library/src/main/go/common"
+	"myLibrary/library/src/main/go/common/log"
 	utils2 "myLibrary/library/src/main/go/utils"
 	"net/http"
 	"runtime"
@@ -33,7 +31,8 @@ type BaseController struct {
 // Init : 处理完路由后调用
 func (receiver *BaseController) Prepare() {
 	ct := receiver.Ctx
-	reqId := utils.GetReqID(ct.Request.Context())
+
+	reqId := utils2.GetReqID(ct.Request.Context())
 	addr := ""
 	{
 		if ct.Request.Header.Get("UserIP") != "" {
@@ -72,10 +71,9 @@ func (receiver *BaseController) AfterEnd() {
 			receiver.Log.Error("结束方法时,出现panic:%s", err)
 		}
 
-		receiver.returnError(utils.NewSysErr("系统错误"))
+		receiver.ReturnError(common.NewSysErr(errors.New("系统错误")))
 	}
 }
-
 
 func (receiver *BaseController) SignBeforeStart(methodName string) {
 	utils2.DefaultDebugDecorateShowSignal(methodName)
@@ -86,7 +84,7 @@ func (receiver *BaseController) SignAfterEnd() {
 	utils2.DefaultDebugDecorateShowSignal(receiver.Log.GetPrefix())
 }
 
-func (receiver *BaseController)ReturnFail(obj services.IBaseRepsonseService,msg string)error{
+func (receiver *BaseController) ReturnFail(obj services.IBaseRepsonseService, msg string) error {
 	receiver.Ctx.Output.Status = http.StatusBadRequest
 	obj.SetResponseCode(constants.FAIL)
 	obj.SetResponseMsg(msg)
@@ -94,7 +92,6 @@ func (receiver *BaseController)ReturnFail(obj services.IBaseRepsonseService,msg 
 	receiver.ServeJSON()
 	return nil
 }
-
 
 // 返回 200
 func (receiver *BaseController) returnSuccess(resp services.IBaseRepsonseService) (err error) {
@@ -109,7 +106,7 @@ func (receiver *BaseController) returnSuccess(resp services.IBaseRepsonseService
 
 // 返回 400
 // FIXME
-func (receiver *BaseController) returnError(e interface{}) (err error) {
+func (receiver *BaseController) ReturnError(e interface{}) (err error) {
 	receiver.Ctx.Output.Status = http.StatusBadRequest
 
 	switch e.(type) {
@@ -130,20 +127,15 @@ func (receiver *BaseController) returnError(e interface{}) (err error) {
 	return
 }
 
-func (receiver *BaseController) returnSysError() (err error) {
+func (receiver *BaseController) ReturnSysError() (err error) {
 	return errors.New("系统错误")
 }
 
-// 返回详细的参数错误
-func (receiver *BaseController) returnDetailParamError(format string, a ...interface{}) (err error) {
-
-	return receiver.returnError(utils.NewApiDetailParamErr(format, a...))
-}
-
-// 返回 参数错误
-func (receiver *BaseController) returnParamError() (err error) {
-	return receiver.returnError(utils.ParamErr)
-}
+// // 返回详细的参数错误
+// func (receiver *BaseController) returnDetailParamError(format string, a ...interface{}) (err error) {
+//
+// 	return receiver.ReturnError(utils.NewApiDetailParamErr(format, a...))
+// }
 
 // 返回 401
 func (receiver *BaseController) returnUnauthorized() (err error) {
@@ -156,11 +148,25 @@ func (receiver *BaseController) returnUnauthorized() (err error) {
 }
 
 // BaseControllerInit 转换为 BaseServicesInit
-func (receiver *BaseController) GetServiceInit() base.IBaseServiceInit {
-	init := new(webImpl.WebBaseServiceInitImpl)
+func (receiver *BaseController) GetServiceInit() services.IBaseServiceInit {
+	init := new(baseImpl.BaseServiceInitImpl)
 	init.SetLogger(receiver.Log)
 	init.SetReqId(receiver.ReqID)
-	init.SetFabricSetup(receiver.BlockChainSetup)
 
 	return init
+}
+
+// 返回 参数错误
+func (receiver *BaseController) ReturnParamError() (err error) {
+	return receiver.ReturnError(errors.New("参数错误"))
+}
+
+func (receiver *BaseController) ReturnSuccessInfo(service services.IBaseRepsonseService) (err error) {
+	receiver.Ctx.Output.Status = http.StatusOK
+	service.SetResponseCode(constants.SUCCESS)
+	service.SetResponseMsg("成功")
+	receiver.Data["json"] = service
+	receiver.ServeJSON()
+
+	return
 }

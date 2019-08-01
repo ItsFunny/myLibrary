@@ -68,3 +68,20 @@ func GetCurrentExecPath() (string, error) {
 	// fmt.Println("path333:", path)
 	return string(path[0 : i+1]), nil
 }
+
+// 获取文件大小
+func GetFileSize(path string) (int64, error) {
+	// 需要判断是否是文件
+	if b := IsFile(path); !b {
+		return 0, errors.New("该路径不是文件")
+	}
+	size := int64(0)
+	if err := filepath.Walk(path, func(path string, f os.FileInfo, err error) error {
+		size = f.Size()
+		return nil
+	}); nil != err {
+		return 0, err
+	}
+
+	return size, nil
+}

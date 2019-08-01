@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"github.com/wumansgy/goEncrypt"
 	"myLibrary/library/src/main/go/converters"
+	"os"
 	"testing"
 )
 
@@ -87,50 +88,107 @@ func rsaDecrypt(value []byte, key []byte) ([]byte, error) {
 
 type SS struct {
 	Name string `json:"name"`
-	Age int `json:"age"`
+	Age  int    `json:"age"`
 }
-func TestMD5Encrypt(t *testing.T) {
-	baseBytes:=make([]byte,0)
 
-	transType:=1
+func TestMD5Encrypt(t *testing.T) {
+	baseBytes := make([]byte, 0)
+
+	transType := 1
 	int642Bytes := converter.BigEndianInt642Bytes(int64(transType))
 	fmt.Println(int642Bytes)
-	baseBytes=int642Bytes[4:]
+	baseBytes = int642Bytes[4:]
 	fmt.Println(baseBytes)
 
 	str := "vmV/G9D2HX9xGXGMOOY3jUlbZ1+4OEzvdp4Zye+gB6U0eaADlkvnghMZ3D5XZbeD"
 	walletAddress := MD5Encrypt([]byte(str))
-	bytes:=[]byte(walletAddress)
+	bytes := []byte(walletAddress)
 
-	baseBytes=append(baseBytes,bytes...)
+	baseBytes = append(baseBytes, bytes...)
 	fmt.Println(baseBytes)
 	fmt.Println(len(baseBytes))
 
-	m:=SS{
+	m := SS{
 		Name: "joker",
 		Age:  23,
 	}
 	marshal, _ := json.Marshal(m)
-	baseBytes=append(baseBytes,marshal...)
+	baseBytes = append(baseBytes, marshal...)
 	fmt.Println(baseBytes)
 	fmt.Println(len(baseBytes))
 
 	// 反序列化
 
-	typeBytes:=make([]byte,4)
-	typeBytes=append(typeBytes,baseBytes[:4]...)
+	typeBytes := make([]byte, 4)
+	typeBytes = append(typeBytes, baseBytes[:4]...)
 	fmt.Println(typeBytes)
 	fmt.Println(converter.BigEndianBytes2Int64(typeBytes))
-	walletBytes:=baseBytes[4:36]
+	walletBytes := baseBytes[4:36]
 	fmt.Println(string(walletBytes))
-	fmt.Println(string(walletBytes)==walletAddress)
+	fmt.Println(string(walletBytes) == walletAddress)
 
-	modelBytes:=baseBytes[36:]
+	modelBytes := baseBytes[36:]
 	var s SS
 	unmarshal := json.Unmarshal(modelBytes, &s)
-	if nil!=unmarshal{
+	if nil != unmarshal {
 		panic(unmarshal)
 	}
 	fmt.Println(s)
+
+}
+
+func TestMD5EncryptFile(t *testing.T) {
+	path := "/Users/joker/Downloads/fengkuangwaixingren.mp4"
+	file, _ := os.Open(path)
+	defer file.Close()
+
+	encryptFile := MD5EncryptFile(file)
+	fmt.Println(encryptFile)
+}
+
+func TestAesEncrypt(t *testing.T) {
+	str := ""
+	aseKey := []byte("321423u9y8d2fwfl")
+	bytes, e := AesEncrypt([]byte(str), aseKey)
+	if nil != e {
+		fmt.Println(e)
+	} else {
+		fmt.Println(hex.EncodeToString(bytes))
+	}
+}
+func TestAesDecrypt(t *testing.T) {
+	str := "aaa"
+	aseKey := []byte("9f07debc1dde4ae58f41fef3b6aca13c")
+	fmt.Println(len(aseKey))
+	bytes, e := AesEncrypt([]byte(str), aseKey)
+	if nil != e {
+		fmt.Println(e)
+	} else {
+		fmt.Println(hex.EncodeToString(bytes))
+	}
+	aesDecrypt, e := AesDecrypt(bytes, []byte(aseKey))
+	if nil != e {
+		fmt.Println(e)
+	} else {
+		fmt.Println(string(aesDecrypt))
+	}
+}
+
+func TestMD5Encrypt2(t *testing.T) {
+	str := "FDSW$t34tregt5tO&$(#RHuyoyiUYE*&OI$HRLuy87odlfh)"
+	key := "12346z"
+	str = key + str
+
+	bytes1 := []byte(str)
+	bytes2, _ := hex.DecodeString(str)
+
+	md5Encrypt := MD5Encrypt(bytes1)
+	fmt.Println(md5Encrypt)
+
+	md52 := MD5Encrypt(bytes2)
+	fmt.Println(md52)
+}
+
+func TestBytes2ECDSAPrv(t *testing.T) {
 
 }

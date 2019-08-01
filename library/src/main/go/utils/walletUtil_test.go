@@ -47,5 +47,5 @@ func TestWalletEncrypt(t *testing.T) {
 }
 
 func TestNewWallet2(t *testing.T) {
-
+	fmt.Println(88&64 == 64)
 }

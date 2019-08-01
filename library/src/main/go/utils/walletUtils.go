@@ -125,12 +125,10 @@ func NewWallet() (*Wallet, error) {
 	// if nil != err {
 	// 	return nil, err
 	// }
-	wallet := Wallet{}
-	// wallet.PrvKey = prvK
+	var wallet Wallet
 	prvBytes, pubBytes := newKeyPairBytes()
 	wallet.PrivateKeyBytes = prvBytes
 	wallet.PublicKeyBytes = pubBytes
-
 	return &wallet, nil
 }
 

@@ -8,7 +8,10 @@
 package utils
 
 import (
+	"crypto/sha256"
+	"encoding/hex"
 	"regexp"
+	"strconv"
 	"strings"
 )
 
@@ -22,9 +25,9 @@ func SubString(str string, index int) string {
 	str = string([]rune(str)[:index])
 	return str
 }
-func SubStringBetween(str string,begin ,end int )string{
+func SubStringBetween(str string, begin, end int) string {
 	// 注意下标从0开始 前闭后开 [begin,end)
-	return  string([]rune(str)[begin:end])
+	return string([]rune(str)[begin:end])
 }
 
 // 判断是否有空格
@@ -52,4 +55,33 @@ func MergeExtraEmptyBlank(s string) string {
 		spc_index = reg.FindStringIndex(string(s2))
 	}
 	return string(s2)
+}
+
+// 计算hash
+func CalculateHashcode(data string) string {
+	nonce := 0
+	var str string
+	var check string
+	pass := false
+	var dif int = 4
+	for nonce = 0; ; nonce++ {
+		str = ""
+		check = ""
+		check = data + strconv.Itoa(nonce)
+		h := sha256.New()
+		h.Write([]byte(check))
+		hashed := h.Sum(nil)
+		str = hex.EncodeToString(hashed)
+		for i := 0; i < dif; i++ {
+			if str[i] != '0' {
+				break
+			}
+			if i == dif-1 {
+				pass = true
+			}
+		}
+		if pass == true {
+			return str
+		}
+	}
 }

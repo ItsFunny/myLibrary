@@ -29,3 +29,7 @@ func (receiver *BaseServiceInitImpl) SetLogger(l *log.Log) {
 func (receiver *BaseServiceInitImpl) GetLogger() *log.Log {
 	return receiver.Log
 }
+func NewBaseServiceInitImpl() *BaseServiceInitImpl {
+	iml := new(BaseServiceInitImpl)
+	return iml
+}
