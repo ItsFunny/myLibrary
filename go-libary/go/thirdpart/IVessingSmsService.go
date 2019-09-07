@@ -8,16 +8,13 @@
 package thirdpart
 
 import (
-	"github.com/akkagao/citizens/models"
-	"github.com/akkagao/citizens/webbase"
+	"myLibrary/go-libary/go/thirdpart/interfaces"
+	"myLibrary/go-libary/go/thirdpart/models"
 )
 
 type (
 	IVessingSmsService interface {
-		SendSMS(req models.SmsVerifySendModel) (models.SmsSendResp, error)
+		SendSMS(config interfaces.ISmsConfiguration,req models.SmsSendReq) (models.SmsSendResp, error)
 	}
 )
 
-func NewUserService(init webbase.IWebBaseServiceInit) ISmsService {
-	return nil
-}

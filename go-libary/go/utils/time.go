@@ -30,6 +30,13 @@ func TimeConvString2Int64(str string) time.Time {
 	// location, _ := time.ParseInLocation(BASE_TIME_STRING_FORMAT, str, time.Local)
 	return parse
 }
+func TimeConvStringWithOtherWay(str string) time.Time {
+	parse, _ := time.Parse(BASE_TIME_FORMAT_TILL_SEC, str)
+	if parse.Unix() < 0 {
+		parse, _ = time.Parse(BASE_TIME_STRING_FORMAT, str)
+	}
+	return parse
+}
 
 func Int64ConvT2TimeStrTilSec(timeStamp int64) string {
 	return time.Unix(timeStamp, 0).Format(BASE_TIME_FORMAT_TILL_SEC)

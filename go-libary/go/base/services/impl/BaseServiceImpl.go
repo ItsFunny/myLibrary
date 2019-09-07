@@ -1,6 +1,7 @@
 package baseImpl
 
 import (
+	"encoding/json"
 	"myLibrary/library/src/main/go/base/services"
 	"myLibrary/library/src/main/go/common/log"
 	"runtime"
@@ -47,9 +48,10 @@ func (receiver *BaseServiceImpl) AfterEnd() {
 	receiver.BaseInitConifg.GetLogger().SetPrefix(strings.TrimRight(pre, " -> "+receiver.MethodName))
 	receiver.BaseInitConifg.GetLogger().Info("结束对: { " + receiver.MethodName + " } 方法的调用")
 }
+
 // 同时打印结果
-func (receiver *BaseServiceImpl)AfterEndWithResp(resp interface{}){
-	receiver.BaseInitConifg.GetLogger().Info("[%s]的结果为:{%v}",receiver.MethodName,resp)
+func (receiver *BaseServiceImpl) AfterEndWithResp(resp interface{}) {
+	receiver.BaseInitConifg.GetLogger().Info("[%s]的结果为:{%v}", receiver.MethodName, resp)
 	receiver.AfterEnd()
 }
 
@@ -60,6 +62,13 @@ func (receiver *BaseServiceImpl) SetInitInfo(init services.IBaseServiceInit) {
 	initInfo.Log = init.GetLogger()
 	receiver.BaseInitConifg = initInfo
 }
+func (receiver *BaseServiceImpl) Unmarshal(bytes []byte, data interface{}) error {
+	if unmarshal := json.Unmarshal(bytes, data); nil != unmarshal {
+		receiver.GetLogger().Error("反序列化失败:%s,原始数据为:[%s]", unmarshal.Error(), string(bytes))
+		return unmarshal
+	}
+	return nil
+}
 
 // 获取基础信息
 func (receiver *BaseServiceImpl) GetInitInfo() services.IBaseServiceInit {
@@ -67,4 +76,11 @@ func (receiver *BaseServiceImpl) GetInitInfo() services.IBaseServiceInit {
 }
 func (this *BaseServiceImpl) GetLogger() *log.Log {
 	return this.GetInitInfo().GetLogger()
+}
+
+func NewBaseServiceImpl()*BaseServiceImpl{
+	l:=new(BaseServiceImpl)
+	l.BaseInitConifg=NewBaseServiceInitImpl()
+
+	return l
 }

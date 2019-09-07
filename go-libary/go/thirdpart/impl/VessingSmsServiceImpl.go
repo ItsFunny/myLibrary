@@ -6,55 +6,53 @@
 # @Description :  TODO 统一整理
 */
 package impl
-//
-// import (
-// 	"encoding/json"
-// 	"github.com/akkagao/citizens/conf"
-// 	"github.com/akkagao/citizens/models"
-// 	"github.com/akkagao/citizens/models/dto"
-// 	"github.com/akkagao/citizens/webbase/impl"
-// 	"io/ioutil"
-// 	utils2 "myLibrary/library/src/main/go/utils"
-// )
-//
-// type VessingSmsServiceImpl struct {
-// 	webImpl.WebBaseServiceImpl
-// }
-//
-// func (this *VessingSmsServiceImpl) SendSMS(req models.SmsVerifySendModel) (models.SmsSendResp, error) {
-// 	var (
-// 		result models.SmsSendResp
-// 	)
-// 	this.BeforeStart("SendSMS")
-// 	defer this.AfterEnd()
-//
-// 	property := conf.GetSmsProperty()
-//
-// 	// 验证码
-// 	validateCode := utils2.GenValidateCode(6)
-// 	result.ValidationCode=validateCode
-// 	keys, values := property.BuildSmsVerifyValues([]string{validateCode})
-// 	response, e := utils2.DoPostForm(property.SmsApiURI, keys, values)
-// 	if nil != e {
-// 		this.GetLogger().Error("[SendSMS] 发送的时候发生错误:%v", e.Error())
-// 		return result, e
-// 	}
-// 	bytes, e := ioutil.ReadAll(response.Body)
-// 	if nil != e {
-// 		this.GetLogger().Error("[SendSMS]读取http response body 失败:%s", e.Error())
-// 		return result, e
-// 	}
-// 	var apiResp models.SmsAPIResp
-// 	if e := json.Unmarshal(bytes, &apiResp); nil != e {
-// 		this.GetLogger().Error("[SendSMS] 反序列化body 失败:%s", e.Error())
-// 		return result, e
-// 	}
-// 	if apiResp.ReturnStatus != 2000 {
-// 		result.Status = dto.FAIL
-// 		result.Msg = apiResp.GetResultInfo()
-// 	} else {
-// 		result.Status = dto.SUCCESS
-// 	}
-//
-// 	return result,nil
-// }
+
+import (
+	"encoding/json"
+	"errors"
+	"github.com/valyala/fasthttp"
+	"myLibrary/go-libary/go/base/services/impl"
+	"myLibrary/go-libary/go/thirdpart/interfaces"
+	"myLibrary/go-libary/go/thirdpart/models"
+	"net/http"
+)
+
+type VessingSmsServiceImpl struct {
+	baseImpl.BaseServiceImpl
+}
+
+func (this *VessingSmsServiceImpl) SendSMS(config interfaces.ISmsConfiguration, req *models.SmsSendReq) (models.SmsSendResp, error) {
+	var (
+		result models.SmsSendResp
+	)
+	this.BeforeStart("SendSMS")
+	defer this.AfterEnd()
+
+	keys, values := config.BuildValues(req)
+	l := len(keys)
+	args := fasthttp.Args{}
+	for i := 0; i < l; i++ {
+		args.Set(keys[i], values[i])
+	}
+	statusCode, body, err := fasthttp.Post(nil, config.GetSmsApiURL(), &args)
+	if nil != err {
+		return result, err
+	} else if statusCode != http.StatusOK {
+		this.GetLogger().Error("rest调用失败")
+		return result, errors.New("未知错误")
+	} else if nil != body && len(body) != 0 {
+		var restResp models.SmsSendRestResp
+		if err := json.Unmarshal(body, &restResp); nil != err {
+			this.GetLogger().Error("反序列化失败:%s,原始数据为:[%s]", err.Error(), string(body))
+			return result, err
+		}
+		if restResp.ReturnStatus != 1 {
+			result.Msg = restResp.ReturnMessage
+		} else {
+			this.GetLogger().Info("成功向用户[%v]发送消息:[%v]", req.GetPhone(), req.GetMsg())
+			result.Msg = "发送成功"
+		}
+	}
+
+	return result, nil
+}

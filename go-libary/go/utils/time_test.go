@@ -16,12 +16,16 @@ import (
 func TestInt64ConvT2TimeStrTilSec(t *testing.T) {
 	// unix := time.Now().Unix()
 	// timeunix:=156233873
+	sec := Int64ConvT2TimeStrTilSec(1567442974)
+	fmt.Println(sec)
 }
 func TestFormatTime2StringByTemplate(t *testing.T) {
 	fmt.Println(FormatTime2StringByTemplate("20060102150405", time.Now().Unix()))
 }
 func TestTimeConvString2Int64(t *testing.T) {
-	str := "2019-08-28 08:59:38"
-	string2Int64 := TimeConvString2Int64(str)
+	str := "2019-09-02 16:09:13"
+	string2Int64 := TimeConvStringWithOtherWay(str).Unix()
+	sec := Int64ConvT2TimeStrTilSec(string2Int64)
+	fmt.Println(sec)
 	fmt.Println(string2Int64)
 }

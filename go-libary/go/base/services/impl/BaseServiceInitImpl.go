@@ -12,8 +12,8 @@ import (
 )
 
 type BaseServiceInitImpl struct {
-	ReqID         string
-	Log           *log.Log
+	ReqID string
+	Log   *log.Log
 }
 
 func (receiver *BaseServiceInitImpl) GetReqId() string {
@@ -31,5 +31,8 @@ func (receiver *BaseServiceInitImpl) GetLogger() *log.Log {
 }
 func NewBaseServiceInitImpl() *BaseServiceInitImpl {
 	iml := new(BaseServiceInitImpl)
+	iml.Log = log.NewLog(log.InitLog{
+		ReqID: "",
+	})
 	return iml
 }

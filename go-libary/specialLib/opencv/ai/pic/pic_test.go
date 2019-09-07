@@ -20,6 +20,7 @@ func TestBatchComparePicSimilarity(t *testing.T) {
 	dir2 := "/Users/joker/Desktop/漫画/彭波--魔力青春摇一摇/moli_ceshi2"
 	filePathes1, e := utils.GetFilesBelownDirFilterBySuffix(dir1, ".jpg")
 	if nil != e {
+		// ExecutionConsumer
 		panic(e)
 	}
 	filePathes2, e := utils.GetFilesBelownDirFilterBySuffix(dir2, ".jpg")
