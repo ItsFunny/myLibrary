@@ -106,7 +106,7 @@ func Write2File(filePath string, bytes []byte) error {
 		// 说明有文件夹
 		// 判断文件夹是否存在
 		dirs := SubString(filePath, strings.LastIndex(filePath, "/"))
-		if IsFileOrDirExists(dirs) {
+		if !IsFileOrDirExists(dirs) {
 			if err := CreateMultiFileDirs(dirs); nil != err {
 				fmt.Println("创建文件夹失败:", err.Error())
 				return err

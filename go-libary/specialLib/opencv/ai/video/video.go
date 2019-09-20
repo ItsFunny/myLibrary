@@ -239,6 +239,7 @@ func GetVideoFramesWithImg(filePath string, funcName string) ([]*goimagehash.Ima
 }
 
 // 通过goimage 获取hash
+// 通过level 从而判断要捕获多少帧的图片
 func getVideoFramesWithGoimage(filePath string, funName string, level int) ([]*goimagehash.ImageHash, error) {
 	picCount := int(VIDEO_LEVEL_COUNT_ARRAY[level])
 	// result := make([][]byte, picCount)
@@ -265,7 +266,7 @@ func getVideoFramesWithGoimage(filePath string, funName string, level int) ([]*g
 		vc.Set(gocv.VideoCapturePosFrames, frames)
 		img := gocv.NewMat()
 		vc.Read(&img)
-		gocv.IMWrite("/Users/joker/Desktop/temp/images/"+utils.GenerateUUID()+"----"+strconv.Itoa(j)+".jpg", img)
+		// gocv.IMWrite("/Users/joker/Desktop/temp/images/"+utils.GenerateUUID()+"----"+strconv.Itoa(j)+".jpg", img)
 		// result[j] = img.ToBytes()
 		image, err := img.ToImage()
 		if nil != err {

@@ -23,7 +23,7 @@ func TestFormatTime2StringByTemplate(t *testing.T) {
 	fmt.Println(FormatTime2StringByTemplate("20060102150405", time.Now().Unix()))
 }
 func TestTimeConvString2Int64(t *testing.T) {
-	str := "2019-09-02 16:09:13"
+	str := "2019-09-20 12:54:21"
 	string2Int64 := TimeConvStringWithOtherWay(str).Unix()
 	sec := Int64ConvT2TimeStrTilSec(string2Int64)
 	fmt.Println(sec)
