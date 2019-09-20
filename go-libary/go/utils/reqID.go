@@ -1,8 +1,8 @@
 package utils
 
 import (
-	"context"
 	"time"
+	"context"
 
 	"strings"
 
@@ -12,11 +12,10 @@ import (
 var reqID struct{}
 var reqStartTime struct{}
 
-const ()
 
 // SetReqID : 设置一个reqID
 func SetReqID(ctx context.Context) context.Context {
-	uid, _ := uuid.NewV4()
+	uid:= uuid.NewV4()
 	str := strings.Replace(uid.String(), "-", "", -1)
 	c := context.WithValue(ctx, reqID, str)
 	return c

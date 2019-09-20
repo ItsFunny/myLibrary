@@ -1,4 +1,5 @@
 # JOB 任务分发
+- consume->execute->handle
 - 角色介绍: 
     -   executor: 
         -   任务的第一级执行者

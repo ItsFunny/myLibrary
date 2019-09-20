@@ -8,7 +8,9 @@
 package controllers
 
 import (
+	"myLibrary/go-libary/go/base/dto"
 	"myLibrary/library/src/main/go/page"
+	"net/http"
 	"strconv"
 )
 
@@ -16,6 +18,17 @@ type WebBaseController struct {
 	BaseController
 }
 
+func (receiver *WebBaseController) ReturnSuccessV2(data interface{}) (err error) {
+	d := dto.ResultDTO{}
+	d.Code = 1
+	d.Msg = "SUCCESS"
+	d.Data = data
+
+	receiver.Ctx.Output.Status = http.StatusOK
+	receiver.Data["json"] = d
+	receiver.ServeJSON()
+	return
+}
 
 func (this *WebBaseController) GetBasePageReq() (page.BasePageReq, error) {
 	p := page.BasePageReq{}
@@ -40,8 +53,8 @@ func (this *WebBaseController) GetBasePageReq() (page.BasePageReq, error) {
 		p.PageNum = pageNumInt
 	}
 
-	return p,nil
+	return p, nil
 }
 
-func (this *WebBaseController)JSON(data interface{}){
+func (this *WebBaseController) JSON(data interface{}) {
 }

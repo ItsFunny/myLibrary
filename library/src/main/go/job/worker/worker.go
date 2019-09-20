@@ -84,6 +84,7 @@ func (w *BaseWoker) Start() {
 			w.WorkPool <- w.jobQueue
 			select {
 			case v := <-w.jobQueue:
+				log.Println("[Worker]收到了新的消息:", v)
 				_, err := w.Consume(v)
 				if nil != err {
 					log.Println("[Worker]consume occur error; ", err)

@@ -202,6 +202,7 @@ func ECCSign(msgStr string, privateKeyBytes []byte) ([]byte, error) {
 	msg := []byte(msgStr)
 	return ECCSignWithBytes(msg, privateKeyBytes)
 }
+
 func ECCSignWithBytes(msgBytes []byte, privateKeyBytes []byte) ([]byte, error) {
 	// 取得私钥
 	prk, e := Bytes2ECDSAPrv(privateKeyBytes)

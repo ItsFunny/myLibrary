@@ -10,20 +10,17 @@ package ai
 import (
 	"bytes"
 	"github.com/corona10/goimagehash"
+	"github.com/mfonda/simhash"
 	"github.com/syyongx/php2go"
 	"image/jpeg"
 )
 
 // 校验字符串的相似度,使用simhash进行判断
 func CompareTextSimilarity(prev, newUpload string) (float64, int) {
-	// hash1 := simhash.Simhash(simhash.NewWordFeatureSet([]byte(prev)))
-	// 	// hash2:=simhash.Simhash(simhash.NewWordFeatureSet([]byte(newUpload)))
-	// 	//
-	// 	//
-	// 	// per := 0.0
-	// 	// text := php2go.SimilarText(prev, newUpload, &per)
-	// 	// return per, text
-	return 0.0, 1
+	hash1 := simhash.Simhash(simhash.NewWordFeatureSet([]byte(prev)))
+	hash2 := simhash.Simhash(simhash.NewWordFeatureSet([]byte(newUpload)))
+	compare := simhash.Compare(hash1, hash2)
+	return 0.0, int(compare)
 }
 
 // 简单字符串匹配,适用于当长度小的情况
@@ -32,9 +29,6 @@ func SimpleCompareTextSimilarity(prev, newUpload string) (float64, int) {
 	i := php2go.SimilarText(prev, newUpload, &per)
 	return per, i
 }
-
-
-
 
 // Deprecated: Use GetImgHash insteaded
 func GetPicSimHash(hashFuncName string, bbs []byte) (uint64, error) {

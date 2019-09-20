@@ -16,8 +16,8 @@ import (
 )
 
 func TestBytes2Int64(t *testing.T) {
-	b := 9223372036854775807
-	a := 18446744073709551615
+	b := uint64(9223372036854775807)
+	a := uint64(18446744073709555)
 	fmt.Println(a < b)
 	buf := make([]byte, 8)
 	binary.BigEndian.PutUint64(buf, a)
@@ -28,7 +28,7 @@ func TestBytes2Int64(t *testing.T) {
 	// fmt.Println(bytes2Int64)
 }
 func TestBigEndianInt642Bytes(t *testing.T) {
-	a := int64(0)
+	a := int64(9999999)
 	bytes := BigEndianInt642Bytes(int64(a))
 	fmt.Println(bytes)
 

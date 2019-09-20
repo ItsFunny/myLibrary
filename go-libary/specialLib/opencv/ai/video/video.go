@@ -15,10 +15,8 @@ import (
 	"image/jpeg"
 	"myLibrary/go-libary/specialLib/opencv/ai/pic"
 	"myLibrary/library/src/main/go/utils"
-	"strconv"
 	"sync"
 )
-
 const (
 	// 只需要捕获最少的帧
 	// 适用于很小的视频
@@ -59,7 +57,6 @@ func CompareVideosWithImg(filePath1, filePath2 string, funcName string, threshol
 
 	return pic.CompareImgHashes(hashes, hashes2, threshold)
 }
-
 
 func CompareVideos(filePath1, filePath2 string) (float64, error) {
 	uint64s, e := GetVideoFramesWithSimHash(filePath1)
@@ -204,7 +201,6 @@ func getVideoFrames(filePath string, level int) ([][]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-
 	// fps是帧率，意思是每一秒刷新图片的数量，frames是一整段视频中总的图片数量。
 	frames := vc.Get(gocv.VideoCaptureFrameCount)
 	total := frames
@@ -221,7 +217,7 @@ func getVideoFrames(filePath string, level int) ([][]byte, error) {
 		vc.Set(gocv.VideoCapturePosFrames, frames)
 		img := gocv.NewMat()
 		vc.Read(&img)
-		gocv.IMWrite("/Users/joker/Desktop/temp/images/"+utils.GenerateUUID()+"----"+strconv.Itoa(j)+".jpg", img)
+		// gocv.IMWrite("/Users/joker/Desktop/temp/images/"+utils.GenerateUUID()+"----"+strconv.Itoa(j)+".jpg", img)
 		result[j] = img.ToBytes()
 		j++
 	}
@@ -239,10 +235,11 @@ func GetVideoFramesWithImg(filePath string, funcName string) ([]*goimagehash.Ima
 }
 
 // 通过goimage 获取hash
+// 通过level 从而判断要捕获多少帧的图片
 func getVideoFramesWithGoimage(filePath string, funName string, level int) ([]*goimagehash.ImageHash, error) {
 	picCount := int(VIDEO_LEVEL_COUNT_ARRAY[level])
 	// result := make([][]byte, picCount)
-	result := make([]*goimagehash.ImageHash,0)
+	result := make([]*goimagehash.ImageHash, 0)
 	// load video
 	vc, err := gocv.VideoCaptureFile(filePath)
 	if err != nil {
@@ -265,7 +262,7 @@ func getVideoFramesWithGoimage(filePath string, funName string, level int) ([]*g
 		vc.Set(gocv.VideoCapturePosFrames, frames)
 		img := gocv.NewMat()
 		vc.Read(&img)
-		gocv.IMWrite("/Users/joker/Desktop/temp/images/"+utils.GenerateUUID()+"----"+strconv.Itoa(j)+".jpg", img)
+		// gocv.IMWrite("/Users/joker/Desktop/temp/images/"+utils.GenerateUUID()+"----"+strconv.Itoa(j)+".jpg", img)
 		// result[j] = img.ToBytes()
 		image, err := img.ToImage()
 		if nil != err {
@@ -284,4 +281,20 @@ func getVideoFramesWithGoimage(filePath string, funName string, level int) ([]*g
 	}
 
 	return result, err
+}
+
+// 获取视频时间总长
+func GetVideoTimeZone(filePath string) (int, error) {
+	// load video
+	vc, err := gocv.VideoCaptureFile(filePath)
+	if err != nil {
+		return -1, err
+	}
+	// fps是帧率，意思是每一秒刷新图片的数量，frames是一整段视频中总的图片数量。
+	frames := vc.Get(gocv.VideoCaptureFrameCount)
+	fps := vc.Get(gocv.VideoCaptureFPS)
+	// 获取时间总长
+	duration := frames / fps
+
+	return int(duration), nil
 }

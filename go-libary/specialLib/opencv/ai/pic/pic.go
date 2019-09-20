@@ -175,3 +175,8 @@ func CompareImgHashes(prevHashes, newHashes []*goimagehash.ImageHash, threshold 
 //
 // 	return float64(count) / float64(big), nil
 // }
+
+// 生成模糊图
+func CreateBlurPic() {
+
+}

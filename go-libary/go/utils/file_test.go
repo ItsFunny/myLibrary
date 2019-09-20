@@ -19,9 +19,10 @@ func TestGetFileSize(t *testing.T) {
 	fmt.Println(size)
 }
 func TestIsFileOrDirExists(t *testing.T) {
-	path := "./hash.go"
-	fmt.Println(IsFileOrDirExists(path))
-
+	// path := "./hash.go"
+	// fmt.Println(IsFileOrDirExists(path))
+	var a [2]int
+	fmt.Println(a[0])
 }
 
 func TestGetFilesBelownDirFilterBySuffix(t *testing.T) {
@@ -32,5 +33,18 @@ func TestGetFilesBelownDirFilterBySuffix(t *testing.T) {
 	}
 	for _, s := range strings {
 		fmt.Println(s)
+	}
+}
+
+func TestGetAllFilesUnderDir(t *testing.T) {
+	dirPath := "."
+	files, e := GetAllFilesUnderDir(dirPath)
+	if nil != e {
+		panic(e)
+	} else {
+		for _, f := range files {
+			fmt.Println(f.Name())
+			f.Close()
+		}
 	}
 }

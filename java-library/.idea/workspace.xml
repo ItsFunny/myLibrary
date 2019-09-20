@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/../../vlink.com/v2/vlink-api/vlink-web/src/main/java/com/vlink/aop/ArgumentValidAOP.java" description="public Object beforeCheck(ProceedingJoinPoint join..." line="44" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aa08344f-1a6b-48d8-9866-e55c2e1f6c80" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/QueueLogin/AbstractLoginServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/QueueLogin/Exception/QueueLoginRangeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/QueueLogin/LoginThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/QueueLogin/QueueConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/QueueLogin/QueueLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/QueueLogin/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/QueueLogin/model/BaseObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/QueueLogin/model/QueueLoginResultInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/QueueLogin/service/BackLoginThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/QueueLogin/service/QueueLoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/QueueLogin/service/impl/QueueLoginServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/cache/AbstractReferenceCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/cache/ClearStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/cache/IReferenceCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/cache/ObjectCreateStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/cache/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/cache/soft/AbstractCHMSoftReferenchCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/cache/soft/CHMSoftReferenceCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/cache/soft/SofReferenceCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/cache/soft/SoftReferenceInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/dto/ResultDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/enums/RestAPIStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/exception/BaseBussException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/exception/FTPBusynessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/file/AbstractFIleStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/file/BlockingPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/file/DefaultFileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/file/FTPClientPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/file/FTPFileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/file/FileStrategyContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/file/IFileStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/framework/BeanSelefAwarePostProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/framework/IBeanSelfAware.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/json/GsonInterfaceAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mail/AbstractEmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mail/DefalutEmailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mail/IEmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mail/factory/AbstractEmailFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mail/factory/DefaultEmailServiceFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mail/property/EmailProperty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/model/HttpClientResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/model/TwoTuple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mq/AbstractConfirmCallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mq/AbstractMQConfirmCallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mq/AppEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mq/AppEventConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mq/AppEventPublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mq/AppEventRabbitMQPublish.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mq/BaseCorrelationData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mq/LogEventPublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mq/MicroCorrelationData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mq/consumer/abs/AbstractAppeventConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mq/consumer/abs/AbstractBaseConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mq/consumer/abs/AbstractChannleAppeventConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/mq/converters/JSONMessageConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/page/AbstractMultipartDBPageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/page/AbstractPageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/page/PageBaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/page/PageExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/page/PageRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/page/PageResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/page/SingleDBPageRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/page/SingleDBPageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/redis/DistributeLock.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/redis/distributelock_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/service/IdWorkerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/service/IdWorkerServiceTwitter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/sqlextention/AbstractSQLExtentionModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/sqlextention/AbstractSQLExtentionpProxyBaseCRUDDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/sqlextention/ISQLExtentionBaseCRUDDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/sqlextention/ISQLExtentionConfigBaseCRUDDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/sqlextention/SQLExtentionConfigProperty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/sqlextention/SQLExtentionDaoWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/sqlextention/SQLExtentionHolderV3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/sqlextention/SQLExtentionInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/sqlextention/SQLExtentionResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/sqlextention/service/ISQLExtentionBaseCRUDService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/sqlextention/service/abs/AbstractSQLExtentionProxyBaseCRUDService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/template/BaseTemplatePattern.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/tree/TreeComposite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/utils/CollectionUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/utils/CommonUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/utils/CryptUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/utils/DateUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/utils/HttpUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/utils/IDGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/utils/IDNoChecker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/utils/JSONUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/utils/KeyUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/utils/PageResultUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/utils/RSAUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/utils/ResultUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/utils/UrlUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/utils/VUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/base/controller/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/base/controller/base.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/base/controller/webBase.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/base/controller/webBase.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/base/models/baseAPIModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/base/models/baseAPIModel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/compress/compress.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/compress/compress_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/converters/converter_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/converters/converter_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/crypt/encrypt.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/crypt/encrypt.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/job/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/job/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/job/dispatcher/dipatcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/job/dispatcher/dipatcher.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/job/worker/worker.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/job/worker/worker.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/main2.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/main2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/plugin/command.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/plugin/command.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/plugin/command_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/plugin/command_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/sort/chinese.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/sort/chinese.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/common.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/utils/common.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/file.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/utils/file.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/file_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/utils/file_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/reqID.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/utils/reqID.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/time.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/utils/time.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/time_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/utils/time_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/walletUtil_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/utils/walletUtil_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/walletUtils.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/go/utils/walletUtils.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/specialLib/opencv/ai/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/specialLib/opencv/ai/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/specialLib/opencv/ai/video/video.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/specialLib/opencv/ai/video/video.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-libary/specialLib/opencv/ai/video/video_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-libary/specialLib/opencv/ai/video/video_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/QueueLogin/AbstractLoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/AbstractLoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/QueueLogin/Exception/QueueLoginRangeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/Exception/QueueLoginRangeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/QueueLogin/LoginThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/LoginThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/QueueLogin/QueueConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/QueueConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/QueueLogin/QueueLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/QueueLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/QueueLogin/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/QueueLogin/model/BaseObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/model/BaseObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/QueueLogin/model/QueueLoginResultInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/model/QueueLoginResultInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/QueueLogin/service/BackLoginThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/service/BackLoginThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/QueueLogin/service/QueueLoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/service/QueueLoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/QueueLogin/service/impl/QueueLoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/service/impl/QueueLoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/cache/AbstractReferenceCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/cache/AbstractReferenceCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/cache/ClearStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/cache/ClearStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/cache/IReferenceCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/cache/IReferenceCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/cache/ObjectCreateStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/cache/ObjectCreateStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/cache/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/cache/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/cache/soft/AbstractCHMSoftReferenchCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/cache/soft/AbstractCHMSoftReferenchCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/cache/soft/CHMSoftReferenceCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/cache/soft/CHMSoftReferenceCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/cache/soft/SofReferenceCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/cache/soft/SofReferenceCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/cache/soft/SoftReferenceInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/cache/soft/SoftReferenceInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/dto/ResultDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/dto/ResultDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/enums/RestAPIStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/enums/RestAPIStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/exception/FTPBusynessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/exception/FTPBusynessException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/file/AbstractFIleStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/file/AbstractFIleStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/file/BlockingPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/file/BlockingPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/file/DefaultFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/file/DefaultFileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/file/FTPClientPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/file/FTPClientPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/file/FTPFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/file/FTPFileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/file/FileStrategyContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/file/FileStrategyContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/file/IFileStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/file/IFileStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/json/GsonInterfaceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/json/GsonInterfaceAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mail/AbstractEmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mail/AbstractEmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mail/DefalutEmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mail/DefalutEmailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mail/IEmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mail/IEmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mail/factory/AbstractEmailFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mail/factory/AbstractEmailFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mail/factory/DefaultEmailServiceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mail/factory/DefaultEmailServiceFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mail/property/EmailProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mail/property/EmailProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/model/HttpClientResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/model/HttpClientResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/model/TwoTuple.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/model/TwoTuple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mq/AbstractConfirmCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/AbstractConfirmCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mq/AbstractMQConfirmCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/AbstractMQConfirmCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mq/AppEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/AppEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mq/AppEventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/AppEventConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mq/AppEventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/AppEventPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mq/AppEventRabbitMQPublish.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/AppEventRabbitMQPublish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mq/BaseCorrelationData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/BaseCorrelationData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mq/LogEventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/LogEventPublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mq/MicroCorrelationData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/MicroCorrelationData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mq/consumer/abs/AbstractAppeventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/consumer/abs/AbstractAppeventConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mq/consumer/abs/AbstractBaseConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/consumer/abs/AbstractBaseConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mq/consumer/abs/AbstractChannleAppeventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/consumer/abs/AbstractChannleAppeventConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/mq/converters/JSONMessageConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/converters/JSONMessageConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/page/AbstractMultipartDBPageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/page/AbstractMultipartDBPageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/page/AbstractPageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/page/AbstractPageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/page/PageBaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/page/PageBaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/page/PageExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/page/PageExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/page/PageRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/page/PageRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/page/PageResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/page/PageResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/redis/DistributeLock.go" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/redis/DistributeLock.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/redis/distributelock_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/redis/distributelock_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/service/IdWorkerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/service/IdWorkerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/service/IdWorkerServiceTwitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/service/IdWorkerServiceTwitter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/sqlextention/AbstractSQLExtentionModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/AbstractSQLExtentionModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/sqlextention/AbstractSQLExtentionpProxyBaseCRUDDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/AbstractSQLExtentionpProxyBaseCRUDDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/sqlextention/ISQLExtentionBaseCRUDDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/ISQLExtentionBaseCRUDDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/sqlextention/ISQLExtentionConfigBaseCRUDDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/ISQLExtentionConfigBaseCRUDDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/sqlextention/SQLExtentionConfigProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/SQLExtentionConfigProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/sqlextention/SQLExtentionDaoWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/SQLExtentionDaoWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/sqlextention/SQLExtentionHolderV3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/SQLExtentionHolderV3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/sqlextention/SQLExtentionInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/SQLExtentionInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/sqlextention/SQLExtentionResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/SQLExtentionResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/sqlextention/service/ISQLExtentionBaseCRUDService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/service/ISQLExtentionBaseCRUDService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/sqlextention/service/abs/AbstractSQLExtentionProxyBaseCRUDService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/service/abs/AbstractSQLExtentionProxyBaseCRUDService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/tree/TreeComposite.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/tree/TreeComposite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/utils/CollectionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/CollectionUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/utils/CommonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/CommonUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/utils/DateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/DateUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/utils/HttpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/HttpUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/utils/IDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/IDGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/utils/IDNoChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/IDNoChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/utils/JsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/JsonUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/utils/KeyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/KeyUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/utils/PageResultUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/PageResultUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/utils/RSAUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/RSAUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/utils/ResultUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/ResultUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-libary/java/com/joker/library/utils/UrlUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/UrlUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/go/base/models/baseAPIModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/../library/src/main/go/base/models/baseAPIModel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/go/job/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/go/job/base.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/go/job/config.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/go/job/dispatcher/configuration.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/go/job/dispatcher/dipatcher.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/go/job/job.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/go/job/jobType.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/go/job/sortJob.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/go/job/worker/worker.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library/src/main/go/utils/file.go" beforeDir="false" afterPath="$PROJECT_DIR$/../library/src/main/go/utils/file.go" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/page/SingleDBPageRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>com.joker.library</find>
+      <find>md5</find>
+      <find>ftp</find>
+      <find>连接失败</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>com.charile</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src/main</dir>
+      <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/src/main/java/com/charile/utils</dir>
+      <dir>$PROJECT_DIR$/src/main/java/com/charile</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/cache/soft/SofReferenceCache.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/cache/soft/CHMSoftReferenceCache.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/cache/soft/AbstractCHMSoftReferenchCache.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/utils/JsonUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/mq/converters/JSONMessageConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/mq/consumer/abs/AbstractChannleAppeventConsumer.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/utils/VUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/exception/BaseBussException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/template/BaseTemplatePattern.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/file/FTPFileService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/file/FTPClientPool.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/file/FileStrategyContext.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/framework/IBeanSelfAware.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/framework/BeanSelefAwarePostProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/utils/CryptUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/page/SinglePageResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/page/SingleDBPageResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/page/SingleDBPageRequest.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-library" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-library" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-library" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-library" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-library" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="charile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-library" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="charile" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java-library" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="charile" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.charile.exception" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/charile" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa08344f-1a6b-48d8-9866-e55c2e1f6c80" name="Default Changelist" comment="" />
+      <created>1577252305918</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577252305918</updated>
+      <workItem from="1577252307376" duration="944000" />
+      <workItem from="1577253528811" duration="6076000" />
+      <workItem from="1577946525395" duration="607000" />
+      <workItem from="1578315952240" duration="100000" />
+      <workItem from="1578467775061" duration="642000" />
+      <workItem from="1578532953282" duration="319000" />
+      <workItem from="1578639097775" duration="1951000" />
+      <workItem from="1578645486717" duration="626000" />
+      <workItem from="1578787772409" duration="557000" />
+      <workItem from="1578809334699" duration="1548000" />
+      <workItem from="1580087247874" duration="566000" />
+      <workItem from="1580786801735" duration="1545000" />
+      <workItem from="1581307303213" duration="516000" />
+      <workItem from="1581654193051" duration="492000" />
+      <workItem from="1581919159802" duration="785000" />
+      <workItem from="1582271239591" duration="1699000" />
+      <workItem from="1582528763443" duration="652000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="19625000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3104435" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Spring" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.30722892" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/cache/soft/CHMSoftReferenceCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/cache/soft/AbstractCHMSoftReferenchCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/cache/soft/SofReferenceCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/mq/consumer/abs/AbstractAppeventConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/mq/consumer/abs/AbstractBaseConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/utils/JSONUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/mq/converters/JSONMessageConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/mq/consumer/abs/AbstractChannleAppeventConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/utils/HttpUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1391">
+          <caret line="51" column="7" lean-forward="true" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/utils/VUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#generateVerifyCode#1;class#VUtils#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/template/BaseTemplatePattern.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="41" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/service/IdWorkerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/service/IdWorkerServiceTwitter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/utils/KeyUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1349">
+          <caret line="78" column="5" selection-start-line="41" selection-start-column="4" selection-end-line="78" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/exception/BaseBussException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/exception/FTPBusynessException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="24" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/file/FTPClientPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2689">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+          <folding>
+            <element signature="e#9276#9277#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/file/DefaultFileService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/file/FileStrategyContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/framework/IBeanSelfAware.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.5.RELEASE/spring-beans-5.0.5.RELEASE.jar!/org/springframework/beans/factory/config/BeanPostProcessor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/file/IFileStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/file/FTPFileService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="47" column="45" selection-start-line="47" selection-start-column="45" selection-end-line="47" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/file/BlockingPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/commons-net/commons-net/3.6/commons-net-3.6.jar!/org/apache/commons/net/ftp/FTPReply.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1178">
+          <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/file/AbstractFIleStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="64" column="40" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/commons-net/commons-net/3.6/commons-net-3.6.jar!/org/apache/commons/net/ftp/FTP.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3040">
+          <caret line="181" column="16" selection-start-line="181" selection-start-column="16" selection-end-line="181" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/framework/BeanSelefAwarePostProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/page/PageExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/utils/CryptUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#CryptUtil#0" />
+            <element signature="docComment;method#md5Encrypt#0;class#CryptUtil#0" />
+            <element signature="method#md5Encrypt#0;class#CryptUtil#0" />
+            <element signature="e#1338#1339#0" expanded="true" />
+            <element signature="e#1382#1383#0" expanded="true" />
+            <element signature="method#getSHA256StrJava#0;class#CryptUtil#0" />
+            <element signature="method#byte2Hex#0;class#CryptUtil#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/page/PageRequestDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="23" column="28" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="23" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/page/PageResponseDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="37" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/page/SingleDBPageResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/page/SingleDBPageRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>fabric-sdk-java2-1.4.4</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>java-library</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

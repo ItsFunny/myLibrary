@@ -12,19 +12,19 @@ type BaseAPIResponseModel struct {
 	Code string
 }
 
-func (this BaseAPIResponseModel) SetResponseCode(code string) {
+func (this *BaseAPIResponseModel) SetResponseCode(code string) {
 	this.Code = code
 }
 
-func (this BaseAPIResponseModel) GetResponseCode() string {
+func (this *BaseAPIResponseModel) GetResponseCode() string {
 	return this.Code
 }
 
-func (this BaseAPIResponseModel) SetResponseMsg(msg string) {
+func (this *BaseAPIResponseModel) SetResponseMsg(msg string) {
 	this.Msg = msg
 }
 
-func (this BaseAPIResponseModel) GetResponseMsg() string {
+func (this *BaseAPIResponseModel) GetResponseMsg() string {
 	return this.Msg
 }
 

@@ -106,7 +106,7 @@ func Write2File(filePath string, bytes []byte) error {
 		// 说明有文件夹
 		// 判断文件夹是否存在
 		dirs := SubString(filePath, strings.LastIndex(filePath, "/"))
-		if IsFileOrDirExists(dirs) {
+		if !IsFileOrDirExists(dirs) {
 			if err := CreateMultiFileDirs(dirs); nil != err {
 				fmt.Println("创建文件夹失败:", err.Error())
 				return err
@@ -152,4 +152,36 @@ func GetFilesBelownDirFilterBySuffix(dir string, filterSuffix string) ([]string,
 	}
 
 	return res, nil
+}
+
+// 获取目录下的所有文件
+func GetAllFilesUnderDir(dirPath string) ([]*os.File, error) {
+	files := make([]*os.File, 0)
+	if e := filepath.Walk(dirPath, func(path string, info os.FileInfo, err error) error {
+		// 跳过
+		if path == dirPath {
+			return nil
+		}
+		if nil != err {
+			return errors.New("读取目录失败:" + err.Error())
+		}
+		if f, e := os.Open(path); nil != e {
+			return errors.Errorf("读取文件[%s]的时候失败:%s", path, e.Error())
+		} else {
+			files = append(files, f)
+		}
+		return nil
+	}); nil != e {
+		return nil, errors.New("filepath#walk 调用失败:" + e.Error())
+	}
+
+	return files, nil
+}
+
+// 删除文件或者文件夹
+func DeleteFileOrDir(path string) error {
+	if IsFileOrDirExists(path) {
+		return errors.New(fmt.Sprintf("path=[%s]不存在", path))
+	}
+	return os.RemoveAll(path)
 }

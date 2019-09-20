@@ -2,11 +2,10 @@ package controllers
 
 import (
 	"errors"
+	"myLibrary/go-libary/go/log"
 	"myLibrary/library/src/main/go/base/constants"
 	"myLibrary/library/src/main/go/base/services"
-	"myLibrary/library/src/main/go/base/services/impl"
 	"myLibrary/library/src/main/go/common"
-	"myLibrary/library/src/main/go/common/log"
 	utils2 "myLibrary/library/src/main/go/utils"
 	"net/http"
 	"runtime"
@@ -17,9 +16,9 @@ import (
 
 // 暂时全局变量,多系统考虑通过请求的session 或 其他方式获取
 type BaseControllerInit struct {
-	ReqID string
+	// ReqID string
 	ReqIP string
-	Log   *log.Log
+	Log   log.Logger
 }
 
 // BaseController : 基础 controller, 提供基础方法
@@ -50,9 +49,9 @@ func (receiver *BaseController) Prepare() {
 		reqIP = addr[:i]
 	}
 
-	receiver.ReqID = reqId
+	// receiver.ReqID = reqId
 	receiver.ReqIP = reqIP
-	receiver.Log = log.NewLog(log.InitLog{ReqID: reqId})
+	receiver.Log = log.NewCommonBaseLoggerWithLog4go(reqId)
 }
 
 // BeforeStart :方法开始调用
@@ -148,13 +147,13 @@ func (receiver *BaseController) returnUnauthorized() (err error) {
 }
 
 // BaseControllerInit 转换为 BaseServicesInit
-func (receiver *BaseController) GetServiceInit() services.IBaseServiceInit {
-	init := new(baseImpl.BaseServiceInitImpl)
-	init.SetLogger(receiver.Log)
-	init.SetReqId(receiver.ReqID)
-
-	return init
-}
+// func (receiver *BaseController) GetServiceInit() services.IBaseServiceInit {
+// 	init := new(baseImpl.BaseServiceInitImpl)
+// 	init.SetLogger(receiver.Log)
+// 	init.SetReqId(receiver.ReqID)
+//
+// 	return init
+// }
 
 // 返回 参数错误
 func (receiver *BaseController) ReturnParamError() (err error) {
@@ -167,6 +166,12 @@ func (receiver *BaseController) ReturnSuccessInfo(service services.IBaseRepsonse
 	service.SetResponseMsg("成功")
 	receiver.Data["json"] = service
 	receiver.ServeJSON()
+	return
+}
 
+func (receiver *BaseController)ReturnSuccess(data interface{})(err error){
+	receiver.Ctx.Output.Status = http.StatusOK
+	receiver.Data["json"] = data
+	receiver.ServeJSON()
 	return
 }

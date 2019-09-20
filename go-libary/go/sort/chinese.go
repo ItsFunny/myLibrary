@@ -33,4 +33,12 @@ var (
 		}
 		return true
 	}
+
+	DEFAULT_SORTED_BY_INT = func(int1, int2 int, desc bool) bool {
+		if desc {
+			return int1 < int2
+		} else {
+			return int1 > int2
+		}
+	}
 )

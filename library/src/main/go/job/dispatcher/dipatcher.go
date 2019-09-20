@@ -82,15 +82,15 @@ func (d *BaseDispatcher) Start() {
 	for _, worker := range d.Workers {
 		worker.Start()
 	}
-	go func() {
-		for {
-			select {
-			case jobBuffer := <-d.JobQueue:
+	for {
+		select {
+		case jobBuffer := <-d.JobQueue:
+			go func(jobInterface interface{}) {
 				jobChannel := <-d.WorkQueue
 				jobChannel <- jobBuffer
-			}
+			}(jobBuffer)
 		}
-	}()
+	}
 }
 
 func (d *BaseDispatcher) AddJob(job interface{}) {

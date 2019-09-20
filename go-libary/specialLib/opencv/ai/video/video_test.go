@@ -35,9 +35,17 @@ func TestCompareVideos(t *testing.T) {
 func TestCompareVideosWithImg(t *testing.T) {
 	filePath1 := "/Users/joker/Desktop/图片/测试/视频相似度测试/jay.flv"
 	filePath2 := "/Users/joker/Desktop/图片/测试/视频相似度测试/jay.flv"
-	f, e := CompareVideosWithImg(filePath1, filePath2,"a",6)
+	f, e := CompareVideosWithImg(filePath1, filePath2, "a", 6)
 	if nil != e {
 		panic(e)
 	}
 	fmt.Println(f)
+}
+func TestGetVideoTimeZone(t *testing.T) {
+	filePath := "/Users/joker/Desktop/test/ffmpeg-test/Jay-test.flv"
+	videoDuration, e := GetVideoTimeZone(filePath)
+	if nil != e {
+		panic(e)
+	}
+	fmt.Println(videoDuration)
 }

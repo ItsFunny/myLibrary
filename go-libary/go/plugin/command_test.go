@@ -77,10 +77,8 @@ func TestAPP2(t *testing.T) {
 }
 
 func TestExecCmdWithLog(t *testing.T) {
-	// withLog := ExecCmdWithLog("you-get -o ~/Desktop/ https://stallman.org/rms.jpg ")
-	// if nil != withLog {
-	// 	fmt.Println(withLog)
-	// }
-	getenv := os.Getenv("PWD")
-	fmt.Println(getenv)
+	cmdStr := "ffmpeg -i ./Jay-test.flv -vcodec copy -acodec copy -ss 00:00:10 -t 15 ./a.flv -y"
+	killSigChan := make(chan struct{}, 1)
+	e := ExecCmdWithLogUnderControl(cmdStr, killSigChan)
+	fmt.Println(e)
 }

@@ -172,6 +172,7 @@ func (w Wallet) GetAddress() (address string) {
 	return address
 }
 
+
 // HashPubKey hashes public key
 func HashPubKey(pubKey []byte) []byte {
 	publicSHA256 := sha256.Sum256(pubKey)
@@ -228,3 +229,6 @@ func ToWIF(priv []byte) (wif string) {
 
 	return wif
 }
+
+
+
