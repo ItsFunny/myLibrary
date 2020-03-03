@@ -13,8 +13,8 @@ import (
 	"github.com/mfonda/simhash"
 	"gocv.io/x/gocv"
 	"image/jpeg"
+	"myLibrary/go-libary/go/utils"
 	"myLibrary/go-libary/specialLib/opencv/ai/pic"
-	"myLibrary/library/src/main/go/utils"
 	"sync"
 )
 const (

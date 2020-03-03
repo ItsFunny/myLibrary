@@ -9,7 +9,7 @@ package controllers
 
 import (
 	"myLibrary/go-libary/go/base/dto"
-	"myLibrary/library/src/main/go/page"
+	"myLibrary/go-libary//go/page"
 	"net/http"
 	"strconv"
 )

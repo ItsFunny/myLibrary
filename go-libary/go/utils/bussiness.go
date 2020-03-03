@@ -9,7 +9,7 @@ package utils
 
 import (
 	"fmt"
-	"myLibrary/library/src/main/go/constants"
+	"myLibrary/go-libary//go/constants"
 )
 
 

@@ -7,7 +7,10 @@
 */
 package main
 
+import "fmt"
+
 func main() {
+	fmt.Println(1)
 	// niuniu := make([]int, 4)
 	// nn := make([]int, 4)
 	// a := 0

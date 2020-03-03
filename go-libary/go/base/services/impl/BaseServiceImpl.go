@@ -2,8 +2,8 @@ package baseImpl
 
 import (
 	"encoding/json"
-	"myLibrary/library/src/main/go/base/services"
-	"myLibrary/library/src/main/go/common/log"
+	"myLibrary/go-libary//go/base/services"
+	"myLibrary/go-libary//go/common/log"
 	"runtime"
 	"strings"
 )

@@ -8,7 +8,7 @@
 package services
 
 import (
-	"myLibrary/library/src/main/go/common/log"
+	"myLibrary/go-libary//go/common/log"
 )
 
 type (

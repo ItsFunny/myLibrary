@@ -7,7 +7,7 @@
 */
 package dispatcher
 
-import "myLibrary/library/src/main/go/job/worker"
+import "myLibrary/go-libary//go/job/worker"
 
 type DispatcherConfiguration struct {
 	// 有多少个worker同时运行

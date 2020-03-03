@@ -10,8 +10,8 @@ package dispatcher
 import (
 	"io"
 	"log"
-	log2 "myLibrary/library/src/main/go/common/log"
-	"myLibrary/library/src/main/go/job/worker"
+	log2 "myLibrary/go-libary//go/common/log"
+	"myLibrary/go-libary//go/job/worker"
 )
 
 // TODO 修改dispatcher中的chan 类型为interface,consumer端做强转

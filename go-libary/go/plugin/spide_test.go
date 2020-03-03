@@ -9,7 +9,7 @@ package plugin
 
 import (
 	"fmt"
-	"myLibrary/library/src/main/go/page"
+	"myLibrary/go-libary/go/page"
 	"testing"
 )
 

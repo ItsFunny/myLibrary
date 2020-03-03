@@ -9,12 +9,16 @@ package utils
 
 import (
 	"archive/zip"
+	"bytes"
 	"encoding/json"
 	"errors"
 	"fmt"
 	"github.com/satori/go.uuid"
 	"github.com/tealeg/xlsx"
+	"golang.org/x/text/encoding/simplifiedchinese"
+	"golang.org/x/text/transform"
 	"io"
+	"io/ioutil"
 	"os"
 	"regexp"
 	"strconv"
@@ -377,4 +381,10 @@ func Write(writer io.Writer, f *xlsx.File) (err error) {
 		}
 	}
 	return zipWriter.Close()
+}
+
+//UTF82GBK : transform UTF8 rune into GBK byte array
+func UTF82GBK(src string) ([]byte, error) {
+	GB18030 := simplifiedchinese.All[0]
+	return ioutil.ReadAll(transform.NewReader(bytes.NewReader([]byte(src)), GB18030.NewEncoder()))
 }

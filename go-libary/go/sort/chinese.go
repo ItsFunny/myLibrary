@@ -7,7 +7,7 @@
 */
 package sort
 
-import "xinglan.com/core-system/platform/platform-rpc/common/utils"
+import "myLibrary/go-libary/go/utils"
 
 var (
 	DEFAULT_SORTED_BY_CHINESE = func(strI, strJ string, desc bool) bool {

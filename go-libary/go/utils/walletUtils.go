@@ -8,7 +8,7 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 	"golang.org/x/crypto/ripemd160"
 	"math/big"
-	"myLibrary/library/src/main/go/crypt"
+	"myLibrary/go-libary//go/crypt"
 )
 
 func byteString(b []byte) (s string) {

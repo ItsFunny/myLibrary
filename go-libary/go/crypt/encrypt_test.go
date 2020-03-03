@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/wumansgy/goEncrypt"
-	"myLibrary/library/src/main/go/converters"
+	"myLibrary/go-libary//go/converters"
 	"os"
 	"testing"
 )

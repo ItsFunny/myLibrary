@@ -13,7 +13,7 @@ import (
 	"github.com/tyler-smith/go-bip32"
 	"github.com/tyler-smith/go-bip39"
 	"math"
-	"myLibrary/library/src/main/go/crypt"
+	"myLibrary/go-libary/go/crypt"
 	"testing"
 )
 
