@@ -14,11 +14,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPReply;
+import org.apache.commons.net.ftp.FTPSClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- *
  * @author joker
  * @date 创建时间：2018年8月8日 下午5:17:19
  */
@@ -27,6 +27,7 @@ public class FTPClientPool implements BlockingPool<FTPClient>
 
     private Logger log = LoggerFactory.getLogger(FTPClientPool.class);
     private final FTPBean configBean;
+
 
     private volatile AtomicInteger onlineClientCount;
 
@@ -163,8 +164,18 @@ public class FTPClientPool implements BlockingPool<FTPClient>
         private Integer ftpPort;
         private String ftpUsername;
         private String ftpPassword;
-
+        private boolean sftp;
         private Integer buffSize;
+
+        public boolean isSftp()
+        {
+            return sftp;
+        }
+
+        public void setSftp(boolean sftp)
+        {
+            this.sftp = sftp;
+        }
 
         public FTPBean(String ftpHost, Integer ftpPort, String ftpUsername, String ftpPassword, Integer buffSize)
         {
@@ -255,7 +266,14 @@ public class FTPClientPool implements BlockingPool<FTPClient>
         FTPClient ftpClient = null;
         try
         {
-            ftpClient = new FTPClient();
+            if (this.configBean.sftp)
+            {
+                ftpClient = new FTPSClient();
+                ftpClient = new FTPSClient("sftp");
+            } else
+            {
+                ftpClient = new FTPClient();
+            }
             // 设置FTP服务器IP和端口
             ftpClient.connect(this.configBean.getFtpHost(), this.configBean.getFtpPort());
             // 设置超时时间,毫秒

@@ -28,6 +28,7 @@ public class FTPFileService extends AbstractFIleStrategy
 
     private String httpPortal = "http://";
 
+
     private String encode = Charset.defaultCharset().toString();
 
     private String SERVER_CHARSET = "ISO-8859-1";
@@ -41,10 +42,17 @@ public class FTPFileService extends AbstractFIleStrategy
     }
 
 
-    @Override
-    public String upload(MultipartFile file, String ftpPath, String newFileName, String key) throws IOException
+    public FTPFileService(FTPBean bean)
     {
-        log.debug("开始上传文件:{},上传路径为:{}", newFileName, ftpPath);
+        this.singletonFTPPool = new FTPClientPool(bean);
+    }
+
+
+    @Override
+    public UploadResponse upload(MultipartFile file, String storePath, String newFileName, String key) throws IOException
+    {
+        UploadResponse result = new UploadResponse();
+        log.debug("开始上传文件:{},上传路径为:{}", newFileName, storePath);
         FTPClient client = singletonFTPPool.get();
         if (null == client)
         {
@@ -52,19 +60,22 @@ public class FTPFileService extends AbstractFIleStrategy
         }
         boolean flag = false;
         InputStream in = null;
+        String storeBasePath = getStoreBasePath(key);
+        String visitPrefix = getVisitPrefix(key);
+        String path = storeBasePath + File.separator + storePath;
         try
         {
             String filePath = file.getOriginalFilename();
             // 获取文件后缀
             String suffix = getSuffix(filePath);
             // 路径转码，处理中文
-            ftpPath = changeEncode(client, ftpPath);
+            path = changeEncode(client, path);
             newFileName = changeEncode(client, newFileName + suffix);
             // 判断目标文件夹是否存在,不存在就创建
-            if (!client.changeWorkingDirectory(ftpPath))
+            if (!client.changeWorkingDirectory(path))
             {
-                client.makeDirectory(ftpPath);
-                client.changeWorkingDirectory(ftpPath);
+                client.makeDirectory(path);
+                client.changeWorkingDirectory(path);
             }
             // 上传文件
             // File file = new File(filePath);
@@ -74,8 +85,11 @@ public class FTPFileService extends AbstractFIleStrategy
             if (flag)
             {
                 log.info("文件上传成功：" + filePath);
-                return this.httpPortal + this.singletonFTPPool.getHost() + File.separator
-                        + ftpPath.substring(ftpPath.indexOf(getVisitPrefix(key))) + newFileName;
+                result.setStorePath(storeBasePath + File.separator + storePath + File.separator + newFileName);
+                result.setMappingPath(visitPrefix + File.separator + storePath + File.separator + newFileName);
+//                this.httpPortal + this.singletonFTPPool.getHost() + File.separator
+//                        + ftpPath.substring(ftpPath.indexOf(getVisitPrefix(key))) + newFileName;
+                return result;
             }
         } catch (Exception e)
         {

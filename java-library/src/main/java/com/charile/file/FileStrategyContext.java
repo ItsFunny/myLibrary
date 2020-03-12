@@ -11,7 +11,6 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 /**
- *
  * @author joker
  * @date 创建时间：2018年8月8日 下午4:50:13
  */
@@ -26,7 +25,7 @@ public class FileStrategyContext
     private String ftpUsername;
     private String ftpPassword;
 
-    public String upload(MultipartFile file, String storePath, String newFileName, String key) throws IOException
+    public UploadResponse upload(MultipartFile file, String storePath, String newFileName, String key) throws IOException
     {
         return this.fileStrategy.upload(file, storePath, newFileName, key);
     }
