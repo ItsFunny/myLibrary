@@ -9,6 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * @author joker
@@ -28,6 +29,11 @@ public class FileStrategyContext
     public UploadResponse upload(MultipartFile file, String storePath, String newFileName, String key) throws IOException
     {
         return this.fileStrategy.upload(file, storePath, newFileName, key);
+    }
+
+    public UploadResponse upload(InputStream inputStream, String storePath, String newFileName, String key) throws IOException
+    {
+        return this.fileStrategy.upload(inputStream, storePath, newFileName, key);
     }
 
     public Boolean delete(String filePathName)

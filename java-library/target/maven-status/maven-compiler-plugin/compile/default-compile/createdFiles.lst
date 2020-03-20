@@ -62,6 +62,7 @@ com/charile/file/UploadResponse.class
 com/charile/exception/SFTPDataTransferException.class
 com/charile/mq/consumer/abs/AbstractChannleAppeventConsumer.class
 com/charile/file/SFTPFileService.class
+com/charile/utils/QRCodeUtil.class
 com/charile/mail/factory/DefaultEmailServiceFactory.class
 com/charile/file/FTPClientPool.class
 com/charile/file/DefaultFileService.class

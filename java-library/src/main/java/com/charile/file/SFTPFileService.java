@@ -11,10 +11,7 @@ import lombok.extern.java.Log;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 /**
  * The type Sftp file service.
@@ -48,6 +45,25 @@ public class SFTPFileService extends AbstractFIleStrategy
     public UploadResponse upload(MultipartFile file, String storePath, String newFileName, String key) throws IOException
     {
         // 变更 /qwe/ => qwe
+        storePath = this.replaceStorepath(storePath);
+        UploadResponse result = new UploadResponse();
+
+        InputStream inputStream = file.getInputStream();
+        return getUploadResponse(inputStream, storePath, newFileName, key, result);
+    }
+
+    @Override
+    public UploadResponse upload(InputStream inputStream, String storePath, String newFileName, String key) throws IOException
+    {
+        // 变更 /qwe/ => qwe
+        storePath = this.replaceStorepath(storePath);
+        UploadResponse result = new UploadResponse();
+
+        return getUploadResponse(inputStream, storePath, newFileName, key, result);
+    }
+
+    private String replaceStorepath(String storePath)
+    {
         Character c = '/';
         if (c.equals(storePath.charAt(0)))
         {
@@ -57,9 +73,12 @@ public class SFTPFileService extends AbstractFIleStrategy
         {
             storePath = storePath.substring(0, storePath.length() - 1);
         }
-        UploadResponse result = new UploadResponse();
+        return storePath;
 
-        InputStream inputStream = file.getInputStream();
+    }
+
+    private UploadResponse getUploadResponse(InputStream inputStream, String storePath, String newFileName, String key, UploadResponse result)
+    {
         try
         {
             try
@@ -96,8 +115,6 @@ public class SFTPFileService extends AbstractFIleStrategy
             }
 
         }
-
-
     }
 
     @Override

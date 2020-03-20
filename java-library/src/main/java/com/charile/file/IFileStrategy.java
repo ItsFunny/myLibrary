@@ -9,6 +9,7 @@ import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * The interface File strategy.
@@ -35,6 +36,8 @@ public interface IFileStrategy
      * @throws IOException the io exception
      */
     UploadResponse upload(MultipartFile file, String storePath, String newFileName, String key) throws IOException;
+
+    UploadResponse upload(InputStream inputStream,String storePath, String newFileName, String key) throws IOException;
 
     /**
      * Delete boolean.

@@ -114,6 +114,12 @@ public class FTPFileService extends AbstractFIleStrategy
         return null;
     }
 
+    @Override
+    public UploadResponse upload(InputStream inputStream, String storePath, String newFileName, String key) throws IOException
+    {
+        return null;
+    }
+
     /**
      * 根据FTP编码集转换文件路径，防止中文乱码，并设置FTP连接的编码集
      *

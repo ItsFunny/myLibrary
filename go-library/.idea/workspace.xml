@@ -2,255 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="298ffa7f-3e1a-43e9-893b-1040a5cb3fd4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go/network/utils/network_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/exception/FTPConfigException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/exception/SFTPDataTransferException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/exception/SFTPLoginException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/SFTPFileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/UploadResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/FileUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/SFTPUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/file/FTPFileServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/file/SFTPFileServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/utils/CommonTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/utils/FileUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/authentication/authorityContainer.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/authentication/authorityContainer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/authentication/authorityContainer_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/authentication/authorityContainer_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/authentication/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/authentication/base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/base/constants/api.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/base/constants/api.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/base/controller/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/base/controller/base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/base/controller/webBase.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/base/controller/webBase.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/base/db/dbBaseModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/base/db/dbBaseModel.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/base/dto/result.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/base/dto/result.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/base/models/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/base/models/base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/base/models/baseAPIModel.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/base/models/baseAPIModel.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/base/models/base_response.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/base/models/base_response.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/base/service/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/base/service/base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/base/service/base_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/base/service/base_service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/base/services/IBaseAPIResponse.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/base/services/IBaseAPIResponse.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/base/services/IBaseService.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/base/services/IBaseService.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/base/services/impl/BaseServiceImpl.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/base/services/impl/BaseServiceImpl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/base/services/impl/BaseServiceInitImpl.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/base/services/impl/BaseServiceInitImpl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/common/data.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/common/data.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/common/error.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/common/error.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/common/list.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/common/list.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/common/log/log.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/common/log/log.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/common/map.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/common/map.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/compress/zip_compress.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/compress/zip_compress.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/compress/zip_compress_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/compress/zip_compress_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/conf/YamlProperty.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/conf/YamlProperty.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/conf/app.conf" beforeDir="false" afterPath="$PROJECT_DIR$/go/conf/app.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/conf/private.pem" beforeDir="false" afterPath="$PROJECT_DIR$/go/conf/private.pem" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/conf/public.pem" beforeDir="false" afterPath="$PROJECT_DIR$/go/conf/public.pem" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/constants/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/constants/base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/constants/wechat.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/constants/wechat.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/converters/chinese.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/converters/chinese.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/converters/common_converter.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/converters/common_converter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/converters/converter_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/converters/converter_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/crypt/aes.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/crypt/aes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/crypt/aes_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/crypt/aes_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/crypt/encrypt.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/crypt/encrypt.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/crypt/encrypt_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/crypt/encrypt_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/crypt/sha.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/crypt/sha.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/db/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/db/db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/db/db_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/db/db_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/db/select.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/db/select.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/db/select_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/db/select_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/error/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/error/base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/error/base_error.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/error/base_error.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/error/error.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/error/error.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/init.sh" beforeDir="false" afterPath="$PROJECT_DIR$/go/init.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/iterator.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/iterator.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/job/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/go/job/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/job/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/job/base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/job/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/job/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/job/dispatcher/configuration.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/job/dispatcher/configuration.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/job/dispatcher/dipatcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/job/dispatcher/dipatcher.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/job/job.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/job/job.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/job/jobType.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/job/jobType.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/job/sortJob.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/job/sortJob.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/job/worker/worker.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/job/worker/worker.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/log/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/go/log/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/log/base_logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/log/base_logger.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/log/log.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/log/log.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/log/log4gologger.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/log/log4gologger.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/network/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/go/network/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/network/utils/mdns.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/network/utils/mdns.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/network/utils/nbns.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/network/utils/nbns.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/network/utils/network.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/network/utils/network.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/network/utils/network_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/page/page.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/page/page.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/plugin/command.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/plugin/command.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/plugin/command_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/plugin/command_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/plugin/spide.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/plugin/spide.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/plugin/spide_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/plugin/spide_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/services/validater.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/services/validater.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/sort/chinese.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/sort/chinese.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/sort/sort.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/sort/sort.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/sort/sort_interface.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/sort/sort_interface.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/thirdpart/IVessingSmsService.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/thirdpart/IVessingSmsService.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/thirdpart/impl/VessingSmsServiceImpl.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/thirdpart/impl/VessingSmsServiceImpl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/thirdpart/impl/sms_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/thirdpart/impl/sms_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/thirdpart/interfaces/sms.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/thirdpart/interfaces/sms.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/thirdpart/models/sms.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/thirdpart/models/sms.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/trees/avltree/avltree.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/trees/avltree/avltree.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/trees/avltree/avltree_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/trees/avltree/avltree_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/trees/avltree/iterator.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/trees/avltree/iterator.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/trees/avltree/serialization.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/trees/avltree/serialization.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/trees/avltree/share.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/trees/avltree/share.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/trees/trees.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/trees/trees.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/bussiness.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/bussiness.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/common.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/common.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/date_utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/date_utils.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/debug.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/debug.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/error.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/error.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/file.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/file.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/file_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/file_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/hash.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/hash.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/http.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/http_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/http_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/qr.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/qr.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/reflect.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/reflect.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/regex.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/regex.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/reqID.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/reqID.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/slice.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/slice.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/sql.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/sql.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/sql_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/sql_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/string.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/string.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/time.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/time.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/time_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/time_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/url.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/url.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/url_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/url_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/uuid.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/uuid.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/validation.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/validation.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/validation_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/validation_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/walletUtil_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/walletUtil_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/utils/walletUtils.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/walletUtils.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/wallet/wallet.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/wallet/wallet.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/wallet/wallet_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/wallet/wallet_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/go/wallet/wallet_tree.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/wallet/wallet_tree.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/specialLib/opencv/ai/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/specialLib/opencv/ai/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/specialLib/opencv/ai/audio/audio_similar.go" beforeDir="false" afterPath="$PROJECT_DIR$/specialLib/opencv/ai/audio/audio_similar.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/specialLib/opencv/ai/audio/audio_similar_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/specialLib/opencv/ai/audio/audio_similar_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/specialLib/opencv/ai/pic/pic.go" beforeDir="false" afterPath="$PROJECT_DIR$/specialLib/opencv/ai/pic/pic.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/specialLib/opencv/ai/pic/pic_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/specialLib/opencv/ai/pic/pic_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/specialLib/opencv/ai/similar.go" beforeDir="false" afterPath="$PROJECT_DIR$/specialLib/opencv/ai/similar.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/specialLib/opencv/ai/similar_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/specialLib/opencv/ai/similar_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/specialLib/opencv/ai/video/video.go" beforeDir="false" afterPath="$PROJECT_DIR$/specialLib/opencv/ai/video/video.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-libary/specialLib/opencv/ai/video/video_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/specialLib/opencv/ai/video/video_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/AbstractLoginServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/Exception/QueueLoginRangeException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/LoginThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/QueueConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/QueueLogin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/model/BaseObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/model/QueueLoginResultInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/service/BackLoginThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/service/QueueLoginService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/QueueLogin/service/impl/QueueLoginServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/cache/AbstractReferenceCache.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/cache/ClearStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/cache/IReferenceCache.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/cache/ObjectCreateStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/cache/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/cache/soft/AbstractCHMSoftReferenchCache.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/cache/soft/CHMSoftReferenceCache.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/cache/soft/SofReferenceCache.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/cache/soft/SoftReferenceInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/dto/ResultDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/enums/RestAPIStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/exception/FTPBusynessException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/file/AbstractFIleStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/file/BlockingPool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/file/DefaultFileService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/file/FTPClientPool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/file/FTPFileService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/file/FileStrategyContext.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/file/IFileStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/json/GsonInterfaceAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mail/AbstractEmailService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mail/DefalutEmailServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mail/IEmailService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mail/factory/AbstractEmailFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mail/factory/DefaultEmailServiceFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mail/property/EmailProperty.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/model/HttpClientResult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/model/TwoTuple.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/AbstractConfirmCallback.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/AbstractMQConfirmCallback.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/AppEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/AppEventConsumer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/AppEventPublisher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/AppEventRabbitMQPublish.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/BaseCorrelationData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/LogEventPublisher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/MicroCorrelationData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/consumer/abs/AbstractAppeventConsumer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/consumer/abs/AbstractBaseConsumer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/consumer/abs/AbstractChannleAppeventConsumer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/mq/converters/JSONMessageConverter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/page/AbstractMultipartDBPageService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/page/AbstractPageService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/page/PageBaseService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/page/PageExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/page/PageRequestDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/page/PageResponseDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/redis/DistributeLock.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/redis/distributelock_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/service/IdWorkerService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/service/IdWorkerServiceTwitter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/AbstractSQLExtentionModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/AbstractSQLExtentionpProxyBaseCRUDDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/ISQLExtentionBaseCRUDDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/ISQLExtentionConfigBaseCRUDDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/SQLExtentionConfigProperty.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/SQLExtentionDaoWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/SQLExtentionHolderV3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/SQLExtentionInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/SQLExtentionResult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/service/ISQLExtentionBaseCRUDService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/sqlextention/service/abs/AbstractSQLExtentionProxyBaseCRUDService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/tree/TreeComposite.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/CollectionUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/CommonUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/DateUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/HttpUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/IDGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/IDNoChecker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/JsonUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/KeyUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/PageResultUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/RSAUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/ResultUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-libarys/java/com/joker/library/utils/UrlUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/authentication/authorityContainer_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/authentication/authorityContainer_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/AbstractFIleStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/AbstractFIleStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/DefaultFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/DefaultFileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/FTPClientPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/FTPClientPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/FTPFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/FTPFileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/FileStrategyContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/FileStrategyContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/IFileStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/IFileStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/redis/DistributeLock.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/redis/distributelock_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/AbstractFIleStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/AbstractFIleStrategy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/DefaultFileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/DefaultFileService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FTPClientPool$FTPBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FTPClientPool$FTPBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FTPClientPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FTPClientPool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FTPFileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FTPFileService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FileStrategyContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FileStrategyContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/IFileStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/IFileStrategy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/target/myLibrary-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/myLibrary-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/TEST-com.charile.file.FTPFileServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/surefire-reports/TEST-com.charile.file.FTPFileServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/TEST-com.charile.file.SFTPFileServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/surefire-reports/TEST-com.charile.file.SFTPFileServiceTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/TEST-com.charile.utils.FileUtilTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/surefire-reports/TEST-com.charile.utils.FileUtilTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/com.charile.file.FTPFileServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/surefire-reports/com.charile.file.FTPFileServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/com.charile.file.SFTPFileServiceTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/surefire-reports/com.charile.file.SFTPFileServiceTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/com.charile.utils.FileUtilTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/surefire-reports/com.charile.utils.FileUtilTest.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -259,7 +23,35 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/go/authentication/authorityContainer_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go/authentication/authorityContainer.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go/authentication/base.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -279,12 +71,14 @@
       <list>
         <option value="$PROJECT_DIR$/specialLib/opencv/ai/video/video.go" />
         <option value="$PROJECT_DIR$/specialLib/go.mod" />
+        <option value="$PROJECT_DIR$/go/authentication/authorityContainer_test.go" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="806" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -310,28 +104,8 @@
             <path>
               <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
               <item name="go-library" type="462c0819:PsiDirectoryNode" />
-              <item name="specialLib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="go-library" type="462c0819:PsiDirectoryNode" />
-              <item name="specialLib" type="462c0819:PsiDirectoryNode" />
-              <item name="opencv" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="go-library" type="462c0819:PsiDirectoryNode" />
-              <item name="specialLib" type="462c0819:PsiDirectoryNode" />
-              <item name="opencv" type="462c0819:PsiDirectoryNode" />
-              <item name="ai" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="go-library" type="462c0819:PsiDirectoryNode" />
-              <item name="specialLib" type="462c0819:PsiDirectoryNode" />
-              <item name="opencv" type="462c0819:PsiDirectoryNode" />
-              <item name="ai" type="462c0819:PsiDirectoryNode" />
-              <item name="pic" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
+              <item name="authentication" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -360,32 +134,83 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="TestAuthority_AddAuthentication in myLibrary/go-library/go/authentication" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-library" />
+      <working_directory value="$PROJECT_DIR$/go/authentication" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="myLibrary/go-library/go/authentication" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestAuthority_AddAuthentication$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.TestAuthority_AddAuthentication in myLibrary/go-library/go/authentication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TestHistory">
+    <history-entry file="TestAuthority_AddAuthentication_in_myLibrary_go-library_go_authentication - 2020.03.17 at 13h 45m 25s.xml">
+      <configuration name="TestAuthority_AddAuthentication in myLibrary/go-library/go/authentication" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestAuthority_AddAuthentication_in_myLibrary_go-library_go_authentication - 2020.03.17 at 13h 45m 43s.xml">
+      <configuration name="TestAuthority_AddAuthentication in myLibrary/go-library/go/authentication" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestAuthority_AddAuthentication_in_myLibrary_go-library_go_authentication - 2020.03.17 at 13h 46m 22s.xml">
+      <configuration name="TestAuthority_AddAuthentication in myLibrary/go-library/go/authentication" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestAuthority_AddAuthentication_in_myLibrary_go-library_go_authentication - 2020.03.17 at 13h 46m 31s.xml">
+      <configuration name="TestAuthority_AddAuthentication in myLibrary/go-library/go/authentication" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestAuthority_AddAuthentication_in_myLibrary_go-library_go_authentication - 2020.03.17 at 13h 47m 02s.xml">
+      <configuration name="TestAuthority_AddAuthentication in myLibrary/go-library/go/authentication" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestAuthority_AddAuthentication_in_myLibrary_go-library_go_authentication - 2020.03.17 at 13h 47m 09s.xml">
+      <configuration name="TestAuthority_AddAuthentication in myLibrary/go-library/go/authentication" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.37108433" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.0939759" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/go/authentication/authorityContainer.go</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/specialLib/opencv/ai/video/video.go">
@@ -416,6 +241,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/authentication/base.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/authentication/authorityContainer.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/authentication/authorityContainer_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
         </state>
       </provider>
     </entry>

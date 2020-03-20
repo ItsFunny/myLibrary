@@ -63,6 +63,7 @@
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/page/SingleDBPageRequest.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/utils/IDNoChecker.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/QueueLogin/service/impl/QueueLoginServiceImpl.java
+/Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/utils/QRCodeUtil.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mq/AppEvent.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mq/consumer/abs/AbstractChannleAppeventConsumer.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/QueueLogin/Exception/QueueLoginRangeException.java

@@ -161,6 +161,21 @@
             <scope>compile</scope>
         </dependency>
 
+
+        <!-- 核心条码编码/解码库 -->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>2.2</version>
+        </dependency>
+
+        <!-- 核心ZXing库的Java SE特定扩展 -->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>javase</artifactId>
+            <version>2.2</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>

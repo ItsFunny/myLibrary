@@ -6,6 +6,7 @@ package com.charile.file;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -22,25 +23,31 @@ public class DefaultFileService extends AbstractFIleStrategy
     public UploadResponse upload(MultipartFile file, String storePath, String newFileName, String key)
     {
         UploadResponse result = new UploadResponse();
-        String suffix = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf('.'));
         String visitPrefix = getVisitPrefix(key);
-        File dirFile = new File(storePath);
+        String storeBasePath = getStoreBasePath(key);
+        File dirFile = new File(storeBasePath + File.separator + storePath);
         if (!dirFile.exists())
         {
             dirFile.mkdirs();
         }
-        File newFiel = new File(dirFile.getAbsolutePath() + File.separator + newFileName + suffix);
+        File newFiel = new File(dirFile.getAbsolutePath() + File.separator + newFileName);
         try
         {
             file.transferTo(newFiel);
-            result.setStorePath(File.separator + storePath.substring(storePath.indexOf(getVisitPrefix(key))) + File.separator + newFileName + suffix);
-            result.setMappingPath(visitPrefix + File.separator + newFileName + suffix);
+            result.setStorePath(storeBasePath + File.separator + storePath + File.separator + newFileName);
+            result.setMappingPath(visitPrefix + File.separator + storePath + File.separator + newFileName);
             return result;
         } catch (IllegalStateException | IOException e)
         {
             e.printStackTrace();
             return null;
         }
+    }
+
+    @Override
+    public UploadResponse upload(InputStream inputStream, String storePath, String newFileName, String key) throws IOException
+    {
+        return null;
     }
 
     @Override

@@ -1,6 +1,7 @@
 package authentication
 
 import (
+	"encoding/hex"
 	"fmt"
 	"reflect"
 	"testing"
@@ -42,24 +43,11 @@ func TestNewAuthority(t *testing.T) {
 }
 
 func TestAuthority_AddAuthentication(t *testing.T) {
-	type args struct {
-		value AuthValue
-	}
-	tests := []struct {
-		name     string
-		receiver Authority
-		args     args
-		want     Authority
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := tt.receiver.AddAuthentication(tt.args.value); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("Authority.AddAuthentication() = %v, want %v", got, tt.want)
-			}
-		})
-	}
+	authority := NewAuthority()
+	authority = authority.AddAuthentication(AuthValue(1))
+	fmt.Println(authority)
+	fmt.Println(authority.CheckAuthentication(AuthValue(2)))
+	fmt.Println(hex.EncodeToString(authority.BigEndianConvt2Bytes()))
 }
 
 func TestAuthority_CheckAuthentication(t *testing.T) {
