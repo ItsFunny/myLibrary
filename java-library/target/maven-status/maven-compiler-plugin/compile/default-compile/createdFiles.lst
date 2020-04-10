@@ -9,6 +9,7 @@ com/charile/sqlextention/ISQLExtentionConfigBaseCRUDDao.class
 com/charile/file/AbstractFIleStrategy.class
 com/charile/sqlextention/SQLExtentionInfo.class
 com/charile/json/GsonInterfaceAdapter.class
+com/charile/dto/BatchInsertReqWrapper.class
 com/charile/exception/FTPBusynessException.class
 com/charile/file/FTPFileService.class
 com/charile/mq/AppEventRabbitMQPublish.class
@@ -30,6 +31,7 @@ com/charile/utils/JSONUtil.class
 com/charile/utils/SFTPUtil.class
 com/charile/cache/ObjectCreateStrategy.class
 com/charile/framework/BeanSelefAwarePostProcessor.class
+com/charile/dto/BatchInsertReq.class
 com/charile/template/BaseTemplatePattern.class
 com/charile/page/AbstractPageService.class
 com/charile/mq/AbstractMQConfirmCallback.class
@@ -48,10 +50,12 @@ com/charile/cache/soft/SoftReferenceInfo.class
 com/charile/sqlextention/AbstractSQLExtentionpProxyBaseCRUDDao.class
 com/charile/service/IdWorkerService.class
 com/charile/cache/soft/AbstractCHMSoftReferenchCache.class
+com/charile/dao/IManualDao.class
 com/charile/mail/property/EmailProperty.class
 com/charile/utils/CryptUtil.class
 com/charile/dto/ResultDTO.class
 com/charile/utils/RSAUtils.class
+com/charile/utils/DebugUtil.class
 com/charile/mq/converters/JSONMessageConverter.class
 com/charile/utils/IDGenerator.class
 com/charile/QueueLogin/QueueLogin.class
@@ -72,6 +76,7 @@ com/charile/file/BlockingPool.class
 com/charile/exception/FTPConfigException.class
 com/charile/mq/AppEventPublisher.class
 com/charile/utils/UrlUtils.class
+com/charile/cache/ObjectInfoThreadLocalCache.class
 com/charile/page/SingleDBPageResponse.class
 com/charile/utils/ResultUtils.class
 com/charile/model/TwoTuple.class

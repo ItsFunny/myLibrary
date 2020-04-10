@@ -5,6 +5,7 @@
 package com.charile.file;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -30,7 +31,7 @@ public class DefaultFileService extends AbstractFIleStrategy
         {
             dirFile.mkdirs();
         }
-        File newFiel = new File(dirFile.getAbsolutePath() + File.separator + newFileName);
+        File newFiel = new File(storeBasePath + File.separator + storePath + File.separator + newFileName);
         try
         {
             file.transferTo(newFiel);
@@ -47,7 +48,32 @@ public class DefaultFileService extends AbstractFIleStrategy
     @Override
     public UploadResponse upload(InputStream inputStream, String storePath, String newFileName, String key) throws IOException
     {
-        return null;
+        UploadResponse result = new UploadResponse();
+
+        String visitPrefix = getVisitPrefix(key);
+        String storeBasePath = getStoreBasePath(key);
+        File dirFile = new File(storeBasePath + File.separator + storePath);
+        if (!dirFile.exists())
+        {
+            dirFile.mkdirs();
+        }
+        File newFiel = new File(storeBasePath + File.separator + storePath + File.separator + newFileName);
+        FileOutputStream fileOutputStream = new FileOutputStream(newFiel);
+        int bytesWritten = 0;
+        int byteCount = 0;
+        byte[] bytes = new byte[1024];
+        while ((byteCount = inputStream.read(bytes)) != -1)
+        {
+            fileOutputStream.write(bytes, bytesWritten, byteCount);
+            bytesWritten += byteCount;
+        }
+
+        inputStream.close();
+        fileOutputStream.close();
+        result.setStorePath(storeBasePath + File.separator + storePath + File.separator + newFileName);
+        result.setMappingPath(visitPrefix + File.separator + storePath + File.separator + newFileName);
+
+        return result;
     }
 
     @Override

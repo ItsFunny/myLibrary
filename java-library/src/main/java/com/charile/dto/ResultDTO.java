@@ -1,9 +1,7 @@
 /**
-*
-* @author joker 
-* @date 创建时间：2018年5月25日 下午1:32:56
-* 
-*/
+ * @author joker
+ * @date 创建时间：2018年5月25日 下午1:32:56
+ */
 package com.charile.dto;
 
 import java.io.Serializable;
@@ -12,70 +10,68 @@ import com.charile.enums.RestAPIStatus;
 
 
 /**
- * 
  * @author joker
  * @date 创建时间：2018年5月25日 下午1:32:56
  */
 public class ResultDTO<T> implements Serializable
 {
-	/**
-	* 
-	* @author joker 
-	* @date 创建时间：2018年8月15日 下午9:05:02
-	*/
-	private static final long serialVersionUID = -2218913589087908206L;
-	private T data;
-	private String msg;
-	private Integer code;
+    /**
+     * @author joker
+     * @date 创建时间：2018年8月15日 下午9:05:02
+     */
+    private static final long serialVersionUID = -2218913589087908206L;
+    private T data;
+    private String msg;
+    private Integer code;
 
-	
-	public boolean isSuccess()
-	{
-		return this.code==RestAPIStatus.SUCESS.ordinal();
-	}
 
-	public String getMsg()
-	{
-		return msg;
-	}
+    public boolean success()
+    {
+        return this.code == RestAPIStatus.SUCESS.ordinal();
+    }
 
-	public void setMsg(String msg)
-	{
-		this.msg = msg;
-	}
+    public String getMsg()
+    {
+        return msg;
+    }
 
-	public T getData()
-	{
-		return data;
-	}
+    public void setMsg(String msg)
+    {
+        this.msg = msg;
+    }
 
-	public void setData(T data)
-	{
-		this.data = data;
-	}
+    public T getData()
+    {
+        return data;
+    }
 
-	public Integer getCode()
-	{
-		return code;
-	}
+    public void setData(T data)
+    {
+        this.data = data;
+    }
 
-	public void setCode(Integer code)
-	{
-		this.code = code;
-	}
+    public Integer getCode()
+    {
+        return code;
+    }
 
-	public ResultDTO<T> sucess(T data, String msg)
-	{
-		ResultDTO<T> ResultDTO = new ResultDTO<>();
-		ResultDTO.setCode(RestAPIStatus.SUCESS.ordinal());
-		ResultDTO.setData(data);
-		ResultDTO.setMsg(msg);
-		return ResultDTO;
-	}
+    public void setCode(Integer code)
+    {
+        this.code = code;
+    }
 
-	public ResultDTO<T> sucess(T data)
-	{
-		return sucess(data, "sucess");
-	}
+    public static <T> ResultDTO<T> success(T data, String msg)
+    {
+        ResultDTO<T> ResultDTO = new ResultDTO<>();
+        ResultDTO.setCode(RestAPIStatus.SUCESS.ordinal());
+        ResultDTO.setData(data);
+        ResultDTO.setMsg(msg);
+        return ResultDTO;
+    }
+
+    public static <T> ResultDTO<T> sucess(T data)
+    {
+        return success(data, "success");
+    }
 
 }

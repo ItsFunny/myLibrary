@@ -29,7 +29,9 @@
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/file/BlockingPool.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mq/AbstractMQConfirmCallback.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/exception/FTPConfigException.java
+/Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/dto/BatchInsertReq.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/utils/KeyUtils.java
+/Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/dto/BatchInsertReqWrapper.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/model/HttpClientResult.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/file/IFileStrategy.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/page/PageBaseService.java
@@ -42,6 +44,7 @@
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/QueueLogin/LoginThread.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mq/AppEventPublisher.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mq/consumer/abs/AbstractBaseConsumer.java
+/Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/dao/IManualDao.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/sqlextention/AbstractSQLExtentionModel.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/framework/IBeanSelfAware.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mail/factory/DefaultEmailServiceFactory.java
@@ -65,6 +68,7 @@
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/QueueLogin/service/impl/QueueLoginServiceImpl.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/utils/QRCodeUtil.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mq/AppEvent.java
+/Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/cache/ObjectInfoThreadLocalCache.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mq/consumer/abs/AbstractChannleAppeventConsumer.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/QueueLogin/Exception/QueueLoginRangeException.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/utils/VUtils.java
@@ -77,6 +81,7 @@
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/service/IdWorkerServiceTwitter.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/QueueLogin/model/BaseObject.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mq/MicroCorrelationData.java
+/Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/utils/DebugUtil.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/QueueLogin/model/QueueLoginResultInfo.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/utils/CommonUtils.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/sqlextention/SQLExtentionResult.java
