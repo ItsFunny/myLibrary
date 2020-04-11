@@ -91,6 +91,7 @@
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/exception/BaseBussException.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/cache/soft/CHMSoftReferenceCache.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/sqlextention/ISQLExtentionConfigBaseCRUDDao.java
+/Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/template/BaseTemplatePatternV2.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/service/IdWorkerService.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/exception/FTPBusynessException.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/file/FTPClientPool.java

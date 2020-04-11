@@ -55,6 +55,7 @@ com/charile/mail/property/EmailProperty.class
 com/charile/utils/CryptUtil.class
 com/charile/dto/ResultDTO.class
 com/charile/utils/RSAUtils.class
+com/charile/template/BaseTemplatePatternV2.class
 com/charile/utils/DebugUtil.class
 com/charile/mq/converters/JSONMessageConverter.class
 com/charile/utils/IDGenerator.class

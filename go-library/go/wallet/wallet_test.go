@@ -13,11 +13,14 @@ import (
 	"fmt"
 	"github.com/hbakhtiyor/schnorr"
 	"github.com/stretchr/testify/assert"
+	"myLibrary/go-library/go/crypt"
 	"testing"
 )
 
 func TestHDWallet_GetAddress(t *testing.T) {
-	wallet := NewHDWallet(1, 1, "qwe")
+	prevPwd := "123"
+	cryptPrevpwd := encrypt.MD5EncryptByBytes(prevPwd)
+	wallet := NewHDWallet(1, 1, cryptPrevpwd)
 	address := wallet.GetAddress()
 	fmt.Println(wallet.Position)
 	fmt.Println(address)
@@ -72,4 +75,16 @@ func SchnorrVerysign(exceptStr string, signatureStr string, key []byte) bool {
 		return false
 	}
 	return b
+}
+
+func TestNewHDWallet(t *testing.T) {
+	prevPwd := "123"
+	cryptPrevpwd := encrypt.MD5EncryptByBytes(prevPwd)
+	w1 := NewHDWallet(1, 1, cryptPrevpwd)
+	nowpwd := "1234"
+	nowcryptPrevpwd := encrypt.MD5EncryptByBytes(nowpwd)
+	w2 := NewHDWallet(1, 1, nowcryptPrevpwd)
+	fmt.Println(w1.GetAddress())
+	fmt.Println(w2.GetAddress())
+
 }
