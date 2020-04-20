@@ -1,8 +1,13 @@
 package com.charile.utils;
 
-import java.io.UnsupportedEncodingException;
+import org.apache.commons.codec.binary.Hex;
+import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.io.FileUtils;
+
+import java.io.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 
 /**
  * @author Charlie
@@ -96,5 +101,24 @@ public class CryptUtil
             stringBuffer.append(temp);
         }
         return stringBuffer.toString();
+    }
+
+    private final static String[] strHex = {"0", "1", "2", "3", "4", "5",
+            "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"};
+
+    public static String md5File(String path) throws IOException, NoSuchAlgorithmException
+    {
+//        String s = DigestUtils.md5Hex(new FileInputStream(path));
+//        return s;
+
+//        FileInputStream fileInputStream = new FileInputStream(new File(path));
+        byte[] bytes = FileUtils.readFileToByteArray(new File(path));
+        MessageDigest md5 = null;
+        md5 = MessageDigest.getInstance("MD5");
+        md5.update(bytes);
+        byte[] m = md5.digest();//加密
+        // BASE64Encoder encoder = new BASE64Encoder();
+        //血坑！！！！！！！！！！！！！
+        return Base64.getEncoder().encodeToString(m);
     }
 }

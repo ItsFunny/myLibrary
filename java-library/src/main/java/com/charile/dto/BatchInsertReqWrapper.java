@@ -51,11 +51,32 @@ public class BatchInsertReqWrapper
     {
         for (int j = 0; j < onceValuesCount - 1; j++)
         {
-            sb.append(this.values.get(index));
-            sb.append(",");
-            index++;
+            index = judgeIsNullOrEmpty(sb, index);
         }
-        sb.append(this.values.get(index));
+        Object o = this.values.get(index);
+        if (null == o || (o instanceof String && ((String) o).isEmpty()))
+        {
+            sb.append("''");
+        } else
+        {
+            sb.append("'" + o + "'");
+        }
+        index++;
+        return index;
+    }
+
+    private int judgeIsNullOrEmpty(StringBuilder sb, int index)
+    {
+        Object o = this.values.get(index);
+        if (null == o || (o instanceof String && ((String) o).isEmpty()))
+        {
+            sb.append("''");
+            sb.append(",");
+        } else
+        {
+            sb.append("'" + o + "'");
+            sb.append(",");
+        }
         index++;
         return index;
     }

@@ -18,4 +18,10 @@ public class BatchInsertReq
     private String columns;
 
     private String values;
+
+    @Override
+    public String toString()
+    {
+        return "INSERT INTO " + this.tableName + " " + this.columns + " VALUES " + this.values;
+    }
 }

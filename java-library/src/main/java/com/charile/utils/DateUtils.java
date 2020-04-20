@@ -29,10 +29,11 @@ public class DateUtils
 //        System.out.println(rightNow);
 
 
-
         // 获取当前年份的最后一天
-        Date lastDayOrTheYear = getLastDayOrTheYear(2020);
-        System.out.println(lastDayOrTheYear);
+//        Date lastDayOrTheYear = getLastDayOrTheYear(2020);
+//        System.out.println(lastDayOrTheYear);
+        System.out.println(new Date().getTime());
+        System.out.println(getCurrentDay());
     }
 
     public static Long getCurrentDay()
@@ -43,6 +44,7 @@ public class DateUtils
         long rightNow = Long.parseLong(sdf.format(c.getTime()));
         return rightNow;
     }
+
 
     public static int calcDateDays(Date early, Date later)
     {

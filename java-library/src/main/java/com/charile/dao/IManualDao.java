@@ -14,6 +14,6 @@ import org.apache.ibatis.annotations.Insert;
 public interface IManualDao
 {
     // for循环遍历插入
-    @Insert("INSERT INTO #{tableName} #{columns} VALUES #{values}")
+    @Insert("INSERT INTO ${tableName} ${columns} VALUES ${values}")
     void batchInsert(BatchInsertReq req);
 }

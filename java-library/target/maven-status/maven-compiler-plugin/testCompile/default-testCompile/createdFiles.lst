@@ -1,4 +1,5 @@
 com/charile/file/SFTPFileServiceTest.class
+com/charile/dto/BatchInsertReqWrapperTest.class
 com/charile/file/FTPFileServiceTest.class
 com/charile/utils/CommonTest.class
 com/charile/utils/FileUtilTest.class
