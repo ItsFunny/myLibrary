@@ -1,7 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8ada4ca0-3593-4da8-89bc-5997bd2962ce" name="Default Changelist" comment="" />
+    <list default="true" id="8ada4ca0-3593-4da8-89bc-5997bd2962ce" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/java/src/main/java/Top100/Top100_Easy_437_Path_Sum_III.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Top100/Too100_Easy_198_House_Robber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Top100/Top100_Easy_70_Climbing_Stairs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/Array_118_Pascals_Triangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/Array_119_PascalsTriangleII.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/Array_121_BestTimetoBuyandSellStock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/Array_122_BestTimetoBuyandSellStockII.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/Array_167_TwoSumII_Inputarrayissorted.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/Array_169_MajorityElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/Array_189_Rotate_Array_背.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/Array_217_Contains_Duplicate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/Array_219_Contains_Duplicate_II.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/Array_243_Shorted_Word_Distance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/Array_268_Missing_Number.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/Array_283_move_zeroes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/Array_414_third_maximum_number.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/Array_66_Plus_One.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/Array_88_Merge_Sorted_Array.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/MaximumSubArrayNum53.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/RemoveDuplicatesNum26.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/RemoveElement27.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/SearchInsertPositionNum35.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/array/TwoSumNum2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/TreeNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hashtable/HashTable_136_Single_Number.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hashtable/HashTable_202_Happy_Number.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hashtable/HashTable_204_Count_Primes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hashtable/HashTable_205_Isomorphic_Strings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hashtable/HashTable_242_Valid_Anagram.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hashtable/HashTable_299_Bulls_and_Cows.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/list/ListNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/list/List_1290_Convert_Binary_Number_in_a_Linked_List_to_Integer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/list/List_141_Linked_List_Cycle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/list/List_160_Intersection_of_Two_Linked_Lists.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/list/List_203_Remove_Linked_List_Elements.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/list/List_206_Reverse_Linked_List.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/list/List_21_Merge_Two_Sorted_Lists.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/list/List_234_Palindrome_Linked_List.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/list/List_237_Delete_Node_in_a_Linked_List.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/list/List_83_remove_duplicates_from_sorted_list.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/list/List_876_Middle_of_the_Linked_List.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/queue/Queue_346_Moving_Average_from_Data_Stream.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/queue/Queue_933_Number_of_Recent_Calls.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stack/Stack_1021_Remove_Outermost_Parentheses.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stack/Stack_1047_Remove_All_Adjacent_Duplicates_In_String.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stack/Stack_155_Min_Stack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stack/Stack_225_Implement_Stack_using_Queues.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stack/Stack_232_Implement_Queue_using_Stacks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stack/Stack_496_Next_Greater_Element_I.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stack/Stack_682_Baseball_Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/stack/Stack_844_Backspace_String_Compare.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_125_Valid_Palindrome.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_13_Roman_to_Integer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_14_Longest_Common_Prefix.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_157_read_n_characters_given_read4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_20_Valid_Parentheses.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_28_Implement_strStr_重点.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_344_Reverse_String.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_345_Reverse_Vowels_of_a_String.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_383_Ransom_Note.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_387_First_Unique_Character_in_a_String.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_415_Add_Strings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_434_Number_of_Segments_in_a_String.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_443_String_Compression_背.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_459_Repeated_Substring_Pattern.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_520_Detect_Capital.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_521_Longest_Uncommon_Subsequence_I.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_541_Reverse_String_II.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_551_Student_Attendance_Record_I.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_557_Reverse_Words_in_a_String_III.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_58_Length_of_Last_Word.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_606_Construct_String_from_Binary_Tree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/string/String_67_Add_Binary_重看.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tree/Tree_110_Balanced_Binary_Tree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tree/Tree_637_Average_of_Levels_in_Binary_Tree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/重做/Stack_496_Next_Greater_Element_I.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/重做/String_415_Add_Strings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/重做/String_443_String_Compression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/重做/String_541_Reverse_String_II.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/重做/Too100_Easy_198_House_Robber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/array/RemoveDuplicatesNum26Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/array/RemoveElement27Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/array/SearchInsertPositionNum35Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/array/TwoSumNum2Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/Array_118_Pascals_Triangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/Array_119_PascalsTriangleII.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/Array_121_BestTimetoBuyandSellStock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/Array_122_BestTimetoBuyandSellStockII.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/Array_167_TwoSumII_Inputarrayissorted.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/Array_169_MajorityElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/Array_189_Rotate_Array_背.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/Array_217_Contains_Duplicate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/Array_219_Contains_Duplicate_II.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/Array_243_Shorted_Word_Distance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/Array_268_Missing_Number.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/Array_283_move_zeroes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/Array_414_third_maximum_number.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/Array_66_Plus_One.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/Array_88_Merge_Sorted_Array.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/MaximumSubArrayNum53.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/RemoveDuplicatesNum26.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/RemoveElement27.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/SearchInsertPositionNum35.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/array/TwoSumNum2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/common/TreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hashtable/HashTable_136_Single_Number.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hashtable/HashTable_204_Count_Primes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hashtable/HashTable_299_Bulls_and_Cows.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/list/ListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/list/List_1290_Convert_Binary_Number_in_a_Linked_List_to_Integer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/list/List_141_Linked_List_Cycle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/list/List_160_Intersection_of_Two_Linked_Lists.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/list/List_203_Remove_Linked_List_Elements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/list/List_206_Reverse_Linked_List.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/list/List_21_Merge_Two_Sorted_Lists.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/list/List_234_Palindrome_Linked_List.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/list/List_237_Delete_Node_in_a_Linked_List.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/list/List_83_remove_duplicates_from_sorted_list.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/list/List_876_Middle_of_the_Linked_List.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/queue/Queue_346_Moving_Average_from_Data_Stream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/queue/Queue_933_Number_of_Recent_Calls.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stack/Stack_1021_Remove_Outermost_Parentheses.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stack/Stack_1047_Remove_All_Adjacent_Duplicates_In_String.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stack/Stack_155_Min_Stack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stack/Stack_225_Implement_Stack_using_Queues.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stack/Stack_232_Implement_Queue_using_Stacks.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stack/Stack_496_Next_Greater_Element_I.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stack/Stack_682_Baseball_Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/stack/Stack_844_Backspace_String_Compare.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_125_Valid_Palindrome.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_13_Roman_to_Integer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_14_Longest_Common_Prefix.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_157_read_n_characters_given_read4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_20_Valid_Parentheses.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_28_Implement_strStr_重点.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_344_Reverse_String.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_345_Reverse_Vowels_of_a_String.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_383_Ransom_Note.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_387_First_Unique_Character_in_a_String.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_415_Add_Strings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_434_Number_of_Segments_in_a_String.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_443_String_Compression_背.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_459_Repeated_Substring_Pattern.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_520_Detect_Capital.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_521_Longest_Uncommon_Subsequence_I.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_541_Reverse_String_II.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_551_Student_Attendance_Record_I.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_557_Reverse_Words_in_a_String_III.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_58_Length_of_Last_Word.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_606_Construct_String_from_Binary_Tree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/string/String_67_Add_Binary_重看.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tree/Tree_110_Balanced_Binary_Tree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tree/Tree_637_Average_of_Levels_in_Binary_Tree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/重做/Stack_496_Next_Greater_Element_I.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/重做/String_415_Add_Strings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/重做/String_443_String_Compression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/重做/String_541_Reverse_String_II.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/array/RemoveDuplicatesNum26Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/array/RemoveElement27Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/array/SearchInsertPositionNum35Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/array/TwoSumNum2Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../go-library/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../go-library/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,14 +179,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/重做/Too100_Easy_198_House_Robber.java">
+        <entry file="file://$PROJECT_DIR$/java/src/main/java/Top100/Top100_Easy_437_Path_Sum_III.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="41" />
-              <folding>
-                <element signature="e#716#717#0" expanded="true" />
-                <element signature="e#740#741#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="190">
+              <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -40,6 +202,9 @@
     <findStrings>
       <find>`</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -109,11 +274,16 @@
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -124,17 +294,25 @@
             <path>
               <item name="LeetCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LeetCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LeetCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="LeetCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -142,25 +320,16 @@
             <path>
               <item name="LeetCode" type="b2602c69:ProjectViewProjectNode" />
               <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Top100" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="LeetCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="重做" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -340,6 +509,7 @@
       <workItem from="1586334133433" duration="935000" />
       <workItem from="1586507093658" duration="1177000" />
       <workItem from="1586593294575" duration="48000" />
+      <workItem from="1586593742738" duration="666000" />
     </task>
     <servers />
   </component>
@@ -376,12 +546,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123103000" />
+    <option name="totallyTimeSpent" value="123769000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3483548" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35336193" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -610,17 +781,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/lang/Character.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109231">
-          <caret line="5825" column="41" selection-start-line="5825" selection-start-column="26" selection-end-line="5825" selection-end-column="41" />
-          <folding>
-            <element signature="e#204938#204939#0" expanded="true" />
-            <element signature="e#204985#204986#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/重做/String_415_Add_Strings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
@@ -764,9 +924,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="14" column="41" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="41" />
-          <folding>
-            <element signature="method#reverseStr#0;class#String_541_Reverse_String_II#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -832,9 +989,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="19" selection-start-line="19" selection-end-line="21" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -874,9 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -908,10 +1059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#nextGreaterElement#0;class#Stack_496_Next_Greater_Element_I#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -919,10 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
-          <folding>
-            <element signature="e#1736#1737#0" expanded="true" />
-            <element signature="e#1781#1782#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1041,6 +1184,13 @@
             <element signature="e#716#717#0" expanded="true" />
             <element signature="e#740#741#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java/src/main/java/Top100/Top100_Easy_437_Path_Sum_III.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
         </state>
       </provider>
     </entry>

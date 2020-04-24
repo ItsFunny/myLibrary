@@ -9,6 +9,7 @@ import (
 	"crypto/rsa"
 	"crypto/sha256"
 	"crypto/x509"
+	"encoding/base64"
 	"encoding/hex"
 	"encoding/json"
 	"encoding/pem"
@@ -138,6 +139,28 @@ func RSAEncryptByPrv(data interface{}, model RSAEncryptModel) ([]byte, error) {
 		return cryptText, nil
 	}
 }
+func RSAEncryptByHex(plainText string, pubK []byte) ([]byte, error) {
+	bytes, e := hex.DecodeString(plainText)
+	if nil != e {
+		return nil, e
+	}
+	if plainText, err := goEncrypt.RsaEncrypt(bytes, pubK); nil != err {
+		log.Errorf("[RSADecrypt]faield:%v", err.Error())
+		return nil, err
+	} else {
+		return plainText, nil
+	}
+}
+
+func RSAEncryptWithDefault(plainText string, pubK []byte) ([]byte, error) {
+	bytes := []byte(plainText)
+	if plainText, err := goEncrypt.RsaEncrypt(bytes, pubK); nil != err {
+		log.Errorf("[RSADecrypt]faield:%v", err.Error())
+		return nil, err
+	} else {
+		return plainText, nil
+	}
+}
 
 func RSADecrypt(encryptStr string, key []byte) ([]byte, error) {
 	// if plainText, err := goEncrypt.RsaDecrypt([]byte(encryptStr), property.PrivateBytes); nil != err {
@@ -165,7 +188,19 @@ func MD5EncryptByBytes(str string) string {
 	md5str2 := fmt.Sprintf("%x", w.Sum(nil)) // w.Sum(nil)将w的hash转成[]byte格式
 	return md5str2
 }
+func MD5EncryptFileByPath(path string) (string, error) {
+	md5Ctx := md5.New()
+	bytes, e := ioutil.ReadFile(path)
+	if nil != e {
+		return "", e
+	}
+	md5Ctx.Write(bytes)
+	cipherStr := md5Ctx.Sum(nil)
+	// fmt.Print(cipherStr)
+	return base64.StdEncoding.EncodeToString(cipherStr),nil
+}
 func MD5EncryptFile(file *os.File) string {
+
 	h := md5.New()
 	io.Copy(h, file)
 	return hex.EncodeToString(h.Sum(nil))

@@ -1,6 +1,7 @@
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/dto/ResultDTO.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/file/SFTPFileService.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/sqlextention/ISQLExtentionBaseCRUDDao.java
+/Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/dto/SelectReqWrapper.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/file/FileStrategyContext.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/file/AbstractFIleStrategy.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/utils/ResultUtils.java
@@ -21,6 +22,7 @@
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/utils/JSONUtil.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/utils/HttpUtils.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mail/DefalutEmailServiceImpl.java
+/Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/dto/SelectReq.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/utils/SFTPUtil.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mq/converters/JSONMessageConverter.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/utils/IDGenerator.java
@@ -87,6 +89,7 @@
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/sqlextention/SQLExtentionResult.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/sqlextention/SQLExtentionHolderV3.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mq/AppEventConsumer.java
+/Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/dto/BaseWrapper.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/file/DefaultFileService.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/exception/BaseBussException.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/cache/soft/CHMSoftReferenceCache.java
@@ -101,5 +104,6 @@
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mq/LogEventPublisher.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/QueueLogin/AbstractLoginServiceImpl.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/sqlextention/service/ISQLExtentionBaseCRUDService.java
+/Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/dto/CommonDTO.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/cache/soft/AbstractCHMSoftReferenchCache.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mq/AbstractConfirmCallback.java

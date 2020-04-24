@@ -11,13 +11,9 @@ import lombok.Data;
  * @Date 创建时间：2020-04-06 14:21
  */
 @Data
-public class BatchInsertReq
+public class BatchInsertReq extends  CommonDTO
 {
-    private String tableName;
-
-    private String columns;
-
-    private String values;
+    protected String values;
 
     @Override
     public String toString()

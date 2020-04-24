@@ -5,7 +5,10 @@
 package com.charile.file;
 
 
+import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -19,6 +22,8 @@ public class FileStrategyContext
 {
     private IFileStrategy fileStrategy;
 
+    private Logger logger = LoggerFactory.getLogger(FileStrategyContext.class);
+
     private boolean isFtp;
 
     private String ftpHost;
@@ -28,6 +33,7 @@ public class FileStrategyContext
 
     public UploadResponse upload(MultipartFile file, String storePath, String newFileName, String key) throws IOException
     {
+        logger.info("开始上传文件,文件原始名称为:{},storePath={},newFileName={},key={}", file.getOriginalFilename(), storePath, newFileName, key);
         return this.fileStrategy.upload(file, storePath, newFileName, key);
     }
 

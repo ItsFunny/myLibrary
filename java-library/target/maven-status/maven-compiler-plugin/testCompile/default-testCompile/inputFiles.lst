@@ -1,5 +1,7 @@
 /Users/joker/go/src/myLibrary/java-library/src/test/java/com/charile/utils/CommonTest.java
 /Users/joker/go/src/myLibrary/java-library/src/test/java/com/charile/dto/BatchInsertReqWrapperTest.java
 /Users/joker/go/src/myLibrary/java-library/src/test/java/com/charile/utils/FileUtilTest.java
+/Users/joker/go/src/myLibrary/java-library/src/test/java/com/charile/dto/SelectReqWrapperTest.java
 /Users/joker/go/src/myLibrary/java-library/src/test/java/com/charile/file/FTPFileServiceTest.java
 /Users/joker/go/src/myLibrary/java-library/src/test/java/com/charile/file/SFTPFileServiceTest.java
+/Users/joker/go/src/myLibrary/java-library/src/test/java/com/charile/utils/CryptUtilTest.java

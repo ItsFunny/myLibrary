@@ -42,7 +42,7 @@ public class BatchInsertReqWrapperTest
             values.add(i);
         }
         wrapper.setValues(values);
-        BatchInsertReq batchInsertReq = wrapper.conv2TDBReq();
-        System.out.println(batchInsertReq);
+//        BatchInsertReq batchInsertReq = wrapper.conv2TDBReq();
+//        System.out.println(batchInsertReq);
     }
 }

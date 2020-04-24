@@ -69,6 +69,17 @@ public class DateUtils
 
         return currYearLast;
     }
+
+
+    public static String formatStandardTemplate(Date date)
+    {
+        if (null == date)
+        {
+            return null;
+        }
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        return dateFormat.format(date);
+    }
 }
 
 

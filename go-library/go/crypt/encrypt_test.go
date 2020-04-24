@@ -229,3 +229,17 @@ func TestECCVerifySignWithHex(t *testing.T) {
 		fmt.Println("string")
 	}
 }
+
+func TestMD5Encrypt3(t *testing.T) {
+	filePath := "/Users/joker/Desktop/a.jpg"
+	// key := "Qm0a2EWB2sSaXtIDpBeCXg=="
+	// file, _ := os.Open(filePath)
+	// defer file.Close()
+	encryptFile, e := MD5EncryptFileByPath(filePath)
+
+	if nil != e {
+		panic(e)
+	}
+	fmt.Println(encryptFile)
+	fmt.Println(Sha256(encryptFile))
+}

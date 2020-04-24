@@ -14,14 +14,12 @@ import java.util.List;
  * @Date 创建时间：2020-04-06 14:28
  */
 @Data
-public class BatchInsertReqWrapper
+public class BatchInsertReqWrapper extends BaseWrapper
 {
-    private String tableName;
-    private List<String> columns;
-    private List<Object> values;
+    protected List<Object> values;
 
 
-    public BatchInsertReq conv2TDBReq()
+    public BatchInsertReq conv2TInsertDBReq()
     {
         BatchInsertReq result = new BatchInsertReq();
         result.setTableName(this.tableName);
@@ -47,7 +45,7 @@ public class BatchInsertReqWrapper
         return result;
     }
 
-    private int getIndex(int onceValuesCount, StringBuilder sb, int index)
+    protected int getIndex(int onceValuesCount, StringBuilder sb, int index)
     {
         for (int j = 0; j < onceValuesCount - 1; j++)
         {
@@ -65,7 +63,7 @@ public class BatchInsertReqWrapper
         return index;
     }
 
-    private int judgeIsNullOrEmpty(StringBuilder sb, int index)
+    protected int judgeIsNullOrEmpty(StringBuilder sb, int index)
     {
         Object o = this.values.get(index);
         if (null == o || (o instanceof String && ((String) o).isEmpty()))
@@ -80,5 +78,4 @@ public class BatchInsertReqWrapper
         index++;
         return index;
     }
-
 }

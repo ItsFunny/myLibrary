@@ -9,6 +9,7 @@ com/charile/sqlextention/ISQLExtentionConfigBaseCRUDDao.class
 com/charile/file/AbstractFIleStrategy.class
 com/charile/sqlextention/SQLExtentionInfo.class
 com/charile/json/GsonInterfaceAdapter.class
+com/charile/dto/SelectReqWrapper.class
 com/charile/dto/BatchInsertReqWrapper.class
 com/charile/exception/FTPBusynessException.class
 com/charile/file/FTPFileService.class
@@ -70,6 +71,7 @@ com/charile/file/SFTPFileService.class
 com/charile/utils/QRCodeUtil.class
 com/charile/mail/factory/DefaultEmailServiceFactory.class
 com/charile/file/FTPClientPool.class
+com/charile/dto/BaseWrapper.class
 com/charile/file/DefaultFileService.class
 com/charile/sqlextention/SQLExtentionResult.class
 com/charile/QueueLogin/Test.class
@@ -81,12 +83,14 @@ com/charile/cache/ObjectInfoThreadLocalCache.class
 com/charile/page/SingleDBPageResponse.class
 com/charile/utils/ResultUtils.class
 com/charile/model/TwoTuple.class
+com/charile/dto/SelectReq.class
 com/charile/page/SingleDBPageRequest.class
 com/charile/cache/IReferenceCache.class
 com/charile/cache/soft/SofReferenceCache.class
 com/charile/mail/factory/AbstractEmailFactory.class
 com/charile/sqlextention/AbstractSQLExtentionModel.class
 com/charile/sqlextention/SQLExtentionDaoWrapper.class
+com/charile/dto/CommonDTO.class
 com/charile/mail/DefalutEmailServiceImpl.class
 com/charile/enums/RestAPIStatus.class
 com/charile/mail/IEmailService.class

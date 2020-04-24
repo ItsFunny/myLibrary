@@ -103,22 +103,23 @@ public class CryptUtil
         return stringBuffer.toString();
     }
 
-    private final static String[] strHex = {"0", "1", "2", "3", "4", "5",
-            "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"};
-
-    public static String md5File(String path) throws IOException, NoSuchAlgorithmException
+    public static String md5File(byte[] bytes) throws IOException, NoSuchAlgorithmException
     {
-//        String s = DigestUtils.md5Hex(new FileInputStream(path));
-//        return s;
+        return getFileString(bytes);
+    }
 
-//        FileInputStream fileInputStream = new FileInputStream(new File(path));
-        byte[] bytes = FileUtils.readFileToByteArray(new File(path));
+    private static String getFileString(byte[] bytes) throws NoSuchAlgorithmException
+    {
         MessageDigest md5 = null;
         md5 = MessageDigest.getInstance("MD5");
         md5.update(bytes);
         byte[] m = md5.digest();//加密
-        // BASE64Encoder encoder = new BASE64Encoder();
-        //血坑！！！！！！！！！！！！！
         return Base64.getEncoder().encodeToString(m);
+    }
+
+    public static String md5File(String path) throws IOException, NoSuchAlgorithmException
+    {
+        byte[] bytes = FileUtils.readFileToByteArray(new File(path));
+        return getFileString(bytes);
     }
 }
