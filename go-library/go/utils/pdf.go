@@ -9,8 +9,10 @@
 package utils
 
 import (
+	"errors"
 	"github.com/SebastiaanKlippert/go-wkhtmltopdf"
 	"io"
+	"os"
 	"path/filepath"
 )
 
@@ -89,7 +91,14 @@ func Html2PdfByReader(req Html2PdfPureReaderReq) (Html2PdfResp, error) {
 	if err != nil {
 		return result, err
 	}
-	filePath := req.PdfStoreBasePath + string(filepath.Separator) + req.PdfNewName + ".pdf"
+
+	filePath := req.PdfStoreBasePath + string(filepath.Separator)
+	if !IsFileOrDirExists(filePath) {
+		if err := CreateMultiFileDirs(filePath); nil != err {
+			return result, errors.New("创建文件夹失败:" + err.Error())
+		}
+	}
+	filePath += req.PdfNewName + ".pdf"
 	// Write buffer contents to file on disk
 	err = pdfg.WriteFile(filePath)
 	if err != nil {
@@ -120,7 +129,17 @@ func Html2PdfBySource(req Html2PdfPureSourceReq) (Html2PdfResp, error) {
 		return result, err
 	}
 
-	filePath := req.PdfStoreBasePath + string(filepath.Separator) + req.PdfNewName + ".pdf"
+	filePath := req.PdfStoreBasePath + string(filepath.Separator)
+
+	if !IsFileOrDirExists(filePath) {
+		if err := CreateMultiFileDirs(filePath); nil != err {
+			return result, errors.New("创建文件夹失败:" + err.Error())
+		}
+	}
+	filePath += string(filepath.Separator) + req.PdfNewName + ".pdf"
+	if IsFileOrDirExists(filePath) {
+		os.Remove(filePath)
+	}
 
 	// Write buffer contents to file on disk
 	err = pdfg.WriteFile(filePath)

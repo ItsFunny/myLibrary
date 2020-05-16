@@ -73,8 +73,8 @@ func TestStaticDynamicHtml(t *testing.T) {
 	req := StaticDynamicHtmlReq{
 		TemplateFilePath:        "/Users/joker/go/src/myLibrary/go-library/go/static/test.html",
 		StaticHtmlBaseStorePath: "/Users/joker/go/src/myLibrary/go-library/go/static/",
-		StaticHtmlName:          "new",
-		Data:                    map[string]interface{}{"name": "test"},
+		NewName:                 "new",
+		Data:                    map[string]interface{}{"name": "fffff"},
 	}
 	html, e := StaticDynamicHtml(req)
 	if nil != e {

@@ -30,6 +30,11 @@ func IsFileOrDirExists(path string) bool {
 	}
 	return true
 }
+// 判断文件是否存在
+func exist(fileName string) bool {
+	_, err := os.Stat(fileName)
+	return err == nil || os.IsExist(err)
+}
 
 func CreateMultiFileDirs(path string) error {
 	return os.MkdirAll(path, os.ModePerm)

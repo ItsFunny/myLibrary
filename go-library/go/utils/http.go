@@ -9,6 +9,7 @@ package utils
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"github.com/valyala/fasthttp"
 	"html/template"
@@ -52,13 +53,23 @@ type StaticDynamicHtmlReq struct {
 	// 基础存储路径
 	StaticHtmlBaseStorePath string
 	// 新的html名称
-	StaticHtmlName string
+	NewName string
 	// 对象
 	Data map[string]interface{}
 }
 type StaticDynamicHtmlResp struct {
 	// 静态页面的存储路径
 	StaticHtmlStorePath string
+}
+
+func NewStaticDynamicHtmlReq(templatePath, staticBaseStorePath, newName string, data map[string]interface{}) StaticDynamicHtmlReq {
+	r := StaticDynamicHtmlReq{
+		TemplateFilePath:        templatePath,
+		StaticHtmlBaseStorePath: staticBaseStorePath,
+		NewName:          newName,
+		Data:                    data,
+	}
+	return r
 }
 
 // 动态生成静态页面
@@ -82,7 +93,14 @@ func generateStaticHtml(template *template.Template, req StaticDynamicHtmlReq, d
 	var (
 		result StaticDynamicHtmlResp
 	)
-	fileName := req.StaticHtmlBaseStorePath + string(filepath.Separator) + req.StaticHtmlName + ".html"
+	fileName := req.StaticHtmlBaseStorePath + string(filepath.Separator)
+
+	if !IsFileOrDirExists(fileName) {
+		if err := CreateMultiFileDirs(fileName); nil != err {
+			return result, errors.New("创建文件夹失败:" + err.Error())
+		}
+	}
+	fileName += req.NewName + ".html"
 	// 1.判断静态文件是否存在
 	if exist(fileName) {
 		err := os.Remove(fileName)
@@ -94,15 +112,9 @@ func generateStaticHtml(template *template.Template, req StaticDynamicHtmlReq, d
 	// 2.生成静态文件
 	file, err := os.OpenFile(fileName, os.O_CREATE|os.O_WRONLY, os.ModePerm)
 	if err != nil {
-		fmt.Println("打开文件失败")
+		return result, errors.New("打开文件失败:" + err.Error())
 	}
 	defer file.Close()
 	result.StaticHtmlStorePath = fileName
 	return result, template.Execute(file, &data)
-}
-
-// 判断文件是否存在
-func exist(fileName string) bool {
-	_, err := os.Stat(fileName)
-	return err == nil || os.IsExist(err)
 }
