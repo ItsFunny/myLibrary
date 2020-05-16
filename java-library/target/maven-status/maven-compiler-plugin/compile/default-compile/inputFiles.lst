@@ -88,6 +88,7 @@
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/utils/CommonUtils.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/sqlextention/SQLExtentionResult.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/sqlextention/SQLExtentionHolderV3.java
+/Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/utils/IPUtil.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mq/AppEventConsumer.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/dto/BaseWrapper.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/file/DefaultFileService.java

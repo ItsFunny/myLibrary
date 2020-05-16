@@ -37,6 +37,7 @@ com/charile/template/BaseTemplatePattern.class
 com/charile/page/AbstractPageService.class
 com/charile/mq/AbstractMQConfirmCallback.class
 com/charile/utils/CollectionUtils.class
+com/charile/utils/IPUtil.class
 com/charile/QueueLogin/service/impl/QueueLoginServiceImpl.class
 com/charile/QueueLogin/User.class
 com/charile/sqlextention/SQLExtentionConfigProperty.class

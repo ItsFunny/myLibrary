@@ -28,7 +28,7 @@ public abstract class AbstractChannleAppeventConsumer extends AbstractBaseConsum
 	public void onMessage(Message message, Channel channel) throws Exception
 	{
 		String name=getClass().getName();
-		log.info("[onMessage]获取到消息:{}",message);
+		log.info("获取到消息:{}",message);
 		long startTime=System.currentTimeMillis();
 		String json=new String(message.getBody(),"utf-8");
 		AppEvent event = JSONUtil.json2Object(json,AppEvent.class);

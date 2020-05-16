@@ -13,6 +13,7 @@ import (
 	"fmt"
 	"github.com/valyala/fasthttp"
 	"io/ioutil"
+	"log"
 	"myLibrary/go-library/go/crypt"
 	"net/http"
 	"testing"
@@ -66,4 +67,18 @@ func TestDoPostForm2(t *testing.T) {
 		}
 
 	}
+}
+
+func TestStaticDynamicHtml(t *testing.T) {
+	req := StaticDynamicHtmlReq{
+		TemplateFilePath:        "/Users/joker/go/src/myLibrary/go-library/go/static/test.html",
+		StaticHtmlBaseStorePath: "/Users/joker/go/src/myLibrary/go-library/go/static/",
+		StaticHtmlName:          "new",
+		Data:                    map[string]interface{}{"name": "test"},
+	}
+	html, e := StaticDynamicHtml(req)
+	if nil != e {
+		log.Fatal(e)
+	}
+	fmt.Println(html)
 }

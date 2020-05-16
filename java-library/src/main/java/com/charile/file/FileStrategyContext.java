@@ -5,6 +5,9 @@
 package com.charile.file;
 
 
+import com.charile.utils.FileUtil;
+import com.sun.media.jfxmedia.events.NewFrameEvent;
+import com.sun.org.apache.xpath.internal.operations.Mult;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -13,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.UUID;
 
 /**
  * @author joker
@@ -30,6 +34,18 @@ public class FileStrategyContext
     private Integer ftpPort;
     private String ftpUsername;
     private String ftpPassword;
+
+    public UploadResponse upload(MultipartFile file, String storePath, String key) throws IOException
+    {
+        String originalFilename = file.getOriginalFilename();
+        if (StringUtils.isEmpty(originalFilename))
+        {
+            throw new RuntimeException("文件名称originalFilename为:[ " + originalFilename + " ] 不可为空");
+        }
+        String suffix = FileUtil.getSuffix(originalFilename);
+        String newName = UUID.randomUUID().toString() + "." + suffix;
+        return this.upload(file, storePath, newName, key);
+    }
 
     public UploadResponse upload(MultipartFile file, String storePath, String newFileName, String key) throws IOException
     {

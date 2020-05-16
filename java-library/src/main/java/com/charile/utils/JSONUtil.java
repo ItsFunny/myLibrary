@@ -96,7 +96,13 @@ public class JSONUtil
         return gson.fromJson(json, type);
     }
 
-    public static <T> T json2Object(String json, Class<T> c)
+//    public static <T> T json2Object(String json, Class<T> c)
+//    {
+//        T t = gson.fromJson(json, c);
+//        return t;
+//    }
+
+    public static <T> T json2Object(String json, Type c)
     {
         T t = gson.fromJson(json, c);
         return t;

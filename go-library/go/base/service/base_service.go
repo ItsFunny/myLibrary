@@ -75,7 +75,6 @@ func (b *BaseServiceImpl) AfterEnd() {
 			b.Error("结束方法时,出现panic:%s", err)
 		}
 	}
-
 	pre := b.log.GetPrefix()
 	b.SetPrefix(strings.TrimRight(pre, " -> "+b.MethodName))
 	fmt.Println(strings.Repeat("<", 20))
