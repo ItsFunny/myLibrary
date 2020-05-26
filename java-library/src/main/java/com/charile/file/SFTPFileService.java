@@ -62,6 +62,7 @@ public class SFTPFileService extends AbstractFIleStrategy
         return getUploadResponse(inputStream, storePath, newFileName, key, result);
     }
 
+
     private String replaceStorepath(String storePath)
     {
         Character c = '/';
@@ -119,6 +120,12 @@ public class SFTPFileService extends AbstractFIleStrategy
 
     @Override
     public Boolean delete(String filePathName)
+    {
+        return null;
+    }
+
+    @Override
+    protected BatchFileUploadWrapperResp doBatchUpload(BatchFileUploadWrapper wrapper)
     {
         return null;
     }

@@ -13,6 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.MultipartFile;
+import sun.util.resources.cldr.guz.LocaleNames_guz;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -50,7 +51,10 @@ public class FileStrategyContext
     public UploadResponse upload(MultipartFile file, String storePath, String newFileName, String key) throws IOException
     {
         logger.info("开始上传文件,文件原始名称为:{},storePath={},newFileName={},key={}", file.getOriginalFilename(), storePath, newFileName, key);
-        return this.fileStrategy.upload(file, storePath, newFileName, key);
+        long startTime = System.currentTimeMillis();
+        UploadResponse upload = this.fileStrategy.upload(file, storePath, newFileName, key);
+        logger.info("结束上传文件,mappingPath={},storePath={},耗时:{}ms", upload.getMappingPath(), upload.getStorePath(), System.currentTimeMillis() - startTime);
+        return upload;
     }
 
     public UploadResponse upload(InputStream inputStream, String storePath, String newFileName, String key) throws IOException

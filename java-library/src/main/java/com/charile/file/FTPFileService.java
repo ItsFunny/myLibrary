@@ -242,4 +242,9 @@ public class FTPFileService extends AbstractFIleStrategy
         return res;
     }
 
+    @Override
+    protected BatchFileUploadWrapperResp doBatchUpload(BatchFileUploadWrapper wrapper)
+    {
+        return null;
+    }
 }

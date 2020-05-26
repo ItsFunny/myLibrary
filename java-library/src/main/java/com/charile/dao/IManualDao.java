@@ -1,12 +1,12 @@
 package com.charile.dao;
 
 import com.charile.dto.BatchInsertReq;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * @author Charlie
@@ -21,11 +21,10 @@ public interface IManualDao
     // for循环遍历插入
     @Insert("INSERT INTO ${tableName} ${columns} VALUES ${values}")
     void batchInsert(BatchInsertReq req);
-
-
     @Select("${sql}")
     Map<String, Object> selectByRawSql(@Param("sql") String sql);
-
+    @Select(("${sql}"))
+    List<TreeMap<String, Object>> selectMultiRecords(@Param("sql") String sql);
     @Delete(("${sql}"))
     void deleteByRawSql(@Param("sql") String sql);
 }

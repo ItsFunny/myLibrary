@@ -32,6 +32,16 @@ public abstract class AbstractFIleStrategy implements IFileStrategy
 
     private Map<String, String> visitPrefixMap;
 
+    @Override
+    public BatchFileUploadWrapperResp batchUpload(BatchFileUploadWrapper wrapper)
+    {
+        if (wrapper == null) throw new RuntimeException("参数不可为空");
+        wrapper.valid();
+
+        return this.doBatchUpload(wrapper);
+    }
+
+    protected abstract BatchFileUploadWrapperResp doBatchUpload(BatchFileUploadWrapper wrapper);
 
     // 如果末尾以 / 结尾,则截断
     public void setBasePathMap(Map<String, String> basePathMap)

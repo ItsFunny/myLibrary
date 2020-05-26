@@ -176,6 +176,19 @@
             <version>2.2</version>
         </dependency>
 
+        <!--压缩-->
+        <dependency>
+            <groupId>org.jpedal</groupId>
+            <artifactId>OpenViewerFX</artifactId>
+            <version>6.6.14</version>
+        </dependency>
+
+        <!--FastDFS-->
+        <dependency>
+            <groupId>org.csource</groupId>
+            <artifactId>fastdfs-client-java</artifactId>
+            <version>1.29-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

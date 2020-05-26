@@ -5,11 +5,13 @@
 package com.charile.file;
 
 
+import com.charile.service.IValidater;
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 /**
  * The interface File strategy.
@@ -37,7 +39,31 @@ public interface IFileStrategy
      */
     UploadResponse upload(MultipartFile file, String storePath, String newFileName, String key) throws IOException;
 
-    UploadResponse upload(InputStream inputStream,String storePath, String newFileName, String key) throws IOException;
+    UploadResponse upload(InputStream inputStream, String storePath, String newFileName, String key) throws IOException;
+
+    @Data
+    class BatchFileUploadWrapper implements IValidater
+    {
+        private Integer uniqueKey;
+        private List<InputStream> streams;
+        private List<String> pathList;
+        private List<String> newNames;
+        private List<String> keys;
+
+        @Override
+        public void valid()
+        {
+
+        }
+    }
+
+    @Data
+    class BatchFileUploadWrapperResp
+    {
+
+    }
+
+    BatchFileUploadWrapperResp batchUpload(BatchFileUploadWrapper wrapper);
 
     /**
      * Delete boolean.

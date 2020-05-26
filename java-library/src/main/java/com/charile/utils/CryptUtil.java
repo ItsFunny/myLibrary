@@ -3,6 +3,7 @@ package com.charile.utils;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.FileUtils;
+import sun.misc.BASE64Decoder;
 
 import java.io.*;
 import java.security.MessageDigest;
@@ -121,5 +122,13 @@ public class CryptUtil
     {
         byte[] bytes = FileUtils.readFileToByteArray(new File(path));
         return getFileString(bytes);
+    }
+
+    private static final BASE64Decoder decoder = new BASE64Decoder();
+
+    public static byte[] base64Decode(String data) throws IOException
+    {
+        byte[] bytes = decoder.decodeBuffer(data);
+        return bytes;
     }
 }

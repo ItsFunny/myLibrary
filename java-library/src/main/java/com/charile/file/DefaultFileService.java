@@ -109,4 +109,9 @@ public class DefaultFileService extends AbstractFIleStrategy
         }
     }
 
+    @Override
+    protected BatchFileUploadWrapperResp doBatchUpload(BatchFileUploadWrapper wrapper)
+    {
+        return null;
+    }
 }
