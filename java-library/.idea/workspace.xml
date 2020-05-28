@@ -5,166 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa08344f-1a6b-48d8-9866-e55c2e1f6c80" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/file/FastDFSConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/file/FastDFSServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/service/IValidater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/template/BaseTemplatePatternV3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/utils/ImgUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/charile/utils/DateUtilsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/charile/utils/ImgUtilTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/bigfile/AbstractBigFileProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/bigfile/BigFileConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/bigfile/BigFileServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/bigfile/BigFileUploadProcessInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/bigfile/ChunkCreateResp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/bigfile/ChunkHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/bigfile/ChunkInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/bigfile/DefaultBigFileProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/bigfile/FileChunkDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/bigfile/FileChunkProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/bigfile/FileInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charile/bigfile/MemoryChunkHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/charile/bigfile/AbstractBigFileProcessorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../go-library/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../go-library/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/charile/dao/IManualDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/charile/dao/IManualDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/charile/file/AbstractFIleStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/charile/file/AbstractFIleStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/charile/file/DefaultFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/charile/file/DefaultFileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/charile/file/FTPFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/charile/file/FTPFileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/charile/file/FileStrategyContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/charile/file/FileStrategyContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/charile/file/IFileStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/charile/file/IFileStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/charile/file/SFTPFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/charile/file/SFTPFileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/charile/utils/CryptUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/charile/utils/CryptUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/charile/utils/DateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/charile/utils/DateUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/QueueLogin/AbstractLoginServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/QueueLogin/Exception/QueueLoginRangeException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/QueueLogin/QueueConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/QueueLogin/QueueLogin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/QueueLogin/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/QueueLogin/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/QueueLogin/model/BaseObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/QueueLogin/model/QueueLoginResultInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/QueueLogin/service/BackLoginThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/QueueLogin/service/QueueLoginService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/QueueLogin/service/impl/QueueLoginServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/cache/AbstractReferenceCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/cache/ClearStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/cache/IReferenceCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/cache/ObjectCreateStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/cache/ObjectInfoThreadLocalCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/cache/soft/AbstractCHMSoftReferenchCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/cache/soft/CHMSoftReferenceCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/cache/soft/SofReferenceCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/cache/soft/SoftReferenceInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/dao/IManualDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/dto/BaseWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/dto/BatchInsertReq.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/dto/BatchInsertReqWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/dto/CommonDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/dto/ResultDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/dto/SelectReq.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/dto/SelectReqWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/enums/RestAPIStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/exception/BaseBussException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/exception/FTPBusynessException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/exception/FTPConfigException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/exception/SFTPDataTransferException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/exception/SFTPLoginException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/file/AbstractFIleStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/file/BlockingPool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/file/DefaultFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/file/FTPClientPool$FTPBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/file/FTPClientPool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/file/FTPFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/file/FileStrategyContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/file/IFileStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/file/SFTPFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/file/UploadResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/framework/BeanSelefAwarePostProcessor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/framework/IBeanSelfAware.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/json/GsonInterfaceAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/mail/AbstractEmailService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/mail/DefalutEmailServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/mail/IEmailService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/mail/factory/AbstractEmailFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/mail/factory/DefaultEmailServiceFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/mail/property/EmailProperty.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/model/HttpClientResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/model/TwoTuple.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/mq/AbstractMQConfirmCallback.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/mq/AppEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/mq/AppEventConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/mq/AppEventPublisher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/mq/AppEventRabbitMQPublish.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/mq/BaseCorrelationData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/mq/LogEventPublisher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/mq/MicroCorrelationData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/mq/consumer/abs/AbstractAppeventConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/mq/consumer/abs/AbstractBaseConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/mq/consumer/abs/AbstractChannleAppeventConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/mq/converters/JSONMessageConverter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/page/AbstractMultipartDBPageService$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/page/AbstractMultipartDBPageService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/page/AbstractPageService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/page/PageBaseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/page/PageExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/page/PageRequestDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/page/PageResponseDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/page/SingleDBPageRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/page/SingleDBPageResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/service/IdWorkerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/service/IdWorkerServiceTwitter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/sqlextention/AbstractSQLExtentionModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/sqlextention/AbstractSQLExtentionpProxyBaseCRUDDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/sqlextention/ISQLExtentionBaseCRUDDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/sqlextention/ISQLExtentionConfigBaseCRUDDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/sqlextention/SQLExtentionConfigProperty.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/sqlextention/SQLExtentionDaoWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/sqlextention/SQLExtentionHolderV3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/sqlextention/SQLExtentionInfo$DBInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/sqlextention/SQLExtentionInfo$TableInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/sqlextention/SQLExtentionInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/sqlextention/SQLExtentionResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/sqlextention/service/ISQLExtentionBaseCRUDService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/sqlextention/service/abs/AbstractSQLExtentionProxyBaseCRUDService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/template/BaseTemplatePattern.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/template/BaseTemplatePatternV2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/tree/TreeComposite.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/CollectionUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/CommonUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/CryptUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/DateUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/DebugUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/FileUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/HttpUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/IDGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/IDNoChecker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/IPUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/JSONUtil$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/JSONUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/KeyUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/PageResultUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/QRCodeUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/RSAUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/ResultUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/SFTPUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/UrlUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/charile/utils/VUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/myLibrary-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.charile.dto.BatchInsertReqWrapperTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.charile.dto.SelectReqWrapperTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.charile.file.FTPFileServiceTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.charile.file.SFTPFileServiceTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.charile.utils.CommonTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.charile.utils.CryptUtilTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.charile.utils.FileUtilTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.charile.dto.BatchInsertReqWrapperTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.charile.dto.SelectReqWrapperTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.charile.file.FTPFileServiceTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.charile.file.SFTPFileServiceTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.charile.utils.CommonTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.charile.utils.CryptUtilTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.charile.utils.FileUtilTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/charile/dto/BatchInsertReqWrapperTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/charile/dto/SelectReqWrapperTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/charile/file/FTPFileServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/charile/file/SFTPFileServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/charile/utils/CommonTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/charile/utils/CryptUtilTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/charile/utils/FileUtilTest.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -191,42 +47,68 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/file/FastDFSServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/charile/bigfile/AbstractBigFileProcessorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="29" column="40" lean-forward="true" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+            <state relative-caret-position="351">
+              <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/BigFileUploadProcessInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2136#2137#0" expanded="true" />
-                <element signature="e#3032#3033#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/file/FastDFSConfig.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/AbstractBigFileProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+            <state relative-caret-position="473">
+              <caret line="113" column="30" selection-start-line="113" selection-start-column="30" selection-end-line="113" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#564#565#0" expanded="true" />
+                <element signature="e#612#613#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/csource/fastdfs-client-java/1.29-SNAPSHOT/fastdfs-client-java-1.29-SNAPSHOT.jar!/org/csource/common/MyException.class">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/FileChunkDecorator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="237">
+              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/DefaultBigFileProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="190" column="21" lean-forward="true" selection-start-line="190" selection-start-column="21" selection-end-line="190" selection-end-column="21" />
+            <state relative-caret-position="141">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#357#358#0" expanded="true" />
+                <element signature="e#392#393#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/BigFileConstants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -272,30 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/charile/page/SingleDBPageResponse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/charile/page/SingleDBPageRequest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/charile/file/FTPClientPool.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/charile/utils/SFTPUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/charile/exception/SFTPLoginException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/charile/exception/FTPConfigException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/charile/exception/SFTPDataTransferException.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/charile/file/FTPFileServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/charile/utils/FileUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/charile/file/UploadResponse.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/charile/utils/FileUtilTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/charile/utils/CommonTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/charile/utils/QRCodeUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/charile/template/BaseTemplatePattern.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/charile/dto/ResultDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/IManualMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/charile/cache/ObjectInfoThreadLocalCache.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/charile/utils/DebugUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/charile/template/BaseTemplatePatternV2.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/charile/utils/CryptUtilTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/charile/utils/RSAUtils.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/charile/dto/BatchInsertReqWrapperTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/charile/dto/CommonDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/charile/dto/BatchInsertReq.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/charile/dto/BaseWrapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/charile/dto/SelectReq.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/charile/dto/SelectReqWrapper.java" />
@@ -323,6 +181,30 @@
         <option value="$PROJECT_DIR$/src/main/java/com/charile/file/FastDFSConfig.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/charile/file/FastDFSServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/file/BigFileService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/file/BigFileProcesser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/file/BigFileHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/file/BigFileProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/file/BigFileServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/file/ChunkHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/file/FileChunkDecorater.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/file/FileChunkHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/file/BigFileUploadProcessInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/file/FileChunkProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/bigfile/FileChunkDecorater.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/bigfile/ChunkCreateResp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/bigfile/BigFileConstant.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/bigfile/FileChunkProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/bigfile/BigFileConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/bigfile/FileInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/bigfile/ChunkInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/bigfile/DefaultBigFileProcessor.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/charile/bigfile/AbstractBigFileProcessorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/bigfile/BigFileUploadProcessInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/bigfile/FileChunkDecorator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/bigfile/ChunkHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/bigfile/MemoryChunkHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charile/bigfile/AbstractBigFileProcessor.java" />
       </list>
     </option>
   </component>
@@ -347,7 +229,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -388,7 +269,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="charile" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
+              <item name="bigfile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
@@ -403,6 +284,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -430,15 +312,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.charile.bigfile" />
       <recent name="com.charile.utils" />
       <recent name="com.charile.dto" />
       <recent name="com.charile.file" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.charile.exception" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/charile" />
@@ -456,7 +339,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ImgUtil">
+  <component name="RunManager" selected="JUnit.AbstractBigFileProcessorTest.process">
     <configuration name="ImgUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.charile.utils.ImgUtil" />
       <module name="java-library" />
@@ -466,6 +349,22 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AbstractBigFileProcessorTest.process" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.charile.bigfile.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.charile.bigfile" />
+      <option name="MAIN_CLASS_NAME" value="com.charile.bigfile.AbstractBigFileProcessorTest" />
+      <option name="METHOD_NAME" value="process" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -502,22 +401,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SFTPFileServiceTest.upload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.charile.file.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.charile.file" />
-      <option name="MAIN_CLASS_NAME" value="com.charile.file.SFTPFileServiceTest" />
-      <option name="METHOD_NAME" value="upload" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SelectReqWrapperTest.conv2SelectReq" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-library" />
       <extension name="coverage">
@@ -536,11 +419,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AbstractBigFileProcessorTest.process" />
         <item itemvalue="Application.ImgUtil" />
         <item itemvalue="JUnit.ImgUtilTest.testCompress" />
         <item itemvalue="JUnit.DateUtilsTest.formatStandardTemplate" />
         <item itemvalue="JUnit.SelectReqWrapperTest.conv2SelectReq" />
-        <item itemvalue="JUnit.SFTPFileServiceTest.upload" />
       </list>
     </recent_temporary>
   </component>
@@ -628,50 +511,51 @@
       <workItem from="1590198167530" duration="598000" />
       <workItem from="1590313016008" duration="518000" />
       <workItem from="1590367481413" duration="1024000" />
-      <workItem from="1590467938551" duration="6931000" />
+      <workItem from="1590467938551" duration="6932000" />
+      <workItem from="1590646936178" duration="9436000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SFTPFileServiceTest_upload - 2020.04.26 at 13h 31m 43s.xml">
-      <configuration name="SFTPFileServiceTest.upload" configurationId="JUnit" />
+    <history-entry file="AbstractBigFileProcessorTest_process - 2020.05.28 at 16h 49m 40s.xml">
+      <configuration name="AbstractBigFileProcessorTest.process" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SFTPFileServiceTest_upload - 2020.04.26 at 13h 33m 45s.xml">
-      <configuration name="SFTPFileServiceTest.upload" configurationId="JUnit" />
+    <history-entry file="AbstractBigFileProcessorTest_process - 2020.05.28 at 16h 51m 59s.xml">
+      <configuration name="AbstractBigFileProcessorTest.process" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SelectReqWrapperTest_conv2SelectReq - 2020.05.06 at 14h 55m 41s.xml">
-      <configuration name="SelectReqWrapperTest.conv2SelectReq" configurationId="JUnit" />
+    <history-entry file="AbstractBigFileProcessorTest_process - 2020.05.28 at 16h 52m 30s.xml">
+      <configuration name="AbstractBigFileProcessorTest.process" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SelectReqWrapperTest_conv2SelectReq - 2020.05.06 at 14h 56m 14s.xml">
-      <configuration name="SelectReqWrapperTest.conv2SelectReq" configurationId="JUnit" />
+    <history-entry file="AbstractBigFileProcessorTest_process - 2020.05.28 at 16h 52m 58s.xml">
+      <configuration name="AbstractBigFileProcessorTest.process" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DateUtilsTest_formatStandardTemplate - 2020.05.17 at 13h 45m 47s.xml">
-      <configuration name="DateUtilsTest.formatStandardTemplate" configurationId="JUnit" />
+    <history-entry file="AbstractBigFileProcessorTest_process - 2020.05.28 at 16h 53m 32s.xml">
+      <configuration name="AbstractBigFileProcessorTest.process" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DateUtilsTest_formatStandardTemplate - 2020.05.17 at 13h 47m 37s.xml">
-      <configuration name="DateUtilsTest.formatStandardTemplate" configurationId="JUnit" />
+    <history-entry file="AbstractBigFileProcessorTest_process - 2020.05.28 at 16h 56m 24s.xml">
+      <configuration name="AbstractBigFileProcessorTest.process" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DateUtilsTest_formatStandardTemplate - 2020.05.17 at 13h 49m 54s.xml">
-      <configuration name="DateUtilsTest.formatStandardTemplate" configurationId="JUnit" />
+    <history-entry file="AbstractBigFileProcessorTest_process - 2020.05.28 at 16h 57m 25s.xml">
+      <configuration name="AbstractBigFileProcessorTest.process" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DateUtilsTest_formatStandardTemplate - 2020.05.17 at 13h 50m 04s.xml">
-      <configuration name="DateUtilsTest.formatStandardTemplate" configurationId="JUnit" />
+    <history-entry file="AbstractBigFileProcessorTest_process - 2020.05.28 at 16h 58m 37s.xml">
+      <configuration name="AbstractBigFileProcessorTest.process" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DateUtilsTest_formatStandardTemplate - 2020.05.17 at 13h 51m 20s.xml">
-      <configuration name="DateUtilsTest.formatStandardTemplate" configurationId="JUnit" />
+    <history-entry file="AbstractBigFileProcessorTest_process - 2020.05.28 at 16h 59m 57s.xml">
+      <configuration name="AbstractBigFileProcessorTest.process" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ImgUtilTest_testCompress - 2020.05.18 at 17h 10m 28s.xml">
-      <configuration name="ImgUtilTest.testCompress" configurationId="JUnit" />
+    <history-entry file="AbstractBigFileProcessorTest_process - 2020.05.28 at 17h 08m 19s.xml">
+      <configuration name="AbstractBigFileProcessorTest.process" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110329000" />
+    <option name="totallyTimeSpent" value="119766000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3319027" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27181688" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -679,7 +563,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.15662651" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5554217" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.112048194" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -688,7 +572,7 @@
       <window_info anchor="bottom" id="Spring" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50143063" side_tool="true" weight="0.24819277" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4985694" visible="true" weight="0.24819277" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4985694" weight="0.49759036" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.4807229" />
       <window_info anchor="bottom" id="Duplicate detector" order="14" weight="0.22168675" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -724,195 +608,40 @@
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/charile/bigfile/AbstractBigFileProcessorTest.java</url>
+          <line>27</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/AbstractBigFileProcessor.java</url>
+          <line>94</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/AbstractBigFileProcessor.java</url>
+          <line>63</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/AbstractBigFileProcessor.java</url>
+          <line>117</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/AbstractBigFileProcessor.java</url>
+          <line>126</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/charile/utils/CryptUtilTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/dto/BaseWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/charile/dto/BatchInsertReqWrapperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#195#196#0" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/dto/BatchInsertReqWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getIndex#0;class#BatchInsertReqWrapper#0" />
-            <element signature="method#judgeIsNullOrEmpty#0;class#BatchInsertReqWrapper#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/charile/dto/SelectReqWrapperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/dto/CommonDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/charile/file/SFTPFileServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar!/com/google/gson/Gson.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14940">
-          <caret line="466" column="17" selection-start-line="466" selection-start-column="17" selection-end-line="466" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/dto/SelectReq.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="20" column="72" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
-          <folding>
-            <element signature="e#283#284#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/dto/SelectReqWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/dto/BatchInsertReq.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/utils/JSONUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2736">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/utils/IPUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/utils/HttpUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="445" column="5" selection-start-line="445" selection-start-column="5" selection-end-line="445" selection-end-column="5" />
-          <folding>
-            <element signature="docComment;class#HttpUtils#0" />
-            <element signature="docComment;method#doGet#0;class#HttpUtils#0" />
-            <element signature="method#doGet#0;class#HttpUtils#0" />
-            <element signature="docComment;method#doGet#1;class#HttpUtils#0" />
-            <element signature="method#doGet#1;class#HttpUtils#0" />
-            <element signature="docComment;method#doGet#2;class#HttpUtils#0" />
-            <element signature="method#doGet#2;class#HttpUtils#0" />
-            <element signature="docComment;method#doPost#0;class#HttpUtils#0" />
-            <element signature="method#doPost#0;class#HttpUtils#0" />
-            <element signature="method#doPost#1;class#HttpUtils#0" />
-            <element signature="docComment;method#doPost#2;class#HttpUtils#0" />
-            <element signature="method#doPost#2;class#HttpUtils#0" />
-            <element signature="docComment;method#doPost#3;class#HttpUtils#0" />
-            <element signature="method#doPost#3;class#HttpUtils#0" />
-            <element signature="docComment;method#doPut#0;class#HttpUtils#0" />
-            <element signature="method#doPut#0;class#HttpUtils#0" />
-            <element signature="docComment;method#doPut#1;class#HttpUtils#0" />
-            <element signature="method#doPut#1;class#HttpUtils#0" />
-            <element signature="docComment;method#doDelete#0;class#HttpUtils#0" />
-            <element signature="method#doDelete#0;class#HttpUtils#0" />
-            <element signature="docComment;method#doDelete#1;class#HttpUtils#0" />
-            <element signature="method#doDelete#1;class#HttpUtils#0" />
-            <element signature="docComment;method#packageHeader#0;class#HttpUtils#0" />
-            <element signature="method#packageHeader#0;class#HttpUtils#0" />
-            <element signature="docComment;method#packageParam#0;class#HttpUtils#0" />
-            <element signature="method#packageParam#0;class#HttpUtils#0" />
-            <element signature="docComment;method#getHttpClientResult#0;class#HttpUtils#0" />
-            <element signature="method#getHttpClientResult#0;class#HttpUtils#0" />
-            <element signature="docComment;method#release#0;class#HttpUtils#0" />
-            <element signature="method#release#0;class#HttpUtils#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/util/EventObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/mq/AppEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/mq/AppEventConsumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/mq/AppEventPublisher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/amqp/spring-rabbit/2.0.1.RELEASE/spring-rabbit-2.0.1.RELEASE.jar!/org/springframework/amqp/rabbit/core/RabbitTemplate.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="486" column="22" selection-start-line="486" selection-start-column="22" selection-end-line="486" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/mq/AppEventRabbitMQPublish.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="694">
@@ -1136,6 +865,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/file/FastDFSServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2109#2110#0" expanded="true" />
+            <element signature="e#2136#2137#0" expanded="true" />
+            <element signature="e#3005#3006#0" expanded="true" />
+            <element signature="e#3032#3033#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/csource/fastdfs-client-java/1.29-SNAPSHOT/fastdfs-client-java-1.29-SNAPSHOT.jar!/org/csource/common/MyException.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1145,27 +888,165 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
+        <state relative-caret-position="6840">
           <caret line="190" column="21" lean-forward="true" selection-start-line="190" selection-start-column="21" selection-end-line="190" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/file/FastDFSServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="29" column="40" lean-forward="true" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2136#2137#0" expanded="true" />
-            <element signature="e#3032#3033#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/file/FastDFSConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        <state relative-caret-position="412">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/BigFileServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/ChunkCreateResp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/FileChunkProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/FileInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/io/OutputStreamWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1399">
+          <caret line="231" column="16" selection-start-line="231" selection-start-column="16" selection-end-line="231" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/BigFileConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/io/BufferedInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/io/InputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="958">
+          <caret line="259" column="15" selection-start-line="259" selection-start-column="15" selection-end-line="259" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/ChunkInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jpedal/OpenViewerFX/6.6.14/OpenViewerFX-6.6.14.jar!/org/jpedal/io/RandomAccessFileBuffer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/DefaultBigFileProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#357#358#0" expanded="true" />
+            <element signature="e#392#393#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/charile/bigfile/AbstractBigFileProcessorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/file/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/MemoryChunkHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/ChunkHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/BigFileUploadProcessInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/FileChunkDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charile/bigfile/AbstractBigFileProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="113" column="30" selection-start-line="113" selection-start-column="30" selection-end-line="113" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#564#565#0" expanded="true" />
+            <element signature="e#612#613#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

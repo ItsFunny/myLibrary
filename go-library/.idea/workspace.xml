@@ -2,166 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="298ffa7f-3e1a-43e9-893b-1040a5cb3fd4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/FastDFSConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/FastDFSServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/service/IValidater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/template/BaseTemplatePatternV3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/ImgUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/utils/DateUtilsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/utils/ImgUtilTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/dao/IManualDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/dao/IManualDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/AbstractFIleStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/AbstractFIleStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/DefaultFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/DefaultFileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/FTPFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/FTPFileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/FileStrategyContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/FileStrategyContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/IFileStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/IFileStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/SFTPFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/SFTPFileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/CryptUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/CryptUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/DateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/DateUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/AbstractLoginServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/Exception/QueueLoginRangeException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/QueueConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/QueueLogin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/model/BaseObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/model/QueueLoginResultInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/service/BackLoginThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/service/QueueLoginService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/service/impl/QueueLoginServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/AbstractReferenceCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/ClearStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/IReferenceCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/ObjectCreateStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/ObjectInfoThreadLocalCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/soft/AbstractCHMSoftReferenchCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/soft/CHMSoftReferenceCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/soft/SofReferenceCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/soft/SoftReferenceInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dao/IManualDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/BaseWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/BatchInsertReq.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/BatchInsertReqWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/CommonDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/ResultDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/SelectReq.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/SelectReqWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/enums/RestAPIStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/exception/BaseBussException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/exception/FTPBusynessException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/exception/FTPConfigException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/exception/SFTPDataTransferException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/exception/SFTPLoginException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/AbstractFIleStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/BlockingPool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/DefaultFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FTPClientPool$FTPBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FTPClientPool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FTPFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FileStrategyContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/IFileStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/SFTPFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/UploadResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/framework/BeanSelefAwarePostProcessor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/framework/IBeanSelfAware.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/json/GsonInterfaceAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mail/AbstractEmailService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mail/DefalutEmailServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mail/IEmailService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mail/factory/AbstractEmailFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mail/factory/DefaultEmailServiceFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mail/property/EmailProperty.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/model/HttpClientResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/model/TwoTuple.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/AbstractMQConfirmCallback.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/AppEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/AppEventConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/AppEventPublisher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/AppEventRabbitMQPublish.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/BaseCorrelationData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/LogEventPublisher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/MicroCorrelationData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/consumer/abs/AbstractAppeventConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/consumer/abs/AbstractBaseConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/consumer/abs/AbstractChannleAppeventConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/converters/JSONMessageConverter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/AbstractMultipartDBPageService$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/AbstractMultipartDBPageService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/AbstractPageService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/PageBaseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/PageExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/PageRequestDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/PageResponseDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/SingleDBPageRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/SingleDBPageResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/service/IdWorkerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/service/IdWorkerServiceTwitter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/AbstractSQLExtentionModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/AbstractSQLExtentionpProxyBaseCRUDDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/ISQLExtentionBaseCRUDDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/ISQLExtentionConfigBaseCRUDDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionConfigProperty.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionDaoWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionHolderV3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionInfo$DBInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionInfo$TableInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/service/ISQLExtentionBaseCRUDService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/service/abs/AbstractSQLExtentionProxyBaseCRUDService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/template/BaseTemplatePattern.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/template/BaseTemplatePatternV2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/tree/TreeComposite.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/CollectionUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/CommonUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/CryptUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/DateUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/DebugUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/FileUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/HttpUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/IDGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/IDNoChecker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/IPUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/JSONUtil$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/JSONUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/KeyUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/PageResultUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/QRCodeUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/RSAUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/ResultUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/SFTPUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/UrlUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/VUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/myLibrary-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/TEST-com.charile.dto.BatchInsertReqWrapperTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/TEST-com.charile.dto.SelectReqWrapperTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/TEST-com.charile.file.FTPFileServiceTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/TEST-com.charile.file.SFTPFileServiceTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/TEST-com.charile.utils.CommonTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/TEST-com.charile.utils.CryptUtilTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/TEST-com.charile.utils.FileUtilTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/com.charile.dto.BatchInsertReqWrapperTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/com.charile.dto.SelectReqWrapperTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/com.charile.file.FTPFileServiceTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/com.charile.file.SFTPFileServiceTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/com.charile.utils.CommonTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/com.charile.utils.CryptUtilTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/surefire-reports/com.charile.utils.FileUtilTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/dto/BatchInsertReqWrapperTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/dto/SelectReqWrapperTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/file/FTPFileServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/file/SFTPFileServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/utils/CommonTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/utils/CryptUtilTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/utils/FileUtilTest.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -252,31 +94,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
-            <path>
-              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="go-library" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="go-library" type="462c0819:PsiDirectoryNode" />
-              <item name="go" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="go-library" type="462c0819:PsiDirectoryNode" />
-              <item name="go" type="462c0819:PsiDirectoryNode" />
-              <item name="crypt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="go-library" type="462c0819:PsiDirectoryNode" />
-              <item name="go" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
             <path>
               <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
@@ -290,6 +110,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -420,7 +241,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27896994" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2825465" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
