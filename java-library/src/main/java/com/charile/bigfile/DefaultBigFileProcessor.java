@@ -17,11 +17,23 @@ import java.io.File;
 @Data
 public class DefaultBigFileProcessor extends AbstractBigFileProcessor
 {
+    // 碎片以及整个作品的存储路径
     private String storePath;
 
     public DefaultBigFileProcessor(ChunkHandler chunkHandler)
     {
         super(chunkHandler);
+    }
+
+
+    public void setStorePath(String storePath)
+    {
+        if (!storePath.endsWith(File.separator))
+        {
+            storePath += File.separator;
+        }
+
+        this.storePath = storePath;
     }
 
     @Override

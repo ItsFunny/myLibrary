@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public interface FileChunkProcessor
 {
-    void process(FileChunkDecorator decorator) throws IOException;
+    ProcessResp process(FileChunkDecorator decorator) throws IOException;
 
 
 
