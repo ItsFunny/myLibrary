@@ -2,15 +2,9 @@ package com.charile.bigfile;
 
 import com.charile.utils.FileUtil;
 import lombok.Data;
-import lombok.extern.log4j.Log4j2;
-import org.jpedal.io.RandomAccessFileBuffer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
-import java.awt.geom.RectangularShape;
 import java.io.*;
-import java.nio.channels.FileChannel;
-import java.util.Random;
 
 /**
  * @author Charlie
@@ -21,9 +15,9 @@ import java.util.Random;
  * @Date 创建时间：2020-05-28 14:33
  */
 @Data
+@Slf4j
 public abstract class AbstractBigFileProcessor implements FileChunkProcessor
 {
-    private static final Logger log = LoggerFactory.getLogger(AbstractBigFileProcessor.class);
 
     public AbstractBigFileProcessor(ChunkHandler chunkHandler)
     {
@@ -43,7 +37,6 @@ public abstract class AbstractBigFileProcessor implements FileChunkProcessor
     @Override
     public ProcessResp process(FileChunkDecorator req) throws IOException
     {
-
         ProcessResp result = new ProcessResp();
         FileInfo fileInfo = this.createIfDirectoryNotExist(req);
         if (fileInfo.isUploaded())
@@ -89,7 +82,7 @@ public abstract class AbstractBigFileProcessor implements FileChunkProcessor
             }
         }
 
-        log.debug("chunk{},开始分段写入到数据中", chunkName);
+        log.info("chunk={},写入到文件:{} 中", chunkName, chunkPath);
         InputStream inputStream = req.getInputStream();
         BufferedInputStream bufferInput = null;
         RandomAccessFile randomAccessFile = null;
@@ -107,7 +100,8 @@ public abstract class AbstractBigFileProcessor implements FileChunkProcessor
         try
         {
             int bytesRead = 0;
-            long lastWrite = 0;
+            long lastWrite = chunkInfo.getUploadedSize();
+            log.debug("processId:{} 碎片:{},上次写入的位置为:{}", req.getProcessId(), req.getChunkMd5(), lastWrite);
             while ((bytesRead = bufferInput.read(buffer)) != -1)
             {
                 // 写入到文件中
@@ -125,6 +119,9 @@ public abstract class AbstractBigFileProcessor implements FileChunkProcessor
             {
                 log.debug("所有chunk都已经上传,需要开启合并");
                 FileUtil.mergeFile(directory, directory + req.getFileOriginName());
+                result.setMerged(true);
+                log.debug("删除本次processId记录");
+                this.chunkHandler.clearChunk(req.getProcessId());
             }
         } catch (IOException e)
         {

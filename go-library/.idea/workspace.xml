@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="298ffa7f-3e1a-43e9-893b-1040a5cb3fd4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/bigfile/AbstractBigFileProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/bigfile/AbstractBigFileProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/resources/log4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/resources/log4j.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/bigfile/AbstractBigFileProcessorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/bigfile/AbstractBigFileProcessorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/utils/CommonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/utils/CommonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/AbstractBigFileProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/AbstractBigFileProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/FileUtil$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/FileUtil$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/FileUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/FileUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/log4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/log4j.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/myLibrary-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/myLibrary-1.0.jar" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -241,7 +252,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2825465" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28612304" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -254,7 +265,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2060241" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.42168674" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />

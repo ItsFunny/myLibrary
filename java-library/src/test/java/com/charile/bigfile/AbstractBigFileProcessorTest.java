@@ -53,8 +53,8 @@ public class AbstractBigFileProcessorTest
         String mergeFile = "/Users/joker/Desktop/split";
         // 每个文件分100m
         String originFile = "/Users/joker/Downloads/阳光电影www.ygdy8.com.勇者斗恶龙：你的故事.BD.1080p.日语中英双字.mkv";
-//        logger.debug("1. 拆分文件");
-//        FileUtil.splitFiles(originFile, 100, chunkOutPutDirectroy, false);
+        logger.debug("1. 拆分文件");
+        FileUtil.splitFiles(originFile, 100, chunkOutPutDirectroy, false);
 
         // 创建多线程,用于进度条展示
         logger.info("根据文件数量创建多线程,开始分片上传碎片");

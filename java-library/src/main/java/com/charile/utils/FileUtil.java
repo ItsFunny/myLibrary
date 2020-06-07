@@ -1,14 +1,17 @@
 package com.charile.utils;
 
-import com.sun.org.apache.bcel.internal.generic.IFLE;
-import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.channels.FileChannel;
-import java.sql.Driver;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * @author Charlie
@@ -160,7 +163,7 @@ public class FileUtil
                 inputStream = new FileInputStream(file);
                 inChannel = inputStream.getChannel();
                 outChannel.transferFrom(inChannel, start, file.length());
-                System.out.println("合并文件:" + file.getName());
+                logger.debug("合并文件:" + file.getName());
                 start += file.length();
 
                 inputStream.close();

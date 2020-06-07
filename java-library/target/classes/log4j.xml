@@ -30,10 +30,10 @@
             <!--value="%d{yyyy-MM-dd HH:mm:ss a} [Thread: %t][ Class:%c  Method: %l ]%n%p:%m%n"/>-->
             <!--<PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>-->
         </layout>
-        <!--  <filter class="org.apache.log4j.varia.LevelRangeFilter">
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
             <param name="LevelMin" value="DEBUG"/>
-            <param name="LevelMax" value="DEBUG"/>
-        </filter> -->
+            <param name="LevelMax" value="ERROR"/>
+        </filter>
     </appender>
     <!-- output the debug   -->
     <!--  <appender name="log4jDebug" class="org.apache.log4j.DailyRollingFileAppender">
