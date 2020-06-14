@@ -23,6 +23,7 @@
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/sqlextention/AbstractSQLExtentionpProxyBaseCRUDDao.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mail/IEmailService.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/model/TwoTuple.java
+/Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/event/WebAppEvent.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/bigfile/FileInfo.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/utils/JSONUtil.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/utils/HttpUtils.java
@@ -35,6 +36,7 @@
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/page/AbstractMultipartDBPageService.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mq/consumer/abs/AbstractAppeventConsumer.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/file/BlockingPool.java
+/Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/event/IAppEventPublisher.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mq/AbstractMQConfirmCallback.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/exception/FTPConfigException.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/dto/BatchInsertReq.java
@@ -77,6 +79,7 @@
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/cache/soft/SoftReferenceInfo.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/mail/factory/AbstractEmailFactory.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/bigfile/FileChunkDecorator.java
+/Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/event/AppEvent.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/page/SingleDBPageRequest.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/utils/IDNoChecker.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charile/QueueLogin/service/impl/QueueLoginServiceImpl.java

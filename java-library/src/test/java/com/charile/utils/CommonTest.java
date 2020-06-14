@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.io.File;
+import java.util.ArrayList;
 
 /**
  * @author Charlie
@@ -19,6 +20,11 @@ import java.io.File;
 @Slf4j
 public class CommonTest
 {
+    public static void main(String[] args)
+    {
+        ArrayList<Integer>arrayList=new ArrayList<>();
+        arrayList.remove(1);
+    }
     @Test
     public void testEmpty()
     {

@@ -86,6 +86,7 @@ com/charile/mq/consumer/abs/AbstractChannleAppeventConsumer.class
 com/charile/file/SFTPFileService.class
 com/charile/utils/QRCodeUtil.class
 com/charile/mail/factory/DefaultEmailServiceFactory.class
+com/charile/event/IAppEventPublisher.class
 com/charile/bigfile/FileInfo.class
 com/charile/file/FTPClientPool.class
 com/charile/dto/BaseWrapper.class
@@ -123,6 +124,8 @@ com/charile/cache/AbstractReferenceCache.class
 com/charile/mq/MicroCorrelationData.class
 com/charile/page/AbstractMultipartDBPageService.class
 com/charile/QueueLogin/service/BackLoginThread.class
+com/charile/event/AppEvent.class
+com/charile/event/WebAppEvent.class
 com/charile/mail/AbstractEmailService.class
 com/charile/utils/JSONUtil$1.class
 com/charile/page/AbstractMultipartDBPageService$1.class

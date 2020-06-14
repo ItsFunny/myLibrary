@@ -2,18 +2,518 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="298ffa7f-3e1a-43e9-893b-1040a5cb3fd4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/go/blockchain/base.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go/blockchain/blockchian.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go/blockchain/validate.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go/constants/result.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/event/AppEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/event/IAppEventPublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/event/WebAppEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/Top100/Too100_Easy_198_House_Robber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/Top100/Top100_Easy_437_Path_Sum_III.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/Top100/Top100_Easy_70_Climbing_Stairs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/Array_118_Pascals_Triangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/Array_119_PascalsTriangleII.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/Array_121_BestTimetoBuyandSellStock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/Array_122_BestTimetoBuyandSellStockII.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/Array_167_TwoSumII_Inputarrayissorted.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/Array_169_MajorityElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/Array_189_Rotate_Array_背.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/Array_217_Contains_Duplicate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/Array_219_Contains_Duplicate_II.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/Array_243_Shorted_Word_Distance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/Array_268_Missing_Number.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/Array_283_move_zeroes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/Array_414_third_maximum_number.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/Array_66_Plus_One.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/Array_88_Merge_Sorted_Array.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/MaximumSubArrayNum53.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/RemoveDuplicatesNum26.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/RemoveElement27.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/SearchInsertPositionNum35.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/array/TwoSumNum2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/common/TreeNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/hashtable/HashTable_136_Single_Number.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/hashtable/HashTable_202_Happy_Number.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/hashtable/HashTable_204_Count_Primes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/hashtable/HashTable_205_Isomorphic_Strings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/hashtable/HashTable_242_Valid_Anagram.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/hashtable/HashTable_299_Bulls_and_Cows.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/list/ListNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/list/List_1290_Convert_Binary_Number_in_a_Linked_List_to_Integer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/list/List_141_Linked_List_Cycle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/list/List_160_Intersection_of_Two_Linked_Lists.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/list/List_203_Remove_Linked_List_Elements.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/list/List_206_Reverse_Linked_List.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/list/List_21_Merge_Two_Sorted_Lists.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/list/List_234_Palindrome_Linked_List.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/list/List_237_Delete_Node_in_a_Linked_List.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/list/List_83_remove_duplicates_from_sorted_list.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/list/List_876_Middle_of_the_Linked_List.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/queue/Queue_346_Moving_Average_from_Data_Stream.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/queue/Queue_933_Number_of_Recent_Calls.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/stack/Stack_1021_Remove_Outermost_Parentheses.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/stack/Stack_1047_Remove_All_Adjacent_Duplicates_In_String.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/stack/Stack_155_Min_Stack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/stack/Stack_225_Implement_Stack_using_Queues.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/stack/Stack_232_Implement_Queue_using_Stacks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/stack/Stack_496_Next_Greater_Element_I.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/stack/Stack_682_Baseball_Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/stack/Stack_844_Backspace_String_Compare.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_125_Valid_Palindrome.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_13_Roman_to_Integer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_14_Longest_Common_Prefix.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_157_read_n_characters_given_read4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_20_Valid_Parentheses.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_28_Implement_strStr_重点.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_344_Reverse_String.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_345_Reverse_Vowels_of_a_String.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_383_Ransom_Note.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_387_First_Unique_Character_in_a_String.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_415_Add_Strings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_434_Number_of_Segments_in_a_String.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_443_String_Compression_背.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_459_Repeated_Substring_Pattern.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_520_Detect_Capital.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_521_Longest_Uncommon_Subsequence_I.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_541_Reverse_String_II.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_551_Student_Attendance_Record_I.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_557_Reverse_Words_in_a_String_III.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_58_Length_of_Last_Word.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_606_Construct_String_from_Binary_Tree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/string/String_67_Add_Binary_重看.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/tree/Tree_110_Balanced_Binary_Tree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/tree/Tree_637_Average_of_Levels_in_Binary_Tree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/重做/Stack_496_Next_Greater_Element_I.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/重做/String_415_Add_Strings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/重做/String_443_String_Compression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/重做/String_541_Reverse_String_II.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/main/java/重做/Too100_Easy_198_House_Robber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/test/java/array/RemoveDuplicatesNum26Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/test/java/array/RemoveElement27Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/test/java/array/SearchInsertPositionNum35Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/src/test/java/array/TwoSumNum2Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/Array_118_Pascals_Triangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/Array_119_PascalsTriangleII.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/Array_121_BestTimetoBuyandSellStock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/Array_122_BestTimetoBuyandSellStockII.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/Array_167_TwoSumII_Inputarrayissorted.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/Array_169_MajorityElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/Array_189_Rotate_Array_背.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/Array_217_Contains_Duplicate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/Array_219_Contains_Duplicate_II.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/Array_243_Shorted_Word_Distance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/Array_268_Missing_Number.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/Array_283_move_zeroes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/Array_414_third_maximum_number.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/Array_66_Plus_One.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/Array_88_Merge_Sorted_Array.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/MaximumSubArrayNum53.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/RemoveDuplicatesNum26.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/RemoveElement27.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/SearchInsertPositionNum35.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/array/TwoSumNum2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/common/TreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/hashtable/HashTable_136_Single_Number.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/hashtable/HashTable_204_Count_Primes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/hashtable/HashTable_299_Bulls_and_Cows.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/list/ListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/list/List_1290_Convert_Binary_Number_in_a_Linked_List_to_Integer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/list/List_141_Linked_List_Cycle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/list/List_160_Intersection_of_Two_Linked_Lists.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/list/List_203_Remove_Linked_List_Elements.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/list/List_206_Reverse_Linked_List.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/list/List_21_Merge_Two_Sorted_Lists.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/list/List_234_Palindrome_Linked_List.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/list/List_237_Delete_Node_in_a_Linked_List.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/list/List_83_remove_duplicates_from_sorted_list.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/list/List_876_Middle_of_the_Linked_List.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/queue/Queue_346_Moving_Average_from_Data_Stream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/queue/Queue_933_Number_of_Recent_Calls.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/stack/Stack_1021_Remove_Outermost_Parentheses.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/stack/Stack_1047_Remove_All_Adjacent_Duplicates_In_String.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/stack/Stack_155_Min_Stack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/stack/Stack_225_Implement_Stack_using_Queues.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/stack/Stack_232_Implement_Queue_using_Stacks.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/stack/Stack_496_Next_Greater_Element_I.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/stack/Stack_682_Baseball_Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/stack/Stack_844_Backspace_String_Compare.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_125_Valid_Palindrome.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_13_Roman_to_Integer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_14_Longest_Common_Prefix.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_157_read_n_characters_given_read4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_20_Valid_Parentheses.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_28_Implement_strStr_重点.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_344_Reverse_String.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_345_Reverse_Vowels_of_a_String.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_383_Ransom_Note.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_387_First_Unique_Character_in_a_String.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_415_Add_Strings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_434_Number_of_Segments_in_a_String.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_443_String_Compression_背.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_459_Repeated_Substring_Pattern.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_520_Detect_Capital.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_521_Longest_Uncommon_Subsequence_I.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_541_Reverse_String_II.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_551_Student_Attendance_Record_I.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_557_Reverse_Words_in_a_String_III.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_58_Length_of_Last_Word.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_606_Construct_String_from_Binary_Tree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/string/String_67_Add_Binary_重看.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/tree/Tree_110_Balanced_Binary_Tree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/tree/Tree_637_Average_of_Levels_in_Binary_Tree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/重做/Stack_496_Next_Greater_Element_I.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/重做/String_415_Add_Strings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/重做/String_443_String_Compression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/classes/重做/String_541_Reverse_String_II.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/test-classes/array/RemoveDuplicatesNum26Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/test-classes/array/RemoveElement27Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/test-classes/array/SearchInsertPositionNum35Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LeetCode/java/target/test-classes/array/TwoSumNum2Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/.idea/data-structure-algorithm.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/JavaBasic.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/data-structure-algorithm.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/algorithm/list_algorithm/loop_list.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/algorithm/list_algorithm/loop_list_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/algorithm/time_wheel.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/common/errro_constants.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/concurrent/thread_pool.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/concurrent/thread_pool_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/hash-conflitct/hash_link_address.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/hash-conflitct/open_address.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/hash-conflitct/open_address_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/hash/hash_set.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/hash/hash_set_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/list/circular_list.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/list/circular_list_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/list/double_sided_list.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/list/double_sided_list_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/list/single_list.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/list/single_list_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/tree/binary_tree/balance_tree/balance_tree.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/tree/binary_tree/binary_search_tree/binary_search_tree.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/tree/binary_tree/binary_search_tree/binary_search_tree_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/tree/binary_tree/complete_tree/complete_tree.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/tree/binary_tree/normal_binary_tree/binary_tree.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/tree/binary_tree/normal_binary_tree/binary_tree_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/tree/complete_tree/complete_tree.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/tree/normal_binary_tree/binary_tree.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/go/structure/tree/normal_binary_tree/binary_tree_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/algorithm/timewheel/TimeInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/algorithm/timewheel/TimeWheel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/algorithm/timewheel/jianzhioffer/_11_number_of_1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/algorithm/timewheel/jianzhioffer/_12_double_exponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/algorithm/timewheel/jianzhioffer/_13_re_order_array.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/algorithm/timewheel/jianzhioffer/_14_find_k_index.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/algorithm/timewheel/jianzhioffer/_1_FindInTwpoArray.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/algorithm/timewheel/jianzhioffer/_2_ReplaceEmpty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/algorithm/timewheel/jianzhioffer/_3_print_from_tail_to_head.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/algorithm/timewheel/jianzhioffer/_4_rebuild_binary_tree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/algorithm/timewheel/jianzhioffer/_5_two_stack_impl_queue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/algorithm/timewheel/jianzhioffer/_6_the_minnumber_of_rotatearray.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/algorithm/timewheel/jianzhioffer/_7_FiberNaqi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/algorithm/timewheel/jianzhioffer/_8_frog_jump.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/leetcode/MaxSubString.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/lock/DeadLock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/lock/ReadWriteLock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/producer_consumer/ProducerAndConsumerWIthLockAndCondition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/producer_consumer/ProducerAndConsumerWithConcurrent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/producer_consumer/ProducerAndConsumerWithNotify.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/reference/AbstractReferenceCache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/reference/ClearStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/reference/IReferenceCache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/reference/ObjectCreateStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/reference/ReferenceCache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/reference/soft/AbstractCHMSoftReferenchCache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/reference/soft/CHMSoftReferenceCache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/reference/soft/SofReferenceCache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/reference/soft/SoftReferenceInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/solution/BitMapSolution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/solution/TopK.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/sort/HeapSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/sort/InsertSortAlgorithm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/sort/MergeSortAlgorithm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/sort/PopSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/sort/QSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/sort/ShellSortAlgorithm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/sort/SimpleSelectionSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/spring/DynamicProxy/DynamicProxyByCglib.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/spring/DynamicProxy/DynamicProxyByJDK.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/structure/list/LruCache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/structure/list/MyArrayList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/structure/map/MapForeach.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/structure/queue/TwoStackImplQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/structure/stack/MyStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/structure/stack/TwoQueueImplStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/structure/tree/BinaryTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/structure/tree/CompleteTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/structure/tree/ThreadLocalTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/tree/binary_tree.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/java/com/basic/utils/CommonUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/source/jvm/jvm.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/source/mysql/mysql.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/source/os/os.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/source/redis/redis.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/source/spring/spring.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/main/source/structure/source_code.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/test/java/com/basic/algorithm/TimeWheelTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/test/java/com/basic/reference/SoftReferenceCacheTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/test/java/com/basic/solution/TopKSolutionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/test/java/com/basic/sort/HeapSortTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/test/java/com/basic/sort/QsortTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/test/java/com/basic/spring/proxy/DynamicProxyByCglibTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/test/java/com/basic/spring/proxy/DynamicProxyByJDKTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/test/java/com/basic/spring/proxy/IProxyService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/test/java/com/basic/structure/list/LruCacheTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/test/java/com/basic/structure/list/MyArrayListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/test/java/com/basic/structure/queue/StackImplQueueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/test/java/com/basic/structure/stack/MyStackTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/test/java/com/basic/structure/stack/TwoQueueImplStackTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/test/java/com/basic/structure/tree/BinaryTreeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/src/test/java/com/basic/structure/tree/CompleteTreeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/algorithm/timewheel/TimeInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/algorithm/timewheel/TimeWheel$Slot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/algorithm/timewheel/TimeWheel$SlotNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/algorithm/timewheel/TimeWheel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/algorithm/timewheel/jianzhioffer/ListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/algorithm/timewheel/jianzhioffer/_11_number_of_1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/algorithm/timewheel/jianzhioffer/_12_double_exponent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/algorithm/timewheel/jianzhioffer/_1_FindInTwpoArray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/algorithm/timewheel/jianzhioffer/_2_ReplaceEmpty.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/algorithm/timewheel/jianzhioffer/_3_print_from_tail_to_head.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/algorithm/timewheel/jianzhioffer/_4_rebuild_binary_tree$TreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/algorithm/timewheel/jianzhioffer/_4_rebuild_binary_tree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/algorithm/timewheel/jianzhioffer/_5_two_stack_impl_queue$SpecialQueue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/algorithm/timewheel/jianzhioffer/_5_two_stack_impl_queue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/algorithm/timewheel/jianzhioffer/_6_the_minnumber_of_rotatearray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/algorithm/timewheel/jianzhioffer/_7_FiberNaqi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/algorithm/timewheel/jianzhioffer/_8_frog_jump.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/leetcode/MaxSubString.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/lock/DeadLock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/lock/ReadWriteLock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/producer_consumer/ProducerAndConsumerWIthLockAndCondition.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/producer_consumer/ProducerAndConsumerWithConcurrent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/producer_consumer/ProducerAndConsumerWithNotify.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/reference/AbstractReferenceCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/reference/ClearStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/reference/IReferenceCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/reference/ObjectCreateStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/reference/ReferenceCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/reference/soft/AbstractCHMSoftReferenchCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/reference/soft/CHMSoftReferenceCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/reference/soft/SofReferenceCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/reference/soft/SoftReferenceInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/solution/BitMapSolution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/solution/TopK.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/sort/HeapSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/sort/InsertSortAlgorithm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/sort/MergeSortAlgorithm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/sort/PopSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/sort/QSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/sort/ShellSortAlgorithm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/sort/SimpleSelectionSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/spring/DynamicProxy/DynamicProxyByCglib.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/spring/DynamicProxy/DynamicProxyByJDK$MyInvocationHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/spring/DynamicProxy/DynamicProxyByJDK.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/structure/list/LruCache$CacheIterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/structure/list/LruCache$CacheNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/structure/list/LruCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/structure/list/MyArrayList$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/structure/list/MyArrayList$MyIterator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/structure/list/MyArrayList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/structure/map/MapForeach.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/structure/queue/TwoStackImplQueue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/structure/stack/MyStack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/structure/stack/TwoQueueImplStack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/structure/tree/BinaryTree$TreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/structure/tree/BinaryTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/structure/tree/CompleteTree$TreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/structure/tree/CompleteTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/structure/tree/ThreadLocalTest$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/structure/tree/ThreadLocalTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/classes/com/basic/utils/CommonUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/test-classes/com/basic/algorithm/TimeWheelTest$TestClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/test-classes/com/basic/algorithm/TimeWheelTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/test-classes/com/basic/reference/SoftReferenceCacheTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/test-classes/com/basic/solution/TopKSolutionTest$ThreadHelper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/test-classes/com/basic/solution/TopKSolutionTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/test-classes/com/basic/sort/HeapSortTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/test-classes/com/basic/sort/QsortTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/test-classes/com/basic/spring/proxy/DynamicProxyByCglibTest$CglibProxyServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/test-classes/com/basic/spring/proxy/DynamicProxyByCglibTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/test-classes/com/basic/spring/proxy/DynamicProxyByJDKTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/test-classes/com/basic/spring/proxy/IProxyService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/test-classes/com/basic/structure/list/LruCacheTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/test-classes/com/basic/structure/list/MyArrayListTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/test-classes/com/basic/structure/queue/StackImplQueueTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/test-classes/com/basic/structure/stack/MyStackTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/test-classes/com/basic/structure/stack/TwoQueueImplStackTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/test-classes/com/basic/structure/tree/BinaryTreeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/target/test-classes/com/basic/structure/tree/CompleteTreeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data-structure-algorithm/update_log.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/error/base_error.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/error/base_error.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/bigfile/AbstractBigFileProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/bigfile/AbstractBigFileProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/FileUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/resources/log4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/resources/log4j.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/bigfile/AbstractBigFileProcessorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/bigfile/AbstractBigFileProcessorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/utils/CommonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/utils/CommonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/AbstractBigFileProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/AbstractBigFileProcessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/FileUtil$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/FileUtil$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/FileUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/FileUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/log4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/log4j.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/AbstractLoginServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/Exception/QueueLoginRangeException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/QueueConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/QueueLogin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/model/BaseObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/model/QueueLoginResultInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/service/BackLoginThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/service/QueueLoginService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/service/impl/QueueLoginServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/AbstractBigFileProcessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/BigFileConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/BigFileServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/BigFileUploadProcessInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/ChunkCreateResp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/ChunkHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/ChunkInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/DefaultBigFileProcessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/FileChunkDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/FileChunkProcessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/FileInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/MemoryChunkHandler$ChunkHolder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/MemoryChunkHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/ProcessResp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/AbstractReferenceCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/ClearStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/IReferenceCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/ObjectCreateStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/ObjectInfoThreadLocalCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/soft/AbstractCHMSoftReferenchCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/soft/CHMSoftReferenceCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/soft/SofReferenceCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/soft/SoftReferenceInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dao/IManualDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/BaseWrapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/BatchInsertReq.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/BatchInsertReqWrapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/CommonDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/ResultDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/SelectReq.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/SelectReqWrapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/enums/RestAPIStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/exception/BaseBussException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/exception/FTPBusynessException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/exception/FTPConfigException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/exception/SFTPDataTransferException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/exception/SFTPLoginException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/AbstractFIleStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/BlockingPool.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/DefaultFileService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FTPClientPool$FTPBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FTPClientPool.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FTPFileService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FastDFSConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FastDFSServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FileStrategyContext.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/IFileStrategy$BatchFileUploadWrapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/IFileStrategy$BatchFileUploadWrapperResp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/IFileStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/SFTPFileService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/UploadResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/framework/BeanSelefAwarePostProcessor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/framework/IBeanSelfAware.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/json/GsonInterfaceAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mail/AbstractEmailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mail/DefalutEmailServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mail/IEmailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mail/factory/AbstractEmailFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mail/factory/DefaultEmailServiceFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mail/property/EmailProperty.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/model/HttpClientResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/model/TwoTuple.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/AbstractMQConfirmCallback.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/AppEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/AppEventConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/AppEventPublisher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/AppEventRabbitMQPublish.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/BaseCorrelationData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/LogEventPublisher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/MicroCorrelationData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/consumer/abs/AbstractAppeventConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/consumer/abs/AbstractBaseConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/consumer/abs/AbstractChannleAppeventConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/converters/JSONMessageConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/AbstractMultipartDBPageService$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/AbstractMultipartDBPageService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/AbstractPageService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/PageBaseService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/PageExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/PageRequestDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/PageResponseDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/SingleDBPageRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/SingleDBPageResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/service/IValidater.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/service/IdWorkerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/service/IdWorkerServiceTwitter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/AbstractSQLExtentionModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/AbstractSQLExtentionpProxyBaseCRUDDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/ISQLExtentionBaseCRUDDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/ISQLExtentionConfigBaseCRUDDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionConfigProperty.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionDaoWrapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionHolderV3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionInfo$DBInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionInfo$TableInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/service/ISQLExtentionBaseCRUDService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/service/abs/AbstractSQLExtentionProxyBaseCRUDService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/template/BaseTemplatePattern.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/template/BaseTemplatePatternV2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/template/BaseTemplatePatternV3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/tree/TreeComposite.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/CollectionUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/CommonUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/CryptUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/DateUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/DebugUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/FileUtil$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/FileUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/HttpUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/IDGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/IDNoChecker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/IPUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/ImgUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/JSONUtil$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/JSONUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/KeyUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/PageResultUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/QRCodeUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/RSAUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/ResultUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/SFTPUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/UrlUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/VUtils.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/target/myLibrary-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/myLibrary-1.0.jar" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,13 +533,48 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/go/crypt/encrypt.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="36">
               <caret line="197" column="32" selection-start-line="197" selection-start-column="32" selection-end-line="197" selection-end-column="32" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go/blockchain/blockchian.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
+              <folding>
+                <element signature="e#147#772#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/go/blockchain/base.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3845">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../vlink.com/v2/vlink-common/base/fabric/base.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="131" column="5" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/go/constants/wechat.go">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -59,7 +594,13 @@
       <find>wkhtmltopdf</find>
       <find>remove</find>
       <find>int64</find>
+      <find>base2.</find>
+      <find>error2</find>
+      <find>buss.</find>
     </findStrings>
+    <replaceStrings>
+      <replace>error3</replace>
+    </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/specialLib</dir>
       <dir>$PROJECT_DIR$/go/utils</dir>
@@ -90,6 +631,11 @@
         <option value="$PROJECT_DIR$/go/utils/pdf.go" />
         <option value="$PROJECT_DIR$/go/utils/http.go" />
         <option value="$PROJECT_DIR$/go/utils/http_test.go" />
+        <option value="$PROJECT_DIR$/go/error/result.go" />
+        <option value="$PROJECT_DIR$/go/blockchain/validate.go" />
+        <option value="$PROJECT_DIR$/go/error/base_error.go" />
+        <option value="$PROJECT_DIR$/go/blockchain/blockchian.go" />
+        <option value="$PROJECT_DIR$/go/blockchain/base.go" />
       </list>
     </option>
   </component>
@@ -105,9 +651,48 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-library" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-library" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-library" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
+              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-library" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-library" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
+              <item name="constants" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-library" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
+              <item name="error" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-library" type="462c0819:PsiDirectoryNode" />
+              <item name="specialLib" type="462c0819:PsiDirectoryNode" />
+            </path>
             <path>
               <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
@@ -117,11 +702,131 @@
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Go SDK 1.13.8" type="20ee2d1f:SyntheticLibraryElementNode" />
             </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;go-library&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;go-library&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;go-library&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;go-library&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;go-library&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;go-library&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;go-library&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="constants" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;go-library&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vlink.com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;go-library&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vlink.com" type="462c0819:PsiDirectoryNode" />
+              <item name="v2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;go-library&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vlink.com" type="462c0819:PsiDirectoryNode" />
+              <item name="v2" type="462c0819:PsiDirectoryNode" />
+              <item name="vlink-common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;go-library&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vlink.com" type="462c0819:PsiDirectoryNode" />
+              <item name="v2" type="462c0819:PsiDirectoryNode" />
+              <item name="vlink-common" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;go-library&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vlink.com" type="462c0819:PsiDirectoryNode" />
+              <item name="v2" type="462c0819:PsiDirectoryNode" />
+              <item name="vlink-common" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+              <item name="fabric" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;go-library&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vlink.com" type="462c0819:PsiDirectoryNode" />
+              <item name="v2" type="462c0819:PsiDirectoryNode" />
+              <item name="vlink-common" type="462c0819:PsiDirectoryNode" />
+              <item name="constants" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="GOPATH &lt;go-library&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vlink.com" type="462c0819:PsiDirectoryNode" />
+              <item name="v2" type="462c0819:PsiDirectoryNode" />
+              <item name="vlink-common" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -135,7 +840,13 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/go/constants" />
+      <recent name="$PROJECT_DIR$/go/blockchain" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/go/error" />
+      <recent name="$PROJECT_DIR$/go/blockchain" />
       <recent name="$PROJECT_DIR$/go/utils" />
     </key>
   </component>
@@ -252,7 +963,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28612304" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29041487" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -265,7 +976,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.42168674" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.06626506" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -573,6 +1284,90 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="197" column="32" selection-start-line="197" selection-start-column="32" selection-end-line="197" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../vlink.com/v2/vlink-common/models/resp.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/common/error.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/constants/base.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-64" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/constants/wechat.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/constants/result.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-352">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/services/validater.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/blockchain/validate.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/error/base.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/error/base_error.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="36" column="39" lean-forward="true" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../vlink.com/v2/vlink-common/base/fabric/base.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="131" column="5" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../vlink.com/v2/vlink-rpc/models/buss/blockchain.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="28" selection-start-line="28" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/blockchain/blockchian.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#147#772#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/blockchain/base.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3845">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>

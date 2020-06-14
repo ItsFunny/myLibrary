@@ -138,7 +138,7 @@ public class AbstractBigFileProcessorTest
                 int uploadedSize = info.getUploadedSize();
                 int chunkSize = info.getChunkSize();
                 float per = (float) uploadedSize / chunkSize;
-                System.out.println(String.format("chunk={%s} 进度为{%s}, {%s}", md5, per * 100 + "%", StringUtils.repeat(">", (int) (per * 100))));
+//                System.out.println(String.format("chunk={%s} 进度为{%s}, {%s}", md5, per * 100 + "%", StringUtils.repeat(">", (int) (per * 100))));
                 percentage = per * 100;
                 try
                 {

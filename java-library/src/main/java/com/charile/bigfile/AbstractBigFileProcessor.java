@@ -1,6 +1,7 @@
 package com.charile.bigfile;
 
 import com.charile.utils.FileUtil;
+import com.sun.org.apache.xpath.internal.WhitespaceStrippingElementMatcher;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
@@ -100,8 +101,13 @@ public abstract class AbstractBigFileProcessor implements FileChunkProcessor
         try
         {
             int bytesRead = 0;
-            long lastWrite = chunkInfo.getUploadedSize();
+            int lastWrite = chunkInfo.getUploadedSize();
             log.debug("processId:{} 碎片:{},上次写入的位置为:{}", req.getProcessId(), req.getChunkMd5(), lastWrite);
+            // 将输入写新定位到写入的位置
+            if (lastWrite > 0)
+            {
+                bufferInput.skip(lastWrite);
+            }
             while ((bytesRead = bufferInput.read(buffer)) != -1)
             {
                 // 写入到文件中
@@ -110,7 +116,7 @@ public abstract class AbstractBigFileProcessor implements FileChunkProcessor
                 lastWrite += bytesRead;
                 // 更新chunk
                 chunkInfo.setUploadedSize(chunkInfo.getUploadedSize() + bytesRead);
-//                log.debug("跟新该chunk已经读取的字节数:{},百分比为:{}", chunkInfo.getUploadedSize(), (float) chunkInfo.getUploadedSize() / chunkInfo.getChunkSize());
+                log.debug("跟新该chunk已经读取的字节数:{},百分比为:{}", chunkInfo.getUploadedSize(), (float) chunkInfo.getUploadedSize() / chunkInfo.getChunkSize());
                 this.chunkHandler.updateChunk(req.getProcessId(), chunkInfo);
             }
             chunkInfo.setStatus(BigFileConstants.CHUNK_SUCCESS);

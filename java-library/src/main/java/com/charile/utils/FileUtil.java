@@ -79,7 +79,7 @@ public class FileUtil
             {
                 // 生成文件的路径
                 String newChunkName = chunkFileName + i;
-                System.out.println("创建文件:" + newChunkName);
+//                System.out.println("创建文件:" + newChunkName);
                 out = new FileOutputStream(new File(newChunkName));
                 outChannel = out.getChannel();
                 // 从inChannel的m*i处，读取固定长度的数据，写入outChannel
