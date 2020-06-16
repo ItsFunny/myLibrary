@@ -30,15 +30,27 @@ func NewJSONSerializeError(e error, msg string) *BaseError {
 	return NewBaseError(e, constants2.JSON_SERIALIZE_ERROR_CODE, msg)
 }
 func NewArguError(e error, msg string) IBaseError {
-		return  NewBaseError(e, constants2.ARGUMENT_ERROR_CODE, msg)
+	return NewBaseError(e, constants2.ARGUMENT_ERROR_CODE, msg)
 }
 
 func NewFabricError(e error, msg string) IBaseError {
-	return  NewBaseError(e, constants2.FABRIC_ERROR_CODE, msg)
+	return NewBaseError(e, constants2.FABRIC_ERROR_CODE, msg)
 }
 func NewRecordNotExistError(msg string) IBaseError {
-		return NewBaseError(nil, constants2.RECORD_NOT_EXIST_ERROR, msg)
+	return NewBaseError(nil, constants2.RECORD_NOT_EXIST_ERROR, msg)
 }
+
+func NewConfigError(e error, msg string) IBaseError {
+	return NewBaseError(e, constants2.CONFIG_ERROR_CODE, msg)
+}
+
+func NewSystemError(e error, msg string) IBaseError {
+	return NewBaseError(e, constants2.SYSTEM_ERROR_CODE, msg)
+}
+func ErrorsWithMessage(err error, msg string) IBaseError {
+	return NewBaseError(err, constants2.FAIL, msg)
+}
+
 func (e *BaseError) Error() string {
 	if nil != e.Cause {
 		return e.Msg + ":" + e.Cause.Error()

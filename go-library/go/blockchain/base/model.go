@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 # @Author : joker
 # @Time : 2020-06-14 16:37 
-# @File : base.go
+# @File : go
 # @Description : 
 # @Attention : 
 */
-package config
+package base
 
 import (
 	"encoding/hex"
@@ -17,23 +17,7 @@ import (
 	"myLibrary/go-library/go/converters"
 )
 
-type TransBaseType int
-type ChannelID string
-type OrganizationID string
-type ChainCodeID string
-type MethodName string
-// 代表区块链上的key
-type Key string
-// fromWalletAddress 从哪个钱包过来的
-type From string
-// toWalletAddress 去往哪个钱包的
-type To string
-// token 交易coin
-type Token float64
-type Version uint64
 
-type TransBaseTypeV2 authentication.Authority
-type TransBaseTypeV2Value authentication.AuthValue
 
 func (this TransBaseTypeV2) String() string {
 	return hex.EncodeToString(this.BigEndianConvtBytes())
@@ -149,6 +133,7 @@ type ServiceLogicBaseResp struct {
 type ChainBaseReq struct {
 	MethodName  MethodName
 	ChannelID   ChannelID
+	OrganizationID OrganizationID
 	ChainCodeID ChainCodeID
 }
 
@@ -157,4 +142,92 @@ type BSBlockChainGetTransactionDetailReqBO struct {
 	NeedArgs  bool   `json:"needArgs"`
 	TxID      string `json:"txId"`
 	ChannelId string `json:"channelId"`
+}
+
+
+
+type BCBase struct {
+	Key   Key   `json:"key"`
+	From  From  `json:"from"`
+	To    To    `json:"to"`
+	Token Token `json:"token"`
+}
+
+type BCPutStateReq struct {
+	BCBase
+	// 是否需要加密
+	NeedEncrypt bool
+}
+
+func (r BCPutStateReq) String() string {
+	str := fmt.Sprintf("{ Key=[%+v] From=[%+v],To=[%+v],Token=[%+v],NeedEncrypt=[%+v] }", r.Key, r.From, r.To, r.To, r.NeedEncrypt)
+	return str
+}
+
+type BCGetStateResp struct {
+	BCBase
+	// 是否需要解密,True代表update的时候需要加密
+	NeedDecrypt bool
+}
+
+
+type BCBaseNodeInfo struct {
+	From       From            `json:"from"`
+	To         To              `json:"to"`
+	Token      Token           `json:"token"`
+	Version    Version         `json:"version"`
+	TxBaseType TransBaseTypeV2 `json:"txBaseType"`
+	// 是否是加密数据
+	Encrypted bool `json:"encrypted"`
+
+	// 遗留字段
+	LeftBytes []byte `json:"leftBytes"`
+}
+
+func GetRegularInfoV2(bs []byte) (BCBaseNodeInfo, []byte) {
+	defer func() {
+		recover()
+	}()
+	// baseTypes := bs[0:8]
+	l := len(bs)
+	fromWalletBytes := bs[constants.FROM_WALLET_ADDRESS_BEGIN:constants.FROM_WALLET_ADDRESS_EDN]
+	toWalletBytes := bs[constants.TO_WALLET_ADDRESS_BEGIN:constants.TO_WALLET_ADDRESS_END]
+	transAmount := bs[constants.TRANS_AMOUNT_INDEX_BEGIN:constants.TRANS_AMOUNT_INDEX_END]
+	versionType := bs[constants.VERSION_TYPE_INDEX_BEGIN:constants.VERSION_TYPE_INDEX_END]
+	baseTypeLength := bs[constants.BASE_TYPE_BYTE_INDEX]
+	leftBytes := bs[constants.LEFT_BYTE_BGEIN:constants.LEFT_BYTE_END]
+
+	typeIndex := l - int(baseTypeLength*8)
+	baseTypes := bs[typeIndex:l]
+
+	m := BCBaseNodeInfo{
+		From: From(fromWalletBytes),
+		// To:         To(toWalletBytes),
+		Token:      Token(converter.BigEndianBytesToFloat64(transAmount)),
+		Version:    Version(converter.BigEndianBytes2Int64(versionType)),
+		TxBaseType: ConvBytes2TransBaseTypeV2(baseTypes),
+	}
+
+	if toWalletBytes[0] == 0 && toWalletBytes[31] == 0 {
+		m.To = ""
+	} else {
+		m.To = To(toWalletBytes)
+	}
+	if bs[constants.CRYPT_INDEX] == 1 {
+		m.Encrypted = true
+	}
+	m.LeftBytes = leftBytes
+
+	return m, bs[constants.VLINK_COMMON_INDEX_END:typeIndex]
+}
+func ConvBytes2TransBaseTypeV2(bytes []byte) TransBaseTypeV2 {
+	authorities, _ := authentication.BigEndianConvtBytes2Authority(bytes)
+	return TransBaseTypeV2(authorities)
+}
+
+type InvokeBaseReq struct {
+	ChannelName   string
+	ChaincodeName string
+	MethodName    MethodName
+	Data          interface{}
 }
