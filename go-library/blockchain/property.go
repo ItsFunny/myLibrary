@@ -9,8 +9,9 @@
 package config
 
 import (
+	"github.com/hyperledger/fabric-sdk-go/pkg/client/resmgmt"
 	"github.com/hyperledger/fabric-sdk-go/pkg/fabsdk"
-	"myLibrary/go-library/blockchain/base"
+	"myLibrary/go-library/common/blockchain/base"
 )
 
 // cc的配置
@@ -23,11 +24,16 @@ type ChainCodeProperties struct {
 }
 
 type Peer struct {
+	AnchorPeers   []AnchorPeer   `yaml:"anchorPeers"`
+	EndorserPeers []EndorserPeer `yaml:"endorserPeers"`
+}
+
+type AnchorPeer struct {
 	Address string `yaml:"address" json:"address"`
 	Port    int    `yaml:"port" json:"port"`
 }
 
-type AnchorPeer struct {
+type EndorserPeer struct {
 	Address string `yaml:"address" json:"address"`
 	Port    int    `yaml:"port" json:"port"`
 	// 这个peer上要挂载哪些cc
@@ -63,8 +69,7 @@ type OrganizationProperties struct {
 	Users []UserProperties `yaml:"users" json:"users"`
 
 	// 该组织下的peer节点
-	Peers []PeerProperties `yaml:"peers" json:"peers"`
-
+	Peer Peer `yaml:"peer"`
 	// ca 信息
 	Ca CaProperties `yaml:"ca" json:"ca"`
 }
@@ -116,14 +121,26 @@ type ChannelProperties struct {
 	NeedListOnBlockEvent bool `yaml:"needListOnBlockEvent" json:"needListOnBlockEvent"`
 }
 
+// 获取这个channel的所有组织
+func (c ChannelProperties) GetChannelAllPeersTarget() resmgmt.RequestOption {
+	results := make([]string, 0)
+	for _, org := range c.Organizations {
+		for _, p := range org.Peer.AnchorPeers {
+			results = append(results, p.Address)
+		}
+		for _, p := range org.Peer.EndorserPeers {
+			results = append(results, p.Address)
+		}
+	}
+	return resmgmt.WithTargetEndpoints(results...)
+}
+
 func (this ChannelProperties) GetInterestBlockEventChainCodes() []string {
 	results := make([]string, 0)
 	for _, org := range this.Organizations {
-		for _, pp := range org.Peers {
-			for _, anchorPeer := range pp.AnchorPeers {
-				for _, chaincode := range anchorPeer.ChainCodes {
-					results = append(results, string(chaincode.ChainCodeID))
-				}
+		for _, p := range org.Peer.EndorserPeers {
+			for _, chaincode := range p.ChainCodes {
+				results = append(results, string(chaincode.ChainCodeID))
 			}
 		}
 	}

@@ -11,22 +11,24 @@ package cc
 import (
 	"github.com/hyperledger/fabric-chaincode-go/shim"
 	"github.com/hyperledger/fabric-protos-go/peer"
+	error2 "myLibrary/go-library/common/error"
 	"myLibrary/go-library/go/base/service"
-	error3 "myLibrary/go-library/go/error"
 )
 
 type IBaseChainCode interface {
 	shim.Chaincode
-	Config() error3.IBaseError
+	Config() error2.IBaseError
 }
 
+// 处理具体的业务逻辑
 type IConcreteChainCode interface {
-	InitDetail(stub shim.ChaincodeStubInterface) error3.IBaseError
+	InitDetail(stub shim.ChaincodeStubInterface) error2.IBaseError
 	InvokeDetail(stub shim.ChaincodeStubInterface)BasePeerResponse
-	ConfigDetail() error3.IBaseError
+	ConfigDetail() error2.IBaseError
 }
 
 
+// chaincode的抽象类
 type BaseChainCodeServiceImpl struct {
 	*service.BaseServiceImpl
 	ConcreteChainCode IConcreteChainCode
@@ -61,29 +63,19 @@ func (v *BaseChainCodeServiceImpl) Invoke(stub shim.ChaincodeStubInterface) peer
 	return resp.Response
 }
 
-func (v *BaseChainCodeServiceImpl) Config() error3.IBaseError {
+func (v *BaseChainCodeServiceImpl) Config() error2.IBaseError {
 	return v.ConcreteChainCode.ConfigDetail()
 }
 
 // type IChaincodeFacadedService interface {
 // 	log.Logger
-// 	ValidateArguAndReturn(method base.MethodName, args []string) (models.BaseFabricAfterValidModel, error3.IBaseError)
+// 	ValidateArguAndReturn(method base.MethodName, args []string) (models.BaseFabricAfterValidModel, error2.IBaseError)
 // }
 
 // 参数加解密
 
 // type IArgumentDecrypt interface {
-// 	Decrypt(argu interface{}, version string) (interface{}, error3.IBaseError)
+// 	Decrypt(argu interface{}, version string) (interface{}, error2.IBaseError)
 // 	SetParent(c IChaincodeFacadedService)
 // }
 
-
-// version,from
-type BasePeerResponse struct {
-	peer.Response
-	// Version             uint64
-	// From                From
-	// To                  To
-	// Token               Token
-	// BaseTransactionType TransBaseType
-}

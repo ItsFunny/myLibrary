@@ -10,7 +10,7 @@ package wrapper
 
 import (
 	"github.com/hyperledger/fabric-sdk-go/pkg/client/msp"
-	"myLibrary/go-library/blockchain/base"
+	"myLibrary/go-library/common/blockchain/base"
 )
 
 type MspOrganizationCaInfo struct {

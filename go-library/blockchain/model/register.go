@@ -8,7 +8,7 @@
 */
 package model
 
-import "myLibrary/go-library/blockchain/base"
+import "myLibrary/go-library/common/blockchain/base"
 
 type UserRegisterReq struct {
 	Oid base.OrganizationID

@@ -19,8 +19,8 @@ const (
 	SYSTEM_ERROR_CODE = 1<<6 | FAIL
 	// 数据库错误
 	DB_ERROR_CODE = 1<<7 | FAIL
-	// fabric调用错误
-	FABRIC_ERROR_CODE = 1<<8 | FAIL
+
+
 	// 参数错误
 	ARGUMENT_ERROR_CODE = 1<<9 | FAIL
 	// 配置错误
@@ -28,8 +28,6 @@ const (
 	// json序列化错误
 	JSON_SERIALIZE_ERROR_CODE    = 1<<11 | FAIL
 	JSON_UN_SERIALIZE_ERROR_CODE = 1<<12 | FAIL
-	// 跨链调用失败
-	OVER_CHAINCODE_INVOKE_ERROR = 1<<13 | FAIL
 
 
 	// http失败
@@ -37,12 +35,9 @@ const (
 
 	SPIDE_ERROR = 1<<15 | FAIL
 
-	// 账本错误
-	FABRIC_LEDGER_ERROR = 1<<16 | FAIL
+
 	CRYPT_ERROR         = 1<<17 | FAIL
 	// 系统错误
-
-	USER_REGISTRATION_ERROR=1<<18|FAIL
 
 	// 需要外抛的错误
 	RETURN_ERROR_CODE = 1<<32 | FAIL

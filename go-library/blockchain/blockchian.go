@@ -26,17 +26,26 @@ import (
 	"github.com/hyperledger/fabric-sdk-go/third_party/github.com/hyperledger/fabric/common/cauthdsl"
 	"gopkg.in/yaml.v1"
 	"io/ioutil"
-	"myLibrary/go-library/blockchain/base"
 	error2 "myLibrary/go-library/blockchain/error"
 	"myLibrary/go-library/blockchain/model"
 	"myLibrary/go-library/blockchain/wrapper"
+	"myLibrary/go-library/common"
+	"myLibrary/go-library/common/blockchain/base"
+	error3 "myLibrary/go-library/common/error"
 	"myLibrary/go-library/go/converters"
-	error3 "myLibrary/go-library/go/error"
 	"myLibrary/go-library/go/log"
 	"strconv"
 	"strings"
 	"time"
 )
+
+type AfterSetupOption func(BlockChainProperties) error3.IBaseError
+
+type ConfigWrapper struct {
+	// BlockHandler     handler.IBlockHandler
+	SetupBlockEventExecutor SetupBlockEventExecutor
+	AfterSetupOption []AfterSetupOption
+}
 
 type OrganizationChannelClientInfo struct {
 	Client *channel.Client
@@ -111,6 +120,9 @@ type ExecuteReq struct {
 	ReqData        interface{}
 }
 
+func (this *BlockChainConfiguration) CallWithNewClient() {
+}
+
 func (this *BlockChainConfiguration) Execute(executeReq ExecuteReq) (base.ServiceLogicBaseResp, []byte, error3.IBaseError) {
 	// name base.MethodName, id base.ChannelID, codeID ChainCodeID, req interface{}
 	name := executeReq.MethodName
@@ -134,20 +146,38 @@ func (this *BlockChainConfiguration) Execute(executeReq ExecuteReq) (base.Servic
 	logicRes.LogicCode = int(converter.BigEndianBytes2Int64(resp.CodeBytes))
 	logicRes.LogicMsg = string(resp.MsgBytes)
 	logicRes.LogBytes = resp.LogBytes
-	if e := json.Unmarshal(resp.OtherBytes, logicRes.CommAttribute); nil != e {
-		return logicRes, nil, error2.NewJSONSerializeError(e, "CommAttribute反序列化失败")
+	if resp.OtherBytes != nil && len(resp.OtherBytes) > 0 {
+		this.Log.Debug("otherBytes的数据为:%s", string(resp.OtherBytes))
+		if e := json.Unmarshal(resp.OtherBytes, &logicRes.CommAttribute); nil != e {
+			return logicRes, nil, error3.NewJSONSerializeError(e, "CommAttribute反序列化失败")
+		}
 	}
 
 	return logicRes, resp.DataBytes, e
 }
 
+func (this *BlockChainConfiguration) ExecuteWithPureBytes(executeReq ExecuteReq) (channel.Response, error3.IBaseError) {
+	// name base.MethodName, id base.ChannelID, codeID ChainCodeID, req interface{}
+	name := executeReq.MethodName
+	id := executeReq.ChannelID
+	codeID := executeReq.ChainCodeID
+	req := executeReq.ReqData
+	response, baseError := this.defaultExecute(base.ChainBaseReq{
+		MethodName:     name,
+		ChannelID:      id,
+		OrganizationID: executeReq.OrganizationID,
+		ChainCodeID:    codeID,
+	}, req)
+	return response, baseError
+}
+
 func (this *BlockChainConfiguration) defaultExecute(b base.ChainBaseReq, req interface{}) (channel.Response, error3.IBaseError) {
 	var d interface{}
 	switch req.(type) {
-	case base.ICrypter:
-		encrypt, e := req.(base.ICrypter).Encrypt(this.Version)
+	case common.ICrypter:
+		encrypt, e := req.(common.ICrypter).Encrypt(this.Version)
 		if nil != e {
-			return channel.Response{}, error2.NewArguError(e, "参数加密失败")
+			return channel.Response{}, error3.NewArguError(e, "参数加密失败")
 		}
 		d = encrypt
 	default:
@@ -168,7 +198,7 @@ func (this *BlockChainConfiguration) execute(b base.ChainBaseReq, data interface
 
 	bytes, e := json.Marshal(data)
 	if e != nil {
-		return channel.Response{}, error2.NewJSONSerializeError(e, fmt.Sprintf("序列化data=[%v]", data))
+		return channel.Response{}, error3.NewJSONSerializeError(e, fmt.Sprintf("序列化data=[%v]", data))
 	}
 	args = append(args, string(bytes))
 	adminClient := this.clientWrapper.clients[b.ChannelID].Clients[b.OrganizationID].Client
@@ -193,7 +223,7 @@ func (this *BlockChainConfiguration) ExecuteWithClient(client *channel.Client, b
 
 	bytes, e := json.Marshal(data)
 	if e != nil {
-		return channel.Response{}, error2.NewJSONSerializeError(e, fmt.Sprintf("序列化data=[%v]", data))
+		return channel.Response{}, error3.NewJSONSerializeError(e, fmt.Sprintf("序列化data=[%v]", data))
 	}
 	args = append(args, string(bytes))
 	response, err := client.Execute(channel.Request{
@@ -226,39 +256,50 @@ func HandleResponse(response channel.Response) (base.BaseFabricResp, error3.IBas
 
 	e := json.Unmarshal(bytes, &resp)
 	if nil != e {
-		return resp, error2.NewJSONSerializeError(e, "反序列化结构体失败")
+		return resp, error3.NewJSONSerializeError(e, "反序列化结构体失败")
 	}
 
 	return resp, nil
 }
 
-func (setUp *BlockChainConfiguration) Config(path string) error3.IBaseError {
+func (setUp *BlockChainConfiguration) Config(path string, configWrapper ConfigWrapper) error3.IBaseError {
 	properties, baseError := setUp.loadYaml(path)
 	if baseError != nil {
 		return baseError
 	}
-	return setUp.doConfig(properties)
+	if e := setUp.doConfig(properties, configWrapper); nil != e {
+		return e
+	}
+	if nil != configWrapper.AfterSetupOption {
+		for _, after := range configWrapper.AfterSetupOption {
+			if e := after(*properties); nil != e {
+				return e
+			}
+		}
+	}
+	return nil
 }
 
 func (setUp *BlockChainConfiguration) loadYaml(path string) (*BlockChainProperties, error3.IBaseError) {
 	var conf BlockChainProperties
 	bytes, err := ioutil.ReadFile(path)
 	if nil != err {
-		return nil, error2.NewConfigError(err, "读取文件错误,path="+path)
+		return nil, error3.NewConfigError(err, "读取文件错误,path="+path)
 	}
 	err = yaml.Unmarshal(bytes, &conf)
 	if nil != err {
 		fmt.Println("yaml unmarshal occur err:" + err.Error())
-		return nil, error2.NewConfigError(err, "yaml反序列化错误")
+		return nil, error3.NewConfigError(err, "yaml反序列化错误")
 	}
 	return &conf, nil
 }
-func (setUp *BlockChainConfiguration) doConfig(p *BlockChainProperties) error3.IBaseError {
+
+func (setUp *BlockChainConfiguration) doConfig(p *BlockChainProperties, wrapper ConfigWrapper) error3.IBaseError {
 	if e := setUp.initialize(*p); nil != e {
 		return e
 	}
 
-	if e := setUp.InstallAndInstantiateCC(*p); nil != e {
+	if e := setUp.InstallAndInstantiateCC(*p, wrapper); nil != e {
 		return e
 	}
 
@@ -294,7 +335,7 @@ func (setUp *BlockChainConfiguration) initialize(p BlockChainProperties) error3.
 			admin, e := resmgmt.New(resourceManagerClientContext)
 			if nil != e {
 				s := fmt.Sprintf("初始化组织为[%s]的资源管理器失败:%s", organization.OrganizationID, e.Error())
-				return error2.NewConfigError(e, s)
+				return error3.NewConfigError(e, s)
 			}
 			if setUp.adminResourceWrapper == nil {
 				w := new(ResourceAdminWrapper)
@@ -334,59 +375,61 @@ func (setUp *BlockChainConfiguration) initialize(p BlockChainProperties) error3.
 			fmt.Println("end 组装identites")
 			fmt.Println("end 初始化msp-client")
 
-			for _, peer := range organization.Peers {
-				fmt.Println("begin 查询已经存在的channel")
-				channelResp, e := admin.QueryChannels(resmgmt.WithTargetEndpoints(peer.AnchorPeers[0].Address))
-				if nil != e {
-					return error2.NewConfigError(e, fmt.Sprintf("查询anchorpeer=[%s]上的channel失败:%s", peer.AnchorPeers[0].Address, e.Error()))
-				}
-				fmt.Println("end 查询已经存在的channel")
+			fmt.Println("begin 查询已经存在的channel")
+			channelResp, e := admin.QueryChannels(resmgmt.WithTargetEndpoints(organization.Peer.EndorserPeers[0].Address))
+			if nil != e {
+				return error3.NewConfigError(e, fmt.Sprintf("查询anchorpeer=[%s]上的channel失败:%s", organization.Peer.EndorserPeers[0].Address, e.Error()))
+			}
+			fmt.Println("end 查询已经存在的channel")
 
-				fmt.Println("begin 判断channel是否已经存在")
-				if nil != channelResp {
-					for _, c := range channelResp.Channels {
-						if strings.EqualFold(c.ChannelId, string(channel.ChannelID)) {
-							channelCreated = true
-							break
-						}
+			fmt.Println("begin 判断channel是否已经存在")
+			if nil != channelResp {
+				for _, c := range channelResp.Channels {
+					if strings.EqualFold(c.ChannelId, string(channel.ChannelID)) {
+						channelCreated = true
+						break
 					}
-				}
-
-				// p := models.VlinkPeer{
-				// 	ChannelName: string(channel.base.ChannelID),
-				// 	Domain:      peer.AnchorPeers[0].Address,
-				// 	Port:        peer.AnchorPeers[0].Port,
-				// }
-				if channelCreated {
-					fmt.Println(fmt.Sprintf("channel:[%s]已经存在\n", string(channel.ChannelID)))
-				} else {
-					fmt.Println("begin 创建channel")
-					saveChanReq := resmgmt.SaveChannelRequest{ChannelID: string(channel.ChannelID), ChannelConfigPath: channel.ChannelConfigPath, SigningIdentities: identites}
-					// 获取某个order的keys 即可
-					endPoints := make([]resmgmt.RequestOption, 0)
-					orderP := channel.Orders[0]
-					// endPoints = append(endPoints, resmgmt.WithOrdererEndpoint(orderP.OrdererAddress),
-					// 	resmgmt.WithOrdererEndpoint("orderer2.vlink.link"),
-					// 	resmgmt.WithOrdererEndpoint("orderer3.vlink.link"),
-					// 	resmgmt.WithOrdererEndpoint("orderer4.vlink.link"),
-					// 	resmgmt.WithOrdererEndpoint("orderer5.vlink.link"))
-					endPoints = append(endPoints, resmgmt.WithOrdererEndpoint(orderP.OrdererAddress))
-
-					saveChanResp, e := admin.SaveChannel(saveChanReq, endPoints...)
-					if nil != e || saveChanResp.TransactionID == "" {
-						panic(e)
-					}
-					fmt.Println("end 创建channel,channel创建成功")
-
-					fmt.Println("begin 将节点加入channel")
-					if e = admin.JoinChannel(string(channel.ChannelID), endPoints...); nil != e {
-						s := fmt.Sprintf("channelId=[%s]加入通道失败:%s", channel.ChannelID, e.Error())
-						return error2.NewConfigError(e, s)
-					}
-					fmt.Println("end 将节点加入channel")
 				}
 			}
 
+			// p := models.VlinkPeer{
+			// 	ChannelName: string(channel.base.ChannelID),
+			// 	Domain:      peer.AnchorPeers[0].Address,
+			// 	Port:        peer.AnchorPeers[0].Port,
+			// }
+			if channelCreated {
+				fmt.Println(fmt.Sprintf("channel:[%s]已经存在\n", string(channel.ChannelID)))
+			} else {
+				fmt.Println("begin 创建channel")
+				saveChanReq := resmgmt.SaveChannelRequest{ChannelID: string(channel.ChannelID), ChannelConfigPath: channel.ChannelConfigPath, SigningIdentities: identites}
+				// 获取某个order的keys 即可
+				endPoints := make([]resmgmt.RequestOption, 0)
+				orderP := channel.Orders[0]
+				// endPoints = append(endPoints, resmgmt.WithOrdererEndpoint(orderP.OrdererAddress),
+				// 	resmgmt.WithOrdererEndpoint("orderer2.vlink.link"),
+				// 	resmgmt.WithOrdererEndpoint("orderer3.vlink.link"),
+				// 	resmgmt.WithOrdererEndpoint("orderer4.vlink.link"),
+				// 	resmgmt.WithOrdererEndpoint("orderer5.vlink.link"))
+				endPoints = append(endPoints, resmgmt.WithOrdererEndpoint(orderP.OrdererAddress))
+				endPoints = append(endPoints, channel.GetChannelAllPeersTarget())
+
+				saveChanResp, e := admin.SaveChannel(saveChanReq, endPoints...)
+				if nil != e || saveChanResp.TransactionID == "" {
+					panic(e)
+				}
+				fmt.Println("end 创建channel,channel创建成功")
+
+				setUp.Log.Debug("创建channel成功,sleep 10秒等待raft 选举完毕")
+				time.Sleep(time.Second * 10)
+
+				fmt.Println("begin 将节点加入channel")
+				// resmgmt.WithTargetEndpoints()
+				if e = admin.JoinChannel(string(channel.ChannelID)); nil != e {
+					s := fmt.Sprintf("channelId=[%s]加入通道失败:%s", channel.ChannelID, e.Error())
+					return error3.NewConfigError(e, s)
+				}
+				fmt.Println("end 将节点加入channel")
+			}
 			fmt.Println("begin 创建区块链账本相关")
 
 			cCtx := make([]fabsdk.ContextOption, 0)
@@ -412,120 +455,117 @@ func (setUp *BlockChainConfiguration) initialize(p BlockChainProperties) error3.
 	return nil
 }
 
-func (setUp *BlockChainConfiguration) InstallAndInstantiateCC(p BlockChainProperties) error3.IBaseError {
+func (setUp *BlockChainConfiguration) InstallAndInstantiateCC(p BlockChainProperties, wrapper ConfigWrapper) error3.IBaseError {
 	fmt.Println("begin InstallAndInstantiateCC")
 	for _, ccan := range p.Channels {
 		for _, org := range ccan.Organizations {
-			for _, peer := range org.Peers {
-				for _, anchorPeer := range peer.AnchorPeers {
-					for _, chaincode := range anchorPeer.ChainCodes {
-						fmt.Println(fmt.Sprintf("begin 创建chaincode package,chaincodeId=[%s]"), chaincode.ChainCodeID)
-						ccPackage, e := packager.NewCCPackage(chaincode.ChainCodePath, p.GoPath)
-						if nil != e {
-							panic(e)
-						}
-						fmt.Println("end 创建chaincodepackage")
-						ccIsInstall := false
+			for _, peer := range org.Peer.EndorserPeers {
+				for _, chaincode := range peer.ChainCodes {
+					fmt.Println(fmt.Sprintf("begin 创建chaincode package,chaincodeId=[%s]"), chaincode.ChainCodeID)
+					ccPackage, e := packager.NewCCPackage(chaincode.ChainCodePath, p.GoPath)
+					if nil != e {
+						panic(e)
+					}
+					fmt.Println("end 创建chaincodepackage")
+					ccIsInstall := false
 
-						fmt.Println("begin 查询已经安装的chaincode")
-						admin := setUp.adminResourceWrapper.admins[ccan.ChannelID].admins[org.OrganizationID].Admin
-						anchorAddress := peer.AnchorPeers[0].Address
-						queryInstallCcResp, e := admin.QueryInstalledChaincodes(resmgmt.WithTargetEndpoints(anchorAddress))
-						if nil != e {
-							panic(e)
-						}
+					fmt.Println("begin 查询已经安装的chaincode")
+					admin := setUp.adminResourceWrapper.admins[ccan.ChannelID].admins[org.OrganizationID].Admin
+					endorserAddress := peer.Address
+					queryInstallCcResp, e := admin.QueryInstalledChaincodes(resmgmt.WithTargetEndpoints(endorserAddress))
+					if nil != e {
+						panic(e)
+					}
 
-						fmt.Printf("begin 判断是否已经安装了该[%s]cc \n", chaincode.ChainCodeID)
-						Versions := make([]int, 0)
-						Versions = append(Versions, 0)
-						for _, c := range queryInstallCcResp.Chaincodes {
-							if strings.EqualFold(string(chaincode.ChainCodeID), c.Name) {
-								ccIsInstall = true
-								i, _ := strconv.Atoi(c.Version)
-								Versions = append(Versions, i+1)
-							}
-						}
-
-						fmt.Printf("end 判断是否已经安装了该[%s]cc \n", chaincode.ChainCodeID)
-						if ccIsInstall {
-							fmt.Printf("该cc[%s]已经安装\n", chaincode.ChainCodeID)
-							if chaincode.NeedUpdate {
-								fmt.Println(fmt.Sprintf("链码[%s]需要升级,版本号为:%d", chaincode.ChainCodeID, Versions[len(Versions)-1]))
-								newInstallCCReq := resmgmt.InstallCCRequest{Name: string(chaincode.ChainCodeID), Path: chaincode.ChainCodePath, Version: strconv.Itoa(Versions[len(Versions)-1]), Package: ccPackage}
-								_, err := admin.InstallCC(newInstallCCReq, resmgmt.WithRetry(retry.DefaultResMgmtOpts))
-								if err != nil {
-									return error2.NewConfigError(err, "failed to install chaincode")
-								}
-								fmt.Println("Chaincode install successfully ,begin upgrade")
-								request := resmgmt.UpgradeCCRequest{
-									Name:    string(chaincode.ChainCodeID),
-									Path:    chaincode.ChainCodePath,
-									Version: strconv.Itoa(Versions[len(Versions)-1]),
-								}
-								member := cauthdsl.SignedByMspMember(string(org.OrganizationID))
-								request.Policy = member
-								response, err := admin.UpgradeCC(string(ccan.ChannelID), request)
-								if nil != err {
-									fmt.Println("更新链码失败:", err.Error())
-									return error2.NewConfigError(err, "更新链码失败")
-								} else {
-									fmt.Println(response.TransactionID)
-								}
-								fmt.Println(fmt.Sprintf("更新链码[%s]成功"), chaincode.ChainCodeID)
-							}
-						} else {
-							fmt.Printf("begin 安装[%s]链码\n", chaincode.ChainCodeID)
-							installCcReq := resmgmt.InstallCCRequest{
-								Name:    string(chaincode.ChainCodeID),
-								Path:    chaincode.ChainCodePath,
-								Version: "0",
-								Package: ccPackage,
-							}
-							responses, e := admin.InstallCC(installCcReq, resmgmt.WithRetry(retry.DefaultResMgmtOpts))
-							if nil != e || responses == nil {
-								panic(e)
-							}
-							fmt.Printf("end 安装[%s]链码\n", chaincode)
-						}
-						ccIsInstance := false
-						fmt.Println("begin 查询已经实例化的链码")
-						queryInstanReps, e := admin.QueryInstantiatedChaincodes(string(ccan.ChannelID), resmgmt.WithTargetEndpoints(anchorAddress))
-						if nil != e {
-							s := fmt.Sprintf("查询通道=[%s]上实例化的链码失败:%s", ccan.ChannelID)
-							return error2.NewConfigError(e, s)
-						}
-
-						for _, c := range queryInstanReps.Chaincodes {
-							if strings.EqualFold(c.Name, string(chaincode.ChainCodeID)) {
-								ccIsInstance = true
-								break
-							}
-						}
-						fmt.Println("end 查询已经实例化的链码")
-
-						if ccIsInstance {
-							fmt.Printf("该[%s]已经实例化\n", chaincode.ChainCodeID)
-						} else {
-							fmt.Printf("begin cc[%s]实例化\n", chaincode.ChainCodeID)
-							ccPolicy := cauthdsl.SignedByMspMember(string(org.OrganizationID))
-							instanReq := resmgmt.InstantiateCCRequest{
-								Name:       string(chaincode.ChainCodeID),
-								Path:       chaincode.ChainCodePath,
-								Version:    "0",
-								Args:       [][]byte{[]byte("init"), []byte("init")},
-								Policy:     ccPolicy,
-								CollConfig: nil,
-							}
-							instanResp, e := admin.InstantiateCC(string(ccan.ChannelID), instanReq,
-								resmgmt.WithOrdererEndpoint(ccan.Orders[0].OrdererAddress),
-								resmgmt.WithTargetEndpoints(anchorAddress))
-							if nil != e || instanResp.TransactionID == "" {
-								panic(e)
-							}
-							fmt.Printf("end cc[%s]实例化\n", chaincode.ChainCodeID)
+					fmt.Printf("begin 判断是否已经安装了该[%s]cc \n", chaincode.ChainCodeID)
+					Versions := make([]int, 0)
+					Versions = append(Versions, 0)
+					for _, c := range queryInstallCcResp.Chaincodes {
+						if strings.EqualFold(string(chaincode.ChainCodeID), c.Name) {
+							ccIsInstall = true
+							i, _ := strconv.Atoi(c.Version)
+							Versions = append(Versions, i+1)
 						}
 					}
 
+					fmt.Printf("end 判断是否已经安装了该[%s]cc \n", chaincode.ChainCodeID)
+					if ccIsInstall {
+						fmt.Printf("该cc[%s]已经安装\n", chaincode.ChainCodeID)
+						if chaincode.NeedUpdate {
+							fmt.Println(fmt.Sprintf("链码[%s]需要升级,版本号为:%d", chaincode.ChainCodeID, Versions[len(Versions)-1]))
+							newInstallCCReq := resmgmt.InstallCCRequest{Name: string(chaincode.ChainCodeID), Path: chaincode.ChainCodePath, Version: strconv.Itoa(Versions[len(Versions)-1]), Package: ccPackage}
+							_, err := admin.InstallCC(newInstallCCReq, resmgmt.WithRetry(retry.DefaultResMgmtOpts))
+							if err != nil {
+								return error3.NewConfigError(err, "failed to install chaincode")
+							}
+							fmt.Println("Chaincode install successfully ,begin upgrade")
+							request := resmgmt.UpgradeCCRequest{
+								Name:    string(chaincode.ChainCodeID),
+								Path:    chaincode.ChainCodePath,
+								Version: strconv.Itoa(Versions[len(Versions)-1]),
+							}
+							member := cauthdsl.SignedByMspMember(string(org.OrganizationID))
+							request.Policy = member
+							response, err := admin.UpgradeCC(string(ccan.ChannelID), request)
+							if nil != err {
+								fmt.Println("更新链码失败:", err.Error())
+								return error3.NewConfigError(err, "更新链码失败")
+							} else {
+								fmt.Println(response.TransactionID)
+							}
+							fmt.Println(fmt.Sprintf("更新链码[%s]成功"), chaincode.ChainCodeID)
+						}
+					} else {
+						fmt.Printf("begin 安装[%s]链码\n", chaincode.ChainCodeID)
+						installCcReq := resmgmt.InstallCCRequest{
+							Name:    string(chaincode.ChainCodeID),
+							Path:    chaincode.ChainCodePath,
+							Version: "0",
+							Package: ccPackage,
+						}
+						responses, e := admin.InstallCC(installCcReq, resmgmt.WithRetry(retry.DefaultResMgmtOpts))
+						if nil != e || responses == nil {
+							panic(e)
+						}
+						fmt.Printf("end 安装[%s]链码\n", chaincode)
+					}
+					ccIsInstance := false
+					fmt.Println("begin 查询已经实例化的链码")
+					queryInstanReps, e := admin.QueryInstantiatedChaincodes(string(ccan.ChannelID), resmgmt.WithTargetEndpoints(endorserAddress))
+					if nil != e {
+						s := fmt.Sprintf("查询通道=[%s]上实例化的链码失败:%s", ccan.ChannelID)
+						return error3.NewConfigError(e, s)
+					}
+
+					for _, c := range queryInstanReps.Chaincodes {
+						if strings.EqualFold(c.Name, string(chaincode.ChainCodeID)) {
+							ccIsInstance = true
+							break
+						}
+					}
+					fmt.Println("end 查询已经实例化的链码")
+
+					if ccIsInstance {
+						fmt.Printf("该[%s]已经实例化\n", chaincode.ChainCodeID)
+					} else {
+						fmt.Printf("begin cc[%s]实例化\n", chaincode.ChainCodeID)
+						ccPolicy := cauthdsl.SignedByMspMember(string(org.OrganizationID))
+						instanReq := resmgmt.InstantiateCCRequest{
+							Name:       string(chaincode.ChainCodeID),
+							Path:       chaincode.ChainCodePath,
+							Version:    "0",
+							Args:       [][]byte{[]byte("init"), []byte("init")},
+							Policy:     ccPolicy,
+							CollConfig: nil,
+						}
+						instanResp, e := admin.InstantiateCC(string(ccan.ChannelID), instanReq,
+							resmgmt.WithOrdererEndpoint(ccan.Orders[0].OrdererAddress),
+							resmgmt.WithTargetEndpoints(endorserAddress))
+						if nil != e || instanResp.TransactionID == "" {
+							panic(e)
+						}
+						fmt.Printf("end cc[%s]实例化\n", chaincode.ChainCodeID)
+					}
 				}
 			}
 
@@ -535,7 +575,7 @@ func (setUp *BlockChainConfiguration) InstallAndInstantiateCC(p BlockChainProper
 			channelContext := setUp.sdk.ChannelContext(string(ccan.ChannelID), org.getEnrollUsers()...)
 			channelClient, e := channel.New(channelContext)
 			if nil != e {
-				return error2.NewConfigError(e, "创建通道:"+string(ccan.ChannelID)+"失败")
+				return error3.NewConfigError(e, "创建通道:"+string(ccan.ChannelID)+"失败")
 			}
 
 			if setUp.clientWrapper == nil {
@@ -569,7 +609,7 @@ func (setUp *BlockChainConfiguration) InstallAndInstantiateCC(p BlockChainProper
 				fmt.Println("begin 创建event事件客户端")
 				eveClient, e := event.New(channelContext, event.WithBlockEvents())
 				if nil != e {
-					return error2.NewConfigError(e, "创建通道事件:"+string(ccan.ChannelID)+"失败")
+					return error3.NewConfigError(e, "创建通道事件:"+string(ccan.ChannelID)+"失败")
 				}
 				if setUp.events == nil {
 					eventWrapper := &ChannelEventWrapper{
@@ -585,10 +625,10 @@ func (setUp *BlockChainConfiguration) InstallAndInstantiateCC(p BlockChainProper
 				fmt.Println("begin 创建event事件客户端")
 				registration, events, e := eveClient.RegisterBlockEvent()
 				if nil != e {
-					return error2.NewSystemError(e, "监听block事件失败")
+					return error3.NewSystemError(e, "监听block事件失败")
 				}
 				eveAdapter.blockRegistration = registration
-				RegisterBlockEvent(ccan.ChannelID, ccan.GetInterestBlockEventChainCodes(), events, blockStopEventFlagChan)
+				RegisterBlockEvent(ccan.ChannelID, wrapper.SetupBlockEventExecutor, ccan.GetInterestBlockEventChainCodes(), events, blockStopEventFlagChan)
 
 				fmt.Println("end InstallAndInstantiateCC")
 			}
@@ -605,7 +645,7 @@ func (c *BlockChainConfiguration) Register(req model.UserRegisterReq) (model.Use
 	)
 	mspClient, exist := c.msps.Clients[req.Oid]
 	if !exist {
-		return result, error2.OrganizationNotExistError(nil, "组织不存在")
+		return result, error3.OrganizationNotExistError(nil, "组织不存在")
 	}
 
 	s, e := mspClient.Client.Register(&mspclient.RegistrationRequest{
@@ -618,7 +658,7 @@ func (c *BlockChainConfiguration) Register(req model.UserRegisterReq) (model.Use
 		Secret:         req.Secret,
 	})
 	if nil != e {
-		return result, error2.UserRegistrationError(e, "用户注册失败")
+		return result, error3.UserRegistrationError(e, "用户注册失败")
 	}
 
 	result.EnrollSecret = s
@@ -629,7 +669,7 @@ func (c *BlockChainConfiguration) Register(req model.UserRegisterReq) (model.Use
 func (c *BlockChainConfiguration) Enroll(req model.UserEnrollReq) error3.IBaseError {
 	mspClient, exist := c.msps.Clients[req.Oid]
 	if !exist {
-		return error2.OrganizationNotExistError(nil, "组织不存在")
+		return error3.OrganizationNotExistError(nil, "组织不存在")
 	}
 	if e := mspClient.Client.Enroll(req.UserUniqueKey, req.BuildEnrollOptions()...); nil != e {
 		return error2.NewFabricError(e, "enroll用户失败")
@@ -672,7 +712,7 @@ func (this *BlockChainConfiguration) GetTransactionByTxId(req model.TransactionG
 	ledgerWrapper, exist := this.GetChannelLedgerWrapper(req.ChannelId)
 	channelLedger := ledgerWrapper.Ledger
 	if !exist {
-		return result, error2.NewArguError(nil, "参数channelId找不到匹配的账本")
+		return result, error3.NewArguError(nil, "参数channelId找不到匹配的账本")
 	}
 	block, e := channelLedger.QueryBlockByTxID(fab.TransactionID(req.TxID))
 	if nil != e {
@@ -687,11 +727,11 @@ func (this *BlockChainConfiguration) GetTransactionByTxId(req model.TransactionG
 		return result, error2.NewFabricError(err, "通过txId查询失败")
 	} else if nil == processedTransaction {
 		this.Log.Error("交易id对应的记录不存在")
-		return result, error2.NewRecordNotExistError("该交易id不存在")
+		return result, error3.NewRecordNotExistError("该交易id不存在")
 	}
 	if processedTransaction.TransactionEnvelope == nil {
 		this.Log.Error("txID=%s的envelop不存在", req.TxID)
-		return result, error2.NewRecordNotExistError("对应的envelop不存在")
+		return result, error3.NewRecordNotExistError("对应的envelop不存在")
 	}
 	result.Signature = hex.EncodeToString(processedTransaction.TransactionEnvelope.Signature)
 

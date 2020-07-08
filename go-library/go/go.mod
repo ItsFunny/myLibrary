@@ -8,6 +8,7 @@ require (
 	github.com/FactomProject/btcutilecc v0.0.0-20130527213604-d3a63a5752ec // indirect
 	github.com/SebastiaanKlippert/go-wkhtmltopdf v1.5.0
 	github.com/astaxie/beego v1.12.2
+	github.com/cmars/basen v0.0.0-20150613233007-fe3947df716e // indirect
 	github.com/emirpasic/gods v1.12.0
 	github.com/ethereum/go-ethereum v1.9.15
 	github.com/gomodule/redigo v2.0.0+incompatible
@@ -27,6 +28,7 @@ require (
 	github.com/wumansgy/goEncrypt v0.0.0-20190822060801-cf9a6f8787e4
 	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
 	golang.org/x/text v0.3.3
+	launchpad.net/gocheck v0.0.0-20140225173054-000000000087 // indirect
 )
 
 replace code.google.com/log4go => /Users/joker/Desktop/go-dependency/code.google.com/log4go

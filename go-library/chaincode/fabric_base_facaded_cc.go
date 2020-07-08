@@ -10,11 +10,11 @@ package cc
 
 import (
 	"github.com/hyperledger/fabric-chaincode-go/shim"
+	"myLibrary/go-library/common/blockchain"
+	"myLibrary/go-library/common/blockchain/base"
+	error2 "myLibrary/go-library/common/error"
 	"myLibrary/go-library/go/base/service"
-	"myLibrary/go-library/blockchain/base"
-	error3 "myLibrary/go-library/blockchain/error"
 	"myLibrary/go-library/go/constants"
-	error2 "myLibrary/go-library/go/error"
 )
 
 type ArgeChecker func(name base.MethodName) (interface{},  error2.IBaseError)
@@ -22,12 +22,13 @@ type ArgeChecker func(name base.MethodName) (interface{},  error2.IBaseError)
 type BaseTypeGetter func(name base.MethodName) (base.TransBaseType, error2.IBaseError)
 
 type IFacadedHandler interface {
-	Handler() base.BasePeerResponse
+
+	Handler()BasePeerResponse
 }
 
 type IConcreteFacadedService interface {
-	HandleDetail(name base.MethodName, req base.BaseFabricAfterValidModel) (base.ITxBaseResper, error2.IBaseError)
-	SecurityCheckAndConvt(name base.MethodName, args []string) (base.BaseFabricAfterValidModel, error2.IBaseError)
+	HandleDetail(name base.MethodName, req blockchain.BaseFabricAfterValidModel) (ITxBaseResper, error2.IBaseError)
+	SecurityCheckAndConvt(name base.MethodName, args []string) (blockchain.BaseFabricAfterValidModel, error2.IBaseError)
 	// 获取管道ID,不同的channel 拥有着不同的账本,因此查询交易的时候,key也是不同的
 	// 2020-01-05 update  需要修改返回值为[]string,存在一条链码部署在多个channel的可能
 	GetChannelID() string
@@ -40,7 +41,7 @@ type BaseFabricFacadedCC struct {
 }
 
 // 2019-12-17 暂时直接返回这个BasePeerResponse,如果后续需要修改,直接修改这里即可
-func (b *BaseFabricFacadedCC) Handler() base.BasePeerResponse {
+func (b *BaseFabricFacadedCC) Handler() BasePeerResponse {
 	b.BeforeStart("Handler")
 	defer b.AfterEnd()
 
@@ -89,18 +90,18 @@ func (b *BaseFabricFacadedCC) Handler() base.BasePeerResponse {
 	return b.ReturnResult(detail, nil)
 }
 
-func (b *BaseFabricFacadedCC) ReturnResult(res interface{}, err error2.IBaseError) base.BasePeerResponse {
+func (b *BaseFabricFacadedCC) ReturnResult(res interface{}, err error2.IBaseError) BasePeerResponse {
 	if nil != err {
-		return base.Fail(err)
+		return Fail(err)
 	}
 
 	if nil == res {
-		return base.SuccessPeerResponse(base.SuccessWithEmptyData())
+		return SuccessPeerResponse(SuccessWithEmptyData())
 	}
 
 	switch res.(type) {
-	case base.ITxBaseResper:
-		t := res.(base.ITxBaseResper)
+	case ITxBaseResper:
+		t := res.(ITxBaseResper)
 		// d := t.GetReturnData()
 
 		var (
@@ -140,18 +141,18 @@ func (b *BaseFabricFacadedCC) ReturnResult(res interface{}, err error2.IBaseErro
 		} else {
 			b.Debug("业务执行失败,失败原因:{%s}", t.GetMsg())
 		}
-		transfer := base.TempTransfer{
+		transfer := TempTransfer{
 			Code:                    t.GetCode(),
 			Msg:                     t.GetMsg(),
 			TxRecords:               t.GetTXRecordInfoList(),
 			ReturnData:              t.GetReturnData(),
 			BaseRespCommonAttribute: t.GetCommAttribute(),
 		}
-		return base.SuccessWithDetailTransfer(transfer)
+		return SuccessWithDetailTransfer(transfer)
 		// return base.SuccessWithDetail(dataBytes, logBytes, t.GetCode(), t.GetMsg())
 	default:
 		// 必须实现该接口,但是不会遇到,因为都有一个外层封装类
-		return base.Fail(error3.NewConfigError(nil, "必须实现IVlinkTxBaseResper接口"))
+		return Fail(error2.NewConfigError(nil, "必须实现IVlinkTxBaseResper接口"))
 	}
 }
 

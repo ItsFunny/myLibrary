@@ -10,6 +10,8 @@ package handler
 
 import (
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/fab"
+	"myLibrary/go-library/common/blockchain/base"
+
 	// "github.com/hyperledger/fabric-sdk-go/third_party/github.com/hyperledger/fabric/core/ledger/util"
 	"myLibrary/go-library/go/base/service"
 )
@@ -21,6 +23,7 @@ type BaseLogicServiceImpl struct {
 type BlockWrapper struct {
 	*fab.BlockEvent
 	ChainCodes []string
+	ChannelId base.ChannelID
 }
 
 // FIXME 提供一个基础的handler service,而不是logic 的service

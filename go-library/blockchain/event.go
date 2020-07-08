@@ -11,13 +11,13 @@ package config
 import (
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/fab"
 	"go.uber.org/atomic"
-	"myLibrary/go-library/go/base/service"
-	"myLibrary/go-library/blockchain/base"
 	"myLibrary/go-library/blockchain/handler"
+	"myLibrary/go-library/common/blockchain/base"
+	"myLibrary/go-library/go/base/service"
 )
 
 var (
-	executor    *TaskExecutor
+	executor *TaskExecutor
 )
 
 func init() {
@@ -32,10 +32,10 @@ func newTaskExecutor() *TaskExecutor {
 
 type TaskExecutor struct {
 	service.IBaseService
-	BlockEventListeners []*blockEventExecutor
+	BlockEventListeners []*BlockEventExecutor
 }
 
-type blockEventExecutor struct {
+type BlockEventExecutor struct {
 	service.IBaseService
 	ChannelID base.ChannelID
 
@@ -50,20 +50,26 @@ type blockEventExecutor struct {
 	BlockHandler handler.IBlockHandler
 }
 
-func RegisterBlockEvent(cid base.ChannelID, interestChainCodes []string, events <-chan *fab.BlockEvent, stop chan struct{}) {
-	b := new(blockEventExecutor)
-	b.BlockHandler = handler.NewLogBlockHandler()
+func RegisterBlockEvent(cid base.ChannelID, setup SetupBlockEventExecutor, interestChainCodes []string, events <-chan *fab.BlockEvent, stop chan struct{}) {
+	b := new(BlockEventExecutor)
 	b.IBaseService = service.NewBaseServiceImplWithLog4goLogger()
 	b.ChannelID = cid
 	b.stop = stop
 	b.InterestChainCodes = interestChainCodes
 	b.ExpectedBlockIndex = atomic.NewInt64(1)
 	b.events = events
+	setup(nil, b)
+	if b.BlockHandler == nil {
+		b.BlockHandler = handler.NewLogBlockHandler()
+	}
+
 	if executor.BlockEventListeners == nil {
-		executor.BlockEventListeners = make([]*blockEventExecutor, 0)
+		executor.BlockEventListeners = make([]*BlockEventExecutor, 0)
 	}
 	executor.BlockEventListeners = append(executor.BlockEventListeners, b)
 }
+
+type SetupBlockEventExecutor func(interface{}, *BlockEventExecutor)error
 
 func RunTasks() {
 	for _, listner := range executor.BlockEventListeners {
@@ -71,17 +77,26 @@ func RunTasks() {
 	}
 }
 
-func (this *blockEventExecutor) handleEventWithDetailBlock() {
+func (this *BlockEventExecutor) handleEventWithDetailBlock() {
 	for {
 		select {
 		case <-this.stop:
 			break
 		case e := <-this.events:
+			if this.ExpectedBlockIndex.Inc() > int64(e.Block.Header.Number) {
+				this.Debug("为重复块,因此直接跳过")
+				continue
+			}
 			w := handler.BlockWrapper{
 				BlockEvent: e,
 				ChainCodes: this.ChainCodes,
+				ChannelId:  this.ChannelID,
 			}
-			this.BlockHandler.Handle(w)
+			if e := this.BlockHandler.Handle(w); nil != e {
+				this.Error("handler block 失败:" + e.Error())
+			} else {
+				this.ExpectedBlockIndex.Inc()
+			}
 		}
 	}
 }

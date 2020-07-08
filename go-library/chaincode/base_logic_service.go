@@ -12,39 +12,50 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/hyperledger/fabric-chaincode-go/shim"
-	"myLibrary/go-library/blockchain/base"
-	error3 "myLibrary/go-library/blockchain/error"
 	"myLibrary/go-library/blockchain/constants"
+	error3 "myLibrary/go-library/chaincode/error"
+	"myLibrary/go-library/common/blockchain/base"
+	error2 "myLibrary/go-library/common/error"
+	"myLibrary/go-library/go/base/service"
 	"myLibrary/go-library/go/converters"
-	error2 "myLibrary/go-library/go/error"
 	"net/http"
 	"strconv"
 )
 
-type IVlinkChainCodeLogicServiceHelper interface {
-	Encrypt(bytes []byte, version base.Version) ([]byte,  error2.IBaseError)
+type IChainCodeLogicServiceHelper interface {
+	Encrypt(bytes []byte, version base.Version) ([]byte, error2.IBaseError)
 	Decrypt(bytes []byte, version base.Version) ([]byte, error2.IBaseError)
 	GetConcreteKey(stub shim.ChaincodeStubInterface, key base.ObjectType, args ...interface{}) (string, error2.IBaseError)
 }
 
-type VlinkChainCodeBaseLogicServiceImpl struct {
+type BaseChainCodeBaseLogicServiceImpl struct {
 	Stub shim.ChaincodeStubInterface
 	// 版本信息
 	Version uint64
 	// 交易的主旨信息
 	BaseTransactionType base.TransBaseTypeV2
 
-	ChainCodeHelper IVlinkChainCodeLogicServiceHelper
-
-	*BaseChainCodeServiceImpl
+	ChainCodeHelper IChainCodeLogicServiceHelper
+	// IBaseChainCode
+	service.IBaseService
 }
 
-func NewVlinkChainCodeBaseLogicServiceImpl(init *BaseChainCodeServiceImpl, s shim.ChaincodeStubInterface, version uint64, BaseTransactionType base.TransBaseTypeV2) *VlinkChainCodeBaseLogicServiceImpl {
-	b := new(VlinkChainCodeBaseLogicServiceImpl)
-	b.BaseChainCodeServiceImpl = init
+// // BeforeStart :方法开始调用
+// func (receiver *BaseServiceImpl) BeforeStart(method string) {
+// 	receiver.MethodName = method
+// 	methodName := receiver.BaseInitConifg.GetLogger().GetPrefix() + " -> " + method
+// 	receiver.BaseInitConifg.GetLogger().SetPrefix(methodName)
+// 	receiver.BaseInitConifg.GetLogger().Info("开始调用:" + methodName)
+// }
+
+
+func NewBaseChainCodeBaseLogicServiceImpl(logger service.IBaseService, s shim.ChaincodeStubInterface, version uint64, BaseTransactionType base.TransBaseTypeV2) *BaseChainCodeBaseLogicServiceImpl {
+	b := new(BaseChainCodeBaseLogicServiceImpl)
+	// b.IBaseChainCode = init
 	b.Stub = s
 	b.Version = version
 	b.BaseTransactionType = BaseTransactionType
+	b.IBaseService = logger
 	return b
 }
 
@@ -52,7 +63,7 @@ func NewVlinkChainCodeBaseLogicServiceImpl(init *BaseChainCodeServiceImpl, s shi
 // ///////   业务辅助方法
 // ////////////////////////////////////////////////////
 // ////////////////////////////////////////////////////
-func (b *VlinkChainCodeBaseLogicServiceImpl) CheckExist(objectType base.ObjectType, req ...interface{}) (bool, error2.IBaseError) {
+func (b *BaseChainCodeBaseLogicServiceImpl) CheckExist(objectType base.ObjectType, req ...interface{}) (bool, error2.IBaseError) {
 	key, baseError := b.ChainCodeHelper.GetConcreteKey(b.Stub, objectType, req...)
 	if nil != baseError {
 		b.Error("获取ot=[%s]的key失败:%s", objectType, baseError.Error())
@@ -69,19 +80,19 @@ func (b *VlinkChainCodeBaseLogicServiceImpl) CheckExist(objectType base.ObjectTy
 
 	return true, nil
 }
-func (b *VlinkChainCodeBaseLogicServiceImpl) BuildCompositeKey(k base.ObjectType, args ...interface{}) (base.Key, error2.IBaseError) {
+func (b *BaseChainCodeBaseLogicServiceImpl) BuildCompositeKey(k base.ObjectType, args ...interface{}) (base.Key, error2.IBaseError) {
 	b.Debug("开始创建组合键,ot=[%+v],args=[%+v]", k, args)
 	s, e := b.ChainCodeHelper.GetConcreteKey(b.Stub, k, args...)
 	// s, e := b.Stub.CreateCompositeKey(string(k), attributes)
 	if nil != e {
-		return "", error3.NewFabricError(e, "创建组合键失败")
+		return "", error3.NewChainCodeError(e, "创建组合键失败")
 	}
 	b.Debug("创建的组合键为:[%+v]", s)
 	return base.Key(s), nil
 }
 
 // putKey的同时 重新修饰值 使得业务区分,现用于区分 是 作品版权还是章节版权
-func (b *VlinkChainCodeBaseLogicServiceImpl) PutByKeyWithDecorate(configReq base.BCPutStateReq, data interface{}, decorater func([]byte) []byte) error2.IBaseError {
+func (b *BaseChainCodeBaseLogicServiceImpl) PutByKeyWithDecorate(configReq base.BCPutStateReq, data interface{}, decorater func([]byte) []byte) error2.IBaseError {
 	bytes, e := b.buildBytes(configReq, data)
 	if nil != e {
 		b.Error("组合bytes失败:%s", e.Error())
@@ -104,9 +115,9 @@ func (b *VlinkChainCodeBaseLogicServiceImpl) PutByKeyWithDecorate(configReq base
 	return nil
 }
 
-func (b *VlinkChainCodeBaseLogicServiceImpl) buildBytes(configReq base.BCPutStateReq, data interface{}) ([]byte, error2.IBaseError) {
+func (b *BaseChainCodeBaseLogicServiceImpl) buildBytes(configReq base.BCPutStateReq, data interface{}) ([]byte, error2.IBaseError) {
 	if configReq.Key == "" {
-		return nil, error3.NewArguError(nil, "参数key不可为空")
+		return nil, error2.NewArguError(nil, "参数key不可为空")
 	}
 	b.Debug("开始上传,上传信息为: [%v]  ,上传数据为:{%v}", configReq, data)
 	tranTypeLength := byte(len(b.BaseTransactionType))
@@ -138,7 +149,7 @@ func (b *VlinkChainCodeBaseLogicServiceImpl) buildBytes(configReq base.BCPutStat
 	default:
 		marshal, e := json.Marshal(data)
 		if nil != e {
-			return nil, error3.NewJSONSerializeError(e, "序列化上链参数失败")
+			return nil, error2.NewJSONSerializeError(e, "序列化上链参数失败")
 		}
 		values = append(values, marshal...)
 	}
@@ -175,9 +186,9 @@ func (b *VlinkChainCodeBaseLogicServiceImpl) buildBytes(configReq base.BCPutStat
 
 	return bytes, nil
 }
-func (b *VlinkChainCodeBaseLogicServiceImpl) PutByKey(configReq base.BCPutStateReq, data interface{}) error2.IBaseError {
+func (b *BaseChainCodeBaseLogicServiceImpl) PutByKey(configReq base.BCPutStateReq, data interface{}) error2.IBaseError {
 	if configReq.Key == "" {
-		return error3.NewArguError(nil, "参数key不可为空")
+		return error2.NewArguError(nil, "参数key不可为空")
 	}
 	b.Debug("开始上传,上传信息为: [%v]  ,上传数据为:{%v}", configReq, data)
 	tranTypeLength := byte(len(b.BaseTransactionType))
@@ -209,7 +220,7 @@ func (b *VlinkChainCodeBaseLogicServiceImpl) PutByKey(configReq base.BCPutStateR
 	default:
 		marshal, e := json.Marshal(data)
 		if nil != e {
-			return error3.NewJSONSerializeError(e, "序列化上链参数失败")
+			return error2.NewJSONSerializeError(e, "序列化上链参数失败")
 		}
 		values = append(values, marshal...)
 	}
@@ -252,17 +263,17 @@ func (b *VlinkChainCodeBaseLogicServiceImpl) PutByKey(configReq base.BCPutStateR
 
 	return nil
 }
-func (b *VlinkChainCodeBaseLogicServiceImpl) putByKey(key base.Key, bytes []byte) error2.IBaseError {
+func (b *BaseChainCodeBaseLogicServiceImpl) putByKey(key base.Key, bytes []byte) error2.IBaseError {
 	if e := b.Stub.PutState(string(key), bytes); nil != e {
-		return error3.NewFabricError(e, "插入数据失败")
+		return error3.NewChainCodeError(e, "插入数据失败")
 	}
 
 	return nil
 }
-func (b *VlinkChainCodeBaseLogicServiceImpl) GetByKey(key base.Key) (base.BCBaseNodeInfo, []byte, error2.IBaseError) {
+func (b *BaseChainCodeBaseLogicServiceImpl) GetByKey(key base.Key) (base.BCBaseNodeInfo, []byte, error2.IBaseError) {
 	return b.getByKey(string(key))
 }
-func (b *VlinkChainCodeBaseLogicServiceImpl) GetDecryptDataByKey(key string) (base.BCBaseNodeInfo, []byte, error2.IBaseError) {
+func (b *BaseChainCodeBaseLogicServiceImpl) GetDecryptDataByKey(key string) (base.BCBaseNodeInfo, []byte, error2.IBaseError) {
 	info, bytes, baseError := b.getByKey(key)
 	if nil != baseError {
 		return info, bytes, baseError
@@ -272,13 +283,13 @@ func (b *VlinkChainCodeBaseLogicServiceImpl) GetDecryptDataByKey(key string) (ba
 		bytes, baseError = b.ChainCodeHelper.Decrypt(bytes, info.Version)
 		if nil != baseError {
 			b.Error("解密失败:%s", baseError.Error())
-			return info, nil, error3.NewFabricError(baseError, "解密失败")
+			return info, nil, error3.NewChainCodeError(baseError, "解密失败")
 		}
 		b.Debug("解密成功")
 	}
 	return info, bytes, nil
 }
-func (this *VlinkChainCodeBaseLogicServiceImpl) getByKey(key string) (base.BCBaseNodeInfo, []byte, error2.IBaseError) {
+func (this *BaseChainCodeBaseLogicServiceImpl) getByKey(key string) (base.BCBaseNodeInfo, []byte, error2.IBaseError) {
 	var (
 		result base.BCBaseNodeInfo
 	)
@@ -287,22 +298,22 @@ func (this *VlinkChainCodeBaseLogicServiceImpl) getByKey(key string) (base.BCBas
 	bytes, e := this.Stub.GetState(key)
 	if nil != e {
 		this.Error("[GetByKey] 从区块链上获取数据 {key=%v} 的时候发生了错误:%s", key, e.Error())
-		return result, nil, error3.NewFabricError(e, "获取数据失败")
+		return result, nil, error3.NewChainCodeError(e, "获取数据失败")
 	}
 	if nil != bytes && len(bytes) >= constants.VLINK_COMMON_INDEX_END {
 		node, modelWallets := base.GetRegularInfoV2(bytes)
 		result = node
-		this.Debug("[getByKey] 的leftBytes长度为:%d,modelWallets的长度为:%d", len(result.LeftBytes),len(modelWallets))
+		this.Debug("[getByKey] 的leftBytes长度为:%d,modelWallets的长度为:%d", len(result.LeftBytes), len(modelWallets))
 		if node.Encrypted {
 			this.Debug("该key 对应的值被加密,需要进行解密")
 			modelWallets, e = this.ChainCodeHelper.Decrypt(modelWallets, node.Version)
 			if nil != e {
 				this.Error("解密数据失败:{%s}", e.Error())
-				return result, modelWallets, error3.NewCryptError(e,  "解密数据失败")
+				return result, modelWallets, error2.NewCryptError(e, "解密数据失败")
 			}
-			this.Debug("[GetState] [解密后的数据为] 成功从链上获取{key=%s的信息} ,解析得到的 基本类型为:[%d] from钱包地址为:[%s],to钱包地址为:[%s],交易金额为:[%v],版本为:[%v],遗留字段为:[%v],模型对象的json为:[%s]", key, node.TxBaseType, node.From, node.To, node.Token, node.Version,node.LeftBytes, string(modelWallets))
+			this.Debug("[GetState] [解密后的数据为] 成功从链上获取{key=%s的信息} ,解析得到的 基本类型为:[%d] from钱包地址为:[%s],to钱包地址为:[%s],交易金额为:[%v],版本为:[%v],遗留字段为:[%v],模型对象的json为:[%s]", key, node.TxBaseType, node.From, node.To, node.Token, node.Version, node.LeftBytes, string(modelWallets))
 		} else {
-			this.Debug("[GetState] [非加密] 成功从链上获取{key=%s的信息} ,解析得到的 基本类型为:[%d] from钱包地址为:[%s],to钱包地址为:[%s],交易金额为:[%v],版本为:[%v],遗留字段为:[%v],模型对象的json为:[%s]", key, node.TxBaseType, node.From, node.To, node.Token, node.Version,node.LeftBytes,node.LeftBytes, string(modelWallets))
+			this.Debug("[GetState] [非加密] 成功从链上获取{key=%s的信息} ,解析得到的 基本类型为:[%d] from钱包地址为:[%s],to钱包地址为:[%s],交易金额为:[%v],版本为:[%v],遗留字段为:[%v],模型对象的json为:[%s]", key, node.TxBaseType, node.From, node.To, node.Token, node.Version, node.LeftBytes, node.LeftBytes, string(modelWallets))
 		}
 		// if node.Version != 0 {
 		// 	this.Debug("[GetState] 成功从链上获取{key=%s的信息} ,解析得到的 基本类型为:[%d],类型为:[%d] ,from钱包地址为:[%s],to钱包地址为:[%s],交易金额为:[%v],版本为:[%v],模型对象的json为:[%s]", key, node.TxBaseType, node.From, node.Version, node.To, node.Token, hex.EncodeToString(modelWallets))
@@ -316,18 +327,18 @@ func (this *VlinkChainCodeBaseLogicServiceImpl) getByKey(key string) (base.BCBas
 	}
 
 }
-func (b *VlinkChainCodeBaseLogicServiceImpl) getKey(stub shim.ChaincodeStubInterface, key base.ObjectType, args ...interface{}) (string, error2.IBaseError) {
+func (b *BaseChainCodeBaseLogicServiceImpl) getKey(stub shim.ChaincodeStubInterface, key base.ObjectType, args ...interface{}) (string, error2.IBaseError) {
 	return b.ChainCodeHelper.GetConcreteKey(stub, key, args...)
 }
 
 // 跨链调用
-func (b *VlinkChainCodeBaseLogicServiceImpl) InvokeOtherCC(req base.InvokeBaseReq) (base.BaseFabricResp, error2.IBaseError) {
+func (b *BaseChainCodeBaseLogicServiceImpl) InvokeOtherCC(req base.InvokeBaseReq) (base.BaseFabricResp, error2.IBaseError) {
 	var args []string
 	args = append(args, string(req.MethodName))
 
 	bytes, e := json.Marshal(req.Data)
 	if e != nil {
-		return base.BaseFabricResp{}, error3.NewJSONSerializeError(e, fmt.Sprintf("序列化data=[%v]", req.Data))
+		return base.BaseFabricResp{}, error2.NewJSONSerializeError(e, fmt.Sprintf("序列化data=[%v]", req.Data))
 	}
 	args = append(args, string(bytes))
 
@@ -336,7 +347,7 @@ func (b *VlinkChainCodeBaseLogicServiceImpl) InvokeOtherCC(req base.InvokeBaseRe
 
 	if invokeResp.Status != http.StatusOK {
 		b.Error("调用链码=[%s],method=[%v],channel=[%v]失败:%s", req.ChaincodeName, req.MethodName, req.ChannelName, invokeResp.GetMessage())
-		return base.BaseFabricResp{}, error3.NewFabricError(nil, "区块链调用失败:"+invokeResp.Message)
+		return base.BaseFabricResp{}, error3.NewChainCodeError(nil, "区块链调用失败:"+invokeResp.Message)
 	}
 	resp, err := handleResponse(invokeResp.Payload)
 	if nil != err {
@@ -353,7 +364,7 @@ func handleResponse(bytes []byte) (base.BaseFabricResp, error2.IBaseError) {
 
 	e := json.Unmarshal(bytes, &resp)
 	if nil != e {
-		return resp, error3.NewJSONSerializeError(e, "反序列化为 BaseFabricResp 失败")
+		return resp, error2.NewJSONSerializeError(e, "反序列化为 BaseFabricResp 失败")
 	}
 
 	return resp, nil
