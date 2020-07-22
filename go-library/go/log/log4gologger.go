@@ -20,12 +20,13 @@ type log4goLogger struct {
 
 func NewLog4goLogger(b *CommonBaseLogger) *log4goLogger {
 	l := new(log4goLogger)
-	l.CommonBaseLogger=b
+	l.CommonBaseLogger = b
 	return l
 }
 
 func (l *log4goLogger) RecordInfo(first interface{}, info ...interface{}) {
-	pc, _, lineNO, ok := runtime.Caller(1)
+	// pc, _, lineNO, ok := runtime.Caller(1)
+	_, _, _, ok := runtime.Caller(1)
 	src := ""
 
 	if l.Prefix != "" {
@@ -33,7 +34,8 @@ func (l *log4goLogger) RecordInfo(first interface{}, info ...interface{}) {
 	}
 
 	if ok {
-		src += fmt.Sprintf("[requestId:%v] (%s:%d)", l.ReqID, runtime.FuncForPC(pc).Name(), lineNO)
+		// src += fmt.Sprintf("[requestId:%v] (%s:%d)", l.ReqID, runtime.FuncForPC(pc).Name(), lineNO)
+		src += fmt.Sprintf("[requestId:%v]", l.ReqID)
 	}
 
 	isStr := false

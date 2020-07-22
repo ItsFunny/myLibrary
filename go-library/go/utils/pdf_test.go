@@ -75,7 +75,7 @@ func TestConvertArrayStringToInt(t *testing.T) {
 }
 
 func TestHtml2PdfBySource(t *testing.T) {
-	req := NewRemotetHtml2PdfPureSourceReq("https://www.baidu.com/", "/Users/joker/go/src/myLibrary/go-library/go/utils/zzzz/asdddd", "sss")
+	req := NewRemotetHtml2PdfPureSourceReq("https://hyperledger-fabric-ca.readthedocs.io/en/release-1.4/users-guide.html", "/Users/joker/go/src/myLibrary/go-library/go/utils/zzzz/asdddd", "fabric-ca")
 	resp, e := Html2PdfBySource(req)
 	if nil != e {
 		panic(e)

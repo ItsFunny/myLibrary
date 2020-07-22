@@ -36,7 +36,7 @@ func NewCommonBaseLoggerWithLog4go(reqID string)*CommonBaseLogger{
 }
 
 func (l *CommonBaseLogger) Info(first interface{}, info ...interface{}) {
-	l.ConcreteLogger.RecordInfo(false, info...)
+	l.ConcreteLogger.RecordInfo(first, info...)
 }
 
 func (l *CommonBaseLogger) Debug(first interface{}, info ...interface{}) {

@@ -6,6 +6,7 @@ require (
 	code.google.com/log4go v0.0.0-00010101000000-000000000000
 	github.com/FactomProject/basen v0.0.0-20150613233007-fe3947df716e // indirect
 	github.com/FactomProject/btcutilecc v0.0.0-20130527213604-d3a63a5752ec // indirect
+	github.com/PuerkitoBio/goquery v1.5.1
 	github.com/SebastiaanKlippert/go-wkhtmltopdf v1.5.0
 	github.com/astaxie/beego v1.12.2
 	github.com/cmars/basen v0.0.0-20150613233007-fe3947df716e // indirect
@@ -30,5 +31,7 @@ require (
 	golang.org/x/text v0.3.3
 	launchpad.net/gocheck v0.0.0-20140225173054-000000000087 // indirect
 )
+
+replace github.com/FactomProject/basen => /Users/joker/Desktop/go-dependency/github.com/FactomProject/basen
 
 replace code.google.com/log4go => /Users/joker/Desktop/go-dependency/code.google.com/log4go

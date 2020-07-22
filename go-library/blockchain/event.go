@@ -9,6 +9,7 @@
 package config
 
 import (
+	"encoding/hex"
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/fab"
 	"go.uber.org/atomic"
 	"myLibrary/go-library/blockchain/handler"
@@ -69,7 +70,7 @@ func RegisterBlockEvent(cid base.ChannelID, setup SetupBlockEventExecutor, inter
 	executor.BlockEventListeners = append(executor.BlockEventListeners, b)
 }
 
-type SetupBlockEventExecutor func(interface{}, *BlockEventExecutor)error
+type SetupBlockEventExecutor func(interface{}, *BlockEventExecutor) error
 
 func RunTasks() {
 	for _, listner := range executor.BlockEventListeners {
@@ -83,8 +84,8 @@ func (this *BlockEventExecutor) handleEventWithDetailBlock() {
 		case <-this.stop:
 			break
 		case e := <-this.events:
-			if this.ExpectedBlockIndex.Inc() > int64(e.Block.Header.Number) {
-				this.Debug("为重复块,因此直接跳过")
+			if this.ExpectedBlockIndex.Load() > int64(e.Block.Header.Number) {
+				this.Debug("该块编号为[%d],currentHash为[%s]为重复块,当前expectedBlockNumber为:[%v],因此直接跳过", int64(e.Block.Header.Number), hex.EncodeToString(e.Block.Header.DataHash), this.ExpectedBlockIndex)
 				continue
 			}
 			w := handler.BlockWrapper{
