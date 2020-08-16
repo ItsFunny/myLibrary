@@ -146,7 +146,7 @@ func (b *InMemoryBlockChainBaseConfiguration) CheckAndConvt(method base.MethodNa
 	fmt.Println("检查参数是否安全")
 
 	if p, exist := b.ArgsCheckMap[method]; !exist {
-		return result, error2.NewConfigError(nil, "配置错误")
+		return result, error2.NewConfigError(nil, fmt.Sprintf("配置错误,该方法{%s},找不到匹配的参数校验方法", method))
 	} else {
 		if err := p.ArgsChecker(args); nil != err {
 			return result, error2.NewArguError(err, "参数checker无法通过")

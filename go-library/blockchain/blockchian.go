@@ -9,9 +9,11 @@
 package config
 
 import (
+	"context"
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
+	cb "github.com/hyperledger/fabric-protos-go/common"
 	"github.com/hyperledger/fabric-sdk-go/pkg/client/channel"
 	"github.com/hyperledger/fabric-sdk-go/pkg/client/event"
 	"github.com/hyperledger/fabric-sdk-go/pkg/client/ledger"
@@ -23,17 +25,20 @@ import (
 	"github.com/hyperledger/fabric-sdk-go/pkg/core/config"
 	packager "github.com/hyperledger/fabric-sdk-go/pkg/fab/ccpackager/gopackager"
 	"github.com/hyperledger/fabric-sdk-go/pkg/fabsdk"
+	"github.com/hyperledger/fabric-sdk-go/pkg/gateway"
 	"github.com/hyperledger/fabric-sdk-go/third_party/github.com/hyperledger/fabric/common/cauthdsl"
 	"gopkg.in/yaml.v1"
 	"io/ioutil"
 	error2 "myLibrary/go-library/blockchain/error"
 	"myLibrary/go-library/blockchain/model"
+	utils2 "myLibrary/go-library/blockchain/utils"
 	"myLibrary/go-library/blockchain/wrapper"
 	"myLibrary/go-library/common"
 	"myLibrary/go-library/common/blockchain/base"
 	error3 "myLibrary/go-library/common/error"
 	"myLibrary/go-library/go/converters"
 	"myLibrary/go-library/go/log"
+	"myLibrary/go-library/go/wallet"
 	"strconv"
 	"strings"
 	"time"
@@ -118,8 +123,27 @@ type ExecuteReq struct {
 	OrganizationID base.OrganizationID
 	ChainCodeID    base.ChainCodeID
 	ReqData        interface{}
+
+	Context context.Context
 }
 
+func (this *BlockChainConfiguration) GetChannelChainCodes(channelId string) []string {
+	result := make([]string, 0)
+	for _, ch := range this.Properties.Channels {
+		if string(ch.ChannelID) != channelId {
+			continue
+		}
+
+		for _, org := range ch.Organizations {
+			for _, p := range org.Peer.EndorserPeers {
+				for _, cc := range p.ChainCodes {
+					result = append(result, string(cc.ChainCodeID))
+				}
+			}
+		}
+	}
+	return result
+}
 func (this *BlockChainConfiguration) CallWithNewClient() {
 }
 
@@ -138,6 +162,7 @@ func (this *BlockChainConfiguration) Execute(executeReq ExecuteReq) (base.Servic
 		ChannelID:      id,
 		OrganizationID: executeReq.OrganizationID,
 		ChainCodeID:    codeID,
+		Context:        executeReq.Context,
 	}, req)
 	if nil != baseError {
 		return logicRes, nil, baseError
@@ -167,6 +192,7 @@ func (this *BlockChainConfiguration) ExecuteWithPureBytes(executeReq ExecuteReq)
 		ChannelID:      id,
 		OrganizationID: executeReq.OrganizationID,
 		ChainCodeID:    codeID,
+		Context:        executeReq.Context,
 	}, req)
 	return response, baseError
 }
@@ -192,28 +218,66 @@ func (this *BlockChainConfiguration) defaultExecute(b base.ChainBaseReq, req int
 	return this.execute(b, d)
 }
 
+func (this *BlockChainConfiguration) EnrollAdminUser(id base.ChannelID, admin, adminpw string) {
+}
+
+type Info struct {
+	UserName string
+}
+
 func (this *BlockChainConfiguration) execute(b base.ChainBaseReq, data interface{}) (channel.Response, error3.IBaseError) {
 	var args []string
+	var result channel.Response
 	args = append(args, string(b.MethodName))
 
 	bytes, e := json.Marshal(data)
 	if e != nil {
 		return channel.Response{}, error3.NewJSONSerializeError(e, fmt.Sprintf("序列化data=[%v]", data))
 	}
+	var resultBytes []byte
+	var err error
 	args = append(args, string(bytes))
-	adminClient := this.clientWrapper.clients[b.ChannelID].Clients[b.OrganizationID].Client
-	response, err := adminClient.Execute(channel.Request{
-		ChaincodeID: string(b.ChainCodeID),
-		Fcn:         args[0],
-		// 2020-01-08 update 为了与invokechaincode 一致,此处补齐一个string
-		Args: [][]byte{[]byte(args[1]), []byte(strconv.Itoa(int(this.Version)))},
-	}, channel.WithTimeout(fab.Execute, time.Second*60))
-
-	if nil != err {
-		return response, error2.NewFabricError(err, fmt.Sprintf("调用fabric失败,方法名称为:%s", b.MethodName))
+	if b.Context == nil {
+		adminClient := this.clientWrapper.clients[b.ChannelID].Clients[b.OrganizationID].Client
+		result, err = adminClient.Execute(channel.Request{
+			ChaincodeID: string(b.ChainCodeID),
+			Fcn:         args[0],
+			// 2020-01-08 update 为了与invokechaincode 一致,此处补齐一个string
+			Args: [][]byte{[]byte(args[1]), []byte(strconv.Itoa(int(this.Version)))},
+		}, channel.WithTimeout(fab.Execute, time.Second*60))
+		resultBytes = result.Payload
+	} else {
+		info, ok := b.Context.Value("info").(*Info)
+		if ok {
+			userName := info.UserName
+			gw, e := gateway.Connect(gateway.WithSDK(this.sdk), gateway.WithUser(userName))
+			if nil != e {
+				return channel.Response{}, error2.NewFabricError(e, "根据用户连接到区块链网络失败")
+			}
+			network, e := gw.GetNetwork(string(b.ChannelID))
+			if nil != e {
+				return channel.Response{}, error2.NewChannelError(e, "连接到network失败")
+			}
+			contract := network.GetContract(string(b.ChainCodeID))
+			resultBytes, err = contract.SubmitTransaction(args[0], args[1], strconv.Itoa(int(this.Version)))
+		} else {
+			adminClient := this.clientWrapper.clients[b.ChannelID].Clients[b.OrganizationID].Client
+			result, err = adminClient.Execute(channel.Request{
+				ChaincodeID: string(b.ChainCodeID),
+				Fcn:         args[0],
+				// 2020-01-08 update 为了与invokechaincode 一致,此处补齐一个string
+				Args: [][]byte{[]byte(args[1]), []byte(strconv.Itoa(int(this.Version)))},
+			}, channel.WithTimeout(fab.Execute, time.Second*60))
+			resultBytes = result.Payload
+		}
 	}
 
-	return response, nil
+	if nil != err {
+		return channel.Response{}, error2.NewFabricError(err, fmt.Sprintf("调用fabric失败,方法名称为:%s", b.MethodName))
+	}
+
+	result.Payload = resultBytes
+	return result, nil
 }
 
 // FIXME 与上面的方法整合
@@ -462,7 +526,7 @@ func (setUp *BlockChainConfiguration) initialize(p BlockChainProperties) error3.
 			}
 			setUp.Log.Info("end 创建区块链账本相关")
 
-			channelCreated=false
+			channelCreated = false
 		}
 	}
 
@@ -653,6 +717,47 @@ func (setUp *BlockChainConfiguration) InstallAndInstantiateCC(p BlockChainProper
 	return nil
 }
 
+type UserRegisterResp struct {
+	EnrollSecret string
+	Identity     msp.SigningIdentity
+
+	Address   string
+	PublicKey string
+}
+
+func (c *BlockChainConfiguration) RegisterAndEnroll(req model.UserRegisterReq) (UserRegisterResp, error3.IBaseError) {
+	var (
+		result UserRegisterResp
+	)
+	resp, baseError := c.Register(req)
+	if nil != baseError {
+		return result, baseError
+	}
+	if res, enroll := c.Enroll(model.UserEnrollReq{
+		Oid:           req.Oid,
+		UserUniqueKey: req.Name,
+		UserPassword:  req.Secret,
+		Profile:       "",
+		Type:          req.Type,
+	}); nil != enroll {
+		return result, enroll
+	} else {
+		result.Identity = res.Identity
+		publicKey, e := res.Identity.PrivateKey().PublicKey()
+		if nil != e {
+			return result, error3.UserRegistrationError(e, "用户注册失败,获取公钥失败")
+		}
+		bytes, e := publicKey.Bytes()
+		if nil != e {
+			return result, error3.UserRegistrationError(e, "用户注册失败,获取公钥失败")
+		}
+		result.Address = wallet.GenerateAddress(bytes)
+		result.PublicKey = hex.EncodeToString(bytes)
+	}
+	result.EnrollSecret = resp.EnrollSecret
+	return result, nil
+}
+
 func (c *BlockChainConfiguration) Register(req model.UserRegisterReq) (model.UserRegistrationResp, error3.IBaseError) {
 	var (
 		result model.UserRegistrationResp
@@ -661,13 +766,12 @@ func (c *BlockChainConfiguration) Register(req model.UserRegisterReq) (model.Use
 	if !exist {
 		return result, error3.OrganizationNotExistError(nil, "组织不存在")
 	}
-
 	s, e := mspClient.Client.Register(&mspclient.RegistrationRequest{
 		Name:           req.Name,
 		Type:           req.Type,
-		MaxEnrollments: 5,
+		MaxEnrollments: -1,
 		Affiliation:    "",
-		Attributes:     nil,
+		Attributes:     req.Attributes,
 		CAName:         mspClient.CaInfo.CaName,
 		Secret:         req.Secret,
 	})
@@ -680,16 +784,28 @@ func (c *BlockChainConfiguration) Register(req model.UserRegisterReq) (model.Use
 	return result, nil
 }
 
-func (c *BlockChainConfiguration) Enroll(req model.UserEnrollReq) error3.IBaseError {
+type EnrollResp struct {
+	Identity msp.SigningIdentity
+}
+
+func (c *BlockChainConfiguration) Enroll(req model.UserEnrollReq) (EnrollResp, error3.IBaseError) {
+	var (
+		result EnrollResp
+	)
 	mspClient, exist := c.msps.Clients[req.Oid]
 	if !exist {
-		return error3.OrganizationNotExistError(nil, "组织不存在")
+		return result, error3.OrganizationNotExistError(nil, "组织不存在")
 	}
 	if e := mspClient.Client.Enroll(req.UserUniqueKey, req.BuildEnrollOptions()...); nil != e {
-		return error2.NewFabricError(e, "enroll用户失败")
+		return result, error2.NewFabricError(e, "enroll用户失败")
+	}
+	if identity, e := mspClient.Client.GetSigningIdentity(req.UserUniqueKey); nil != e {
+		return result, error2.NewFabricError(e, "enroll用户成功,但是获取签名失败")
+	} else {
+		result.Identity = identity
 	}
 
-	return nil
+	return result, nil
 }
 
 func (c *BlockChainConfiguration) GetOrganizationAdminUsers(oid base.OrganizationID) []string {
@@ -748,6 +864,39 @@ func (this *BlockChainConfiguration) GetTransactionByTxId(req model.TransactionG
 		return result, error3.NewRecordNotExistError("对应的envelop不存在")
 	}
 	result.Signature = hex.EncodeToString(processedTransaction.TransactionEnvelope.Signature)
+	return result, nil
+}
 
+func (this *BlockChainConfiguration) GetTransactionDetailData(req model.TransactionDetailGetByIdReq) (utils2.TransactionDetail, error3.IBaseError) {
+	var (
+		result utils2.TransactionDetail
+	)
+	ledgerWrapper, exist := this.GetChannelLedgerWrapper(req.ChannelId)
+	if !exist {
+		return result, error3.NewArguError(nil, "参数channelId找不到匹配的账本")
+	}
+
+	processedTransaction, err := ledgerWrapper.Ledger.QueryTransaction(fab.TransactionID(req.TxID))
+	if nil != err {
+		this.Log.Error("从 ledger中通过txID=%s查询 记录的时候失败:%s", req.TxID, err.Error())
+		return result, error2.NewFabricError(err, "通过txId查询失败")
+	} else if nil == processedTransaction {
+		this.Log.Error("交易id对应的记录不存在")
+		return result, error3.NewRecordNotExistError("该交易id不存在")
+	}
+
+	env := cb.Envelope{
+		Payload:              processedTransaction.TransactionEnvelope.Payload,
+		Signature:            processedTransaction.TransactionEnvelope.Signature,
+		XXX_NoUnkeyedLiteral: processedTransaction.TransactionEnvelope.XXX_NoUnkeyedLiteral,
+		XXX_unrecognized:     processedTransaction.TransactionEnvelope.XXX_unrecognized,
+		XXX_sizecache:        processedTransaction.TransactionEnvelope.XXX_sizecache,
+	}
+	result, err = utils2.GetTransactionInfoFromEnvelop(&env, req.ChainCodeIdList, req.NeedArgs, req.DescriptionFunc)
+	if nil != err {
+		this.Log.Error("查询交易失败:" + err.Error())
+		return result, error3.NewLedgerError(err, req.ChannelId, "获取交易失败")
+	}
+	result.Signature = hex.EncodeToString(env.Signature)
 	return result, nil
 }

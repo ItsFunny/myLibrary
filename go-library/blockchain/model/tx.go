@@ -8,11 +8,24 @@
 */
 package model
 
+import "myLibrary/go-library/common/blockchain/base"
+
 type TransactionGetByIdReq struct {
 	// 通过交易id获取详情信息
 	NeedArgs  bool   `json:"needArgs"`
 	TxID      string `json:"txId"`
 	ChannelId string `json:"channelId"`
+
+}
+
+type TransactionDetailGetByIdReq struct {
+	// 通过交易id获取详情信息
+	NeedArgs  bool   `json:"needArgs"`
+	TxID      string `json:"txId"`
+	ChannelId string `json:"channelId"`
+
+	ChainCodeIdList []string `json:"chainCodeIdList"`
+	DescriptionFunc func(base.TransBaseTypeV2) string
 }
 
 type  TransactionGetByIdResp struct {

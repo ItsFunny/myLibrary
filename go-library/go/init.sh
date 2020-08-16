@@ -1,8 +1,9 @@
 #!/bin/bash
 
 rm -rf vendor
-govendor init
-govendor add +e
+#govendor init
+#govendor add +e
+go mod vendor
 
 cp -r \
    "${GOPATH}/src/github.com/ethereum/go-ethereum/crypto/secp256k1/libsecp256k1" \

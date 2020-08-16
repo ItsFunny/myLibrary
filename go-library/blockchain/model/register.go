@@ -8,13 +8,18 @@
 */
 package model
 
-import "myLibrary/go-library/common/blockchain/base"
+import (
+	"github.com/hyperledger/fabric-sdk-go/pkg/client/msp"
+	"myLibrary/go-library/common/blockchain/base"
+)
 
 type UserRegisterReq struct {
 	Oid base.OrganizationID
 	Name string
 	Secret string
 	Type string
+
+	Attributes []msp.Attribute
 }
 
 type UserRegistrationResp struct {

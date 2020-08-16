@@ -27,3 +27,5 @@ replace code.google.com/log4go => /Users/joker/go/src/code.google.com/log4go
 replace myLibrary/go-library/go => /Users/joker/go/src/myLibrary/go-library/go
 
 replace myLibrary/go-library/common => /Users/joker/go/src/myLibrary/go-library/common
+		replace github.com/FactomProject/basen => /Users/joker/Desktop/go-dependency/github.com/FactomProject/basen
+		replace github.com/FactomProject/btcutilecc => /Users/joker/Desktop/go-dependency/github.com/FactomProject/btcutilecc
