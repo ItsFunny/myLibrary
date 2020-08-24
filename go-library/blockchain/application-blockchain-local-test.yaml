@@ -6,8 +6,8 @@ channels:
     needListOnBlockEvent: true
     channelConfigPath: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/artifacts/userchannel.tx
     orders:
-      - ordererId: orderer0.vlink.link
-        ordererAddress: orderer0.vlink.link
+      - ordererId: orderer0.0
+        ordererAddress: orderer0.0
         ordererPort: 6050
     organizations:
       - organizationId: VlinkOrgMSP
@@ -18,22 +18,22 @@ channels:
             admin: true
         peers:
           - anchorPeers:
-              - address: user0.vlink.link
+              - address: user0.0
                 port: 11051
                 chainCodes:
                   - chainCodeId: usercc
                     chainCodePath: vlink.com/v2/vlink-chaincodes/usercc
                     needUpdate: false
         ca:
-          caName: 'ca0.vlink.link'
+          caName: 'ca0.0'
 
 #
   - channelId: copyrightchannel
     needListOnBlockEvent: true
     channelConfigPath: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/artifacts/copyrightchannel.tx
     orders:
-      - ordererId: orderer0.vlink.link
-        ordererAddress: orderer0.vlink.link
+      - ordererId: orderer0.0
+        ordererAddress: orderer0.0
         ordererPort: 6050
     organizations:
       - organizationId: VlinkOrgMSP
@@ -44,11 +44,11 @@ channels:
             admin: true
         peers:
           - anchorPeers:
-              - address: copyright0.vlink.link
+              - address: copyright0.0
                 port: 10051
                 chainCodes:
                   - chainCodeId: copyrightcc
                     chainCodePath: vlink.com/v2/vlink-chaincodes/copyrightcc
                     needUpdate: false
         ca:
-          caName: 'ca0.vlink.link'
+          caName: 'ca0.0'

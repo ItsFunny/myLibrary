@@ -1,9 +1,9 @@
 package com.charile.utils;
 
 import com.jcraft.jsch.*;
+import lombok.Data;
 import org.apache.commons.io.IOUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.io.*;
 import java.util.Properties;
@@ -20,9 +20,10 @@ import java.util.Vector;
 public class SFTPUtil
 {
 
-    private ChannelSftp sftp;
-
-    private Session session;
+    private SFTPWrapper sftpWrapper;
+//    private ChannelSftp sftp;
+//
+//    private Session session;
     /**
      * SFTP 登录用户名
      */
@@ -44,6 +45,24 @@ public class SFTPUtil
      */
     private int port;
 
+    @Data
+    public static class SFTPWrapper
+    {
+        private ChannelSftp sftp;
+        private Session session;
+
+        public void logOut()
+        {
+            if (this.sftp != null && this.sftp.isConnected())
+            {
+                this.sftp.disconnect();
+            }
+            if (this.session != null && this.session.isConnected())
+            {
+                this.session.disconnect();
+            }
+        }
+    }
 
     /**
      * 构造基于密码认证的sftp对象
@@ -54,6 +73,11 @@ public class SFTPUtil
         this.password = password;
         this.host = host;
         this.port = port;
+    }
+
+    public void prepare(SFTPWrapper sftpWrapper)
+    {
+        this.sftpWrapper = sftpWrapper;
     }
 
     /**
@@ -73,32 +97,13 @@ public class SFTPUtil
     /**
      * 连接sftp服务器
      */
+    @Deprecated // use prepare
     public void login() throws JSchException
     {
         try
         {
-            JSch jsch = new JSch();
-            if (privateKey != null)
-            {
-                jsch.addIdentity(privateKey);// 设置私钥
-            }
-
-            session = jsch.getSession(username, host, port);
-
-            if (password != null)
-            {
-                session.setPassword(password);
-            }
-            Properties config = new Properties();
-            config.put("StrictHostKeyChecking", "no");
-
-            session.setConfig(config);
-            session.connect();
-
-            Channel channel = session.openChannel("sftp");
-            channel.connect();
-
-            sftp = (ChannelSftp) channel;
+            // 获取
+            this.sftpWrapper = this.accquireSftp();
         } catch (JSchException e)
         {
             e.printStackTrace();
@@ -106,25 +111,39 @@ public class SFTPUtil
         }
     }
 
+    private SFTPWrapper accquireSftp() throws JSchException
+    {
+        SFTPWrapper sftpWrapper = new SFTPWrapper();
+        JSch jsch = new JSch();
+        if (privateKey != null)
+        {
+            jsch.addIdentity(privateKey);// 设置私钥
+        }
+        sftpWrapper.session = jsch.getSession(username, host, port);
+
+        if (password != null)
+        {
+            sftpWrapper.session.setPassword(password);
+        }
+        Properties config = new Properties();
+        config.put("StrictHostKeyChecking", "no");
+
+        sftpWrapper.session.setConfig(config);
+        sftpWrapper.session.connect();
+
+        Channel channel = sftpWrapper.session.openChannel("sftp");
+        channel.connect();
+
+        sftpWrapper.sftp = (ChannelSftp) channel;
+        return sftpWrapper;
+    }
+
     /**
      * 关闭连接 server
      */
     public void logout()
     {
-        if (sftp != null)
-        {
-            if (sftp.isConnected())
-            {
-                sftp.disconnect();
-            }
-        }
-        if (session != null)
-        {
-            if (session.isConnected())
-            {
-                session.disconnect();
-            }
-        }
+        this.sftpWrapper.logOut();
     }
 
 
@@ -139,8 +158,8 @@ public class SFTPUtil
     {
         try
         {
-            sftp.cd(basePath);
-            sftp.cd(directory);
+            sftpWrapper.sftp.cd(basePath);
+            sftpWrapper.sftp.cd(directory);
         } catch (SftpException e)
         {
             //目录不存在，则创建文件夹
@@ -152,15 +171,15 @@ public class SFTPUtil
                 tempPath += "/" + dir;
                 try
                 {
-                    sftp.cd(tempPath);
+                    sftpWrapper.sftp.cd(tempPath);
                 } catch (SftpException ex)
                 {
-                    sftp.mkdir(tempPath);
-                    sftp.cd(tempPath);
+                    sftpWrapper.sftp.mkdir(tempPath);
+                    sftpWrapper.sftp.cd(tempPath);
                 }
             }
         }
-        sftp.put(input, sftpFileName);  //上传文件
+        sftpWrapper.sftp.put(input, sftpFileName);  //上传文件
     }
 
 
@@ -175,10 +194,10 @@ public class SFTPUtil
     {
         if (directory != null && !"".equals(directory))
         {
-            sftp.cd(directory);
+            sftpWrapper.sftp.cd(directory);
         }
         File file = new File(saveFile);
-        sftp.get(downloadFile, new FileOutputStream(file));
+        sftpWrapper.sftp.get(downloadFile, new FileOutputStream(file));
     }
 
     /**
@@ -192,9 +211,9 @@ public class SFTPUtil
     {
         if (directory != null && !"".equals(directory))
         {
-            sftp.cd(directory);
+            sftpWrapper.sftp.cd(directory);
         }
-        InputStream is = sftp.get(downloadFile);
+        InputStream is = sftpWrapper.sftp.get(downloadFile);
 
         byte[] fileData = IOUtils.toByteArray(is);
 
@@ -210,8 +229,8 @@ public class SFTPUtil
      */
     public void delete(String directory, String deleteFile) throws SftpException
     {
-        sftp.cd(directory);
-        sftp.rm(deleteFile);
+        sftpWrapper.sftp.cd(directory);
+        sftpWrapper.sftp.rm(deleteFile);
     }
 
 
@@ -222,7 +241,7 @@ public class SFTPUtil
      */
     public Vector<?> listFiles(String directory) throws SftpException
     {
-        return sftp.ls(directory);
+        return sftpWrapper.sftp.ls(directory);
     }
 
     //上传文件测试

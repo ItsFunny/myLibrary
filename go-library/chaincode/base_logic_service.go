@@ -12,6 +12,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/hyperledger/fabric-chaincode-go/shim"
+	"github.com/sirupsen/logrus"
 	"myLibrary/go-library/blockchain/constants"
 	error3 "myLibrary/go-library/chaincode/error"
 	"myLibrary/go-library/common/blockchain/base"

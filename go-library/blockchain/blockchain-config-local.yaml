@@ -23,19 +23,19 @@ version: 1.0.0
 organizations:
   VlinkOrgMSP:
     mspid: VlinkOrgMSP
-    cryptoPath:  peerOrganizations/vlink.link/users/{username}@vlink.link/msp
+    cryptoPath:  peerOrganizations/0/users/{username}@0/msp
     peers:
-      - user0.vlink.link
-      - user1.vlink.link
-      - copyright0.vlink.link
-      - copyright1.vlink.link
+      - user0.0
+      - user1.0
+      - copyright0.0
+      - copyright1.0
     # [Optional]. Certificate Authorities issue certificates for identification purposes in a Fabric based
     # network. Typically certificates provisioning is done in a separate process outside of the
     # runtime network. Fabric-CA is a special certificate authority that provides a REST APIs for
     # dynamic certificate management (enroll, revoke, re-enroll). The following section is only for
     # Fabric-CA servers.
     certificateAuthorities:
-      - ca0.vlink.link
+      - ca0.0
   # the profile will contain public information about organizations other than the one it belongs to.
   # These are necessary information to make transaction lifecycles work, including MSP IDs and
   # peers with a public URL to send transaction proposals. The file will not contain private
@@ -86,7 +86,7 @@ client:
 channels:
   userchannel:
     peers:
-      user0.vlink.link:
+      user0.0:
         endorsingPeer: true
         chaincodeQuery: true
         ledgerQuery: true
@@ -95,7 +95,7 @@ channels:
 
   copyrightchannel:
     peers:
-      copyright0.vlink.link:
+      copyright0.0:
         endorsingPeer: true
         chaincodeQuery: true
         ledgerQuery: true
@@ -105,102 +105,102 @@ channels:
 
 
 orderers:
-  orderer0.vlink.link:
-    url: orderer0.vlink.link:6050
+  orderer0.0:
+    url: orderer0.0:6050
     grpcOptions:
-      ssl-target-name-override: orderer0.vlink.link
+      ssl-target-name-override: orderer0.0
       keep-alive-time: 0s
       keep-alive-timeout: 20s
       keep-alive-permit: false
       fail-fast: false
       allow-insecure: false
     tlsCACerts:
-      path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/ordererOrganizations/vlink.link/tlsca/tlsca.vlink.link-cert.pem
+      path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/ordererOrganizations/0/tlsca/tlsca.0-cert.pem
 
-  orderer1.vlink.link:
-    url: orderer1.vlink.link:6051
+  orderer1.0:
+    url: orderer1.0:6051
     grpcOptions:
-      ssl-target-name-override: orderer1.vlink.link
+      ssl-target-name-override: orderer1.0
       keep-alive-time: 0s
       keep-alive-timeout: 20s
       keep-alive-permit: false
       fail-fast: false
       allow-insecure: false
     tlsCACerts:
-      path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/ordererOrganizations/vlink.link/tlsca/tlsca.vlink.link-cert.pem
-  orderer2.vlink.link:
-    url: orderer2.vlink.link:6052
+      path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/ordererOrganizations/0/tlsca/tlsca.0-cert.pem
+  orderer2.0:
+    url: orderer2.0:6052
     grpcOptions:
-      ssl-target-name-override: orderer2.vlink.link
+      ssl-target-name-override: orderer2.0
       keep-alive-time: 0s
       keep-alive-timeout: 20s
       keep-alive-permit: false
       fail-fast: false
       allow-insecure: false
     tlsCACerts:
-      path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/ordererOrganizations/vlink.link/tlsca/tlsca.vlink.link-cert.pem
+      path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/ordererOrganizations/0/tlsca/tlsca.0-cert.pem
 
 
-  orderer3.vlink.link:
-    url: orderer3.vlink.link:6053
+  orderer3.0:
+    url: orderer3.0:6053
     grpcOptions:
-      ssl-target-name-override: ordere3.vlink.link
+      ssl-target-name-override: ordere3.0
       keep-alive-time: 0s
       keep-alive-timeout: 20s
       keep-alive-permit: false
       fail-fast: false
       allow-insecure: false
     tlsCACerts:
-      path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/ordererOrganizations/vlink.link/tlsca/tlsca.vlink.link-cert.pem
+      path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/ordererOrganizations/0/tlsca/tlsca.0-cert.pem
 
-  orderer4.vlink.link:
-    url: orderer4.vlink.link:6054
+  orderer4.0:
+    url: orderer4.0:6054
     grpcOptions:
-      ssl-target-name-override: orderer4.vlink.link
+      ssl-target-name-override: orderer4.0
       keep-alive-time: 0s
       keep-alive-timeout: 20s
       keep-alive-permit: false
       fail-fast: false
       allow-insecure: false
     tlsCACerts:
-      path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/ordererOrganizations/vlink.link/tlsca/tlsca.vlink.link-cert.pem
+      path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/ordererOrganizations/0/tlsca/tlsca.0-cert.pem
 
 
 peers:
-  user0.vlink.link:
-    url: user0.vlink.link:11051
+  user0.0:
+    url: user0.0:11051
     grpcOptions:
-      ssl-target-name-override: user0.vlink.link
+      ssl-target-name-override: user0.0
       keep-alive-time: 0s
       keep-alive-timeout: 20s
       keep-alive-permit: false
       fail-fast: false
       allow-insecure: false
     tlsCACerts:
-      path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/peerOrganizations/vlink.link/tlsca/tlsca.vlink.link-cert.pem
+      path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/peerOrganizations/0/tlsca/tlsca.0-cert.pem
 
-  copyright0.vlink.link:
-    url: copyright0.vlink.link:10051
+  copyright0.0:
+    url: copyright0.0:10051
     grpcOptions:
-      ssl-target-name-override: copyright0.vlink.link
+      ssl-target-name-override: copyright0.0
       keep-alive-time: 0s
       keep-alive-timeout: 20s
       keep-alive-permit: false
       fail-fast: false
       allow-insecure: false
     tlsCACerts:
-      path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/peerOrganizations/vlink.link/tlsca/tlsca.vlink.link-cert.pem
+      path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/peerOrganizations/0/tlsca/tlsca.0-cert.pem
 certificateAuthorities:
-  ca0.vlink.link:
-    url: https://ca.vlink.link:7054
+  ca0.0:
+    url: https://ca.0:7054
     tlsCACerts:
-      path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/peerOrganizations/vlink.link/peers/ca0.vlink.link/tls/ca.crt
+      path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/peerOrganizations/0/peers/ca0.0/tls/ca.crt
       client:
         key:
-          path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/peerOrganizations/vlink.link/peers/ca0.vlink.link/tls/server.key
+          path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/peerOrganizations/0/peers/ca0.0/tls/server.key
         cert:
-          path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/peerOrganizations/vlink.link/peers/ca0.vlink.link/tls/server.crt
+          path: /Users/joker/go/src/vlink.com/v2/vlink-blockchain-network/containers/test/crypto-config/peerOrganizations/0/peers/ca0.0/tls/server.crt
     registrar:
       enrollId: admin
       enrollSecret: adminpw
-    caName: ca0.vlink.link
+    caName: ca0.0

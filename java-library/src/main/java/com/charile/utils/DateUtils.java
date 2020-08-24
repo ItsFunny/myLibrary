@@ -18,7 +18,12 @@ public class DateUtils
 
     public static void main(String[] args)
     {
-//        //获取当前的年月日
+        Long a = 1594452019403l;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String format = dateFormat.format(new Date(a));
+        System.out.println(format);
+        System.out.println(Long.parseLong(format));
+        //        //获取当前的年月日
 //        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 //        Calendar c = Calendar.getInstance();
 //        c.add(Calendar.DAY_OF_MONTH, 0);

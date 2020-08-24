@@ -14,22 +14,24 @@ import java.util.concurrent.ConcurrentHashMap;
  * @Description 高速缓存, 底层是CHM和软引用
  * @Detail 1. 通过ReferenceQueue
  * 2. 获取不到的话就可能是任务
+ * k:
+ * v:
  * @date 创建时间：2019-02-01 06:18
  */
-public abstract class AbstractCHMSoftReferenchCache<K, V> extends AbstractReferenceCache<K, V>
+public abstract class AbstractCHMSoftReferenceCache<K, V> extends AbstractReferenceCache<K, V>
 {
     protected ClearStrategy<V> clearStrategy;
     protected ReferenceQueue<V> valueQueue;
     protected ConcurrentHashMap<K, SoftReferenceInfo<K, V>> dataMap;
 
-    public AbstractCHMSoftReferenchCache(ObjectCreateStrategy<V> createStrategy)
+    public AbstractCHMSoftReferenceCache(ObjectCreateStrategy<V> createStrategy)
     {
         super(createStrategy);
         this.dataMap = new ConcurrentHashMap<>();
         this.valueQueue = new ReferenceQueue<>();
     }
 
-    public AbstractCHMSoftReferenchCache(ClearStrategy<V> clearStrategy, ObjectCreateStrategy<V> createStrategy)
+    public AbstractCHMSoftReferenceCache(ClearStrategy<V> clearStrategy, ObjectCreateStrategy<V> createStrategy)
     {
         super(createStrategy);
         this.clearStrategy = clearStrategy;

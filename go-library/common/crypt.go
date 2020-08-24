@@ -8,9 +8,14 @@
 */
 package common
 
+import "sync"
+
 type ICrypter interface {
 	Encrypt(data ...interface{}) (interface{}, error)
 	Decrypt(data ...interface{}) (interface{}, error)
 }
 
-
+func main() {
+	m:=sync.Map{}
+	m.Load("")
+}

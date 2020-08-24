@@ -13,7 +13,7 @@ import com.charile.cache.ObjectCreateStrategy;
  * @Detail
  * @date 创建时间：2019-02-01 06:42
  */
-public class CHMSoftReferenceCache<K, V> extends AbstractCHMSoftReferenchCache<K, V>
+public class CHMSoftReferenceCache<K, V> extends AbstractCHMSoftReferenceCache<K, V>
 {
     private ClearStrategy<V> DEFAULT_CHM_CLEAR_STRATEGY = (queue) ->
     {

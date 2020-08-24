@@ -385,6 +385,7 @@ func (setUp *BlockChainConfiguration) initialize(p BlockChainProperties) error3.
 	// defer sdk.Close()
 	setUp.sdk = sdk
 
+
 	setUp.Log.Info("end 初始化SDK")
 
 	setUp.Log.Info("begin 初始化资源管理器")
@@ -471,10 +472,10 @@ func (setUp *BlockChainConfiguration) initialize(p BlockChainProperties) error3.
 				endPoints := make([]resmgmt.RequestOption, 0)
 				orderP := channel.Orders[0]
 				// endPoints = append(endPoints, resmgmt.WithOrdererEndpoint(orderP.OrdererAddress),
-				// 	resmgmt.WithOrdererEndpoint("orderer2.vlink.link"),
-				// 	resmgmt.WithOrdererEndpoint("orderer3.vlink.link"),
-				// 	resmgmt.WithOrdererEndpoint("orderer4.vlink.link"),
-				// 	resmgmt.WithOrdererEndpoint("orderer5.vlink.link"))
+				// 	resmgmt.WithOrdererEndpoint("orderer2.0"),
+				// 	resmgmt.WithOrdererEndpoint("orderer3.0"),
+				// 	resmgmt.WithOrdererEndpoint("orderer4.0"),
+				// 	resmgmt.WithOrdererEndpoint("orderer5.0"))
 				endPoints = append(endPoints, resmgmt.WithOrdererEndpoint(orderP.OrdererAddress))
 				endPoints = append(endPoints, channel.GetChannelAllPeersTarget())
 
@@ -742,6 +743,7 @@ func (c *BlockChainConfiguration) RegisterAndEnroll(req model.UserRegisterReq) (
 	}); nil != enroll {
 		return result, enroll
 	} else {
+		// FIXME 写入到本地的wallet中
 		result.Identity = res.Identity
 		publicKey, e := res.Identity.PrivateKey().PublicKey()
 		if nil != e {

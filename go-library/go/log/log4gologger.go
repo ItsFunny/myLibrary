@@ -11,6 +11,7 @@ package log
 import (
 	"code.google.com/log4go"
 	"fmt"
+	"github.com/sirupsen/logrus"
 	"runtime"
 )
 
@@ -28,7 +29,8 @@ func (l *log4goLogger) RecordInfo(first interface{}, info ...interface{}) {
 	// pc, _, lineNO, ok := runtime.Caller(1)
 	_, _, _, ok := runtime.Caller(1)
 	src := ""
-
+	lo:=logrus.New()
+	lo.Info()
 	if l.Prefix != "" {
 		src = fmt.Sprintf("[%s] ", l.Prefix)
 	}
