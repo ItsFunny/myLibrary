@@ -1,0 +1,90 @@
+version: '2'
+
+networks:
+  bidsun:
+services:
+  orderer0:
+    container_name: orderer.bidsun.com
+    extends:
+      file: ./base/peer-base.yaml
+      service: orderer-base
+    environment:
+      - FABRIC_LOGGING_SPEC=DEBUG
+    ports:
+      - "7050:7050"
+    volumes:
+      - ./channel-artifacts:/var/hyperledger/configtx
+      - ./channel-artifacts/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
+      - ./crypto-config/ordererOrganizations/bidsun.com/orderers/orderer.bidsun.com/msp:/var/hyperledger/orderer/msp
+      - ./crypto-config/ordererOrganizations/bidsun.com/orderers/orderer.bidsun.com/tls:/var/hyperledger/orderer/tls
+      - ./crypto-config/ordererOrganizations/bidsun.com/tlsca:/var/hyperledger/tlsca
+#      - /tmp/hyperledger/production/orderer0:/var/hyperledger/production
+    networks:
+      bidsun:
+
+#  orderer1:
+#    container_name: orderer1.bidsun.com
+#    extends:
+#      file: ../base/peer-base.yaml
+#      service: orderer-base
+#    ports:
+#      - "5051:7050"
+#    volumes:
+#      - ./channel-artifacts:/var/hyperledger/configtx
+#      - ./channel-artifacts/orderer.genesis.block:/var/hyperledger/orderer/orderer.genesis.block
+#      - ./crypto-config/ordererOrganizations/bidsun.com/orderers/orderer1.bidsun.com/msp:/var/hyperledger/orderer/msp
+#      - ./crypto-config/ordererOrganizations/bidsun.com/orderers/orderer1.bidsun.com/tls:/var/hyperledger/orderer/tls
+#      - ./crypto-config/ordererOrganizations/bidsun.com/tlsca:/var/hyperledger/tlsca
+##      - /tmp/hyperledger/production/orderer1:/var/hyperledger/production
+#    networks:
+#      bidsun:
+#
+#  orderer2:
+#    container_name: orderer2.bidsun.com
+#    extends:
+#      file: ../base/peer-base.yaml
+#      service: orderer-base
+#    ports:
+#      - "5052:7050"
+#    volumes:
+#      - ./channel-artifacts:/var/hyperledger/configtx
+#      - ./channel-artifacts/orderer.genesis.block:/var/hyperledger/orderer/orderer.genesis.block
+#      - ./crypto-config/ordererOrganizations/bidsun.com/orderers/orderer2.bidsun.com/msp:/var/hyperledger/orderer/msp
+#      - ./crypto-config/ordererOrganizations/bidsun.com/orderers/orderer2.bidsun.com/tls:/var/hyperledger/orderer/tls
+#      - ./crypto-config/ordererOrganizations/bidsun.com/tlsca:/var/hyperledger/tlsca
+##      - /tmp/hyperledger/production/orderer2:/var/hyperledger/production
+#    networks:
+#      bidsun:
+#  orderer3:
+#    container_name: orderer3.bidsun.com
+#    extends:
+#      file: ../base/peer-base.yaml
+#      service: orderer-base
+#    ports:
+#      - "5053:7050"
+#    volumes:
+#      - ./channel-artifacts:/var/hyperledger/configtx
+#      - ./channel-artifacts/orderer.genesis.block:/var/hyperledger/orderer/orderer.genesis.block
+#      - ./crypto-config/ordererOrganizations/bidsun.com/orderers/orderer3.bidsun.com/msp:/var/hyperledger/orderer/msp
+#      - ./crypto-config/ordererOrganizations/bidsun.com/orderers/orderer3.bidsun.com/tls:/var/hyperledger/orderer/tls
+#      - ./crypto-config/ordererOrganizations/bidsun.com/tlsca:/var/hyperledger/tlsca
+##      - /tmp/hyperledger/production/orderer3:/var/hyperledger/production
+#    networks:
+#      bidsun:
+#  orderer4:
+#    container_name: orderer4.bidsun.com
+#    extends:
+#      file: ../base/peer-base.yaml
+#      service: orderer-base
+#    ports:
+#      - "5054:7050"
+#    volumes:
+#      - ./channel-artifacts:/var/hyperledger/configtx
+#      - ./channel-artifacts/orderer.genesis.block:/var/hyperledger/orderer/orderer.genesis.block
+#      - ./crypto-config/ordererOrganizations/bidsun.com/orderers/orderer4.bidsun.com/msp:/var/hyperledger/orderer/msp
+#      - ./crypto-config/ordererOrganizations/bidsun.com/orderers/orderer4.bidsun.com/tls:/var/hyperledger/orderer/tls
+#      - ./crypto-config/ordererOrganizations/bidsun.com/tlsca:/var/hyperledger/tlsca
+##      - /tmp/hyperledger/production/orderer4:/var/hyperledger/production
+#    networks:
+#      bidsun:
+

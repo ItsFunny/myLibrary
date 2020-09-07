@@ -14,6 +14,22 @@ import (
 	"myLibrary/go-library/common/blockchain/base"
 )
 
+const (
+	// 当前组织背书
+	POLICY_TYPE_OWNER_ORGANIZATION = 1
+
+	POLICY_TYPE_SIGN_BY_ANY_ADMIN=2
+	POLICY_TYPE_SIGN_BY_ANY_CLIENT=3
+	POLICY_TYPE_SIGN_BY_ANY_MEMBER=4
+	POLICY_TYPE_SIGN_BY_ANY_PEER=5
+
+	POLICY_TYPE_SIGN_BY_MSP_ADMIN=12
+	POLICY_TYPE_SIGN_BY_MSP_CLIENT=13
+	POLICY_TYPE_SIGN_BY_MSP_MEMBER=14
+	POLICY_TYPE_SIGN_BY_MSP_PEER=14
+
+)
+
 // cc的配置
 type ChainCodeProperties struct {
 	ChainCodeID   base.ChainCodeID `yaml:"chainCodeId" json:"chainCodeId"`
@@ -21,13 +37,18 @@ type ChainCodeProperties struct {
 	NeedUpdate    bool             `yaml:"needUpdate" json:"needUpdate"`
 	// 2020-06-16 是否是需要监听block事件的chaincode
 	NeedListOnBlockEvent bool `yaml:"needListOnBlockEvent" json:"needListOnBlockEvent"`
+
+	// 2020-09-06 add
+	// 如果版本号定义了,则使用该版本号,否则自动升级
+	Version string `yaml:"version" json:"version"`
+	// 如果背书策略未指定,则默认为当前组织背书
+	PolicyType byte   `yaml:"policyType" json:"policyType"`
+	Policy     string `yaml:"policy" json:"policy"`
 }
 
 type Peer struct {
 	AnchorPeers   []AnchorPeer   `yaml:"anchorPeers"`
 	EndorserPeers []EndorserPeer `yaml:"endorserPeers"`
-
-
 }
 
 type AnchorPeer struct {
@@ -149,11 +170,16 @@ func (this ChannelProperties) GetInterestBlockEventChainCodes() []string {
 	return results
 }
 
+type SDKConfigProperty struct {
+	Path           string              `json:"path"`
+	OrganizationId base.OrganizationID `json:"clientId"`
+}
+
 type BlockChainProperties struct {
 	// GOPATH路径
 	GoPath string `yaml:"goPath" json:"goPath"`
 	// config的路径,绝对路径
-	ConfigPath string `yaml:"configPath" json:"configPath"`
+	SDKConfig []SDKConfigProperty `yaml:"configPath" json:"configPath"`
 	// 加密的版本号
 	CryptVersion base.Version        `yaml:"cryptVersion" json:"version"`
 	Channels     []ChannelProperties `yaml:"channels" json:"channels"`

@@ -1,0 +1,91 @@
+version: '2'
+networks:
+  demo:
+services:
+  peer0:
+    container_name: peer0.bidsun.com
+    extends:
+      file: ./base/peer-base.yaml
+      service: peer-base
+    environment:
+      - CORE_PEER_ID=peer0.bidsun.com
+      - CORE_PEER_ADDRESS=peer0.bidsun.com:11051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:11051
+      - CORE_PEER_CHAINCODEADDRESS=peer0.bidsun.com:11052
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:11052
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer2.bidsun.com:11061
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.bidsun.com:11051
+      - CORE_PEER_LOCALMSPID=BidsunMSP
+    ports:
+      - "11051:11051"
+      - "11052:11052"
+    volumes:
+      - /var/run/:/host/var/run/
+      - ./crypto-config/peerOrganizations/bidsun.com/peers/peer0.bidsun.com/msp:/etc/hyperledger/fabric/msp
+      - ./crypto-config/peerOrganizations/bidsun.com/peers/peer0.bidsun.com/tls:/etc/hyperledger/fabric/tls
+    #      - /tmp/hyperledger/production/peer0:/var/hyperledger/production
+    networks:
+      demo:
+#  peer2:
+#    container_name: peer2.bidsun.com
+#    extends:
+#      file: ./base/peer-base.yaml
+#      service: peer-base
+#    environment:
+#      - CORE_PEER_ID=peer2.bidsun.com
+#      - CORE_PEER_ADDRESS=peer2.bidsun.com:11061
+#      - CORE_PEER_LISTENADDRESS=0.0.0.0:11061
+#      - CORE_PEER_CHAINCODEADDRESS=peer2.bidsun.com:11062
+#      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:11062
+#      - CORE_PEER_GOSSIP_BOOTSTRAP=peer2.bidsun.com:11051
+#      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer2.bidsun.com:11061
+#      - CORE_PEER_LOCALMSPID=Org0MSP
+#    ports:
+#      - "11061:11061"
+#      - "11062:11062"
+#    volumes:
+#      - /var/run/:/host/var/run/
+#      - ./crypto-config/peerOrganizations/bidsun.com/peers/peer2.bidsun.com/msp:/etc/hyperledger/fabric/msp
+#      - ./crypto-config/peerOrganizations/bidsun.com/peers/peer2.bidsun.com/tls:/etc/hyperledger/fabric/tls
+#    #      - /tmp/hyperledger/production/peer0:/var/hyperledger/production
+#    networks:
+#      demo:
+
+
+#
+#  cli:
+#    container_name: cli
+#    image: hyperledger/fabric-tools:1.4.2
+#    tty: true
+#    stdin_open: true
+#    environment:
+#      - SYS_CHANNEL=sysdemochannel
+#      - GOPATH=/opt/gopath
+#      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+#      #- FABRIC_LOGGING_SPEC=DEBUG
+#      - FABRIC_LOGGING_SPEC=DEBUG
+#      - CORE_PEER_ID=cli
+#      - CORE_PEER_ADDRESS=peer0.bidsun.com:11051
+#      - CORE_PEER_LOCALMSPID=Org0MSP
+#      - CORE_PEER_TLS_ENABLED=true
+#      - CORE_PEER_TLS_CERT_FILE=/var/hyperledger/fabric/tls/server.crt
+#      - CORE_PEER_TLS_KEY_FILE=/var/hyperledger/fabric/tls/server.key
+#      - CORE_PEER_TLS_ROOTCERT_FILE=/var/hyperledger/fabric/tls/ca.crt
+#      - CORE_PEER_MSPCONFIGPATH=/var/hyperledger/fabric/msp
+#    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
+#    command: /bin/bash
+#    volumes:
+#      - /var/run/:/host/var/run/
+#      - ../../chaincodes:/opt/gopath/src/github.com/hyperledger/fabric/chaincode
+#      - ./crypto-config/peerOrganizations/bidsun.com/peers/peer0.bidsun.com/tls:/var/hyperledger/fabric/tls
+#      - ./crypto-config/peerOrganizations/bidsun.com/peers/peer0.bidsun.com/msp:/var/hyperledger/fabric/msp
+#      - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
+#      - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/artifacts
+#    networks:
+#      bidsun:
+#    extra_hosts:
+#      - "orderer.bidsun.com:172.224.2.2"
+#      - "orderer1.demo.com:172.224.2.2"
+#      - "orderer2.demo.com:172.224.2.2"
+#      - "orderer3.demo.com:172.224.2.2"
+#      - "orderer4.demo.com:172.224.2.2"

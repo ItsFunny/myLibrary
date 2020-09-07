@@ -1,0 +1,391 @@
+{
+	"MSP": {
+		"BidsunMSP": {
+			"channels": [
+				"ebidsun-alpha",
+				"ebidsun-global",
+				"ebidsun-files",
+				"tc-construction-project",
+				"ebidsun-enterprise-base",
+				"notary-enterprise-performance",
+				"notary-enterprise-bid-material",
+				"tc-purchase-project",
+				"tc-enterprise-bidinfo",
+				"notary-qualification",
+				"authority-invoke-log",
+				"ebidsun-transfer-test"
+			],
+			"peers": [
+				"peer0.bidsun.com:7051"
+			],
+			"chaincodes": [
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/tt_example"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/enterprise"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/platform"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/cryptomessage"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/tender_project"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/bid_section"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/bidding_result"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/enterprise_credit_score"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/tradecenter_trade_exponent"
+				},
+				{
+					"channelName": "ebidsun-global",
+					"chaincodePath": "bidchain/chaincode/platform"
+				},
+				{
+					"channelName": "ebidsun-global",
+					"chaincodePath": "bidchain/chaincode/bid_project"
+				},
+				{
+					"channelName": "ebidsun-global",
+					"chaincodePath": "bidchain/chaincode/guarantee"
+				},
+				{
+					"channelName": "ebidsun-global",
+					"chaincodePath": "bidchain/chaincode/trade_bind"
+				},
+				{
+					"channelName": "ebidsun-files",
+					"chaincodePath": "bidchain/chaincode/ipfs_filehash"
+				},
+				{
+					"channelName": "tc-construction-project",
+					"chaincodePath": "bidchain/chaincode/bid_project"
+				},
+				{
+					"channelName": "ebidsun-enterprise-base",
+					"chaincodePath": "bidchain/chaincode/enterprise_baseinfo"
+				},
+				{
+					"channelName": "notary-enterprise-performance",
+					"chaincodePath": "bidchain/chaincode/enterprise_reference_performance"
+				},
+				{
+					"channelName": "notary-enterprise-performance",
+					"chaincodePath": "bidchain/chaincode/enterprise_performance"
+				},
+				{
+					"channelName": "notary-enterprise-performance",
+					"chaincodePath": "bidchain/chaincode/enterprise_performance_copy"
+				},
+				{
+					"channelName": "notary-enterprise-bid-material",
+					"chaincodePath": "bidchain/chaincode/enterprise_qrcode"
+				},
+				{
+					"channelName": "tc-purchase-project",
+					"chaincodePath": "bidchain/chaincode/bid_project_purchase"
+				},
+				{
+					"channelName": "tc-enterprise-bidinfo",
+					"chaincodePath": "bidchain/chaincode/bidproject_info_ledger"
+				},
+				{
+					"channelName": "notary-qualification",
+					"chaincodePath": "bidchain/chaincode/enterprise_qualification"
+				},
+				{
+					"channelName": "notary-qualification",
+					"chaincodePath": "bidchain/chaincode/enterprise_qualification_copy"
+				},
+				{
+					"channelName": "authority-invoke-log",
+					"chaincodePath": "bidchain/chaincode/qualification_query_result"
+				},
+				{
+					"channelName": "ebidsun-transfer-test",
+					"chaincodePath": "bidchain/chaincode/tt_transfer_demo"
+				},
+				{
+					"channelName": "ebidsun-transfer-test",
+					"chaincodePath": "bidchain/chaincode/enterprise"
+				}
+			]
+		},
+		"GuangzhouMSP": {
+			"channels": [
+				"ebidsun-alpha",
+				"ebidsun-global",
+				"ebidsun-files",
+				"tc-construction-project",
+				"ebidsun-enterprise-base",
+				"notary-enterprise-performance",
+				"notary-enterprise-bid-material",
+				"tc-purchase-project",
+				"tc-enterprise-bidinfo",
+				"notary-qualification",
+				"authority-invoke-log",
+				"ebidsun-transfer-test"
+			],
+			"peers": [
+				"peer0.guangzhou.com:9051"
+			],
+			"chaincodes": [
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/tt_example"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/enterprise"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/platform"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/cryptomessage"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/tender_project"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/bid_section"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/bidding_result"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/enterprise_credit_score"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/tradecenter_trade_exponent"
+				},
+				{
+					"channelName": "ebidsun-global",
+					"chaincodePath": "bidchain/chaincode/platform"
+				},
+				{
+					"channelName": "ebidsun-global",
+					"chaincodePath": "bidchain/chaincode/bid_project"
+				},
+				{
+					"channelName": "ebidsun-global",
+					"chaincodePath": "bidchain/chaincode/guarantee"
+				},
+				{
+					"channelName": "ebidsun-global",
+					"chaincodePath": "bidchain/chaincode/trade_bind"
+				},
+				{
+					"channelName": "ebidsun-files",
+					"chaincodePath": "bidchain/chaincode/ipfs_filehash"
+				},
+				{
+					"channelName": "tc-construction-project",
+					"chaincodePath": "bidchain/chaincode/bid_project"
+				},
+				{
+					"channelName": "ebidsun-enterprise-base",
+					"chaincodePath": "bidchain/chaincode/enterprise_baseinfo"
+				},
+				{
+					"channelName": "notary-enterprise-performance",
+					"chaincodePath": "bidchain/chaincode/enterprise_reference_performance"
+				},
+				{
+					"channelName": "notary-enterprise-performance",
+					"chaincodePath": "bidchain/chaincode/enterprise_performance"
+				},
+				{
+					"channelName": "notary-enterprise-performance",
+					"chaincodePath": "bidchain/chaincode/enterprise_performance_copy"
+				},
+				{
+					"channelName": "notary-enterprise-bid-material",
+					"chaincodePath": "bidchain/chaincode/enterprise_qrcode"
+				},
+				{
+					"channelName": "tc-purchase-project",
+					"chaincodePath": "bidchain/chaincode/bid_project_purchase"
+				},
+				{
+					"channelName": "tc-enterprise-bidinfo",
+					"chaincodePath": "bidchain/chaincode/bidproject_info_ledger"
+				},
+				{
+					"channelName": "notary-qualification",
+					"chaincodePath": "bidchain/chaincode/enterprise_qualification"
+				},
+				{
+					"channelName": "notary-qualification",
+					"chaincodePath": "bidchain/chaincode/enterprise_qualification_copy"
+				},
+				{
+					"channelName": "authority-invoke-log",
+					"chaincodePath": "bidchain/chaincode/qualification_query_result"
+				},
+				{
+					"channelName": "ebidsun-transfer-test",
+					"chaincodePath": "bidchain/chaincode/tt_transfer_demo"
+				},
+				{
+					"channelName": "ebidsun-transfer-test",
+					"chaincodePath": "bidchain/chaincode/enterprise"
+				}
+			]
+		},
+		"ZhuhaiMSP": {
+			"channels": [
+				"ebidsun-alpha",
+				"ebidsun-global",
+				"ebidsun-files",
+				"tc-construction-project",
+				"ebidsun-enterprise-base",
+				"notary-enterprise-performance",
+				"notary-enterprise-bid-material",
+				"tc-purchase-project",
+				"tc-enterprise-bidinfo",
+				"notary-qualification",
+				"authority-invoke-log",
+				"ebidsun-transfer-test"
+			],
+			"peers": [
+				"peer0.zhuhai.com:7051"
+			],
+			"chaincodes": [
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/tt_example"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/enterprise"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/platform"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/cryptomessage"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/tender_project"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/bid_section"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/bidding_result"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/enterprise_credit_score"
+				},
+				{
+					"channelName": "ebidsun-alpha",
+					"chaincodePath": "bidchain/chaincode/tradecenter_trade_exponent"
+				},
+				{
+					"channelName": "ebidsun-global",
+					"chaincodePath": "bidchain/chaincode/platform"
+				},
+				{
+					"channelName": "ebidsun-global",
+					"chaincodePath": "bidchain/chaincode/bid_project"
+				},
+				{
+					"channelName": "ebidsun-global",
+					"chaincodePath": "bidchain/chaincode/guarantee"
+				},
+				{
+					"channelName": "ebidsun-global",
+					"chaincodePath": "bidchain/chaincode/trade_bind"
+				},
+				{
+					"channelName": "ebidsun-files",
+					"chaincodePath": "bidchain/chaincode/ipfs_filehash"
+				},
+				{
+					"channelName": "tc-construction-project",
+					"chaincodePath": "bidchain/chaincode/bid_project"
+				},
+				{
+					"channelName": "ebidsun-enterprise-base",
+					"chaincodePath": "bidchain/chaincode/enterprise_baseinfo"
+				},
+				{
+					"channelName": "notary-enterprise-performance",
+					"chaincodePath": "bidchain/chaincode/enterprise_reference_performance"
+				},
+				{
+					"channelName": "notary-enterprise-performance",
+					"chaincodePath": "bidchain/chaincode/enterprise_performance"
+				},
+				{
+					"channelName": "notary-enterprise-performance",
+					"chaincodePath": "bidchain/chaincode/enterprise_performance_copy"
+				},
+				{
+					"channelName": "notary-enterprise-bid-material",
+					"chaincodePath": "bidchain/chaincode/enterprise_qrcode"
+				},
+				{
+					"channelName": "tc-purchase-project",
+					"chaincodePath": "bidchain/chaincode/bid_project_purchase"
+				},
+				{
+					"channelName": "tc-enterprise-bidinfo",
+					"chaincodePath": "bidchain/chaincode/bidproject_info_ledger"
+				},
+				{
+					"channelName": "notary-qualification",
+					"chaincodePath": "bidchain/chaincode/enterprise_qualification"
+				},
+				{
+					"channelName": "notary-qualification",
+					"chaincodePath": "bidchain/chaincode/enterprise_qualification_copy"
+				},
+				{
+					"channelName": "authority-invoke-log",
+					"chaincodePath": "bidchain/chaincode/qualification_query_result"
+				},
+				{
+					"channelName": "ebidsun-transfer-test",
+					"chaincodePath": "bidchain/chaincode/tt_transfer_demo"
+				},
+				{
+					"channelName": "ebidsun-transfer-test",
+					"chaincodePath": "bidchain/chaincode/enterprise"
+				}
+			]
+		}
+	}
+}

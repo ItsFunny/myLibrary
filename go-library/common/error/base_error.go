@@ -62,6 +62,7 @@ func ErrorsWithMessage(err error, msg string) IBaseError {
 	return NewBaseError(err, FAIL, msg)
 }
 
+
 func (e *BaseError) Error() string {
 	if nil != e.Cause {
 		return e.Msg + ":" + e.Cause.Error()

@@ -12,6 +12,7 @@ import (
 	"context"
 	"encoding/hex"
 	"encoding/json"
+	"errors"
 	"fmt"
 	cb "github.com/hyperledger/fabric-protos-go/common"
 	"github.com/hyperledger/fabric-sdk-go/pkg/client/channel"
@@ -24,12 +25,16 @@ import (
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/msp"
 	"github.com/hyperledger/fabric-sdk-go/pkg/core/config"
 	packager "github.com/hyperledger/fabric-sdk-go/pkg/fab/ccpackager/gopackager"
+	"github.com/hyperledger/fabric-sdk-go/pkg/fab/resource"
 	"github.com/hyperledger/fabric-sdk-go/pkg/fabsdk"
 	"github.com/hyperledger/fabric-sdk-go/pkg/gateway"
 	"github.com/hyperledger/fabric-sdk-go/third_party/github.com/hyperledger/fabric/common/cauthdsl"
+	genesisconfig "github.com/hyperledger/fabric/common/tools/configtxgen/localconfig"
 	"gopkg.in/yaml.v1"
 	"io/ioutil"
 	error2 "myLibrary/go-library/blockchain/error"
+	"myLibrary/go-library/blockchain/internal"
+	localGenesisconfig "myLibrary/go-library/blockchain/internal/genesisconfig"
 	"myLibrary/go-library/blockchain/model"
 	utils2 "myLibrary/go-library/blockchain/utils"
 	"myLibrary/go-library/blockchain/wrapper"
@@ -98,12 +103,16 @@ type ChannelLedgerWrapper struct {
 	ledgers map[base.ChannelID]*ChannelLedgerInfo
 }
 
+type SDKWrapper struct {
+	sdkMap map[base.OrganizationID]*fabsdk.FabricSDK
+}
+
 //
 type BlockChainConfiguration struct {
 	Log                  log.Logger
 	Version              base.Version
 	Properties           *BlockChainProperties
-	sdk                  *fabsdk.FabricSDK
+	sdkWrapper           *SDKWrapper
 	clientWrapper        *ChannelClientWrapper
 	adminResourceWrapper *ResourceAdminWrapper
 	events               *ChannelEventWrapper
@@ -114,6 +123,9 @@ type BlockChainConfiguration struct {
 func NewBlockChainConfiguration() *BlockChainConfiguration {
 	c := new(BlockChainConfiguration)
 	c.Log = log.NewCommonBaseLoggerWithLog4go("config")
+	c.sdkWrapper = &SDKWrapper{
+		sdkMap: make(map[base.OrganizationID]*fabsdk.FabricSDK),
+	}
 	return c
 }
 
@@ -222,7 +234,8 @@ func (this *BlockChainConfiguration) EnrollAdminUser(id base.ChannelID, admin, a
 }
 
 type Info struct {
-	UserName string
+	UserName       string
+	OrganizationId base.OrganizationID
 }
 
 func (this *BlockChainConfiguration) execute(b base.ChainBaseReq, data interface{}) (channel.Response, error3.IBaseError) {
@@ -250,7 +263,7 @@ func (this *BlockChainConfiguration) execute(b base.ChainBaseReq, data interface
 		info, ok := b.Context.Value("info").(*Info)
 		if ok {
 			userName := info.UserName
-			gw, e := gateway.Connect(gateway.WithSDK(this.sdk), gateway.WithUser(userName))
+			gw, e := gateway.Connect(gateway.WithSDK(this.sdkWrapper.sdkMap[info.OrganizationId]), gateway.WithUser(userName))
 			if nil != e {
 				return channel.Response{}, error2.NewFabricError(e, "根据用户连接到区块链网络失败")
 			}
@@ -327,9 +340,14 @@ func HandleResponse(response channel.Response) (base.BaseFabricResp, error3.IBas
 }
 
 func (setUp *BlockChainConfiguration) Config(path string, configWrapper ConfigWrapper) error3.IBaseError {
-	properties, baseError := setUp.loadYaml(path)
-	if baseError != nil {
-		return baseError
+	// properties, baseError := setUp.loadYaml(path)
+	properties := new(BlockChainProperties)
+	bytes, e := ioutil.ReadFile(path)
+	if e != nil {
+		return error3.NewConfigError(e, "读取文件错误,path="+path)
+	}
+	if e := json.Unmarshal(bytes, properties); nil != e {
+		return error3.NewConfigError(e, "json反序列化错误")
 	}
 	if e := setUp.doConfig(properties, configWrapper); nil != e {
 		return e
@@ -377,162 +395,201 @@ func (setUp *BlockChainConfiguration) doConfig(p *BlockChainProperties, wrapper 
 
 func (setUp *BlockChainConfiguration) initialize(p BlockChainProperties) error3.IBaseError {
 	setUp.Log.Info("begin 初始化SDK")
-	c := config.FromFile(p.ConfigPath)
-	sdk, e := fabsdk.New(c)
-	if nil != e {
-		panic(e)
-	}
-	// defer sdk.Close()
-	setUp.sdk = sdk
+	for _, sdkCfg := range p.SDKConfig {
+		c := config.FromFile(sdkCfg.Path)
+		sdk, e := fabsdk.New(c)
+		if nil != e {
+			panic(e)
+		}
+		// defer sdk.Close()
+		setUp.sdkWrapper.sdkMap[sdkCfg.OrganizationId] = sdk
 
+		setUp.Log.Info("end 初始化SDK")
 
-	setUp.Log.Info("end 初始化SDK")
+		setUp.Log.Info("begin 初始化资源管理器")
+		// 多个组织有多个不同的organization ,所以需要for 遍历多次初始化
+		channelCreated := false
+		for _, channel := range p.Channels {
+			for _, organization := range channel.Organizations {
+				setUp.Log.Info(fmt.Sprintf("begin 初始化组织为[%s]的资源管理器", organization.OrganizationID))
+				setUp.Log.Info("信息为:", organization.String())
+				resourceManagerClientContext := sdk.Context(fabsdk.WithOrg(string(organization.OrganizationID)), fabsdk.WithUser(organization.GetAdminUser()[0]))
+				// resourceManagerClientContext := sdk.Context(fabsdk.WithOrg(string(organization.OrganizationID)))
+				admin, e := resmgmt.New(resourceManagerClientContext)
+				if nil != e {
+					s := fmt.Sprintf("初始化组织为[%s]的资源管理器失败:%s", organization.OrganizationID, e.Error())
+					return error3.NewConfigError(e, s)
+				}
+				if setUp.adminResourceWrapper == nil {
+					w := new(ResourceAdminWrapper)
+					w.admins = make(map[base.ChannelID]*ResourceAdminInfo)
+					setUp.adminResourceWrapper = w
+				}
+				m := setUp.adminResourceWrapper.admins[channel.ChannelID]
+				if m == nil {
+					resourceMap := new(ResourceAdminInfo)
+					resourceMap.admins = make(map[base.OrganizationID]*OrganizationResourceAdmin)
+					setUp.adminResourceWrapper.admins[channel.ChannelID] = resourceMap
+					m = resourceMap
+				}
+				m.admins[organization.OrganizationID] = &OrganizationResourceAdmin{
+					Admin: admin,
+				}
+				setUp.Log.Info(fmt.Sprintf("end 初始化组织为[%s]的资源管理器", organization.OrganizationID))
 
-	setUp.Log.Info("begin 初始化资源管理器")
-	// 多个组织有多个不同的organization ,所以需要for 遍历多次初始化
-	channelCreated := false
-	for _, channel := range p.Channels {
-		for _, organization := range channel.Organizations {
-			setUp.Log.Info(fmt.Sprintf("begin 初始化组织为[%s]的资源管理器", organization.OrganizationID))
-			setUp.Log.Info("信息为:", organization.String())
-			resourceManagerClientContext := sdk.Context(fabsdk.WithOrg(string(organization.OrganizationID)), fabsdk.WithUser(organization.GetAdminUser()[0]))
-			// resourceManagerClientContext := sdk.Context(fabsdk.WithOrg(string(organization.OrganizationID)))
-			admin, e := resmgmt.New(resourceManagerClientContext)
-			if nil != e {
-				s := fmt.Sprintf("初始化组织为[%s]的资源管理器失败:%s", organization.OrganizationID, e.Error())
-				return error3.NewConfigError(e, s)
-			}
-			if setUp.adminResourceWrapper == nil {
-				w := new(ResourceAdminWrapper)
-				w.admins = make(map[base.ChannelID]*ResourceAdminInfo)
-				setUp.adminResourceWrapper = w
-			}
-			m := setUp.adminResourceWrapper.admins[channel.ChannelID]
-			if m == nil {
-				resourceMap := new(ResourceAdminInfo)
-				resourceMap.admins = make(map[base.OrganizationID]*OrganizationResourceAdmin)
-				setUp.adminResourceWrapper.admins[channel.ChannelID] = resourceMap
-				m = resourceMap
-			}
-			m.admins[organization.OrganizationID] = &OrganizationResourceAdmin{
-				Admin: admin,
-			}
-			setUp.Log.Info(fmt.Sprintf("end 初始化组织为[%s]的资源管理器", organization.OrganizationID))
+				setUp.Log.Info("begin 开始初始化admin-mspclient")
+				mspClient, e := mspclient.New(sdk.Context(), mspclient.WithOrg(string(organization.OrganizationID)))
+				if nil != e {
+					panic(e)
+				}
+				if setUp.msps == nil {
+					setUp.msps = wrapper.NewOrganizationMspWrapper()
+				}
+				clientWrapper := wrapper.NewMspClientWrapper(mspClient)
+				clientWrapper.CaInfo.CaName = organization.Ca.CaName
+				setUp.msps.Clients[organization.OrganizationID] = clientWrapper
+				setUp.Log.Info("begin 组装identites")
+				identites := make([]msp.SigningIdentity, 0)
+				identity, e := mspClient.GetSigningIdentity(organization.GetAdminUser()[0])
+				if nil != e {
+					panic(e)
+				}
+				identites = append(identites, identity)
+				setUp.Log.Info("end 组装identites")
+				setUp.Log.Info("end 初始化msp-client")
 
-			setUp.Log.Info("begin 开始初始化admin-mspclient")
-			mspClient, e := mspclient.New(sdk.Context(), mspclient.WithOrg(string(organization.OrganizationID)))
-			if nil != e {
-				panic(e)
-			}
-			if setUp.msps == nil {
-				setUp.msps = wrapper.NewOrganizationMspWrapper()
-			}
-			clientWrapper := wrapper.NewMspClientWrapper(mspClient)
-			clientWrapper.CaInfo.CaName = organization.Ca.CaName
-			setUp.msps.Clients[organization.OrganizationID] = clientWrapper
-			setUp.Log.Info("begin 组装identites")
-			identites := make([]msp.SigningIdentity, 0)
-			identity, e := mspClient.GetSigningIdentity(organization.GetAdminUser()[0])
-			if nil != e {
-				panic(e)
-			}
-			identites = append(identites, identity)
-			setUp.Log.Info("end 组装identites")
-			setUp.Log.Info("end 初始化msp-client")
+				setUp.Log.Info("begin 查询已经存在的channel")
+				channelResp, e := admin.QueryChannels(resmgmt.WithTargetEndpoints(organization.Peer.EndorserPeers[0].Address))
+				if nil != e {
+					return error3.NewConfigError(e, fmt.Sprintf("查询anchorpeer=[%s]上的channel失败:%s", organization.Peer.EndorserPeers[0].Address, e.Error()))
+				}
+				setUp.Log.Info("end 查询已经存在的channel,长度为:%d", len(channelResp.Channels))
 
-			setUp.Log.Info("begin 查询已经存在的channel")
-			channelResp, e := admin.QueryChannels(resmgmt.WithTargetEndpoints(organization.Peer.EndorserPeers[0].Address))
-			if nil != e {
-				return error3.NewConfigError(e, fmt.Sprintf("查询anchorpeer=[%s]上的channel失败:%s", organization.Peer.EndorserPeers[0].Address, e.Error()))
-			}
-			setUp.Log.Info("end 查询已经存在的channel,长度为:%d", len(channelResp.Channels))
-
-			setUp.Log.Info("begin 判断channel是否已经存在")
-			if nil != channelResp {
-				for _, c := range channelResp.Channels {
-					setUp.Log.Info("存在channel名称为:" + c.ChannelId)
-					if strings.EqualFold(c.ChannelId, string(channel.ChannelID)) {
-						channelCreated = true
-						break
+				setUp.Log.Info("begin 判断channel是否已经存在")
+				if nil != channelResp {
+					for _, c := range channelResp.Channels {
+						setUp.Log.Info("存在channel名称为:" + c.ChannelId)
+						if strings.EqualFold(c.ChannelId, string(channel.ChannelID)) {
+							channelCreated = true
+							break
+						}
 					}
 				}
-			}
 
-			// p := models.VlinkPeer{
-			// 	ChannelName: string(channel.base.ChannelID),
-			// 	Domain:      peer.AnchorPeers[0].Address,
-			// 	Port:        peer.AnchorPeers[0].Port,
-			// }
-			if channelCreated {
-				setUp.Log.Info(fmt.Sprintf("channel:[%s]已经存在\n", string(channel.ChannelID)))
-			} else {
-				setUp.Log.Info("begin 创建channel")
-				saveChanReq := resmgmt.SaveChannelRequest{ChannelID: string(channel.ChannelID), ChannelConfigPath: channel.ChannelConfigPath, SigningIdentities: identites}
-				// 获取某个order的keys 即可
-				endPoints := make([]resmgmt.RequestOption, 0)
-				orderP := channel.Orders[0]
-				// endPoints = append(endPoints, resmgmt.WithOrdererEndpoint(orderP.OrdererAddress),
-				// 	resmgmt.WithOrdererEndpoint("orderer2.0"),
-				// 	resmgmt.WithOrdererEndpoint("orderer3.0"),
-				// 	resmgmt.WithOrdererEndpoint("orderer4.0"),
-				// 	resmgmt.WithOrdererEndpoint("orderer5.0"))
-				endPoints = append(endPoints, resmgmt.WithOrdererEndpoint(orderP.OrdererAddress))
-				endPoints = append(endPoints, channel.GetChannelAllPeersTarget())
+				// p := models.VlinkPeer{
+				// 	ChannelName: string(channel.base.ChannelID),
+				// 	Domain:      peer.AnchorPeers[0].Address,
+				// 	Port:        peer.AnchorPeers[0].Port,
+				// }
+				if channelCreated {
+					setUp.Log.Info(fmt.Sprintf("channel:[%s]已经存在\n", string(channel.ChannelID)))
+				} else {
+					setUp.Log.Info("begin 创建channel")
+					saveChanReq := resmgmt.SaveChannelRequest{ChannelID: string(channel.ChannelID), ChannelConfigPath: channel.ChannelConfigPath, SigningIdentities: identites}
+					// 获取某个order的keys 即可
+					endPoints := make([]resmgmt.RequestOption, 0)
+					orderP := channel.Orders[0]
+					// endPoints = append(endPoints, resmgmt.WithOrdererEndpoint(orderP.OrdererAddress),
+					// 	resmgmt.WithOrdererEndpoint("orderer2.0"),
+					// 	resmgmt.WithOrdererEndpoint("orderer3.0"),
+					// 	resmgmt.WithOrdererEndpoint("orderer4.0"),
+					// 	resmgmt.WithOrdererEndpoint("orderer5.0"))
+					endPoints = append(endPoints, resmgmt.WithOrdererEndpoint(orderP.OrdererAddress))
+					endPoints = append(endPoints, channel.GetChannelAllPeersTarget())
 
-				saveChanResp, e := admin.SaveChannel(saveChanReq, endPoints...)
-				if nil != e || saveChanResp.TransactionID == "" {
-					setUp.Log.Error("创建channel失败,可能是因为已经存在了channel,所以直接加入")
+					saveChanResp, e := admin.SaveChannel(saveChanReq, endPoints...)
+					if nil != e || saveChanResp.TransactionID == "" {
+						setUp.Log.Error("创建channel失败,可能是因为已经存在了channel,所以直接加入")
 
-					tryJoinChannel := func() error3.IBaseError {
-						setUp.Log.Info("尝试将节点加入channel")
+						tryJoinChannel := func() error3.IBaseError {
+							setUp.Log.Info("尝试将节点加入channel")
+							// resmgmt.WithTargetEndpoints()
+							if e = admin.JoinChannel(string(channel.ChannelID)); nil != e {
+								s := fmt.Sprintf("尝试channelId=[%s]加入通道失败:%s", channel.ChannelID, e.Error())
+								return error3.NewConfigError(e, s)
+							}
+							return nil
+						}
+						if e := tryJoinChannel(); nil != e {
+							return e
+						}
+					} else {
+						setUp.Log.Debug("end 创建channel成功,sleep 10秒等待raft 选举完毕")
+						time.Sleep(time.Second * 10)
+						setUp.Log.Info("begin 将节点加入channel")
 						// resmgmt.WithTargetEndpoints()
 						if e = admin.JoinChannel(string(channel.ChannelID)); nil != e {
-							s := fmt.Sprintf("尝试channelId=[%s]加入通道失败:%s", channel.ChannelID, e.Error())
+							s := fmt.Sprintf("channelId=[%s]加入通道失败:%s", channel.ChannelID, e.Error())
 							return error3.NewConfigError(e, s)
 						}
-						return nil
+						setUp.Log.Info("end 将节点加入channel")
 					}
-					if e := tryJoinChannel(); nil != e {
-						return e
-					}
-				} else {
-					setUp.Log.Debug("end 创建channel成功,sleep 10秒等待raft 选举完毕")
-					time.Sleep(time.Second * 10)
-					setUp.Log.Info("begin 将节点加入channel")
-					// resmgmt.WithTargetEndpoints()
-					if e = admin.JoinChannel(string(channel.ChannelID)); nil != e {
-						s := fmt.Sprintf("channelId=[%s]加入通道失败:%s", channel.ChannelID, e.Error())
-						return error3.NewConfigError(e, s)
-					}
-					setUp.Log.Info("end 将节点加入channel")
 				}
-			}
-			setUp.Log.Info("begin 创建区块链账本相关")
+				setUp.Log.Info("begin 创建区块链账本相关")
 
-			cCtx := make([]fabsdk.ContextOption, 0)
-			cCtx = append(cCtx, fabsdk.WithOrg(string(organization.OrganizationID)))
-			cCtx = append(cCtx, fabsdk.WithUser(organization.GetAdminUser()[0]))
-			ledgerContext := sdk.ChannelContext(string(channel.ChannelID), cCtx...)
-			ledgerClient, e := ledger.New(ledgerContext)
-			if nil != e {
-				panic(e)
-			}
-			if setUp.ledgerWrapper == nil {
-				ledgerWrapper := new(ChannelLedgerWrapper)
-				ledgerWrapper.ledgers = make(map[base.ChannelID]*ChannelLedgerInfo)
-				setUp.ledgerWrapper = ledgerWrapper
-			}
-			setUp.ledgerWrapper.ledgers[channel.ChannelID] = &ChannelLedgerInfo{
-				Ledger: ledgerClient,
-			}
-			setUp.Log.Info("end 创建区块链账本相关")
+				cCtx := make([]fabsdk.ContextOption, 0)
+				cCtx = append(cCtx, fabsdk.WithOrg(string(organization.OrganizationID)))
+				cCtx = append(cCtx, fabsdk.WithUser(organization.GetAdminUser()[0]))
+				ledgerContext := sdk.ChannelContext(string(channel.ChannelID), cCtx...)
+				ledgerClient, e := ledger.New(ledgerContext)
+				if nil != e {
+					panic(e)
+				}
+				if setUp.ledgerWrapper == nil {
+					ledgerWrapper := new(ChannelLedgerWrapper)
+					ledgerWrapper.ledgers = make(map[base.ChannelID]*ChannelLedgerInfo)
+					setUp.ledgerWrapper = ledgerWrapper
+				}
+				setUp.ledgerWrapper.ledgers[channel.ChannelID] = &ChannelLedgerInfo{
+					Ledger: ledgerClient,
+				}
+				setUp.Log.Info("end 创建区块链账本相关")
 
-			channelCreated = false
+				channelCreated = false
+			}
 		}
 	}
 
 	return nil
 }
+
+// func generateNewVersion(version string) string {
+// 	bytes := make([]byte, 0)
+// 	up := false
+// 	copy:=false
+// 	for i := len(version) - 1; i >= 0; i-- {
+// 		if version[i] <= '9' && version[i] >= '0' {
+// 			if version[i] == '9' {
+//
+// 			} else {
+// 				bytes = append(bytes, version[i]+1)
+// 				copy=true
+// 			}
+// 		} else {
+// 			bytes = append(bytes, version[i])
+// 		}
+// 	}
+// 	for i := len(version) - 1; i >= 0; i-- {
+// 		if up {
+// 			if version[i] == '9' {
+// 				bytes = append(bytes, '0')
+// 			} else {
+// 				up = false
+// 				bytes = append(bytes, version[i]+1)
+// 			}
+// 		} else {
+// 			bytes = append(bytes, version[i]+1)
+// 		}
+// 	}
+//
+// 	for i, j := 0, len(bytes)-1; i < j; {
+// 		bytes[i], bytes[j] = bytes[j], bytes[i]
+// 		i++
+// 		j--
+// 	}
+//
+// 	return string(bytes)
+// }
 
 func (setUp *BlockChainConfiguration) InstallAndInstantiateCC(p BlockChainProperties, wrapper ConfigWrapper) error3.IBaseError {
 	setUp.Log.Info("begin InstallAndInstantiateCC")
@@ -540,7 +597,7 @@ func (setUp *BlockChainConfiguration) InstallAndInstantiateCC(p BlockChainProper
 		for _, org := range ccan.Organizations {
 			for _, peer := range org.Peer.EndorserPeers {
 				for _, chaincode := range peer.ChainCodes {
-					setUp.Log.Info(fmt.Sprintf("begin 创建chaincode package,chaincodeId=[%s]"), chaincode.ChainCodeID)
+					setUp.Log.Info(fmt.Sprintf("begin 创建chaincode package,chaincodeId=[%s]", chaincode.ChainCodeID))
 					ccPackage, e := packager.NewCCPackage(chaincode.ChainCodePath, p.GoPath)
 					if nil != e {
 						panic(e)
@@ -558,11 +615,19 @@ func (setUp *BlockChainConfiguration) InstallAndInstantiateCC(p BlockChainProper
 
 					fmt.Printf("begin 判断是否已经安装了该[%s]cc \n", chaincode.ChainCodeID)
 					Versions := make([]int, 0)
+					// versions := make([]byte, 0)
 					Versions = append(Versions, 0)
 					for _, c := range queryInstallCcResp.Chaincodes {
 						if strings.EqualFold(string(chaincode.ChainCodeID), c.Name) {
 							ccIsInstall = true
 							i, _ := strconv.Atoi(c.Version)
+
+							// for i := len(c.Version); i >= 0; i-- {
+							// 	if c.Version[i] >= 0 && c.Version[i] <= 8 {
+							// 		c.Version[i] += 1
+							// 		break
+							// 	}
+							// }
 							Versions = append(Versions, i+1)
 						}
 					}
@@ -592,7 +657,7 @@ func (setUp *BlockChainConfiguration) InstallAndInstantiateCC(p BlockChainProper
 							} else {
 								setUp.Log.Info(response.TransactionID)
 							}
-							setUp.Log.Info(fmt.Sprintf("更新链码[%s]成功"), chaincode.ChainCodeID)
+							setUp.Log.Info(fmt.Sprintf("更新链码[%s]成功", chaincode.ChainCodeID))
 						}
 					} else {
 						fmt.Printf("begin 安装[%s]链码\n", chaincode.ChainCodeID)
@@ -606,13 +671,13 @@ func (setUp *BlockChainConfiguration) InstallAndInstantiateCC(p BlockChainProper
 						if nil != e || responses == nil {
 							panic(e)
 						}
-						fmt.Printf("end 安装[%s]链码\n", chaincode)
+						fmt.Printf("end 安装[%s]链码\n", chaincode.ChainCodeID)
 					}
 					ccIsInstance := false
 					setUp.Log.Info("begin 查询已经实例化的链码")
 					queryInstanReps, e := admin.QueryInstantiatedChaincodes(string(ccan.ChannelID), resmgmt.WithTargetEndpoints(endorserAddress))
 					if nil != e {
-						s := fmt.Sprintf("查询通道=[%s]上实例化的链码失败:%s", ccan.ChannelID)
+						s := fmt.Sprintf("查询通道=[%s]上实例化的链码失败:%s", ccan.ChannelID, e.Error())
 						return error3.NewConfigError(e, s)
 					}
 
@@ -651,7 +716,8 @@ func (setUp *BlockChainConfiguration) InstallAndInstantiateCC(p BlockChainProper
 			setUp.Log.Info("begin 创建用于execute和query的channel client,基于channel->organization")
 			// FIXME 这里需要确定,是通过channelId,还是org还是user 获取client信息
 			// 若是org ,则 需要有一个 通过channelId获取org的map
-			channelContext := setUp.sdk.ChannelContext(string(ccan.ChannelID), org.getEnrollUsers()...)
+
+			channelContext := setUp.sdkWrapper.sdkMap[org.OrganizationID].ChannelContext(string(ccan.ChannelID), org.getEnrollUsers()...)
 			channelClient, e := channel.New(channelContext)
 			if nil != e {
 				return error3.NewConfigError(e, "创建通道:"+string(ccan.ChannelID)+"失败")
@@ -717,6 +783,17 @@ func (setUp *BlockChainConfiguration) InstallAndInstantiateCC(p BlockChainProper
 
 	return nil
 }
+
+type AddOrganizationReq struct {
+	ChannelID           base.ChannelID
+	ExistOrganizationID base.OrganizationID
+}
+
+type AddOrganizationResp struct {
+}
+
+// func (setUp *BlockChainConfiguration) AddOrganization(req AddOrganizationReq)(AddOrganizationResp,error3.IBaseError) {
+// }
 
 type UserRegisterResp struct {
 	EnrollSecret string
@@ -822,8 +899,7 @@ func (c *BlockChainConfiguration) GetOrganizationAdminUsers(oid base.Organizatio
 }
 
 func (c *BlockChainConfiguration) NewChannelClient(cid base.ChannelID, oid base.OrganizationID, user string) (*channel.Client, error) {
-
-	channelContext := c.sdk.ChannelContext(string(cid), fabsdk.WithOrg(string(oid)), fabsdk.WithUser(user))
+	channelContext := c.sdkWrapper.sdkMap[oid].ChannelContext(string(cid), fabsdk.WithOrg(string(oid)), fabsdk.WithUser(user))
 	channelClient, e := channel.New(channelContext)
 	return channelClient, e
 }
@@ -902,3 +978,97 @@ func (this *BlockChainConfiguration) GetTransactionDetailData(req model.Transact
 	result.Signature = hex.EncodeToString(env.Signature)
 	return result, nil
 }
+
+func (setup *BlockChainConfiguration) AddOrganization(req AddOrganizationReq) (AddOrganizationResp, error) {
+	var (
+		result AddOrganizationResp
+	)
+	admin := setup.adminResourceWrapper.admins[req.ChannelID].admins[req.ExistOrganizationID].Admin
+	block, e := admin.QueryConfigBlockFromOrderer(string(req.ChannelID))
+	if nil != e {
+		return result, error3.NewSystemError(e, "获取channel的配置块失败")
+	}
+	fromBlock, e := resource.ExtractConfigFromBlock(block)
+	if nil != e {
+		return result, error3.ErrorsWithMessage(e, "解析配置块失败")
+	}
+	// FIXME 添加组织测试
+
+	return result, nil
+}
+
+// 从configtx文件中实例化configGroup对象
+func GenCfgGroupFromTx(txPath string, orgName string) (*cb.ConfigGroup, error) {
+	var cfgG *cb.ConfigGroup
+	var topLevelConfig *genesisconfig.TopLevel
+	topLevelConfig = genesisconfig.LoadTopLevel(txPath)
+	var err error
+	for _, org := range topLevelConfig.Organizations {
+		if org.Name == orgName {
+			// NewConsortiumOrgGroup
+			cf := &localGenesisconfig.Organization{
+				Name:    org.Name,
+				ID:      org.ID,
+				MSPDir:  org.MSPDir,
+				MSPType: org.MSPType,
+				// Policies:        org.Policies ,
+				// AnchorPeers:      org.AnchorPeers,
+				// OrdererEndpoints: org,
+				AdminPrincipal: org.AdminPrincipal,
+				SkipAsForeign:  false,
+			}
+			cfPolicy := make(map[string]*localGenesisconfig.Policy)
+			for k, v := range org.Policies {
+				cfPolicy[k] = &localGenesisconfig.Policy{
+					Type: v.Type,
+					Rule: v.Rule,
+				}
+			}
+			cf.Policies = cfPolicy
+
+			for _, anchor := range org.AnchorPeers {
+				cf.AnchorPeers = append(cf.AnchorPeers, &localGenesisconfig.AnchorPeer{
+					Host: anchor.Host,
+					Port: anchor.Port,
+				})
+			}
+			cfgG, err = internal.NewConsortiumOrgGroup(cf)
+			if err != nil {
+				return nil, err
+			}
+			return cfgG, nil
+		}
+	}
+	return nil, errors.New("org gen ConfigGroup fail")
+}
+
+// NewConsortiumsGroup returns an org component of the channel configuration.  It defines the crypto material for the
+// organization (its MSP).  It sets the mod_policy of all elements to "Admins".
+// func NewConsortiumOrgGroup(conf *genesisconfig.Organization) (*fabCommon.ConfigGroup, error) {
+// 	consortiumsOrgGroup := utils2.NewConfigGroup()
+// 	consortiumsOrgGroup.ModPolicy = channelconfig.AdminsPolicyKey
+//
+// 	if conf.SkipAsForeign {
+// 		return consortiumsOrgGroup, nil
+// 	}
+//
+// 	mspConfig, err := msp.GetVerifyingMspConfig(conf.MSPDir, conf.ID, conf.MSPType)
+// 	if err != nil {
+// 		return nil, errors.Wrapf(err, "1 - Error loading MSP configuration for org: %s", conf.Name)
+// 	}
+//
+// 	if err := AddPolicies(consortiumsOrgGroup, conf.Policies, channelconfig.AdminsPolicyKey); err != nil {
+// 		return nil, errors.Wrapf(err, "error adding policies to consortiums org group '%s'", conf.Name)
+// 	}
+//
+// 	addValue(consortiumsOrgGroup, channelconfig.MSPValue(mspConfig), channelconfig.AdminsPolicyKey)
+//
+// 	return consortiumsOrgGroup, nil
+// }
+// func NewConfigGroup() *common.ConfigGroup {
+// 	return &common.ConfigGroup{
+// 		Groups:   make(map[string]*common.ConfigGroup),
+// 		Values:   make(map[string]*common.ConfigValue),
+// 		Policies: make(map[string]*common.ConfigPolicy),
+// 	}
+// }

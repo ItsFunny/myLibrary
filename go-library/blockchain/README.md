@@ -1,4 +1,6 @@
 
+cp -r \
+> /Users/joker/go/src/github.com/ethereum/go-ethereum/crypto/secp256k1/libsecp256k1 /Users/joker/go/src/myLibrary/go-library/blockchain/vendor/github.com/ethereum/go-ethereum/crypto/secp256k1/
 # 加密模块
 - 因为账本数据共享,所以一些数据会加密:`只会对后面的value进行加密`
     -   用户信息

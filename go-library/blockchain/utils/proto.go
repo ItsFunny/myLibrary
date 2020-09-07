@@ -328,3 +328,4 @@ func GetTransactionInfoFromEnvelop(envelop *cb.Envelope, chainCodeId []string, n
 
 	return result, nil
 }
+
