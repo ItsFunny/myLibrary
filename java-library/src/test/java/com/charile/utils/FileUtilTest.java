@@ -1,7 +1,9 @@
 package com.charile.utils;
 
+import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 
+import java.io.File;
 import java.io.IOException;
 
 import static org.junit.Assert.*;
@@ -33,6 +35,33 @@ public class FileUtilTest
         String directory = "/Users/joker/Desktop/split";
         String outputFile = "/Users/joker/Desktop/阳光电影www.ygdy8.com.勇者斗恶龙：你的故事.BD.1080p.日语中英双字.mkv";
         FileUtil.mergeFile(directory, outputFile);
+    }
+
+    @Test
+    public void testSplit() throws Exception
+    {
+        String file = "/Users/joker/Downloads/1.pdf";
+        FileUtil.splitFiles("/Users/joker/Downloads/1.pdf", 80, "/Users/joker/Downloads/1", false);
+    }
+
+    @Test
+    public void testtt() throws Exception
+    {
+        long a = 1024 * 1024 * 1024;
+        System.out.println(a);
+//        String file1 = "/Users/joker/Downloads/1/1.pdf-1";
+//        String file2 = "/Users/joker/Downloads/11.pdf";
+//        byte[] bytes = FileUtils.readFileToByteArray(new File(file1));
+//        byte[] bytes2 = FileUtils.readFileToByteArray(new File(file2));
+//        for (int i = 0; i < bytes.length; i++)
+//        {
+//            if (bytes[i] != bytes2[i])
+//            {
+//                System.out.println(bytes[i]);
+//                System.out.println(bytes2[i]);
+//                throw new RuntimeException("不匹配:");
+//            }
+//        }
     }
 
 }

@@ -1,5 +1,6 @@
 package com.charile.utils;
 
+import org.apache.commons.lang3.builder.ToStringExclude;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,6 +28,8 @@ public class FileUtil
 
     // 1m大小
     private static final int _1_M = 1024 * 1024;
+
+    private static final int _1_k = 1024;
 
     public static String getSuffix(String path)
     {
@@ -64,7 +67,7 @@ public class FileUtil
             toDirectory += File.separator;
         }
         // 每个chunk的大小
-        long chunkSize = size * _1_M;
+        long chunkSize = size * _1_k;
         // 计算最终会分成几个文件
         long totalLength = originFile.length();
         int count = (int) (totalLength / chunkSize);
@@ -145,8 +148,6 @@ public class FileUtil
                 return index1 <= index2 ? -1 : 1;
             }
         });
-
-
         FileOutputStream fileOutputStream = null;
         FileChannel outChannel = null;
         FileChannel inChannel = null;

@@ -30,7 +30,6 @@ public class CryptUtil
      */
     public static String md5Encrypt(String password)
     {
-
         try
         {
             // 得到一个信息摘要器
@@ -59,6 +58,22 @@ public class CryptUtil
         }
     }
 
+    public static String sha256(byte[] bytes)
+    {
+        MessageDigest messageDigest;
+        String encodeStr = "";
+        try
+        {
+            messageDigest = MessageDigest.getInstance("SHA-256");
+            messageDigest.update(bytes);
+            encodeStr = byte2Hex(messageDigest.digest());
+        } catch (NoSuchAlgorithmException e)
+        {
+            e.printStackTrace();
+            throw new RuntimeException("算法错误", e);
+        }
+        return encodeStr;
+    }
 
     public static String Sha256(String str)
     {

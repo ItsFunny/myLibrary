@@ -1,0 +1,72 @@
+{
+  "version": "1",
+  "channelConfiguration": [
+    {
+      "channelId": "",
+      "channelConfigPath": "",
+      "needListOnBlockEvent": true,
+      "ordererConfiguration": [
+        {
+          "nodes": [
+            {
+              "ip": "",
+              "port": 7050,
+              "ordererId": ""
+            }
+          ]
+        }
+      ],
+      "organizationConfigurations": [
+        {
+          "nodes": [
+            {
+              "organizationId": "",
+              "users": [
+                {
+                  "keyFile": "",
+                  "certFile": "",
+                  "userName": "",
+                  "admin": true
+                }
+              ]
+            }
+          ],
+          "peerConfiguration": {
+            "anchorPeers": [
+              {
+                "ip": "",
+                "port": 123
+              }
+            ],
+            "endorserPeers": [
+              {
+                "ip": "",
+                "port": 123,
+                "chainCodes": [
+                  {
+                    "chainCodeId": "",
+                    "chainCodePath": "",
+                    "needUpdate": false,
+                    "needListOnBlockEvent": false,
+                    "version": "",
+                    "policyType": 1,
+                    "policy": ""
+                  }
+                ]
+              }
+            ]
+          },
+          "caConfiguration": {
+            "caNodes": [
+              {
+                "caName": "",
+                "ip": "",
+                "port": 123
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

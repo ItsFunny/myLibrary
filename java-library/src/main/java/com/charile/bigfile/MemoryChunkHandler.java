@@ -106,7 +106,6 @@ public class MemoryChunkHandler implements ChunkHandler
     public boolean increase(String processId, int maxCount)
     {
         AtomicInteger uploadedCount = chunkCountMap.get(processId);
-
         int currentUploaded = 0;
         if (uploadedCount == null)
         {
@@ -130,8 +129,6 @@ public class MemoryChunkHandler implements ChunkHandler
         } else
         {
             currentUploaded = uploadedCount.incrementAndGet();
-
-
         }
         logger.info("线程{}更新碎片数目,已上传碎片数目为:{},剩余:{}块", Thread.currentThread().getName(), currentUploaded, maxCount - currentUploaded);
         if (currentUploaded == maxCount)
