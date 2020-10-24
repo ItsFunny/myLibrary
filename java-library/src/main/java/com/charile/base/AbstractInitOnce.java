@@ -1,5 +1,7 @@
 package com.charile.base;
 
+import com.charile.blockchain.configuration.ConfigurationFactory;
+import com.charile.exception.ConfigException;
 import lombok.Data;
 
 /**
@@ -13,19 +15,18 @@ import lombok.Data;
 @Data
 public abstract class AbstractInitOnce implements IInitOnce
 {
-    private boolean init;
+    private  boolean init;
 
     @Override
-    public void initOnce() throws Exception
+    public void initOnce() throws ConfigException
     {
-        if (this.init)
+        if (init)
         {
             return;
         }
         this.init();
-        this.init = true;
+        init = true;
     }
 
-    protected abstract void init() throws Exception;
-
+    protected abstract void init() throws ConfigException;
 }

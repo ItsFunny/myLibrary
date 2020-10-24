@@ -11,5 +11,5 @@ package com.charile.template;
 public abstract class BaseTemplatePatternV3<T>
 {
     // 校验是否是当前执行者该执行的
-    protected abstract Boolean validIsMine(T type);
+    public abstract Boolean validIsMine(T type);
 }

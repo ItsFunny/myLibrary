@@ -1,0 +1,2 @@
+2020-10-25 00:23:26 上午 [Thread: main][ Class:com.charile.blockchain.proxy.FabricNetworkContainer Method: com.charile.blockchain.proxy.FabricNetworkContainer.handlerResponse(FabricNetworkContainer.java:397) ]
+ERROR:执行该proposal失败,失败原因为:org.hyperledger.fabric.sdk.ProposalResponse@382c90c2

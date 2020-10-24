@@ -1,6 +1,6 @@
 package com.charile.bigfile;
 
-import com.charile.utils.FileUtil;
+import com.charile.utils.FileUtils;
 import com.sun.org.apache.xpath.internal.WhitespaceStrippingElementMatcher;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -124,7 +124,7 @@ public abstract class AbstractBigFileProcessor implements FileChunkProcessor
             if (this.chunkHandler.increase(req.getProcessId(), req.getTotalChunk()))
             {
                 log.debug("所有chunk都已经上传,需要开启合并");
-                FileUtil.mergeFile(directory, directory + req.getFileOriginName());
+                FileUtils.mergeFile(directory, directory + req.getFileOriginName());
                 result.setMerged(true);
                 log.debug("删除本次processId记录");
                 this.chunkHandler.clearChunk(req.getProcessId());

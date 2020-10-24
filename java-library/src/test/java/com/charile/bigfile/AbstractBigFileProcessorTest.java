@@ -1,6 +1,6 @@
 package com.charile.bigfile;
 
-import com.charile.utils.FileUtil;
+import com.charile.utils.FileUtils;
 import lombok.Data;
 import lombok.extern.log4j.Log4j;
 import lombok.extern.log4j.Log4j2;
@@ -54,7 +54,7 @@ public class AbstractBigFileProcessorTest
         // 每个文件分100m
         String originFile = "/Users/joker/Downloads/阳光电影www.ygdy8.com.勇者斗恶龙：你的故事.BD.1080p.日语中英双字.mkv";
         logger.debug("1. 拆分文件");
-        FileUtil.splitFiles(originFile, 100, chunkOutPutDirectroy, false);
+        FileUtils.splitFiles(originFile, 100, chunkOutPutDirectroy, false);
 
         // 创建多线程,用于进度条展示
         logger.info("根据文件数量创建多线程,开始分片上传碎片");

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 
-<log4j:configuration  debug="true" xmlns:log4j='http://jakarta.apache.org/log4j/' >
+<log4j:configuration debug="true" xmlns:log4j='http://jakarta.apache.org/log4j/'
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://jakarta.apache.org/log4j/ ">
 
-<!-- ========================== 自定义输出格式说明================================ -->
+    <!-- ========================== 自定义输出格式说明================================ -->
     <!-- %p 输出优先级，即DEBUG，INFO，WARN，ERROR，FATAL -->
     <!-- %r 输出自应用启动到输出该log信息耗费的毫秒数  -->
     <!-- %c 输出所属的类目，通常就是所在类的全名 -->
@@ -144,11 +146,11 @@
     <root>
         <priority value="debug"/>
         <appender-ref ref="CONSOLE"/>
-        <!--<appender-ref ref="log4jDebug"/>-->
-        <!--<appender-ref ref="log4jInfo"/>-->
-        <!--<appender-ref ref="log4jWarn"/>-->
-        <!--<appender-ref ref="log4jError"/>-->
-        <!-- <appender-ref ref="MAIL" /> -->
+        <appender-ref ref="log4jDebug"/>
+        <appender-ref ref="log4jInfo"/>
+        <appender-ref ref="log4jWarn"/>
+        <appender-ref ref="log4jError"/>
+         <!--<appender-ref ref="MAIL" />-->
     </root>
 
 </log4j:configuration>

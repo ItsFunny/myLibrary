@@ -5,7 +5,7 @@
 package com.charile.file;
 
 
-import com.charile.utils.FileUtil;
+import com.charile.utils.FileUtils;
 import com.sun.media.jfxmedia.events.NewFrameEvent;
 import com.sun.org.apache.xpath.internal.operations.Mult;
 import lombok.extern.log4j.Log4j2;
@@ -43,7 +43,7 @@ public class FileStrategyContext
         {
             throw new RuntimeException("文件名称originalFilename为:[ " + originalFilename + " ] 不可为空");
         }
-        String suffix = FileUtil.getSuffix(originalFilename);
+        String suffix = FileUtils.getSuffix(originalFilename);
         String newName = UUID.randomUUID().toString() + "." + suffix;
         return this.upload(file, storePath, newName, key);
     }

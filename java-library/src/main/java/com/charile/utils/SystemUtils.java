@@ -23,6 +23,11 @@ public class SystemUtils
         return properties;
     }
 
+    public static void setEnviroment(String key, String value)
+    {
+        System.setProperty(key, value);
+    }
+
     public static Object getEnviroment(String key)
     {
         return getOSEnveiroments().get(key);

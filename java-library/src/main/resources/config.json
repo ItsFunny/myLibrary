@@ -1,70 +1,72 @@
 {
   "version": "1",
-  "channelConfiguration": [
-    {
-      "channelId": "",
-      "channelConfigPath": "",
-      "needListOnBlockEvent": true,
-      "ordererConfiguration": [
-        {
-          "nodes": [
+  "tls": true,
+  "cryptoConfigPrefixPath": "/Users/joker/go/src/examples/blockchain/multiorganization/",
+  "artifactsPrefixPath": "/Users/joker/go/src/examples/blockchain/multiorganization/",
+  "chainCodeRootDir": "/Users/joker/go",
+  "organizationConfiguration": {
+    "organizationNodes": [
+      {
+        "mspId": "Org1MSP",
+        "alpha": true,
+        "users": [
+          {
+            "keyString": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgJRvWXpEUSLfLzc65\no7zh44u4hd71CNUBpoAhc8AaQ2ChRANCAASnc+h/OHGWuLRxg3xWCcSQebxkCFVC\ndkVVNWAXVVpKjq4S3EJYh7jUSks+Buvkf/k7ADu4fzq6lsU/NyzQy5Zk\n-----END PRIVATE KEY-----\n",
+            "certString": "-----BEGIN CERTIFICATE-----\nMIICEDCCAbegAwIBAgIQAOFwGxtyLKkaIIxrjy0cYTAKBggqhkjOPQQDAjBjMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzERMA8GA1UEChMIb3JnMS5jb20xFDASBgNVBAMTC2NhLm9yZzEuY29t\nMB4XDTIwMTAyMTE0NTQwMFoXDTMwMTAxOTE0NTQwMFowYzELMAkGA1UEBhMCVVMx\nEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xDjAM\nBgNVBAsTBWFkbWluMRcwFQYDVQQDDA5BZG1pbkBvcmcxLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABKdz6H84cZa4tHGDfFYJxJB5vGQIVUJ2RVU1YBdVWkqO\nrhLcQliHuNRKSz4G6+R/+TsAO7h/OrqWxT83LNDLlmSjTTBLMA4GA1UdDwEB/wQE\nAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIIT5a/d0OcH7l0sppubpR3eU\nuGt5k3ZGFkKne3GTsQcbMAoGCCqGSM49BAMCA0cAMEQCIDfxfp4zQA/qnqjPwrWB\nDjcG7/GHVBRTsNyPlwGNPS2cAiATWQuW96zIfqarPis2uiSMRsO/2F6x5abWCrID\nSAKLuQ==\n-----END CERTIFICATE-----\n",
+            "name": "Admin"
+          }
+        ],
+        "peerConfiguration": {
+          "endorserPeers": [
             {
-              "ip": "",
-              "port": 7050,
-              "ordererId": ""
-            }
-          ]
-        }
-      ],
-      "organizationConfigurations": [
-        {
-          "nodes": [
-            {
-              "organizationId": "",
-              "users": [
+              "domain": "peer0.org1.com",
+              "ipWithPort": "127.0.0.1:11051",
+              "tlsCertFile": "crypto-config/peerOrganizations/org1.com/peers/peer0.org1.com/tls/ca.crt",
+              "chainCodes": [
                 {
-                  "keyFile": "",
-                  "certFile": "",
-                  "userName": "",
-                  "admin": true
+                  "chainCodeId": "democc",
+                  "chainCodePath": "myLibrary/java-library/src/main/resources/chaincodes/",
+                  "needUpdate": true,
+                  "version": "0.01",
+                  "policyFile": ""
                 }
               ]
             }
-          ],
-          "peerConfiguration": {
-            "anchorPeers": [
+          ]
+        },
+        "caConfiguration": {
+        },
+        "channelConfigurations": [
+          {
+            "channelId": "demochannel",
+            "channelConfigPath": "artifacts/demochannel.tx",
+            "needListOnBlockEvent": false,
+            "ordererConfigurations": [
               {
-                "ip": "",
-                "port": 123
-              }
-            ],
-            "endorserPeers": [
-              {
-                "ip": "",
-                "port": 123,
-                "chainCodes": [
+                "orderMspId": "OrdererMSP",
+                "ordererNodes": [
                   {
-                    "chainCodeId": "",
-                    "chainCodePath": "",
-                    "needUpdate": false,
-                    "needListOnBlockEvent": false,
-                    "version": "",
-                    "policyType": 1,
-                    "policy": ""
+                    "domain": "orderer.demo.com",
+                    "ipWithPort": "127.0.0.1:5050",
+                    "tlsCertFile": "crypto-config/ordererOrganizations/demo.com/orderers/orderer.demo.com/tls/ca.crt"
                   }
                 ]
               }
             ]
-          },
-          "caConfiguration": {
-            "caNodes": [
-              {
-                "caName": "",
-                "ip": "",
-                "port": 123
-              }
-            ]
           }
+        ]
+      }
+    ]
+  },
+
+  "ordererConfigurations": [
+    {
+      "orderMspId": "OrdererMSP",
+      "ordererNodes": [
+        {
+          "domain": "orderer.demo.com",
+          "ipWithPort": "127.0.0.1:5050",
+          "tlsCertFile": "crypto-config/ordererOrganizations/demo.com/orderers/orderer.demo.com/tls/ca.crt"
         }
       ]
     }
