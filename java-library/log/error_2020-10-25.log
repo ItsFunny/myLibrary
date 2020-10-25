@@ -1,2 +1,4 @@
 2020-10-25 00:23:26 上午 [Thread: main][ Class:com.charile.blockchain.proxy.FabricNetworkContainer Method: com.charile.blockchain.proxy.FabricNetworkContainer.handlerResponse(FabricNetworkContainer.java:397) ]
 ERROR:执行该proposal失败,失败原因为:org.hyperledger.fabric.sdk.ProposalResponse@382c90c2
+2020-10-25 10:46:22 上午 [Thread: main][ Class:com.charile.blockchain.proxy.DefaultFabricClientHandler Method: com.charile.blockchain.proxy.DefaultFabricClientHandler.invokeBlockChain(DefaultFabricClientHandler.java:100) ]
+ERROR:交易执行失败,msg:make sure the chaincode demochannel has been successfully instantiated and try again: chaincode demochannel not found
