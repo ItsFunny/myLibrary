@@ -81,6 +81,9 @@ public class PeerConfiguration implements IValidater
 
         protected List<String> chainCodes;
 
+        // 属于哪些channel
+        protected List<String> channels;
+
         protected boolean anchorPeer;
 
         protected boolean endorsingPeer = true;
@@ -151,6 +154,10 @@ public class PeerConfiguration implements IValidater
             if (!ConfigurationFactory.getInstance().getBlockChainConfiguration().containsChainCodes(this.chainCodes))
             {
                 throw new ConfigException("chaincode 不匹配");
+            }
+            if (!ConfigurationFactory.getInstance().getBlockChainConfiguration().containsChannels(this.channels))
+            {
+                throw new ConfigException("channels 不匹配,该peer所属的channel在配置中并不存在");
             }
         }
     }

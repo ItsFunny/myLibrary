@@ -11,10 +11,7 @@ import com.rabbitmq.client.AMQP;
 import lombok.Data;
 import lombok.extern.java.Log;
 import org.apache.commons.lang3.StringUtils;
-import org.hyperledger.fabric.sdk.Channel;
-import org.hyperledger.fabric.sdk.HFClient;
-import org.hyperledger.fabric.sdk.InstallProposalRequest;
-import org.hyperledger.fabric.sdk.Orderer;
+import org.hyperledger.fabric.sdk.*;
 import org.springframework.util.CollectionUtils;
 
 import java.io.File;
@@ -35,10 +32,16 @@ import java.util.stream.Collectors;
 @Log
 public class BlockChainConfiguration extends AbstractInitOnce implements IValidater
 {
+    // 是否需要deploy 区块链网络 ,true的话,部署整个网络,否则只是初始化channel等信息
+    private boolean deploy;
+
+
     private String version;
     private boolean alpha;
     // 是否启用tls
     private boolean tls;
+
+    private String prefixPath;
 
     private String cryptoConfigPrefixPath;
     // tx 文件路径前缀
@@ -102,16 +105,26 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
     public void valid()
     {
         if (StringUtils.isEmpty(this.version)) this.version = "1";
+
+        if (StringUtils.isEmpty(this.prefixPath))
+        {
+            throw new ConfigException("prefixPath 不可为空");
+        }
+        this.prefixPath = FileUtils.appendFilePathIfNone(this.prefixPath);
         if (StringUtils.isEmpty(this.artifactsPrefixPath))
         {
-            throw new ConfigException("artifactsPrefixPath 不可为空");
+            this.artifactsPrefixPath = this.prefixPath + "artifacts" + File.separator;
+        } else
+        {
+            this.artifactsPrefixPath = FileUtils.appendFilePathIfNone(this.artifactsPrefixPath);
         }
-        this.artifactsPrefixPath = FileUtils.appendFilePathIfNone(this.artifactsPrefixPath);
         if (StringUtils.isEmpty(this.cryptoConfigPrefixPath))
         {
-            throw new ConfigException("cryptoConfigPrefixPath 不可为空");
+            this.cryptoConfigPrefixPath = this.prefixPath + "crypto-config" + File.separator;
+        } else
+        {
+            this.cryptoConfigPrefixPath = FileUtils.appendFilePathIfNone(this.cryptoConfigPrefixPath);
         }
-        this.cryptoConfigPrefixPath = FileUtils.appendFilePathIfNone(this.cryptoConfigPrefixPath);
         this.clientConfiguration.valid();
         this.organizationConfiguration.valid();
         for (OrdererConfiguration ordererConfiguration : ordererConfigurations)
@@ -120,8 +133,7 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
         }
         this.channelConfiguration.valid();
         this.peerConfiguration.valid();
-
-
+        this.chaincodeConfiguration.valid();
     }
 
     public boolean containsOrderers(List<String> orderers)
@@ -223,12 +235,13 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
         return getAnchorPeer(peers);
     }
 
-    public PeerConfiguration.PeerNode getAnchorPeer(List<String> ps)
+
+    public PeerConfiguration.PeerNode getAnchorPeer(List<String> peerDomainList)
     {
         List<PeerConfiguration.PeerNode> peers = this.peerConfiguration.getPeers();
         Map<String, PeerConfiguration.PeerNode> collect = peers.stream().collect(Collectors.toMap(p -> p.getDomain(), p -> p));
         PeerConfiguration.PeerNode anchorPeer = null;
-        for (String p : ps)
+        for (String p : peerDomainList)
         {
             PeerConfiguration.PeerNode peerNode = collect.get(p);
             if (peerNode.isAnchorPeer())
@@ -341,4 +354,41 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
         }
         return res;
     }
+
+    public List<ChannelConfiguration.ChannelNode> getChannelsByPeers(List<String> ps)
+    {
+        List<PeerConfiguration.PeerNode> peers = this.peerConfiguration.getPeers();
+        Map<String, PeerConfiguration.PeerNode> collect = peers.stream().collect(Collectors.toMap(p -> p.getDomain(), p -> p));
+        List<ChannelConfiguration.ChannelNode> result = new ArrayList<>();
+        for (String p : ps)
+        {
+            PeerConfiguration.PeerNode peerNode = collect.get(p);
+            if (null == peerNode)
+            {
+                continue;
+            }
+            List<String> channels = peerNode.getChannels();
+            for (String cid : channels)
+            {
+                result.add(this.getChannelNode(cid));
+            }
+        }
+        return result;
+    }
+
+    public List<PeerConfiguration.PeerNode> getChannelAllPeers(String channelId)
+    {
+        final PeerConfiguration peerConfiguration = this.getPeerConfiguration();
+        List<PeerConfiguration.PeerNode> peers = peerConfiguration.getPeers();
+        List<PeerConfiguration.PeerNode> peerNodes = new ArrayList<>();
+        for (PeerConfiguration.PeerNode peer : peers)
+        {
+            if (peer.getChannels().contains(channelId))
+            {
+                peerNodes.add(peer);
+            }
+        }
+        return peerNodes;
+    }
+
 }

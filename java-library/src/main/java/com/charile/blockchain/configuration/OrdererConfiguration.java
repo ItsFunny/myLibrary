@@ -114,7 +114,7 @@ public class OrdererConfiguration implements IValidater
             {
                 throw new ConfigException("证书不可为空");
             }
-            this.tlsCertFile = ConfigurationFactory.getInstance().getBlockChainConfiguration().getCryptoConfigPrefixPath() + FileUtils.appendFilePathIfNone(this.tlsCertFile);
+            this.tlsCertFile = ConfigurationFactory.getInstance().getBlockChainConfiguration().getPrefixPath() + FileUtils.appendFilePathIfNone(this.tlsCertFile);
         }
     }
 }

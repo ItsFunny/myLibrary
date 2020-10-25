@@ -57,7 +57,7 @@ public class OrganizationConfiguration implements IValidater
         //        private boolean alpha;
         // 用户信息
         private List<UserNode> users;
-        private List<String> channels;
+//        private List<String> channels;
         private List<String> peers;
         private String ca;
 
@@ -135,10 +135,10 @@ public class OrganizationConfiguration implements IValidater
                 user.valid();
             }
             // 判断是否存在
-            if (!ConfigurationFactory.getInstance().getBlockChainConfiguration().getChannelConfiguration().contains(this.channels))
-            {
-                throw new ConfigException("配置中的channel不匹配");
-            }
+//            if (!ConfigurationFactory.getInstance().getBlockChainConfiguration().getChannelConfiguration().contains(this.channels))
+//            {
+//                throw new ConfigException("配置中的channel不匹配");
+//            }
             if (!ConfigurationFactory.getInstance().getBlockChainConfiguration().containsPeers(this.getPeers()))
             {
                 throw new ConfigException("配置中的peer不匹配");

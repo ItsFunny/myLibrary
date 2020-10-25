@@ -51,6 +51,9 @@ public class ChannelConfiguration implements IValidater
         // 该channel下的所有orderer组织,默认是只有1个的
         private List<String> orderers;
 
+//        // 该channel下的所有peer
+//        private List<String>peers;
+
         @Override
         public void valid()
         {

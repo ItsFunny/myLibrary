@@ -23,7 +23,7 @@ public class FabricNetworkContainerTest
     @Test
     public void testCreateChannel() throws Exception
     {
-        SystemUtils.setEnviroment(ConfigConstants.CONFIG_BLOCKCHAIN_CONFIGURAITION, "/Users/joker/go/src/myLibrary/java-library/src/main/resources/config_new.json");
+        SystemUtils.setEnviroment(ConfigConstants.CONFIG_BLOCKCHAIN_CONFIGURAITION, "/Users/joker/go/src/myLibrary/java-library/src/main/resources/config_47_103_samecc_just_use.json");
         ConfigurationFactory.getInstance().slowInit();
         IFabricClientService fabricClientService=new DefaultFabricClientHandler();
         InvokeResp resp = fabricClientService.invokeBlockChain(buildInvokeReq(), null);

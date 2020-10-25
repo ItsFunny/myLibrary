@@ -2,15 +2,16 @@ package com.charile.blockchain.proxy;
 
 import com.charile.base.AbstractInitOnce;
 import com.charile.base.IKeyImporter;
-import com.charile.blockchain.configuration.*;
+import com.charile.blockchain.ResultInfo;
 import com.charile.blockchain.configuration.ChannelConfiguration;
+import com.charile.blockchain.configuration.*;
 import com.charile.blockchain.model.NewClientReq;
 import com.charile.blockchain.model.UserInfo;
+import com.charile.blockchain.util.ConvertUtils;
 import com.charile.blockchain.wrapper.HFClientWrapper;
 import com.charile.exception.ConfigException;
 import com.charile.utils.Base64Utils;
 import lombok.Data;
-import oracle.jvm.hotspot.jfr.JFR;
 import org.apache.commons.lang3.StringUtils;
 import org.hyperledger.fabric.protos.peer.Query;
 import org.hyperledger.fabric.sdk.*;
@@ -20,15 +21,12 @@ import org.hyperledger.fabric.sdk.security.CryptoSuite;
 import org.hyperledger.fabric.sdk.security.CryptoSuiteFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sun.security.krb5.Config;
 
 import java.io.File;
-import java.time.Period;
+import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
-
-import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
  * @author Charlie
@@ -87,25 +85,93 @@ public class FabricNetworkContainer extends AbstractInitOnce
     @Override
     protected void init() throws ConfigException
     {
+        BlockChainConfiguration blockChainConfiguration = ConfigurationFactory.getInstance().getBlockChainConfiguration();
+        if (blockChainConfiguration.isDeploy())
+        {
+            this.deployNetwork(blockChainConfiguration);
+        } else
+        {
+            logger.info("只是实例化channel等信息");
+            try
+            {
+                HFClient alphaClient = this.buildAlphaHFClient(blockChainConfiguration);
+
+
+
+                ChannelConfiguration channelConfiguration = blockChainConfiguration.getChannelConfiguration();
+                List<ChannelConfiguration.ChannelNode> channels = channelConfiguration.getChannels();
+
+                for (ChannelConfiguration.ChannelNode channelNode : channels)
+                {
+                    Channel channel = alphaClient.newChannel(channelNode.getChannelId());
+                    List<String> orderers = channelNode.getOrderers();
+                    List<Orderer> channelAllOrderers = blockChainConfiguration.getChannelAllOrderers(orderers, alphaClient);
+                    logger.info("查询该channelId=[{}]的所有peer,结果为{}条记录", channelNode.getChannelId(), channelAllOrderers.size());
+                    for (Orderer o : channelAllOrderers)
+                    {
+                        channel.addOrderer(o);
+                    }
+                    logger.info("查询该channelId=[{}]的所有peer", channelNode.getChannelId());
+                    List<PeerConfiguration.PeerNode> channelAllPeers = blockChainConfiguration.getChannelAllPeers(channelNode.getChannelId());
+                    List<Peer> peers = ConvertUtils.convPeerNodes2TPeers(channelAllPeers, blockChainConfiguration.isTls(), alphaClient);
+                    for (Peer peer : peers)
+                    {
+                        channel.addPeer(peer);
+                    }
+                    channel.initialize();
+                }
+            } catch (Exception e)
+            {
+                throw new ConfigException(e);
+            }
+
+        }
+
+    }
+
+    private void deployNetwork(BlockChainConfiguration blockChainConfiguration)
+    {
         try
         {
             // 初始化区块链网络
             logger.info("开始初始化区块链网络");
-            BlockChainConfiguration blockChainConfiguration = ConfigurationFactory.getInstance().getBlockChainConfiguration();
-            HFClient alphaClient = this.buildAlphaHFClient(blockChainConfiguration);
+
+            HFClient alphaClient = this.createNewHfClient();
             this.clientWrapper = new HFClientWrapper();
 
             blockChainConfiguration.initOnce();
-            this.initlizeNetwork(alphaClient, blockChainConfiguration);
+            try
+            {
+                this.initlizeNetwork(alphaClient, blockChainConfiguration);
+            } catch (InvalidArgumentException e)
+            {
+                throw new ConfigException(e, ResultInfo.NETWORK_CREATE_PEER_ERROR);
+            }
+
+            List<ChannelConfiguration.ChannelNode> channels = blockChainConfiguration.getChannelConfiguration().getChannels();
+            for (ChannelConfiguration.ChannelNode c : channels)
+            {
+                Channel channel = alphaClient.getChannel(c.getChannelId());
+                logger.info("begin 初始化channelId=[{}]的channel", c.getChannelId());
+                channel.initialize();
+                logger.info("end 初始化channelId=[{}]的channel", c.getChannelId());
+            }
+
             this.installAndInstantiateCC(alphaClient, blockChainConfiguration);
-            this.afterInitNetwork(blockChainConfiguration,alphaClient);
+
+
+            this.afterInitNetwork(blockChainConfiguration, alphaClient);
+            // 需要初始化channel
+            alphaClient = this.clientWrapper.getAlphaClient();
+
         } catch (Exception e)
         {
             throw new ConfigException(e);
         }
     }
 
-    private void afterInitNetwork(BlockChainConfiguration blockChainConfiguration,HFClient alphaClient)throws Exception{
+    private void afterInitNetwork(BlockChainConfiguration blockChainConfiguration, HFClient alphaClient) throws Exception
+    {
         UserInfo alphaUser = blockChainConfiguration.getAlphaUser();
         // 初始化完毕之后,重新设置为alpha client的证书
         alphaClient.setUserContext(alphaUser);
@@ -125,11 +191,18 @@ public class FabricNetworkContainer extends AbstractInitOnce
         HFClient instance = HFClient.createNewInstance();
         CryptoSuite cryptoSuite = CryptoSuiteFactory.getDefault().getCryptoSuite();
         instance.setCryptoSuite(cryptoSuite);
+
+        UserInfo alphaUser = blockChainConfiguration.getAlphaUser();
+        instance.setUserContext(alphaUser);
+        this.clientWrapper = new HFClientWrapper();
+        this.clientWrapper.setAlphaClient(instance);
+        this.clientWrapper.put(alphaUser.getMspId(),alphaUser);
+
         return instance;
     }
 
 
-    private void initlizeNetwork(HFClient client, BlockChainConfiguration blockChainConfiguration) throws Exception
+    private void initlizeNetwork(HFClient client, BlockChainConfiguration blockChainConfiguration) throws InvalidArgumentException
     {
         final HFClient hfClient = client;
         logger.info("查询已经存在的channel");
@@ -156,22 +229,31 @@ public class FabricNetworkContainer extends AbstractInitOnce
 
             String organizationId = node.getMspId();
             logger.info("开始初始化组织id为[{}]的相关区块链信息", organizationId);
-            List<String> channels = node.getChannels();
+            List<ChannelConfiguration.ChannelNode> channels = blockChainConfiguration.getChannelsByPeers(node.getPeers());
+//            List<String> channels = node.getChannels();
             logger.info("该组织{}加入的channel数量为:{}", organizationId, channels.size());
-            for (String cid : channels)
+            for (ChannelConfiguration.ChannelNode channelNode : channels)
             {
 //            for (ChannelConfiguration channelConfiguration : channelConfigurations)
 //            {
-                String channelId = cid;
+                String channelId = channelNode.getChannelId();
 
                 PeerConfiguration.PeerNode anchorPeer = blockChainConfiguration.getOrganizationAnchorPeer(node.getMspId());
                 logger.info("anchorPeer:{}", anchorPeer);
                 String grpcUrl = blockChainConfiguration.isTls() ? "grpcs://" : "grpc://";
                 grpcUrl += anchorPeer.getIpWithPort();
-                Peer peer = hfClient.newPeer(anchorPeer.getDomain(), grpcUrl, anchorPeer.buildProperties());
+                Peer peer = null;
+                peer = hfClient.newPeer(anchorPeer.getDomain(), grpcUrl, anchorPeer.buildProperties());
 
                 logger.info("begin 查询该组织[{}]已经加入的channel信息", channelId);
-                Set<String> channelStrings = hfClient.queryChannels(peer);
+                Set<String> channelStrings = null;
+                try
+                {
+                    channelStrings = hfClient.queryChannels(peer);
+                } catch (ProposalException e)
+                {
+                    throw new ConfigException(e, ResultInfo.INVOKE_FAILED);
+                }
                 logger.info("end 查询该组织[{}]已经加入的channel信息,:{}", channelId, channelStrings);
 
                 boolean channelCreated = false;
@@ -189,42 +271,92 @@ public class FabricNetworkContainer extends AbstractInitOnce
                 // 获取该组织的所有配置着的peer,通通加入
                 Collection<PeerConfiguration.PeerNode> allPeers = blockChainConfiguration.getOrganizationAllPeers(node.getPeers());
                 logger.info("获取channel的所有orderer");
-                List<Orderer> allOrderers = blockChainConfiguration.getChannelAllOrderers(cid, hfClient);
+                List<Orderer> allOrderers = blockChainConfiguration.getChannelAllOrderers(channelId, hfClient);
 
                 if (channelCreated)
                 {
                     logger.info("该channel:{}已经创建", channelId);
-                    channel = client.newChannel(channelId);
+                    // 需要先get 再new ,不然会报重复的错误
+                    channel = client.getChannel(channelId);
+                    if (channel == null)
+                    {
+                        channel = client.newChannel(channelId);
+                    }
+
+
                     for (PeerConfiguration.PeerNode peerNode : allPeers)
                     {
                         channel.addPeer(peerNode.conv2TPeer(blockChainConfiguration.isTls(), hfClient));
                     }
-                    for(Orderer orderer : allOrderers){
+                    for (Orderer orderer : allOrderers)
+                    {
                         channel.addOrderer(orderer);
                     }
                 } else
                 {
-                    logger.info("该channel 可能未创建,所以开始准备创建,组织id:{},chanelId:{}", node.getMspId(), cid);
+                    logger.info("该channel 可能未创建,所以开始准备创建,组织id:{},chanelId:{}", node.getMspId(), channelId);
                     logger.info("begin 创建channel");
-                    ChannelConfiguration.ChannelNode channelNode = blockChainConfiguration.getChannelNode(cid);
-                    org.hyperledger.fabric.sdk.ChannelConfiguration configuration = new org.hyperledger.fabric.sdk.ChannelConfiguration(new File(channelNode.getChannelConfigPath()));
-                    byte[] channelConfigurationSignature = client.getChannelConfigurationSignature(configuration, adminUserInfo);
+//                    ChannelConfiguration.ChannelNode channelNode = blockChainConfiguration.getChannelNode(cid);
+                    org.hyperledger.fabric.sdk.ChannelConfiguration configuration = null;
+                    try
+                    {
+                        configuration = new org.hyperledger.fabric.sdk.ChannelConfiguration(new File(channelNode.getChannelConfigPath()));
+                    } catch (IOException e)
+                    {
+                        throw new ConfigException(new IllegalArgumentException(e), ResultInfo.NETWORK_MAYBE_READ_FILE_ERROR);
+                    } catch (InvalidArgumentException e)
+                    {
+                        throw new ConfigException(e, ResultInfo.ILLEGAL_ARGUMENT_ERROR);
+                    }
+                    byte[] channelConfigurationSignature = new byte[0];
+                    channelConfigurationSignature = client.getChannelConfigurationSignature(configuration, adminUserInfo);
+
                     logger.info("签名信息为:" + Base64Utils.encode(channelConfigurationSignature));
-                    channel = hfClient.newChannel(channelId,allOrderers.get(0), configuration, channelConfigurationSignature);
-                    TimeUnit.SECONDS.sleep(8);
+                    boolean joined = false;
+                    try
+                    {
+                        channel = hfClient.newChannel(channelId, allOrderers.get(0), configuration, channelConfigurationSignature);
+                        channelCreated = true;
+                    } catch (Exception e)
+                    {
+                        logger.info("可能是其他组织已经创建了该channel,所以尝试直接加入");
+                        channel = client.getChannel(channelId);
+                        try
+                        {
+                            tryJoinAllPeersAfterAlreadCreated(hfClient, blockChainConfiguration.isTls(), channel, allPeers);
+                        } catch (ProposalException e1)
+                        {
+                            logger.error("尝试加入失败,直接退出,抛出错误:" + e.getMessage());
+                            throw new ConfigException(e, ResultInfo.UNKNOWN);
+                        }
+                        joined = true;
+                    }
+                    if (!joined)
+                    {
+                        try
+                        {
+                            joinAllPeers(client, blockChainConfiguration.isTls(), channel, allPeers);
+                        } catch (ProposalException e)
+                        {
+                            throw new ConfigException(e, ResultInfo.NETWORK_JOIN_CHANNEL_ERROR);
+                        }
+                    } else
+                    {
+                        logger.info("channel已由其他组织创建,该组织{}的peer加入成功");
+                    }
+                    try
+                    {
+                        if (channelCreated)
+                        {
+                            TimeUnit.SECONDS.sleep(8);
+                        }
+                    } catch (InterruptedException e)
+                    {
+                        throw new ConfigException(e, ResultInfo.CONCURRENT_ERROR);
+                    }
 
                     logger.info("将所有的peer都加入到channel中");
-                    joinAllPeers(hfClient, blockChainConfiguration.isTls(), channel, allPeers);
-                }
-                try
-                {
-                    logger.info("begin channel 开始初始化");
-                    channel.initialize();
-                    logger.info("end channel 结束初始化");
-                } catch (Exception e)
-                {
-                    logger.error("channel初始化错误" + e.getMessage());
-                    throw new ConfigException(e);
+
                 }
             }
 
@@ -239,10 +371,11 @@ public class FabricNetworkContainer extends AbstractInitOnce
         List<OrganizationConfiguration.OrganizationNode> organizationNodes = organizationConfiguration.getOrganizations();
         for (OrganizationConfiguration.OrganizationNode node : organizationNodes)
         {
-            List<String> channels = node.getChannels();
+            List<ChannelConfiguration.ChannelNode> channelsByPeers = blockChainConfiguration.getChannelsByPeers(node.getPeers());
 
-            for (String cid : channels)
+            for (ChannelConfiguration.ChannelNode channelNode : channelsByPeers)
             {
+                String cid = channelNode.getChannelId();
                 logger.info("begin 对组织[{}]进行相关操作", node.getMspId());
                 User user = this.clientWrapper.getUser(node.getMspId());
                 hfClient.setUserContext(user);
@@ -252,6 +385,7 @@ public class FabricNetworkContainer extends AbstractInitOnce
                 {
                     Channel channel = hfClient.getChannel(cid);
                     Collection<Peer> channelPeers = channel.getPeers();
+                    // FIXME ,获取该组织下的要安装该chaincode的所有peer,既 chaincode在外层遍历,而peer在内层遍历
                     Peer peer = null;
                     for (Peer channelPeer : channelPeers)
                     {
@@ -313,22 +447,12 @@ public class FabricNetworkContainer extends AbstractInitOnce
                                 request.setChaincodeVersion(installVersion + "");
                                 Collection<ProposalResponse> responses = hfClient.sendInstallProposal(request, Arrays.asList(peer));
                                 handlerResponse(responses, "链码升级前安装");
-
-
-                                UpgradeProposalRequest upgradeProposalRequest = hfClient.newUpgradeProposalRequest();
-                                upgradeProposalRequest.setChaincodeID(chaincodeID);
-                                upgradeProposalRequest.setArgs("a", "b", "c");
-//                            upgradeProposalRequest.setProposalWaitTime();
-                                upgradeProposalRequest.setFcn("init");
-                                upgradeProposalRequest.setUserContext(user);
-                                Collection<ProposalResponse> proposalResponses = channel.sendUpgradeProposal(upgradeProposalRequest, Arrays.asList(peer));
-                                handlerResponse(proposalResponses, "链码升级");
                             }
                         } else
                         {
                             logger.info("该chaincodeid=[{}],并未安装,开始安装", chainCodeId);
                             InstallProposalRequest request = hfClient.newInstallProposalRequest();
-
+                            // FIXME 可能需要查询安装该chaincode的所有peer,然后统一安装,实例化的时候只需要实例化一个就可以
                             request.setChaincodeID(chaincodeID);
                             request.setUserContext(hfClient.getUserContext());
                             request.setChaincodeSourceLocation(new File(blockChainConfiguration.getChainCodeRootDir()));
@@ -365,9 +489,6 @@ public class FabricNetworkContainer extends AbstractInitOnce
                             chaincodeEndorsementPolicy.fromYamlFile(new File(chainCode.getPolicyFile()));
                             instantiateProposalRequest.setChaincodeEndorsementPolicy(chaincodeEndorsementPolicy);
                         }
-//                    List<ChannelConfiguration> channelConfigurations = node.getChannelConfigurations();
-//                    for (ChannelConfiguration channelConfiguration : channelConfigurations)
-//                    {
                         String channelId = cid;
                         boolean ccHasInstaned = false;
                         logger.info("begin 判断该chaincode ,在该channelId=[{}]上是否已经被实例化", channelId);
@@ -381,6 +502,7 @@ public class FabricNetworkContainer extends AbstractInitOnce
                                 continue;
                             }
                         }
+
                         if (ccHasInstaned)
                         {
                             logger.info("该chaincode已经被实例化");
@@ -388,21 +510,26 @@ public class FabricNetworkContainer extends AbstractInitOnce
                         {
                             logger.info("该chaincode未被实例化,开始实例化");
                             logger.info("begin 往channel 请求实例化链码,channelId=[{}]", cid);
-                            Collection<ProposalResponse> instantiationProposal = channel.sendInstantiationProposal(instantiateProposalRequest);
-                            boolean success = true;
+                            List<Peer> instanPeers = Arrays.asList(peer);
+                            Collection<ProposalResponse> instantiationProposal = channel.sendInstantiationProposal(instantiateProposalRequest, instanPeers);
+                            int successCount = 0;
                             String msg = null;
+                            List<ProposalResponse> successful = new ArrayList<>();
                             for (ProposalResponse proposalResponse : instantiationProposal)
                             {
                                 if (proposalResponse.getStatus().getStatus() != 200)
                                 {
-                                    success = false;
                                     msg += proposalResponse.getMessage();
+                                } else
+                                {
+                                    successCount++;
+                                    successful.add(proposalResponse);
                                 }
                             }
-                            if (success)
+                            if (successCount == instanPeers.size())
                             {
                                 logger.info("成功实例化链码,往orderer发起交易请求");
-                                CompletableFuture<BlockEvent.TransactionEvent> cf = channel.sendTransaction(instantiationProposal);
+                                CompletableFuture<BlockEvent.TransactionEvent> cf = channel.sendTransaction(successful);
                                 List<String> msgList = new ArrayList<>();
                                 cf.thenApply((event) ->
                                 {
@@ -427,7 +554,31 @@ public class FabricNetworkContainer extends AbstractInitOnce
                                 throw new ConfigException("实例化链码失败:" + msg);
                             }
                         }
-//                    }
+
+//                        if (!needUpgrade)
+//                        {
+//                            logger.info("该chaincode=[{}],不需要升级", chainCodeId);
+//                        } else
+//                        {
+//                            logger.info("该chaincode需要升级,因此需要安装新版本,再升级");
+//
+//                            InstallProposalRequest request = hfClient.newInstallProposalRequest();
+//                            request.setChaincodeID(chaincodeID);
+//                            request.setUserContext(hfClient.getUserContext());
+//                            request.setChaincodeSourceLocation(new File(blockChainConfiguration.getChainCodeRootDir()));
+//                            request.setChaincodeVersion(installVersion + "");
+//                            Collection<ProposalResponse> responses = hfClient.sendInstallProposal(request, Arrays.asList(peer));
+//                            handlerResponse(responses, "链码升级前安装");
+//
+//                            UpgradeProposalRequest upgradeProposalRequest = hfClient.newUpgradeProposalRequest();
+//                            upgradeProposalRequest.setChaincodeID(chaincodeID);
+//                            upgradeProposalRequest.setArgs("a", "b", "c");
+////                            upgradeProposalRequest.setProposalWaitTime();
+//                            upgradeProposalRequest.setFcn("init");
+//                            upgradeProposalRequest.setUserContext(user);
+//                            Collection<ProposalResponse> proposalResponses = channel.sendUpgradeProposal(upgradeProposalRequest, Arrays.asList(peer));
+//                            handlerResponse(proposalResponses, "链码升级");
+//                        }
                     }
                 }
             }
@@ -446,25 +597,22 @@ public class FabricNetworkContainer extends AbstractInitOnce
         }
     }
 
-    private void joinAllPeers(HFClient client, boolean tls, Channel channel, Collection<PeerConfiguration.PeerNode> peerNodes)
+    // 在已经创建过了的话,直接尝试全部加入
+    private void tryJoinAllPeersAfterAlreadCreated(HFClient client, boolean tls, Channel channel, Collection<PeerConfiguration.PeerNode> peerNodes) throws ProposalException, InvalidArgumentException
+    {
+        joinAllPeers(client, tls, channel, peerNodes);
+    }
+
+    private void joinAllPeers(HFClient client, boolean tls, Channel channel, Collection<PeerConfiguration.PeerNode> peerNodes) throws InvalidArgumentException, ProposalException
     {
         final HFClient hfClient = client;
         Peer peer = null;
-        try
+        for (PeerConfiguration.PeerNode p : peerNodes)
         {
-            for (PeerConfiguration.PeerNode p : peerNodes)
-            {
-                String grpcUrl = tls ? "grpcs://" : "grpc://";
-                grpcUrl += p.getIpWithPort();
-                peer = hfClient.newPeer(p.getDomain(), grpcUrl, p.buildProperties());
-                channel.joinPeer(peer);
-            }
-        } catch (InvalidArgumentException e)
-        {
-            throw new ConfigException("证书解析失败");
-        } catch (ProposalException e)
-        {
-            throw new ConfigException("加入channel失败", e);
+            String grpcUrl = tls ? "grpcs://" : "grpc://";
+            grpcUrl += p.getIpWithPort();
+            peer = hfClient.newPeer(p.getDomain(), grpcUrl, p.buildProperties());
+            channel.joinPeer(peer);
         }
 
     }
