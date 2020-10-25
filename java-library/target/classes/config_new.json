@@ -4,11 +4,13 @@
   "cryptoConfigPrefixPath": "/Users/joker/go/src/examples/blockchain/multiorganization/",
   "artifactsPrefixPath": "/Users/joker/go/src/examples/blockchain/multiorganization/",
   "chainCodeRootDir": "/Users/joker/go",
+  "clientConfiguration": {
+    "organizationMspId": "Org1MSP"
+  },
   "organizationConfiguration": {
-    "organizationNodes": [
+    "organizations": [
       {
         "mspId": "Org1MSP",
-        "alpha": true,
         "users": [
           {
             "keyString": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgJRvWXpEUSLfLzc65\no7zh44u4hd71CNUBpoAhc8AaQ2ChRANCAASnc+h/OHGWuLRxg3xWCcSQebxkCFVC\ndkVVNWAXVVpKjq4S3EJYh7jUSks+Buvkf/k7ADu4fzq6lsU/NyzQy5Zk\n-----END PRIVATE KEY-----\n",
@@ -16,53 +18,32 @@
             "name": "Admin"
           }
         ],
-        "peerConfiguration": {
-          "endorserPeers": [
-            {
-              "domain": "peer0.org1.com",
-              "ipWithPort": "127.0.0.1:11051",
-              "tlsCertFile": "crypto-config/peerOrganizations/org1.com/peers/peer0.org1.com/tls/ca.crt",
-              "chainCodes": [
-                {
-                  "chainCodeId": "democc",
-                  "chainCodePath": "myLibrary/java-library/src/main/resources/chaincodes/",
-                  "needUpdate": true,
-                  "version": "0.01",
-                  "policyFile": ""
-                }
-              ]
-            }
-          ]
-        },
-        "caConfiguration": {
-        },
-        "channelConfigurations": [
+        "peers": [
+          "peer0.org1.com"
+        ],
+        "channels": [
+          "demochannel"
+        ],
+        "ca":""
+      }
+    ],
+    "ordererConfigurations": [
+      {
+        "orderMspId": "OrdererMSP",
+        "orderers": [
           {
-            "channelId": "demochannel",
-            "channelConfigPath": "artifacts/demochannel.tx",
-            "needListOnBlockEvent": false,
-            "ordererConfigurations": [
-              {
-                "orderMspId": "OrdererMSP",
-                "ordererNodes": [
-                  {
-                    "domain": "orderer.demo.com",
-                    "ipWithPort": "127.0.0.1:5050",
-                    "tlsCertFile": "crypto-config/ordererOrganizations/demo.com/orderers/orderer.demo.com/tls/ca.crt"
-                  }
-                ]
-              }
-            ]
+            "domain": "orderer.demo.com",
+            "ipWithPort": "127.0.0.1:5050",
+            "tlsCertFile": "crypto-config/ordererOrganizations/demo.com/orderers/orderer.demo.com/tls/ca.crt"
           }
         ]
       }
     ]
   },
-
   "ordererConfigurations": [
     {
       "orderMspId": "OrdererMSP",
-      "ordererNodes": [
+      "orderers": [
         {
           "domain": "orderer.demo.com",
           "ipWithPort": "127.0.0.1:5050",
@@ -70,5 +51,43 @@
         }
       ]
     }
-  ]
+  ],
+  "channelConfiguration": {
+    "channels": [
+      {
+        "channelId": "demochannel",
+        "channelConfigPath": "artifacts/demochannel.tx",
+        "needListOnBlockEvent": false,
+        "orderers": [
+          "orderer.demo.com"
+        ]
+      }
+    ]
+  },
+  "peerConfiguration": {
+    "peers": [
+      {
+        "domain": "peer0.org1.com",
+        "ipWithPort": "127.0.0.1:11051",
+        "tlsCertFile": "crypto-config/peerOrganizations/org1.com/peers/peer0.org1.com/tls/ca.crt",
+        "anchorPeer": true,
+        "chainCodes": [
+          "democc"
+        ]
+      }
+    ]
+  },
+  "chaincodeConfiguration": {
+    "chainCodes": [
+      {
+        "chainCodeId": "democc",
+        "chainCodePath": "myLibrary/java-library/src/main/resources/chaincodes/",
+        "needUpdate": true,
+        "version": "0.01",
+        "policyFile": ""
+      }
+    ]
+  },
+  "caConfiguration": {
+  }
 }

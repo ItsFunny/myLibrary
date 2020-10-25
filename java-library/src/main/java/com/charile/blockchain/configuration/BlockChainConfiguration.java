@@ -7,17 +7,20 @@ import com.charile.exception.ConfigException;
 import com.charile.service.IValidater;
 import com.charile.utils.FileUtils;
 import com.charile.utils.SystemUtils;
+import com.rabbitmq.client.AMQP;
 import lombok.Data;
 import lombok.extern.java.Log;
 import org.apache.commons.lang3.StringUtils;
 import org.hyperledger.fabric.sdk.Channel;
 import org.hyperledger.fabric.sdk.HFClient;
 import org.hyperledger.fabric.sdk.InstallProposalRequest;
+import org.hyperledger.fabric.sdk.Orderer;
+import org.springframework.util.CollectionUtils;
 
 import java.io.File;
 import java.nio.file.Path;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author Charlie
@@ -43,16 +46,36 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
     //
     private String chainCodeRootDir;
 
+
+    private ClientConfiguration clientConfiguration;
     // 以组织为主
     private OrganizationConfiguration organizationConfiguration;
 
     // orderer的配置
     private List<OrdererConfiguration> ordererConfigurations;
 
+    // 所有的channel
+    private ChannelConfiguration channelConfiguration;
+
+    // 所有的peer
+    private PeerConfiguration peerConfiguration;
+
+    // chaincode
+    private ChainCodeConfiguration chaincodeConfiguration;
+
+
+    // ca信息
+    private CaConfiguration caConfiguration;
+
 
     private BlockChainConfiguration()
     {
 
+    }
+
+    public boolean containsChannels(List<String> channels)
+    {
+        return this.channelConfiguration.contains(channels);
     }
 
 
@@ -62,17 +85,18 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
         this.valid();
     }
 
-    public UserInfo getAlphaUser(){
-        List<OrganizationConfiguration.OrganizationNode> organizationNodes = this.organizationConfiguration.getOrganizationNodes();
-        for (OrganizationConfiguration.OrganizationNode organizationNode : organizationNodes)
-        {
-            if (organizationNode.isAlpha())
-            {
-                return organizationNode.getAdminUserInfo(Arrays.asList(IKeyImporter.COMMON_PEM_KEY_IMPORTER, IKeyImporter.STANDARD_SM2_KEY_IMPORTER));
-            }
-        }
-        throw new ConfigException("不可能会调到这里");
-    }
+//    public UserInfo getAlphaUser()
+//    {
+//        List<OrganizationConfiguration.OrganizationNode> organizationNodes = this.organizationConfiguration.getOrganizations();
+//        for (OrganizationConfiguration.OrganizationNode organizationNode : organizationNodes)
+//        {
+//            if (organizationNode.isAlpha())
+//            {
+//                return organizationNode.getAdminUserInfo(Arrays.asList(IKeyImporter.COMMON_PEM_KEY_IMPORTER, IKeyImporter.STANDARD_SM2_KEY_IMPORTER));
+//            }
+//        }
+//        throw new ConfigException("不可能会调到这里");
+//    }
 
     @Override
     public void valid()
@@ -88,6 +112,233 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
             throw new ConfigException("cryptoConfigPrefixPath 不可为空");
         }
         this.cryptoConfigPrefixPath = FileUtils.appendFilePathIfNone(this.cryptoConfigPrefixPath);
+        this.clientConfiguration.valid();
         this.organizationConfiguration.valid();
+        for (OrdererConfiguration ordererConfiguration : ordererConfigurations)
+        {
+            ordererConfiguration.valid();
+        }
+        this.channelConfiguration.valid();
+        this.peerConfiguration.valid();
+
+
+    }
+
+    public boolean containsOrderers(List<String> orderers)
+    {
+        if (CollectionUtils.isEmpty(orderers))
+        {
+            throw new ConfigException("orderers不可为空");
+        }
+        for (OrdererConfiguration ordererConfiguration : ordererConfigurations)
+        {
+            Map<String, OrdererConfiguration.OrdererNode> collect = ordererConfiguration.getOrderers().stream().collect(Collectors.toMap(o -> o.getDomain(), ordererNode -> ordererNode));
+            for (String orderer : orderers)
+            {
+                if (!collect.containsKey(orderer))
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public boolean containsPeers(List<String> s)
+    {
+        if (CollectionUtils.isEmpty(s))
+        {
+            throw new ConfigException("peers不可为空");
+        }
+        List<PeerConfiguration.PeerNode> peerNodes = this.peerConfiguration.getPeers();
+        Map<String, PeerConfiguration.PeerNode> collect = peerNodes.stream().collect(Collectors.toMap(p -> p.getDomain(), p -> p));
+        for (String s1 : s)
+        {
+            if (!collect.containsKey(s1))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean containsCa(List<String> ca)
+    {
+        CaConfiguration caConfiguration = this.getCaConfiguration();
+        List<CaConfiguration.CaNode> caNodes = caConfiguration.getCaNodes();
+//        caNodes.stream().collect(Collectors.toMap(c->c.getCaName()))
+
+        return true;
+    }
+
+    public boolean containsChainCodes(List<String> cs)
+    {
+        if (CollectionUtils.isEmpty(cs))
+        {
+            throw new ConfigException("chaincodes 不可为空");
+        }
+
+        ChainCodeConfiguration chaincodeConfiguration = this.getChaincodeConfiguration();
+        List<ChainCodeConfiguration.ChainCodeNode> chaincodes = chaincodeConfiguration.getChainCodes();
+        Map<String, ChainCodeConfiguration> collect = chaincodes.stream().collect(Collectors.toMap(c -> c.getChainCodeId(), chainCodeNode -> chaincodeConfiguration));
+        for (String c : cs)
+        {
+            if (!collect.containsKey(c))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public UserInfo getAlphaUser()
+    {
+        List<OrganizationConfiguration.OrganizationNode> organizations = this.organizationConfiguration.getOrganizations();
+        String organizationMspId = this.clientConfiguration.getOrganizationMspId();
+        for (OrganizationConfiguration.OrganizationNode organization : organizations)
+        {
+            if (!organization.getMspId().equalsIgnoreCase(organizationMspId))
+            {
+                continue;
+            }
+            OrganizationConfiguration.UserNode adminUser = organization.getAdminUser();
+            UserInfo info = new UserInfo(IKeyImporter.COMMON_PEM_KEY_IMPORTER, organizationMspId, adminUser.getName(), adminUser.getKeyString().getBytes(), adminUser.getCertString().getBytes());
+            return info;
+        }
+        throw new ConfigException("不可能到达这里");
+    }
+
+    public PeerConfiguration.PeerNode getOrganizationAnchorPeer(String mspId)
+    {
+        List<OrganizationConfiguration.OrganizationNode> organizations = this.organizationConfiguration.getOrganizations();
+        OrganizationConfiguration.OrganizationNode node = null;
+        for (OrganizationConfiguration.OrganizationNode organization : organizations)
+        {
+            if (organization.getMspId().equalsIgnoreCase(mspId))
+            {
+                node = organization;
+            }
+        }
+        List<String> peers = node.getPeers();
+        return getAnchorPeer(peers);
+    }
+
+    public PeerConfiguration.PeerNode getAnchorPeer(List<String> ps)
+    {
+        List<PeerConfiguration.PeerNode> peers = this.peerConfiguration.getPeers();
+        Map<String, PeerConfiguration.PeerNode> collect = peers.stream().collect(Collectors.toMap(p -> p.getDomain(), p -> p));
+        PeerConfiguration.PeerNode anchorPeer = null;
+        for (String p : ps)
+        {
+            PeerConfiguration.PeerNode peerNode = collect.get(p);
+            if (peerNode.isAnchorPeer())
+            {
+                anchorPeer = peerNode;
+                break;
+            }
+        }
+        return anchorPeer;
+    }
+
+    public List<PeerConfiguration.PeerNode> getOrganizationAllPeers(List<String> ps)
+    {
+        List<PeerConfiguration.PeerNode> peers = this.peerConfiguration.getPeers();
+        Map<String, PeerConfiguration.PeerNode> collect = peers.stream().collect(Collectors.toMap(p -> p.getDomain(), p -> p));
+        List<PeerConfiguration.PeerNode> result = new ArrayList<>();
+        for (String p : ps)
+        {
+            PeerConfiguration.PeerNode peerNode = collect.get(p);
+            result.add(peerNode);
+        }
+        return result;
+    }
+
+    public List<Orderer> getChannelAllOrderers(String cid, HFClient client)
+    {
+        List<ChannelConfiguration.ChannelNode> channels = this.channelConfiguration.getChannels();
+        ChannelConfiguration.ChannelNode node = null;
+        for (ChannelConfiguration.ChannelNode channel : channels)
+        {
+            if (channel.getChannelId().equalsIgnoreCase(cid))
+            {
+
+                node = channel;
+                break;
+            }
+        }
+        return this.getChannelAllOrderers(node.getOrderers(), client);
+    }
+
+    public List<Orderer> getChannelAllOrderers(List<String> os, HFClient client)
+    {
+        List<OrdererConfiguration> ordererConfigurations = this.getOrdererConfigurations();
+        Map<String, OrdererConfiguration.OrdererNode> nodeMap = new HashMap<>();
+        for (OrdererConfiguration ordererConfiguration : ordererConfigurations)
+        {
+            List<OrdererConfiguration.OrdererNode> orderers = ordererConfiguration.getOrderers();
+            for (OrdererConfiguration.OrdererNode orderer : orderers)
+            {
+                nodeMap.put(orderer.getDomain(), orderer);
+            }
+        }
+        List<Orderer> result = new ArrayList<>();
+        for (String o : os)
+        {
+            OrdererConfiguration.OrdererNode ordererNode = nodeMap.get(o);
+            Orderer orderer = ordererNode.buildOrderer(tls, client);
+            result.add(orderer);
+        }
+        return result;
+    }
+
+    public ChannelConfiguration.ChannelNode getChannelNode(String cid)
+    {
+        List<ChannelConfiguration.ChannelNode> channels = this.channelConfiguration.getChannels();
+        for (ChannelConfiguration.ChannelNode channel : channels)
+        {
+            if (channel.getChannelId().equalsIgnoreCase(cid))
+            {
+                return channel;
+            }
+        }
+        throw new ConfigException("这不可能发生");
+    }
+
+    public List<PeerConfiguration.PeerNode> getOrgAllEndorserPeers(List<String> ps)
+    {
+
+        List<PeerConfiguration.PeerNode> peers = this.peerConfiguration.getPeers();
+        Map<String, PeerConfiguration.PeerNode> collect = peers.stream().collect(Collectors.toMap(p -> p.getDomain(), p -> p));
+        List<PeerConfiguration.PeerNode> res = new ArrayList<>();
+        for (String p : ps)
+        {
+            if (!collect.containsKey(p))
+            {
+                continue;
+            }
+            PeerConfiguration.PeerNode peerNode = collect.get(p);
+            if (peerNode.isEndorsingPeer())
+            {
+                res.add(peerNode);
+            }
+        }
+
+        return res;
+    }
+
+    public List<ChainCodeConfiguration.ChainCodeNode> getChainCodes(List<String> cids)
+    {
+        List<ChainCodeConfiguration.ChainCodeNode> res = new ArrayList<>();
+        List<ChainCodeConfiguration.ChainCodeNode> chainCodes = this.getChaincodeConfiguration().getChainCodes();
+        Map<String, ChainCodeConfiguration.ChainCodeNode> collect = chainCodes.stream().collect(Collectors.toMap(c -> c.getChainCodeId(), c -> c));
+        for (String cid : cids)
+        {
+            ChainCodeConfiguration.ChainCodeNode chainCodeNode = collect.get(cid);
+            if (null != chainCodeNode)
+            {
+                res.add(chainCodeNode);
+            }
+        }
+        return res;
     }
 }

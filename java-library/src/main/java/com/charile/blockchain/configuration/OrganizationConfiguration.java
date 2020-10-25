@@ -4,16 +4,12 @@ import com.charile.base.IKeyImporter;
 import com.charile.blockchain.model.UserInfo;
 import com.charile.exception.ConfigException;
 import com.charile.service.IValidater;
-import com.charile.utils.Base64Utils;
 import com.charile.utils.FileUtils;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
-import org.hyperledger.fabric.sdk.HFClient;
-import org.hyperledger.fabric.sdk.Peer;
 
 import java.io.File;
-import java.util.*;
-import java.util.stream.Stream;
+import java.util.List;
 
 /**
  * @author Charlie
@@ -29,23 +25,27 @@ public class OrganizationConfiguration implements IValidater
     private OrganizationConfiguration() {}
 
     // 组织中的节点信息
-    private List<OrganizationNode> organizationNodes;
+    private List<OrganizationNode> organizations;
 
     @Override
     public void valid()
     {
-        boolean alphaExist = false;
-        for (OrganizationNode organizationNode : organizationNodes)
+//        boolean alphaExist = false;
+//        for (OrganizationNode organizationNode : organizations)
+//        {
+//            if (organizationNode.isAlpha())
+//            {
+//                alphaExist = true;
+//            }
+//            organizationNode.valid();
+//        }
+//        if (!alphaExist)
+//        {
+//            throw new ConfigException("alpha组织必须存在");
+//        }
+        for (OrganizationNode organization : organizations)
         {
-            if (organizationNode.isAlpha())
-            {
-                alphaExist = true;
-            }
-            organizationNode.valid();
-        }
-        if (!alphaExist)
-        {
-            throw new ConfigException("alpha组织必须存在");
+            organization.valid();
         }
     }
 
@@ -54,32 +54,35 @@ public class OrganizationConfiguration implements IValidater
     public static class OrganizationNode implements IValidater
     {
         private String mspId;
-        private boolean alpha;
+        //        private boolean alpha;
         // 用户信息
         private List<UserNode> users;
+        private List<String> channels;
+        private List<String> peers;
+        private String ca;
+
         // peer信息
-        private PeerConfiguration peerConfiguration;
+        //        private PeerConfiguration peerConfiguration;
         // ca信息
-        private CaConfiguration caConfiguration;
         // 加入了哪些channel
-        private List<ChannelConfiguration> channelConfigurations;
+//        private List<ChannelConfiguration> channelConfigurations;
 
-        public Collection<PeerConfiguration.PeerNode> getAllPeers()
-        {
-            Map<String, PeerConfiguration.PeerNode> peers = new HashMap();
-            PeerConfiguration.PeerNode anchorPeer = this.peerConfiguration.getAnchorPeer();
-            peers.put(anchorPeer.getDomain(), anchorPeer);
-            List<PeerConfiguration.EndorserPeer> endorserPeers = this.peerConfiguration.getEndorserPeers();
-            for (PeerConfiguration.EndorserPeer endorserPeer : endorserPeers)
-            {
-                if (!peers.containsKey(endorserPeer.getDomain()))
-                {
-                    peers.put(endorserPeer.getDomain(), endorserPeer);
-                }
-            }
-            return peers.values();
-        }
-
+//        public Collection<PeerConfiguration.PeerNode> getAllPeers()
+//        {
+//            Map<String, PeerConfiguration.PeerNode> peers = new HashMap();
+//            PeerConfiguration.PeerNode anchorPeer = this.peerConfiguration.getAnchorPeer();
+//            peers.put(anchorPeer.getDomain(), anchorPeer);
+//            List<PeerConfiguration.EndorserPeer> endorserPeers = this.peerConfiguration.getEndorserPeers();
+//            for (PeerConfiguration.EndorserPeer endorserPeer : endorserPeers)
+//            {
+//                if (!peers.containsKey(endorserPeer.getDomain()))
+//                {
+//                    peers.put(endorserPeer.getDomain(), endorserPeer);
+//                }
+//            }
+//            return peers.values();
+//        }
+//
         public UserInfo getAdminUserInfo(List<IKeyImporter> importers)
         {
             UserNode adminUser = getAdminUser();
@@ -119,10 +122,10 @@ public class OrganizationConfiguration implements IValidater
             throw new ConfigException("配置错误,找不到匹配的admin用户");
         }
 
-        public PeerConfiguration.PeerNode getAnchorPeer()
-        {
-            return this.peerConfiguration.getAnchorPeer();
-        }
+//        public PeerConfiguration.PeerNode getAnchorPeer()
+//        {
+//            return this.peerConfiguration.getAnchorPeer();
+//        }
 
         @Override
         public void valid()
@@ -131,14 +134,28 @@ public class OrganizationConfiguration implements IValidater
             {
                 user.valid();
             }
-            this.peerConfiguration.valid();
-            this.caConfiguration.valid();
-
-
-            for (ChannelConfiguration channelConfiguration : this.channelConfigurations)
+            // 判断是否存在
+            if (!ConfigurationFactory.getInstance().getBlockChainConfiguration().getChannelConfiguration().contains(this.channels))
             {
-                channelConfiguration.valid();
+                throw new ConfigException("配置中的channel不匹配");
             }
+            if (!ConfigurationFactory.getInstance().getBlockChainConfiguration().containsPeers(this.getPeers()))
+            {
+                throw new ConfigException("配置中的peer不匹配");
+            }
+
+//            private List<String>peers;
+//            private List<String>channels;
+//            private String ca;
+
+//            this.peerConfiguration.valid();
+//            this.caConfiguration.valid();
+
+
+//            for (ChannelConfiguration channelConfiguration : this.channelConfigurations)
+//            {
+//                channelConfiguration.valid();
+//            }
         }
     }
 
@@ -176,5 +193,4 @@ public class OrganizationConfiguration implements IValidater
             }
         }
     }
-
 }

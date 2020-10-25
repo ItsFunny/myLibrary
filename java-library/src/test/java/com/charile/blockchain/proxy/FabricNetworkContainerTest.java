@@ -13,10 +13,10 @@ public class FabricNetworkContainerTest
     @Test
     public void testCreateChannel() throws Exception
     {
-        SystemUtils.setEnviroment(ConfigConstants.CONFIG_BLOCKCHAIN_CONFIGURAITION, "/Users/joker/go/src/myLibrary/java-library/src/main/resources/config.json");
+        SystemUtils.setEnviroment(ConfigConstants.CONFIG_BLOCKCHAIN_CONFIGURAITION, "/Users/joker/go/src/myLibrary/java-library/src/main/resources/config_new.json");
         ConfigurationFactory.getInstance().slowInit();
 
-        HFClient client = FabricNetworkContainer.getInstance().getClient();
+        HFClient client = FabricNetworkContainer.getInstance().getClientWrapper().getAlphaClient();
 
     }
 

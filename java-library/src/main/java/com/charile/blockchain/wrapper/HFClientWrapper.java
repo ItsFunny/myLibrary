@@ -38,9 +38,12 @@ public class HFClientWrapper
     // 各个组织的context
     private Map<String, User> userContextMap = new HashMap<>();
 
-    public HFClientWrapper() { }
+    public HFClientWrapper() { this.userContextMap = new HashMap<>(); }
 
     public  void put(String mspId, User userInfo){
         this.userContextMap.put(mspId,userInfo);
+    }
+    public User getUser(String mspId){
+        return this.userContextMap.get(mspId);
     }
 }

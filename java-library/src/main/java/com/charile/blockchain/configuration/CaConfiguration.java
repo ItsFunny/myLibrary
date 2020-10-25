@@ -26,10 +26,9 @@ public class CaConfiguration implements IValidater
     }
 
     @Data
-    class CaNode
+    public static class CaNode
     {
-        private String caName;
-        private String ip;
-        private Integer port;
+        private String domain;
+        private String ipWithPort;
     }
 }

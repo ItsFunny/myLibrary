@@ -27,34 +27,34 @@ public class OrdererConfiguration implements IValidater
     private OrdererConfiguration() {}
 
     private String orderMspId;
-    private List<OrdererNode> ordererNodes;
+    private List<OrdererNode> orderers;
 
 
-    public Collection<Orderer> searchOrders(List<String> orderDomain, boolean tls, HFClient client)
-    {
-        Set<Orderer> orderers = new HashSet<>();
-        for (OrdererNode node : ordererNodes)
-        {
-            for (String s : orderDomain)
-            {
-                if (node.getDomain().equalsIgnoreCase(s))
-                {
-                    orderers.add(node.buildOrderer(tls, client));
-                }
-            }
-        }
-        return orderers;
-    }
+//    public Collection<Orderer> searchOrders(List<String> orderDomain, boolean tls, HFClient client)
+//    {
+//        Set<Orderer> orderers = new HashSet<>();
+//        for (OrdererNode node : orderers)
+//        {
+//            for (String s : orderDomain)
+//            {
+//                if (node.getDomain().equalsIgnoreCase(s))
+//                {
+//                    orderers.add(node.buildOrderer(tls, client));
+//                }
+//            }
+//        }
+//        return orderers;
+//    }
 
-    public Collection<Orderer> buildOrders(boolean tls, HFClient client)
-    {
-        Set<Orderer> orderers = new HashSet<>();
-        for (OrdererNode ordererNode : ordererNodes)
-        {
-            orderers.add(ordererNode.buildOrderer(tls, client));
-        }
-        return orderers;
-    }
+//    public Collection<Orderer> buildOrders(boolean tls, HFClient client)
+//    {
+//        Set<Orderer> result = new HashSet<>();
+//        for (OrdererNode ordererNode : orderers)
+//        {
+//            orderers.add(ordererNode.buildOrderer(tls, client));
+//        }
+//        return result;
+//    }
 
     @Override
     public void valid()
@@ -63,7 +63,7 @@ public class OrdererConfiguration implements IValidater
         {
             throw new ConfigException("orderMsp不可为空");
         }
-        for (OrdererNode ordererNode : ordererNodes)
+        for (OrdererNode ordererNode : orderers)
         {
             ordererNode.valid();
         }

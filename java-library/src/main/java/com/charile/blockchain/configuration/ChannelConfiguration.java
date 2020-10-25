@@ -7,7 +7,6 @@ import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 import org.hyperledger.fabric.sdk.HFClient;
 import org.hyperledger.fabric.sdk.Orderer;
-import org.springframework.core.annotation.Order;
 
 import java.util.*;
 
@@ -24,33 +23,84 @@ public class ChannelConfiguration implements IValidater
 {
     private ChannelConfiguration() {}
 
-    private String channelId;
-    private String channelConfigPath;
-    private boolean needListOnBlockEvent;
+    private List<ChannelNode> channels;
 
-    // 该channel下的所有orderer组织,默认是只有1个的
-    private List<String> orderers;
-
-    public Orderer getOneOrderer(boolean tls, HFClient client)
+    public boolean contains(List<String> chs)
     {
-        BlockChainConfiguration blockChainConfiguration = ConfigurationFactory.getInstance().getBlockChainConfiguration();
-        List<OrdererConfiguration> ordererConfigurations = blockChainConfiguration.getOrdererConfigurations();
-        for (OrdererConfiguration ordererConfiguration : ordererConfigurations)
+        int count = 0;
+        for (ChannelNode ch : channels)
         {
-            for (OrdererConfiguration configuration : ordererConfigurations)
+            for (String name : chs)
             {
-                List<OrdererConfiguration.OrdererNode> ordererNodes = configuration.getOrdererNodes();
-                for (OrdererConfiguration.OrdererNode ordererNode : ordererNodes)
+                if (name.equalsIgnoreCase(ch.getChannelId()))
                 {
-                    if (ordererNode.getDomain().equalsIgnoreCase(this.orderers.get(0)))
-                    {
-                        return ordererNode.buildOrderer(tls, client);
-                    }
+                    count++;
                 }
             }
         }
-        throw new ConfigException("找不到匹配的orderer");
+        return count == chs.size();
     }
+
+    @Data
+    public static class ChannelNode implements IValidater
+    {
+        private String channelId;
+        private String channelConfigPath;
+        private boolean needListOnBlockEvent;
+
+        // 该channel下的所有orderer组织,默认是只有1个的
+        private List<String> orderers;
+
+        @Override
+        public void valid()
+        {
+            if (StringUtils.isEmpty(this.channelId))
+            {
+                throw new ConfigException("channelid不可为空");
+            }
+            if (StringUtils.isEmpty(this.channelConfigPath))
+            {
+                throw new ConfigException("channelConfigPath 不可为空");
+            }
+            this.channelConfigPath = FileUtils.cutPathIfStartWith(this.channelConfigPath);
+            this.channelConfigPath = ConfigurationFactory.getInstance().getBlockChainConfiguration().getArtifactsPrefixPath() + this.channelConfigPath;
+            if (!ConfigurationFactory.getInstance().getBlockChainConfiguration().containsOrderers(this.orderers))
+            {
+                throw new ConfigException("orderer不匹配");
+            }
+        }
+    }
+
+//    @Deprecated
+//    private String channelId;
+//    @Deprecated
+//    private String channelConfigPath;
+//    @Deprecated
+//    private boolean needListOnBlockEvent;
+//
+//    // 该channel下的所有orderer组织,默认是只有1个的
+//    private List<String> orderers;
+
+//    public Orderer getOneOrderer(boolean tls, HFClient client)
+//    {
+//        BlockChainConfiguration blockChainConfiguration = ConfigurationFactory.getInstance().getBlockChainConfiguration();
+//        List<OrdererConfiguration> ordererConfigurations = blockChainConfiguration.getOrdererConfigurations();
+//        for (OrdererConfiguration ordererConfiguration : ordererConfigurations)
+//        {
+//            for (OrdererConfiguration configuration : ordererConfigurations)
+//            {
+//                List<OrdererConfiguration.OrdererNode> ordererNodes = configuration.getOrderers();
+//                for (OrdererConfiguration.OrdererNode ordererNode : ordererNodes)
+//                {
+//                    if (ordererNode.getDomain().equalsIgnoreCase(this.orderers.get(0)))
+//                    {
+//                        return ordererNode.buildOrderer(tls, client);
+//                    }
+//                }
+//            }
+//        }
+//        throw new ConfigException("找不到匹配的orderer");
+//    }
 
     public Collection<Orderer> buildOrders(boolean tls, HFClient client)
     {
@@ -60,7 +110,7 @@ public class ChannelConfiguration implements IValidater
         Set<Orderer> orderers = new HashSet<>();
         for (OrdererConfiguration ordererConfiguration : ordererConfigurations)
         {
-            orderers.addAll(ordererConfiguration.searchOrders(this.getOrderers(), tls, client));
+//            orderers.addAll(ordererConfiguration.(this.getOrderers(), tls, client));
         }
         return orders;
     }
@@ -68,17 +118,11 @@ public class ChannelConfiguration implements IValidater
     @Override
     public void valid()
     {
-        if (StringUtils.isEmpty(this.channelId))
-        {
-            throw new ConfigException("channelid不可为空");
-        }
-        if (StringUtils.isEmpty(this.channelConfigPath))
-        {
-            throw new ConfigException("channelConfigPath 不可为空");
-        }
-        this.channelConfigPath = FileUtils.cutPathIfStartWith(this.channelConfigPath);
-        this.channelConfigPath = ConfigurationFactory.getInstance().getBlockChainConfiguration().getArtifactsPrefixPath() + this.channelConfigPath;
 
+        for (ChannelNode channel : channels)
+        {
+            channel.valid();
+        }
 
         // FIXME 校验是否存在
 //        Set<Orderer> orders = new HashSet<>();
