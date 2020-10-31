@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.charile</groupId>
+    <groupId>com.charlie</groupId>
     <artifactId>myLibrary</artifactId>
     <version>1.0</version>
 
@@ -55,11 +55,11 @@
 
 
         <!--<dependency>-->
-            <!--<groupId>org.slf4j</groupId>-->
-            <!--<artifactId>slf4j-api</artifactId>-->
-            <!--<version>1.7.25</version>-->
-            <!--<scope>compile</scope>-->
-            <!--<optional>true</optional>-->
+        <!--<groupId>org.slf4j</groupId>-->
+        <!--<artifactId>slf4j-api</artifactId>-->
+        <!--<version>1.7.25</version>-->
+        <!--<scope>compile</scope>-->
+        <!--<optional>true</optional>-->
         <!--</dependency>-->
         <!-- spring-web -->
         <dependency>
@@ -215,14 +215,67 @@
             <groupId>org.jpedal</groupId>
             <artifactId>OpenViewerFX</artifactId>
             <version>6.6.14</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>bcprov-jdk16</artifactId>
+                    <groupId>bouncycastle</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!--FastDFS-->
         <!--<dependency>-->
-            <!--<groupId>org.csource</groupId>-->
-            <!--<artifactId>fastdfs-client-java</artifactId>-->
-            <!--<version>1.29-SNAPSHOT</version>-->
+        <!--<groupId>org.csource</groupId>-->
+        <!--<artifactId>fastdfs-client-java</artifactId>-->
+        <!--<version>1.29-SNAPSHOT</version>-->
         <!--</dependency>-->
+
+
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.60</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-ext-jdk15on</artifactId>
+            <version>1.60</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.sjsm</groupId>
+            <artifactId>
+                sjsm-sm2
+            </artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sjsm</groupId>
+            <artifactId>
+                sjsm-sm2-cert
+            </artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- keytools的依赖-->
+        <dependency>
+            <groupId>gdca</groupId>
+            <artifactId>cesecore-common</artifactId>
+            <version>6.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>1.8</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
