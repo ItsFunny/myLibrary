@@ -12,7 +12,6 @@ import (
 	"context"
 	"encoding/hex"
 	"encoding/json"
-	"errors"
 	"fmt"
 	cb "github.com/hyperledger/fabric-protos-go/common"
 	"github.com/hyperledger/fabric-sdk-go/pkg/client/channel"
@@ -25,16 +24,12 @@ import (
 	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/msp"
 	"github.com/hyperledger/fabric-sdk-go/pkg/core/config"
 	packager "github.com/hyperledger/fabric-sdk-go/pkg/fab/ccpackager/gopackager"
-	"github.com/hyperledger/fabric-sdk-go/pkg/fab/resource"
 	"github.com/hyperledger/fabric-sdk-go/pkg/fabsdk"
 	"github.com/hyperledger/fabric-sdk-go/pkg/gateway"
 	"github.com/hyperledger/fabric-sdk-go/third_party/github.com/hyperledger/fabric/common/cauthdsl"
-	genesisconfig "github.com/hyperledger/fabric/common/tools/configtxgen/localconfig"
 	"gopkg.in/yaml.v1"
 	"io/ioutil"
 	error2 "myLibrary/go-library/blockchain/error"
-	"myLibrary/go-library/blockchain/internal"
-	localGenesisconfig "myLibrary/go-library/blockchain/internal/genesisconfig"
 	"myLibrary/go-library/blockchain/model"
 	utils2 "myLibrary/go-library/blockchain/utils"
 	"myLibrary/go-library/blockchain/wrapper"
@@ -978,69 +973,69 @@ func (this *BlockChainConfiguration) GetTransactionDetailData(req model.Transact
 	result.Signature = hex.EncodeToString(env.Signature)
 	return result, nil
 }
-
-func (setup *BlockChainConfiguration) AddOrganization(req AddOrganizationReq) (AddOrganizationResp, error) {
-	var (
-		result AddOrganizationResp
-	)
-	admin := setup.adminResourceWrapper.admins[req.ChannelID].admins[req.ExistOrganizationID].Admin
-	block, e := admin.QueryConfigBlockFromOrderer(string(req.ChannelID))
-	if nil != e {
-		return result, error3.NewSystemError(e, "获取channel的配置块失败")
-	}
-	fromBlock, e := resource.ExtractConfigFromBlock(block)
-	if nil != e {
-		return result, error3.ErrorsWithMessage(e, "解析配置块失败")
-	}
-	// FIXME 添加组织测试
-
-	return result, nil
-}
-
-// 从configtx文件中实例化configGroup对象
-func GenCfgGroupFromTx(txPath string, orgName string) (*cb.ConfigGroup, error) {
-	var cfgG *cb.ConfigGroup
-	var topLevelConfig *genesisconfig.TopLevel
-	topLevelConfig = genesisconfig.LoadTopLevel(txPath)
-	var err error
-	for _, org := range topLevelConfig.Organizations {
-		if org.Name == orgName {
-			// NewConsortiumOrgGroup
-			cf := &localGenesisconfig.Organization{
-				Name:    org.Name,
-				ID:      org.ID,
-				MSPDir:  org.MSPDir,
-				MSPType: org.MSPType,
-				// Policies:        org.Policies ,
-				// AnchorPeers:      org.AnchorPeers,
-				// OrdererEndpoints: org,
-				AdminPrincipal: org.AdminPrincipal,
-				SkipAsForeign:  false,
-			}
-			cfPolicy := make(map[string]*localGenesisconfig.Policy)
-			for k, v := range org.Policies {
-				cfPolicy[k] = &localGenesisconfig.Policy{
-					Type: v.Type,
-					Rule: v.Rule,
-				}
-			}
-			cf.Policies = cfPolicy
-
-			for _, anchor := range org.AnchorPeers {
-				cf.AnchorPeers = append(cf.AnchorPeers, &localGenesisconfig.AnchorPeer{
-					Host: anchor.Host,
-					Port: anchor.Port,
-				})
-			}
-			cfgG, err = internal.NewConsortiumOrgGroup(cf)
-			if err != nil {
-				return nil, err
-			}
-			return cfgG, nil
-		}
-	}
-	return nil, errors.New("org gen ConfigGroup fail")
-}
+//
+// func (setup *BlockChainConfiguration) AddOrganization(req AddOrganizationReq) (AddOrganizationResp, error) {
+// 	var (
+// 		result AddOrganizationResp
+// 	)
+// 	admin := setup.adminResourceWrapper.admins[req.ChannelID].admins[req.ExistOrganizationID].Admin
+// 	block, e := admin.QueryConfigBlockFromOrderer(string(req.ChannelID))
+// 	if nil != e {
+// 		return result, error3.NewSystemError(e, "获取channel的配置块失败")
+// 	}
+// 	fromBlock, e := resource.ExtractConfigFromBlock(block)
+// 	if nil != e {
+// 		return result, error3.ErrorsWithMessage(e, "解析配置块失败")
+// 	}
+// 	// FIXME 添加组织测试
+//
+// 	return result, nil
+// }
+//
+// // 从configtx文件中实例化configGroup对象
+// func GenCfgGroupFromTx(txPath string, orgName string) (*cb.ConfigGroup, error) {
+// 	var cfgG *cb.ConfigGroup
+// 	var topLevelConfig *genesisconfig.TopLevel
+// 	topLevelConfig = genesisconfig.LoadTopLevel(txPath)
+// 	var err error
+// 	for _, org := range topLevelConfig.Organizations {
+// 		if org.Name == orgName {
+// 			// NewConsortiumOrgGroup
+// 			cf := &localGenesisconfig.Organization{
+// 				Name:    org.Name,
+// 				ID:      org.ID,
+// 				MSPDir:  org.MSPDir,
+// 				MSPType: org.MSPType,
+// 				// Policies:        org.Policies ,
+// 				// AnchorPeers:      org.AnchorPeers,
+// 				// OrdererEndpoints: org,
+// 				AdminPrincipal: org.AdminPrincipal,
+// 				SkipAsForeign:  false,
+// 			}
+// 			cfPolicy := make(map[string]*localGenesisconfig.Policy)
+// 			for k, v := range org.Policies {
+// 				cfPolicy[k] = &localGenesisconfig.Policy{
+// 					Type: v.Type,
+// 					Rule: v.Rule,
+// 				}
+// 			}
+// 			cf.Policies = cfPolicy
+//
+// 			for _, anchor := range org.AnchorPeers {
+// 				cf.AnchorPeers = append(cf.AnchorPeers, &localGenesisconfig.AnchorPeer{
+// 					Host: anchor.Host,
+// 					Port: anchor.Port,
+// 				})
+// 			}
+// 			cfgG, err = internal.NewConsortiumOrgGroup(cf)
+// 			if err != nil {
+// 				return nil, err
+// 			}
+// 			return cfgG, nil
+// 		}
+// 	}
+// 	return nil, errors.New("org gen ConfigGroup fail")
+// }
 
 // NewConsortiumsGroup returns an org component of the channel configuration.  It defines the crypto material for the
 // organization (its MSP).  It sets the mod_policy of all elements to "Admins".

@@ -48,7 +48,7 @@ type ChainCodeProperties struct {
 
 type Peer struct {
 	AnchorPeers   []AnchorPeer   `yaml:"anchorPeers"`
-	EndorserPeers []EndorserPeer `yaml:"endorserPeers"`
+	EndorserPeers []EndorserPeer `yaml:"a"`
 }
 
 type AnchorPeer struct {

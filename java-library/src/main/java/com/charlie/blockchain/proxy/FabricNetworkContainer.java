@@ -376,6 +376,9 @@ public class FabricNetworkContainer extends AbstractInitOnce
         }
     }
 
+    // FIXME 需要单独的抽成接口
+    // 支持当chaincode升级的时候只需要升级一次,并且其他的peer会同步安装最新的版本,并且,升级的话,默认第一个peer会升级,后面的就不需要
+    // 再次升级了
     private void installAndInstantiateCC(HFClient client, BlockChainConfiguration blockChainConfiguration) throws Exception
     {
         Map<String, List<String>> nodeChainCodeMapList = new HashMap<>();
@@ -398,11 +401,8 @@ public class FabricNetworkContainer extends AbstractInitOnce
                 List<PeerConfiguration.PeerNode> endorserPeers = blockChainConfiguration.getOrgAllEndorserPeers(peers);
                 // 同一个channel下的
                 // 如果说chaincode 已经升级过了或者实例化过了,则不需要进行再次升级
-                // FIXME ,同一个chaincode,并且属性设置为true会导致chaincode不停升级
-                // FIXME 并不会
                 for (PeerConfiguration.PeerNode endorserPeer : endorserPeers)
                 {
-
                     Channel channel = hfClient.getChannel(cid);
                     Collection<Peer> channelPeers = channel.getPeers();
                     // FIXME ,获取该组织下的要安装该chaincode的所有peer,既 chaincode在外层遍历,而peer在内层遍历
@@ -453,8 +453,6 @@ public class FabricNetworkContainer extends AbstractInitOnce
                                     {
                                         installVersion = installVersion <= prevVersion ? prevVersion + 0.01 : installVersion;
                                     }
-
-
                                     logger.info("该chaincode已经安装,同时需要升级,newVersion=[{}],prevVersion=[{}]", installVersion, prevVersion);
                                 }
                             }
@@ -464,6 +462,9 @@ public class FabricNetworkContainer extends AbstractInitOnce
                                 .setPath(chainCode.getChainCodePath());
                         ChaincodeID chaincodeID = chaincodeIDBuilder.build();
 
+                        // FIXME 升级有问题,问题在于 就是需要判断实例化的最大版本是否大于当前版本
+                        // 以及需要获取到该chaincode 在该channel中最新的版本,避免peer1装了1.1之后,就不执行了
+                        // 导致下次安装的时候,peer1位1.2 而peer2位1.1
                         if (ccHasInstall)
                         {
                             if (!needUpgrade)
@@ -471,35 +472,32 @@ public class FabricNetworkContainer extends AbstractInitOnce
                                 logger.info("该chaincode=[{}],不需要升级", chainCodeId);
                             } else
                             {
-                                logger.info("该chaincode需要升级,因此需要安装新版本,再升级");
-
-                                InstallProposalRequest request = hfClient.newInstallProposalRequest();
-                                request.setChaincodeID(chaincodeID);
-                                request.setUserContext(hfClient.getUserContext());
-                                request.setChaincodeSourceLocation(new File(blockChainConfiguration.getChainCodeRootDir()));
-                                request.setChaincodeVersion(installVersion + "");
-                                Collection<ProposalResponse> responses = hfClient.sendInstallProposal(request, Arrays.asList(peer));
-                                handlerResponse(responses, "链码升级前安装");
-
-
-                                UpgradeProposalRequest upgradeProposalRequest = hfClient.newUpgradeProposalRequest();
-                                upgradeProposalRequest.setChaincodeID(chaincodeID);
-                                upgradeProposalRequest.setArgs("a", "b", "c");
-//                            upgradeProposalRequest.setProposalWaitTime();
-                                upgradeProposalRequest.setFcn("init");
-                                upgradeProposalRequest.setUserContext(user);
-                                Collection<ProposalResponse> proposalResponses = channel.sendUpgradeProposal(upgradeProposalRequest, Arrays.asList(peer));
-                                handlerResponse(proposalResponses, "链码升级");
-
-                                Pair pair = ProposalUtils.parseResp(proposalResponses);
-                                Collection<ProposalResponse> successResponse = pair.getSuccessResponse();
-                                Collection<ProposalResponse> failResponse = pair.getFailResponse();
-                                logger.info("成功:[{}],失败:[{}]", successResponse.size(), failResponse.size());
-                                if (successResponse.size() < failResponse.size())
-                                {
-                                    throw new ConfigException("成功的小于失败的");
-                                }
-                                send2Orderer("升级链码", channel, successResponse);
+//                                logger.info("该chaincode需要升级,因此需要安装新版本,再升级");
+//                                InstallProposalRequest request = hfClient.newInstallProposalRequest();
+//                                request.setChaincodeID(chaincodeID);
+//                                request.setUserContext(hfClient.getUserContext());
+//                                request.setChaincodeSourceLocation(new File(blockChainConfiguration.getChainCodeRootDir()));
+//                                request.setChaincodeVersion(installVersion + "");
+//                                Collection<ProposalResponse> responses = hfClient.sendInstallProposal(request, Arrays.asList(peer));
+//                                handlerResponse(responses, "链码升级前安装");
+//                                UpgradeProposalRequest upgradeProposalRequest = hfClient.newUpgradeProposalRequest();
+//                                upgradeProposalRequest.setChaincodeID(chaincodeID);
+//                                upgradeProposalRequest.setArgs("a", "b", "c");
+////                            upgradeProposalRequest.setProposalWaitTime();
+//                                upgradeProposalRequest.setFcn("init");
+//                                upgradeProposalRequest.setUserContext(user);
+//                                Collection<ProposalResponse> proposalResponses = channel.sendUpgradeProposal(upgradeProposalRequest, Arrays.asList(peer));
+//                                handlerResponse(proposalResponses, "链码升级");
+//
+//                                Pair pair = ProposalUtils.parseResp(proposalResponses);
+//                                Collection<ProposalResponse> successResponse = pair.getSuccessResponse();
+//                                Collection<ProposalResponse> failResponse = pair.getFailResponse();
+//                                logger.info("成功:[{}],失败:[{}]", successResponse.size(), failResponse.size());
+//                                if (successResponse.size() < failResponse.size())
+//                                {
+//                                    throw new ConfigException("成功的小于失败的");
+//                                }
+//                                send2Orderer("升级链码", channel, successResponse);
                             }
                         } else
                         {
@@ -531,11 +529,6 @@ public class FabricNetworkContainer extends AbstractInitOnce
                         instantiateProposalRequest.setChaincodeLanguage(TransactionRequest.Type.GO_LANG);
                         instantiateProposalRequest.setFcn("init");
                         instantiateProposalRequest.setArgs("a", "b", "c");
-
-//                            Map<String, byte[]> tm = new HashMap<>();
-//                            tm.put("HyperLedgerFabric", "InstantiateProposalRequest:JavaSDK".getBytes(UTF_8));
-//                            tm.put("method", "InstantiateProposalRequest".getBytes(UTF_8));
-//                            instantiateProposalRequest.setTransientMap(tm);
                         if (!StringUtils.isEmpty(chainCode.getPolicyFile()))
                         {
                             ChaincodeEndorsementPolicy chaincodeEndorsementPolicy = new ChaincodeEndorsementPolicy();
@@ -544,15 +537,28 @@ public class FabricNetworkContainer extends AbstractInitOnce
                         }
                         String channelId = cid;
                         boolean ccHasInstaned = false;
+                        // peer是否需要更新安装到最新的版本
+                        boolean peerNeedUpdateInstallCC=false;
+                        double updateInstallVersion=0.01;
                         logger.info("begin 判断该chaincode ,在该channelId=[{}]上是否已经被实例化", channelId);
                         List<Query.ChaincodeInfo> instantiatedChaincodes = channel.queryInstantiatedChaincodes(peer, user);
                         logger.info("在 该channel上查询到的实例化的chaincode数量为:" + instantiatedChaincodes.size());
                         for (Query.ChaincodeInfo instantiatedChaincode : instantiatedChaincodes)
                         {
+                            // 实例化的版本号,如果需要升级,则会判断当前已经实例化的链码是否版本比要升级的链码低,低的话升级
+                            double instantiatedVersion = Double.parseDouble(instantiatedChaincode.getVersion());
+
+                            if (needUpgrade && instantiatedVersion > installVersion)
+                            {
+                                logger.info("当前已经实例化的链码为{},比安装的链码版本要高,所以不需要升级链码,但是需要安装链码的当前最新版本", instantiatedVersion, installVersion);
+                                needUpgrade = false;
+                                peerNeedUpdateInstallCC=true;
+                                updateInstallVersion=instantiatedVersion;
+                            }
+
                             if (instantiatedChaincode.getName().equalsIgnoreCase(chainCodeId))
                             {
                                 ccHasInstaned = true;
-                                continue;
                             }
                         }
 
@@ -612,30 +618,50 @@ public class FabricNetworkContainer extends AbstractInitOnce
                         logger.info("查询需要装该chaincode的所有peer,如果已经装了一个,则剩下的不需要再安装");
 
 
-//                        if (!needUpgrade)
-//                        {
-//                            logger.info("该chaincode=[{}],不需要升级", chainCodeId);
-//                        } else
-//                        {
-//                            logger.info("该chaincode需要升级,因此需要安装新版本,再升级");
-//
-//                            InstallProposalRequest request = hfClient.newInstallProposalRequest();
-//                            request.setChaincodeID(chaincodeID);
-//                            request.setUserContext(hfClient.getUserContext());
-//                            request.setChaincodeSourceLocation(new File(blockChainConfiguration.getChainCodeRootDir()));
-//                            request.setChaincodeVersion(installVersion + "");
-//                            Collection<ProposalResponse> responses = hfClient.sendInstallProposal(request, Arrays.asList(peer));
-//                            handlerResponse(responses, "链码升级前安装");
-//
-//                            UpgradeProposalRequest upgradeProposalRequest = hfClient.newUpgradeProposalRequest();
-//                            upgradeProposalRequest.setChaincodeID(chaincodeID);
-//                            upgradeProposalRequest.setArgs("a", "b", "c");
-////                            upgradeProposalRequest.setProposalWaitTime();
-//                            upgradeProposalRequest.setFcn("init");
-//                            upgradeProposalRequest.setUserContext(user);
-//                            Collection<ProposalResponse> proposalResponses = channel.sendUpgradeProposal(upgradeProposalRequest, Arrays.asList(peer));
-//                            handlerResponse(proposalResponses, "链码升级");
-//                        }
+                        if (!needUpgrade)
+                        {
+                            logger.info("该chaincode=[{}],不需要升级", chainCodeId);
+                            if (peerNeedUpdateInstallCC)
+                            {
+                                logger.info("该peer的chaincode不需要升级,但是需要同步更新安装的版本,当前最新版本为:"+updateInstallVersion);
+                                InstallProposalRequest request = hfClient.newInstallProposalRequest();
+                                request.setChaincodeID(chaincodeID);
+                                request.setUserContext(hfClient.getUserContext());
+                                request.setChaincodeSourceLocation(new File(blockChainConfiguration.getChainCodeRootDir()));
+                                request.setChaincodeVersion(updateInstallVersion + "");
+                                Collection<ProposalResponse> responses = hfClient.sendInstallProposal(request, Arrays.asList(peer));
+                                handlerResponse(responses, "peer同步链码安装版本");
+                            }
+                        } else
+                        {
+                            logger.info("该chaincode需要升级,因此需要安装新版本,再升级");
+                            InstallProposalRequest request = hfClient.newInstallProposalRequest();
+                            request.setChaincodeID(chaincodeID);
+                            request.setUserContext(hfClient.getUserContext());
+                            request.setChaincodeSourceLocation(new File(blockChainConfiguration.getChainCodeRootDir()));
+                            request.setChaincodeVersion(installVersion + "");
+                            Collection<ProposalResponse> responses = hfClient.sendInstallProposal(request, Arrays.asList(peer));
+                            handlerResponse(responses, "链码升级前安装");
+
+                            UpgradeProposalRequest upgradeProposalRequest = hfClient.newUpgradeProposalRequest();
+                            upgradeProposalRequest.setChaincodeID(chaincodeID);
+                            upgradeProposalRequest.setArgs("a", "b", "c");
+//                            upgradeProposalRequest.setProposalWaitTime();
+                            upgradeProposalRequest.setFcn("init");
+                            upgradeProposalRequest.setUserContext(user);
+                            Collection<ProposalResponse> proposalResponses = channel.sendUpgradeProposal(upgradeProposalRequest, Arrays.asList(peer));
+                            handlerResponse(proposalResponses, "链码升级");
+
+                            Pair pair = ProposalUtils.parseResp(proposalResponses);
+                            Collection<ProposalResponse> successResponse = pair.getSuccessResponse();
+                            Collection<ProposalResponse> failResponse = pair.getFailResponse();
+                            logger.info("成功:[{}],失败:[{}]", successResponse.size(), failResponse.size());
+                            if (successResponse.size() < failResponse.size())
+                            {
+                                throw new ConfigException("成功的小于失败的");
+                            }
+                            send2Orderer("升级链码", channel, successResponse);
+                        }
                     }
                 }
             }
