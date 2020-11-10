@@ -5,21 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa08344f-1a6b-48d8-9866-e55c2e1f6c80" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../go-library/.idea/go-library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../go-library/.idea/go-library.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-library/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../go-library/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-library/blockchain/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../go-library/blockchain/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-library/blockchain/blockchian.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-library/blockchain/blockchian.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-library/blockchain/blockchian_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-library/blockchain/blockchian_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-library/blockchain/property.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-library/blockchain/property.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-library/go/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../go-library/go/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-library/go/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../go-library/go/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-library/go/utils/PemUtils.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-library/go/utils/PemUtils.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-library/go/utils/base64utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-library/go/utils/base64utils.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../go-library/go/utils/smutils.go" beforeDir="false" afterPath="$PROJECT_DIR$/../go-library/go/utils/smutils.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/charlie/T.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/charlie/blockchain/proxy/FabricNetworkContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/charlie/blockchain/proxy/FabricNetworkContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/charlie/blockchain/proxy/FabricNetworkContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/charlie/blockchain/proxy/FabricNetworkContainer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/charlie/utils/KeyUtilsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/charlie/utils/KeyUtilsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -46,47 +37,23 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/charlie/blockchain/proxy/FabricNetworkContainerTest.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/config_47_103_samecc.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="733">
-              <caret line="176" column="26" selection-start-line="176" selection-start-column="26" selection-end-line="176" selection-end-column="26" />
-              <folding>
-                <element signature="n#!!block;n#organizationConfiguration#0;n#!!top" />
-                <element signature="n#!!block;n#channelConfiguration#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="10404">
+              <caret line="289" column="18" selection-start-line="289" selection-start-column="18" selection-end-line="289" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/charlie/blockchain/proxy/FabricNetworkContainer.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/charlie/T.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="380" column="12" selection-start-line="380" selection-start-column="12" selection-end-line="380" selection-end-column="12" />
+            <state relative-caret-position="387">
+              <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/charlie/blockchain/proxy/DefaultFabricClientHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="97" selection-start-line="97" selection-end-line="97" />
             </state>
           </provider>
         </entry>
@@ -97,16 +64,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>springframework</find>
-      <find>fastdf</find>
-      <find>3.2</find>
       <find>Reference</find>
       <find>Marydon</find>
       <find>XJ</find>
@@ -133,7 +97,10 @@
       <find>slf4j</find>
       <find>fabric</find>
       <find>Certificate</find>
+      <find>sj</find>
+      <find>bc</find>
       <find>bcprov</find>
+      <find>1.4.9</find>
     </findStrings>
     <replaceStrings>
       <replace>com.charile</replace>
@@ -157,7 +124,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/config_new.json" />
         <option value="$PROJECT_DIR$/src/main/java/com/charile/blockchain/wrapper/HFClientWrapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/charile/blockchain/filter/IPeerFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/charile/blockchain/wrapper/ChannelWrapper.java" />
@@ -204,10 +170,11 @@
         <option value="$PROJECT_DIR$/src/test/java/com/charlie/blockchain/proxy/FabricNetworkContainerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/charlie/blockchain/model/CertInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/charlie/utils/CertificateUtils.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/charlie/utils/KeyUtils.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/charlie/utils/KeyUtilsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/charlie/blockchain/proxy/FabricNetworkContainer.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/charlie/T.java" />
       </list>
     </option>
   </component>
@@ -253,7 +220,7 @@
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="799" />
@@ -274,98 +241,6 @@
             <path>
               <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
               <item name="java-library" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-library" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-library" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-library" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-library" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="charlie" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-library" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="charlie" type="462c0819:PsiDirectoryNode" />
-              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-library" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="charlie" type="462c0819:PsiDirectoryNode" />
-              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="proxy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-library" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-library" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-library" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-library" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="charlie" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-library" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="charlie" type="462c0819:PsiDirectoryNode" />
-              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-library" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="charlie" type="462c0819:PsiDirectoryNode" />
-              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="proxy" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="java-library" type="b2602c69:ProjectViewProjectNode" />
@@ -440,7 +315,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FabricNetworkContainerTest.testCreateChannel">
+  <component name="RunManager" selected="Application.T">
     <configuration name="BlockChainConfiguration" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.charlie.blockchain.configuration.BlockChainConfiguration" />
       <module name="java-library" />
@@ -449,6 +324,30 @@
           <option name="PATTERN" value="com.charlie.blockchain.configuration.*" />
           <option name="ENABLED" value="true" />
         </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="T" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.charlie.T" />
+      <module name="java-library" />
+      <option name="VM_PARAMETERS" value="-Xms5m -Xmx5m" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.charlie.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
       </extension>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -498,22 +397,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileUtilTest.testtt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-library" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.charlie.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.charlie.utils" />
-      <option name="MAIN_CLASS_NAME" value="com.charlie.utils.FileUtilTest" />
-      <option name="METHOD_NAME" value="testtt" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="KeyUtilsTest.test11" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-library" />
       <extension name="coverage">
@@ -532,18 +415,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.BlockChainConfiguration" />
+      <item itemvalue="Application.T" />
       <item itemvalue="JUnit.FabricNetworkContainerTest.testCreateChannel" />
       <item itemvalue="JUnit.FabricNetworkContainerTest.testQuery" />
-      <item itemvalue="JUnit.FileUtilTest.testtt" />
       <item itemvalue="JUnit.KeyUtilsTest.test11" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.T" />
         <item itemvalue="JUnit.FabricNetworkContainerTest.testCreateChannel" />
         <item itemvalue="JUnit.KeyUtilsTest.test11" />
         <item itemvalue="JUnit.FabricNetworkContainerTest.testQuery" />
         <item itemvalue="Application.BlockChainConfiguration" />
-        <item itemvalue="JUnit.FileUtilTest.testtt" />
       </list>
     </recent_temporary>
   </component>
@@ -676,7 +559,14 @@
       <workItem from="1604120653377" duration="2472000" />
       <workItem from="1604184692341" duration="1093000" />
       <workItem from="1604186052297" duration="10000" />
-      <workItem from="1604327528164" duration="2072000" />
+      <workItem from="1604327528164" duration="2626000" />
+      <workItem from="1604543908322" duration="318000" />
+      <workItem from="1604544246891" duration="526000" />
+      <workItem from="1604581616727" duration="755000" />
+      <workItem from="1604582961758" duration="601000" />
+      <workItem from="1604630130824" duration="2431000" />
+      <workItem from="1604811402715" duration="60000" />
+      <workItem from="1604842969614" duration="5000" />
     </task>
     <servers />
   </component>
@@ -713,30 +603,29 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="310929000" />
+    <option name="totallyTimeSpent" value="316179000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="799" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21816881" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2353362" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.6605375" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.16626506" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.45903614" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.16626506" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Spring" order="9" />
+      <window_info anchor="bottom" id="Spring" order="9" weight="0.32956153" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50143063" side_tool="true" weight="0.24819277" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4985694" weight="0.7694484" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4985694" weight="0.33012047" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.73373497" />
       <window_info anchor="bottom" id="Duplicate detector" order="14" weight="0.22168675" />
       <window_info anchor="bottom" id="JProfiler" order="15" />
@@ -1075,13 +964,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/charlie/blockchain/exception/BaseFabricException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/charlie/exception/ConfigException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
@@ -1538,14 +1420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="271" column="21" selection-start-line="271" selection-start-column="21" selection-end-line="271" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/charlie/utils/KeyUtilsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -1582,9 +1456,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/charlie/blockchain/proxy/FabricNetworkContainerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/config_47_103_samecc.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="733">
+        <state relative-caret-position="3312">
           <caret line="176" column="26" selection-start-line="176" selection-start-column="26" selection-end-line="176" selection-end-column="26" />
           <folding>
             <element signature="n#!!block;n#organizationConfiguration#0;n#!!top" />
@@ -1593,27 +1477,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/charlie/blockchain/proxy/FabricNetworkContainerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/charlie/blockchain/proxy/DefaultFabricClientHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
+        <state relative-caret-position="2736">
           <caret line="97" selection-start-line="97" selection-end-line="97" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/charlie/blockchain/proxy/FabricNetworkContainer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="380" column="12" selection-start-line="380" selection-start-column="12" selection-end-line="380" selection-end-column="12" />
+        <state relative-caret-position="192">
+          <caret line="384" selection-start-line="384" selection-end-line="384" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10404">
+          <caret line="289" column="18" selection-start-line="289" selection-start-column="18" selection-end-line="289" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/charlie/T.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

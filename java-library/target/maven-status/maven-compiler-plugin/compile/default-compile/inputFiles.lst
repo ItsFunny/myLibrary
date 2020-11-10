@@ -18,6 +18,7 @@
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charlie/utils/FileUtils.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charlie/QueueLogin/model/BaseObject.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charlie/file/FastDFSConfig.java
+/Users/joker/go/src/myLibrary/java-library/src/main/java/com/charlie/blockchain/model/CertInfo.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charlie/blockchain/model/InvokeResp.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charlie/sqlextention/service/ISQLExtentionBaseCRUDService.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charlie/blockchain/wrapper/ChannelContext.java
@@ -105,6 +106,7 @@
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charlie/cache/soft/CHMSoftReferenceCache.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charlie/utils/CollectionUtils.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charlie/utils/VUtils.java
+/Users/joker/go/src/myLibrary/java-library/src/main/java/com/charlie/utils/CertificateUtils.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charlie/sqlextention/service/abs/AbstractSQLExtentionProxyBaseCRUDService.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charlie/bigfile/ChunkHandler.java
 /Users/joker/go/src/myLibrary/java-library/src/main/java/com/charlie/bigfile/AbstractBigFileProcessor.java
