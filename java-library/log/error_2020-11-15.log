@@ -1,0 +1,474 @@
+2020-11-15 17:34:46 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:34:46 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,orderer 开始decorate
+2020-11-15 17:34:46 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:34:46 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:34:46 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,Channel 开始decorate
+2020-11-15 17:34:46 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:34:53 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:34:53 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,peer开始decorate
+2020-11-15 17:34:53 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:34:59 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:34:59 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:34:59 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:35:04 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:35:04 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:35:04 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:35:08 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:35:08 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,ecdsa签名
+2020-11-15 17:35:08 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:35:08 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:35:08 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:35:08 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:35:08 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:35:08 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:35:08 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:40:26 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:40:26 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,orderer 开始decorate
+2020-11-15 17:40:26 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:40:26 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:40:26 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,Channel 开始decorate
+2020-11-15 17:40:26 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:40:27 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:40:27 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,peer开始decorate
+2020-11-15 17:40:27 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:40:30 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:40:30 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:40:30 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:40:33 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:40:33 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:40:33 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:40:35 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:40:35 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,ecdsa签名
+2020-11-15 17:40:35 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:40:35 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:40:35 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:40:35 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:40:35 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:40:35 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:40:35 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:45:02 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:45:02 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,orderer 开始decorate
+2020-11-15 17:45:02 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:45:02 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:45:02 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,Channel 开始decorate
+2020-11-15 17:45:02 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:45:07 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:45:07 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,peer开始decorate
+2020-11-15 17:45:07 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:45:10 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:45:10 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:45:10 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:45:14 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:45:14 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:45:14 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:45:16 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:45:16 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,ecdsa签名
+2020-11-15 17:45:16 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:45:23 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:45:23 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:45:23 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:45:23 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:45:23 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:45:23 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:46:33 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:46:33 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,orderer 开始decorate
+2020-11-15 17:46:33 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:46:33 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:46:33 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,Channel 开始decorate
+2020-11-15 17:46:33 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:46:33 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:46:33 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,peer开始decorate
+2020-11-15 17:46:33 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:46:37 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:46:37 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:46:37 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:46:39 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:46:39 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:46:39 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:46:41 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:46:41 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,ecdsa签名
+2020-11-15 17:46:41 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:46:41 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:46:41 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:46:41 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:46:41 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:46:41 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:46:41 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:47:57 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:47:57 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,orderer 开始decorate
+2020-11-15 17:47:57 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:47:57 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:47:57 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,Channel 开始decorate
+2020-11-15 17:47:57 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:47:57 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:47:57 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,peer开始decorate
+2020-11-15 17:47:57 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:48:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:48:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:48:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:48:02 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:48:02 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:48:02 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:48:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:48:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,ecdsa签名
+2020-11-15 17:48:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:48:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:48:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:48:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:48:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:48:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:48:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:49:29 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:49:29 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,orderer 开始decorate
+2020-11-15 17:49:29 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:49:29 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:49:29 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,Channel 开始decorate
+2020-11-15 17:49:29 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:49:29 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:49:29 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,peer开始decorate
+2020-11-15 17:49:29 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:49:29 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:49:29 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:49:29 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:49:29 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:49:29 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:49:29 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:49:29 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:49:29 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,ecdsa签名
+2020-11-15 17:49:29 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:49:30 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:49:30 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:49:30 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:49:30 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:49:30 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:49:30 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,orderer 开始decorate
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,Channel 开始decorate
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,peer开始decorate
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,ecdsa签名
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 17:51:03 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,orderer 开始decorate
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,Channel 开始decorate
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,peer开始decorate
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,ecdsa签名
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 18:03:00 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 22:16:17 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 22:16:17 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,orderer 开始decorate
+2020-11-15 22:16:17 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 22:16:17 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 22:16:17 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,Channel 开始decorate
+2020-11-15 22:16:17 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 22:16:17 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 22:16:17 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,peer开始decorate
+2020-11-15 22:16:17 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 22:16:17 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 22:16:17 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 22:16:17 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 22:16:17 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 22:16:17 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 22:16:17 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 22:16:17 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 22:16:17 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,ecdsa签名
+2020-11-15 22:16:17 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 22:16:18 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 22:16:18 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 22:16:18 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 22:16:18 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 22:16:18 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 22:16:18 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,orderer 开始decorate
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,peer开始decorate
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,ecdsa签名
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:54) ]
+ERROR:>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:61) ]
+ERROR:       当前线程:1,由channel 主导用什么算法,为ecdsa算法
+2020-11-15 22:17:19 下午 [Thread: main][ Class:org.hyperledger.fabric.util.DebugUtil Method: org.hyperledger.fabric.util.DebugUtil.fatalPrint(DebugUtil.java:62) ]
+ERROR:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

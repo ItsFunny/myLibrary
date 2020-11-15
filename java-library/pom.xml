@@ -18,9 +18,9 @@
 
         <!-- https://mvnrepository.com/artifact/org.hyperledger.fabric-sdk-java/fabric-sdk-java -->
         <dependency>
-            <groupId>org.hyperledger.fabric-sdk-java</groupId>
-            <artifactId>fabric-sdk-java</artifactId>
-            <version>1.4.7</version>
+            <groupId>myLibrary</groupId>
+            <artifactId>fabric-sdk-gm</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
             <exclusions>
                 <exclusion>
                     <groupId>log4j</groupId>
@@ -32,6 +32,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
 
         <dependency>
             <groupId>org.projectlombok</groupId>

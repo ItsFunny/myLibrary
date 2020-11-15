@@ -1,7 +1,7 @@
 package com.charlie.blockchain.configuration;
 
 import com.charlie.base.AbstractInitOnce;
-import com.charlie.base.IKeyImporter;
+import com.charlie.blockchain.constants.AlgorithmConstants;
 import com.charlie.blockchain.model.UserInfo;
 import com.charlie.exception.ConfigException;
 import com.charlie.service.IValidater;
@@ -10,9 +10,13 @@ import lombok.Data;
 import lombok.extern.java.Log;
 import org.apache.commons.lang3.StringUtils;
 import org.hyperledger.fabric.sdk.*;
+import org.hyperledger.fabric.sdk.config.FabricNetworkConfig;
+import org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator;
+import org.springframework.beans.BeanUtils;
 import org.springframework.util.CollectionUtils;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -31,8 +35,6 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
 {
     // 是否需要deploy 区块链网络 ,true的话,部署整个网络,否则只是初始化channel等信息
     private boolean deploy;
-
-
     private String version;
     // 是否启用tls
     private boolean tls;
@@ -42,6 +44,8 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
 //    private String artifactsPrefixPath;
     //
     private String chainCodeRootDir;
+    // 是否以channel作为算法主导因素
+    private boolean algorithmJudgeByChannel = true;
 
 
     private ClientConfiguration clientConfiguration;
@@ -80,6 +84,7 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
     protected void init() throws ConfigException
     {
         this.valid();
+        FabricNetworkConfig.newBuilder().algorithmJudgeByChannel(this.algorithmJudgeByChannel).build();
     }
 
 //    public UserInfo getAlphaUser()
@@ -99,26 +104,11 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
     public void valid()
     {
         if (StringUtils.isEmpty(this.version)) this.version = "1";
-
         if (StringUtils.isEmpty(this.prefixPath))
         {
             throw new ConfigException("prefixPath 不可为空");
         }
         this.prefixPath = FileUtils.appendFilePathIfNone(this.prefixPath);
-//        if (StringUtils.isEmpty(this.artifactsPrefixPath))
-//        {
-//            this.artifactsPrefixPath = this.prefixPath + "artifacts" + File.separator;
-//        } else
-//        {
-//            this.artifactsPrefixPath = FileUtils.appendFilePathIfNone(this.artifactsPrefixPath);
-//        }
-//        if (StringUtils.isEmpty(this.cryptoConfigPrefixPath))
-//        {
-//            this.cryptoConfigPrefixPath = this.prefixPath + "crypto-config" + File.separator;
-//        } else
-//        {
-//            this.cryptoConfigPrefixPath = FileUtils.appendFilePathIfNone(this.cryptoConfigPrefixPath);
-//        }
         this.clientConfiguration.valid();
         this.organizationConfiguration.valid();
         for (OrdererConfiguration ordererConfiguration : ordererConfigurations)
@@ -208,7 +198,14 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
                 continue;
             }
             OrganizationConfiguration.UserNode adminUser = organization.getAdminUser();
-            UserInfo info = new UserInfo(IKeyImporter.COMMON_PEM_KEY_IMPORTER, organizationMspId, adminUser.getName(), adminUser.getKeyString().getBytes(), adminUser.getCertString().getBytes());
+            UserInfo info = null;
+            try
+            {
+                info = new UserInfo(organizationMspId, adminUser.getName(), adminUser.getKeyBytes(AlgorithmConstants.ECDSA), adminUser.getCertBytes(AlgorithmConstants.ECDSA), adminUser.getKeyBytes(AlgorithmConstants.GM), adminUser.getCertBytes(AlgorithmConstants.GM));
+            } catch (IOException e)
+            {
+                throw new RuntimeException(e);
+            }
             return info;
         }
         throw new ConfigException("不可能到达这里");
@@ -260,43 +257,92 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
         return result;
     }
 
-    public List<Orderer> getChannelAllOrderers(String cid, HFClient client)
+
+    // 获取该组织下在该channel下的所有peer
+    public List<PeerConfiguration.PeerChannelBO> getOrganizationAllPeersByChannel(String cid, String mspId)
     {
+        List<PeerConfiguration.PeerChannelBO> result = new ArrayList<>();
+        List<OrganizationConfiguration.OrganizationNode> organizations = this.organizationConfiguration.getOrganizations();
+        for (OrganizationConfiguration.OrganizationNode organization : organizations)
+        {
+            if (!organization.getMspId().equalsIgnoreCase(mspId))
+            {
+                continue;
+            }
+            List<ChannelConfiguration.ChannelNode> channels = this.channelConfiguration.getChannels();
+            for (ChannelConfiguration.ChannelNode channel : channels)
+            {
+                if (!channel.getChannelId().equalsIgnoreCase(cid)) continue;
+                List<ChannelConfiguration.ChannelPeerInfo> peers = channel.getPeers();
+                Map<String, ChannelConfiguration.ChannelPeerInfo> collect = peers.stream().collect(Collectors.toMap(p -> p.getDomain(), p -> p));
+                List<PeerConfiguration.PeerNode> organizationAllPeers = getOrganizationAllPeers(organization.getPeers());
+                for (PeerConfiguration.PeerNode p : organizationAllPeers)
+                {
+                    ChannelConfiguration.ChannelPeerInfo channelPeerInfo = collect.get(p.getDomain());
+                    if (null == channelPeerInfo) continue;
+                    PeerConfiguration.PeerChannelBO peerChannelBO = new PeerConfiguration.PeerChannelBO();
+                    BeanUtils.copyProperties(p, peerChannelBO);
+                    BeanUtils.copyProperties(channelPeerInfo, peerChannelBO);
+                    result.add(peerChannelBO);
+                }
+            }
+        }
+        return result;
+    }
+
+    public List<Orderer> getChannelAllOrderers(String cid,HFClient client)
+    {
+        List<OrdererConfiguration.OrdererChannelBO> result = new ArrayList<>();
         List<ChannelConfiguration.ChannelNode> channels = this.channelConfiguration.getChannels();
         ChannelConfiguration.ChannelNode node = null;
         for (ChannelConfiguration.ChannelNode channel : channels)
         {
             if (channel.getChannelId().equalsIgnoreCase(cid))
             {
-
                 node = channel;
                 break;
             }
         }
-        return this.getChannelAllOrderers(node.getOrderers(), client);
-    }
-
-    public List<Orderer> getChannelAllOrderers(List<String> os, HFClient client)
-    {
+        Map<String, ChannelConfiguration.ChannelOrderInfo> collect = node.getOrderers().stream().collect(Collectors.toMap(o -> o.getDomain(), o -> o));
         List<OrdererConfiguration> ordererConfigurations = this.getOrdererConfigurations();
-        Map<String, OrdererConfiguration.OrdererNode> nodeMap = new HashMap<>();
         for (OrdererConfiguration ordererConfiguration : ordererConfigurations)
         {
             List<OrdererConfiguration.OrdererNode> orderers = ordererConfiguration.getOrderers();
             for (OrdererConfiguration.OrdererNode orderer : orderers)
             {
-                nodeMap.put(orderer.getDomain(), orderer);
+                ChannelConfiguration.ChannelOrderInfo channelOrderInfo = collect.get(orderer.getDomain());
+                if (channelOrderInfo == null) continue;
+                OrdererConfiguration.OrdererChannelBO bo = new OrdererConfiguration.OrdererChannelBO();
+                BeanUtils.copyProperties(orderer, bo);
+                BeanUtils.copyProperties(channelOrderInfo, bo);
+                result.add(bo);
             }
         }
-        List<Orderer> result = new ArrayList<>();
-        for (String o : os)
-        {
-            OrdererConfiguration.OrdererNode ordererNode = nodeMap.get(o);
-            Orderer orderer = ordererNode.buildOrderer(tls, client);
-            result.add(orderer);
-        }
-        return result;
+        return result.stream().map(o -> o.buildOrderer(true, client)).collect(Collectors.toList());
     }
+
+
+//    public List<Orderer> getChannelAllOrderers(List<String> os, HFClient client)
+//    {
+//        List<OrdererConfiguration> ordererConfigurations = this.getOrdererConfigurations();
+//        Map<String, OrdererConfiguration.OrdererNode> nodeMap = new HashMap<>();
+//        for (OrdererConfiguration ordererConfiguration : ordererConfigurations)
+//        {
+//            List<OrdererConfiguration.OrdererNode> orderers = ordererConfiguration.getOrderers();
+//            for (OrdererConfiguration.OrdererNode orderer : orderers)
+//            {
+//                nodeMap.put(orderer.getDomain(), orderer);
+//            }
+//        }
+//        List<Orderer> result = new ArrayList<>();
+//        for (String o : os)
+//        {
+//            OrdererConfiguration.OrdererNode ordererNode = nodeMap.get(o);
+//            Orderer orderer = ordererNode.buildOrderer(tls, client);
+//            result.add(orderer);
+//        }
+//        return result;
+//    }
 
     public ChannelConfiguration.ChannelNode getChannelNode(String cid)
     {
@@ -351,47 +397,81 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
 
     public List<ChannelConfiguration.ChannelNode> getChannelsByPeers(List<String> ps)
     {
-        List<PeerConfiguration.PeerNode> peers = this.peerConfiguration.getPeers();
-        Map<String, PeerConfiguration.PeerNode> collect = peers.stream().collect(Collectors.toMap(p -> p.getDomain(), p -> p));
         List<ChannelConfiguration.ChannelNode> result = new ArrayList<>();
-        for (String p : ps)
+        List<ChannelConfiguration.ChannelNode> channels = this.channelConfiguration.getChannels();
+        for (ChannelConfiguration.ChannelNode channel : channels)
         {
-            PeerConfiguration.PeerNode peerNode = collect.get(p);
-            if (null == peerNode)
+            List<ChannelConfiguration.ChannelPeerInfo> peers = channel.getPeers();
+            for (ChannelConfiguration.ChannelPeerInfo peer : peers)
             {
-                continue;
-            }
-            List<String> channels = peerNode.getChannels();
-            for (String cid : channels)
-            {
-                result.add(this.getChannelNode(cid));
+                if (ps.contains(peer.getDomain())) result.add(channel);
             }
         }
         return result;
+//        List<PeerConfiguration.PeerNode> peers = this.peerConfiguration.getPeers();
+//        Map<String, PeerConfiguration.PeerNode> collect = peers.stream().collect(Collectors.toMap(p -> p.getDomain(), p -> p));
+//        List<ChannelConfiguration.ChannelNode> result = new ArrayList<>();
+//        for (String p : ps)
+//        {
+//            PeerConfiguration.PeerNode peerNode = collect.get(p);
+//            if (null == peerNode)
+//            {
+//                continue;
+//            }
+////            List<PeerConfiguration.PeerChannelTypeInfo> channels = peerNode.getChannels();
+////            for (PeerConfiguration.PeerChannelTypeInfo info : channels)
+////            {
+////                result.add(this.getChannelNode(info.getChannelName()));
+////            }
+//        }
+//        return result;
     }
 
-    public List<PeerConfiguration.PeerNode> getChannelAllPeers(String channelId)
+    public List<PeerConfiguration.PeerChannelBO> getChannelAllPeers(String channelId)
     {
-        final PeerConfiguration peerConfiguration = this.getPeerConfiguration();
-        List<PeerConfiguration.PeerNode> peers = peerConfiguration.getPeers();
-        List<PeerConfiguration.PeerNode> peerNodes = new ArrayList<>();
-        for (PeerConfiguration.PeerNode peer : peers)
+        List<PeerConfiguration.PeerChannelBO> result = new ArrayList<>();
+        List<ChannelConfiguration.ChannelNode> channels = this.channelConfiguration.getChannels();
+        for (ChannelConfiguration.ChannelNode channel : channels)
         {
-            if (peer.getChannels().contains(channelId))
+            if (!channel.getChannelId().equalsIgnoreCase(channelId))
             {
-                peerNodes.add(peer);
+                continue;
+            }
+            List<ChannelConfiguration.ChannelPeerInfo> peers = channel.getPeers();
+            List<PeerConfiguration.PeerNode> peers1 = this.peerConfiguration.getPeers();
+            for (PeerConfiguration.PeerNode peerNode : peers1)
+            {
+                if (peers.contains(peerNode.getDomain()))
+                {
+                    PeerConfiguration.PeerChannelBO bo = new PeerConfiguration.PeerChannelBO();
+                    BeanUtils.copyProperties(peerNode, bo);
+                    BeanUtils.copyProperties(peerNode, bo);
+                    result.add(bo);
+                }
             }
         }
-        return peerNodes;
+        return result;
+//
+//        final PeerConfiguration peerConfiguration = this.getPeerConfiguration();
+//        List<PeerConfiguration.PeerNode> peers = peerConfiguration.getPeers();
+//        List<PeerConfiguration.PeerNode> peerNodes = new ArrayList<>();
+//        for (PeerConfiguration.PeerNode peer : peers)
+//        {
+//            if (peer.getChannels().contains(channelId))
+//            {
+//                peerNodes.add(peer);
+//            }
+//        }
+//        return peerNodes;
     }
 
     // 获取该channel下的所有要安装该chaincode的peer
-    public List<PeerConfiguration.PeerNode> getAllEndorserPeersByChaincodeIDAndChannelId(String chaincodeId, String channelId)
+    public List<PeerConfiguration.PeerChannelBO> getAllEndorserPeersByChaincodeIDAndChannelId(String chaincodeId, String channelId)
     {
         List<OrganizationConfiguration.OrganizationNode> organizations = this.getOrganizationConfiguration().getOrganizations();
-        List<PeerConfiguration.PeerNode> channelAllPeers = this.getChannelAllPeers(channelId);
-        List<PeerConfiguration.PeerNode> result = new ArrayList<>();
-        for (PeerConfiguration.PeerNode peer : channelAllPeers)
+        List<PeerConfiguration.PeerChannelBO> channelAllPeers = this.getChannelAllPeers(channelId);
+        List<PeerConfiguration.PeerChannelBO> result = new ArrayList<>();
+        for (PeerConfiguration.PeerChannelBO peer : channelAllPeers)
         {
             List<String> chainCodes = peer.getChainCodes();
             if (CollectionUtils.isEmpty(chainCodes)) continue;
@@ -401,5 +481,49 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
             }
         }
         return result;
+    }
+
+    public CaConfiguration.CaNode getClientCa()
+    {
+        ClientConfiguration clientConfiguration = this.getClientConfiguration();
+        String organizationMspId = clientConfiguration.getOrganizationMspId();
+        OrganizationConfiguration.OrganizationNode organizationByMspId = this.getOrganizationByMspId(organizationMspId);
+        String ca = organizationByMspId.getCa();
+        CaConfiguration.CaNode caNodeByName = this.getCaNodeByName(ca);
+        return caNodeByName;
+    }
+
+
+    public OrganizationConfiguration.OrganizationNode getOrganizationByMspId(String mspId)
+    {
+        List<OrganizationConfiguration.OrganizationNode> organizations = this.getOrganizationConfiguration().getOrganizations();
+        for (OrganizationConfiguration.OrganizationNode organization : organizations)
+        {
+            if (organization.getMspId().equalsIgnoreCase(mspId))
+            {
+                return organization;
+            }
+        }
+        throw new ConfigException("找不到匹配的组织,不可能调用到这里");
+    }
+
+    public CaConfiguration.CaNode getCaNodeByMspId(String mspId)
+    {
+        OrganizationConfiguration.OrganizationNode organizationByMspId = this.getOrganizationByMspId(mspId);
+        return this.getCaNodeByName(organizationByMspId.getCa());
+    }
+
+
+    public CaConfiguration.CaNode getCaNodeByName(String name)
+    {
+        List<CaConfiguration.CaNode> caNodes = this.getCaConfiguration().getCaNodes();
+        for (CaConfiguration.CaNode caNode : caNodes)
+        {
+            if (caNode.getCaName().equalsIgnoreCase(name))
+            {
+                return caNode;
+            }
+        }
+        throw new RuntimeException("不可能调用到这里");
     }
 }

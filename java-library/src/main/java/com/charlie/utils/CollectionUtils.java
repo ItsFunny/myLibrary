@@ -49,4 +49,8 @@ public class CollectionUtils
 		}
 		return null;
 	}
+
+	public static boolean isEmpty(Collection collection){
+		return org.springframework.util.CollectionUtils.isEmpty(collection);
+	}
 }

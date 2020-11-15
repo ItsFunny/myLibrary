@@ -1,5 +1,6 @@
 package com.charlie.blockchain.proxy;
 
+import com.charlie.blockchain.exception.CAException;
 import com.charlie.blockchain.exception.InvokeException;
 import com.charlie.blockchain.exception.QueryException;
 import com.charlie.blockchain.model.*;
@@ -23,6 +24,10 @@ public interface IFabricClientService
 
     InstallChaincodeResp installChainCode(InstallChaincodeReq req);
 
-    QueryResp queryBlockChain(QueryReq req,List<IQueryOption>queryOptions)throws QueryException;
+    QueryResp queryBlockChain(QueryReq req, List<IQueryOption> queryOptions)throws QueryException;
+
+
+
+    RegisterEnrollResp registerAndEnroll(cn.bidsun.blockchain.model.RegisterEnrollReq req, List<IRegisterOption>registerOptions, List<IEnrollOption>enrollOptions)throws CAException;
 
 }

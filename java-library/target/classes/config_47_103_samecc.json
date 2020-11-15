@@ -2,6 +2,7 @@
   "version": "1",
   "tls": true,
   "deploy": true,
+  "algorithmJudgeByChannel": true,
   "prefixPath": "/Users/joker/go/src/myLibrary/java-library/src/main/resources/",
   "chainCodeRootDir": "/Users/joker/go",
   "clientConfiguration": {
@@ -13,9 +14,19 @@
         "mspId": "Org1MSP",
         "users": [
           {
-            "keyString": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgJRvWXpEUSLfLzc65\no7zh44u4hd71CNUBpoAhc8AaQ2ChRANCAASnc+h/OHGWuLRxg3xWCcSQebxkCFVC\ndkVVNWAXVVpKjq4S3EJYh7jUSks+Buvkf/k7ADu4fzq6lsU/NyzQy5Zk\n-----END PRIVATE KEY-----\n",
-            "certString": "-----BEGIN CERTIFICATE-----\nMIICEDCCAbegAwIBAgIQAOFwGxtyLKkaIIxrjy0cYTAKBggqhkjOPQQDAjBjMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzERMA8GA1UEChMIb3JnMS5jb20xFDASBgNVBAMTC2NhLm9yZzEuY29t\nMB4XDTIwMTAyMTE0NTQwMFoXDTMwMTAxOTE0NTQwMFowYzELMAkGA1UEBhMCVVMx\nEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xDjAM\nBgNVBAsTBWFkbWluMRcwFQYDVQQDDA5BZG1pbkBvcmcxLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABKdz6H84cZa4tHGDfFYJxJB5vGQIVUJ2RVU1YBdVWkqO\nrhLcQliHuNRKSz4G6+R/+TsAO7h/OrqWxT83LNDLlmSjTTBLMA4GA1UdDwEB/wQE\nAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIIT5a/d0OcH7l0sppubpR3eU\nuGt5k3ZGFkKne3GTsQcbMAoGCCqGSM49BAMCA0cAMEQCIDfxfp4zQA/qnqjPwrWB\nDjcG7/GHVBRTsNyPlwGNPS2cAiATWQuW96zIfqarPis2uiSMRsO/2F6x5abWCrID\nSAKLuQ==\n-----END CERTIFICATE-----\n",
-            "name": "Admin"
+            "name": "Admin",
+            "enrollments": [
+              {
+                "keyString": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgJRvWXpEUSLfLzc65\no7zh44u4hd71CNUBpoAhc8AaQ2ChRANCAASnc+h/OHGWuLRxg3xWCcSQebxkCFVC\ndkVVNWAXVVpKjq4S3EJYh7jUSks+Buvkf/k7ADu4fzq6lsU/NyzQy5Zk\n-----END PRIVATE KEY-----\n",
+                "certString": "-----BEGIN CERTIFICATE-----\nMIICEDCCAbegAwIBAgIQAOFwGxtyLKkaIIxrjy0cYTAKBggqhkjOPQQDAjBjMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzERMA8GA1UEChMIb3JnMS5jb20xFDASBgNVBAMTC2NhLm9yZzEuY29t\nMB4XDTIwMTAyMTE0NTQwMFoXDTMwMTAxOTE0NTQwMFowYzELMAkGA1UEBhMCVVMx\nEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xDjAM\nBgNVBAsTBWFkbWluMRcwFQYDVQQDDA5BZG1pbkBvcmcxLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABKdz6H84cZa4tHGDfFYJxJB5vGQIVUJ2RVU1YBdVWkqO\nrhLcQliHuNRKSz4G6+R/+TsAO7h/OrqWxT83LNDLlmSjTTBLMA4GA1UdDwEB/wQE\nAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIIT5a/d0OcH7l0sppubpR3eU\nuGt5k3ZGFkKne3GTsQcbMAoGCCqGSM49BAMCA0cAMEQCIDfxfp4zQA/qnqjPwrWB\nDjcG7/GHVBRTsNyPlwGNPS2cAiATWQuW96zIfqarPis2uiSMRsO/2F6x5abWCrID\nSAKLuQ==\n-----END CERTIFICATE-----\n",
+                "type": 0
+              },
+              {
+                "keyString": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgJRvWXpEUSLfLzc65\no7zh44u4hd71CNUBpoAhc8AaQ2ChRANCAASnc+h/OHGWuLRxg3xWCcSQebxkCFVC\ndkVVNWAXVVpKjq4S3EJYh7jUSks+Buvkf/k7ADu4fzq6lsU/NyzQy5Zk\n-----END PRIVATE KEY-----\n",
+                "certString": "-----BEGIN CERTIFICATE-----\nMIICEDCCAbegAwIBAgIQAOFwGxtyLKkaIIxrjy0cYTAKBggqhkjOPQQDAjBjMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzERMA8GA1UEChMIb3JnMS5jb20xFDASBgNVBAMTC2NhLm9yZzEuY29t\nMB4XDTIwMTAyMTE0NTQwMFoXDTMwMTAxOTE0NTQwMFowYzELMAkGA1UEBhMCVVMx\nEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xDjAM\nBgNVBAsTBWFkbWluMRcwFQYDVQQDDA5BZG1pbkBvcmcxLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABKdz6H84cZa4tHGDfFYJxJB5vGQIVUJ2RVU1YBdVWkqO\nrhLcQliHuNRKSz4G6+R/+TsAO7h/OrqWxT83LNDLlmSjTTBLMA4GA1UdDwEB/wQE\nAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIIT5a/d0OcH7l0sppubpR3eU\nuGt5k3ZGFkKne3GTsQcbMAoGCCqGSM49BAMCA0cAMEQCIDfxfp4zQA/qnqjPwrWB\nDjcG7/GHVBRTsNyPlwGNPS2cAiATWQuW96zIfqarPis2uiSMRsO/2F6x5abWCrID\nSAKLuQ==\n-----END CERTIFICATE-----\n",
+                "type": 0
+              }
+            ]
           }
         ],
         "peers": [
@@ -27,9 +38,19 @@
         "mspId": "Org2MSP",
         "users": [
           {
-            "keyString": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgP75D/eGbFLWP28nm\nULFL+PpAsXfGtSmCukaPtoiIX3WhRANCAAS05NRDcUXj7WQb0wGxu1F5CPuCo6aR\nytisQbZVvKddLTr9HhYMxJkYTou1OO3aBgGjy1eJVKJhk/GnZuYLVVFy\n-----END PRIVATE KEY-----\n",
-            "certString": "-----BEGIN CERTIFICATE-----\nMIICEDCCAbegAwIBAgIQCt21zeFaxzi4lh8gPRInnTAKBggqhkjOPQQDAjBjMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzERMA8GA1UEChMIb3JnMi5jb20xFDASBgNVBAMTC2NhLm9yZzIuY29t\nMB4XDTIwMTAyMTE0NTQwMFoXDTMwMTAxOTE0NTQwMFowYzELMAkGA1UEBhMCVVMx\nEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xDjAM\nBgNVBAsTBWFkbWluMRcwFQYDVQQDDA5BZG1pbkBvcmcyLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABLTk1ENxRePtZBvTAbG7UXkI+4KjppHK2KxBtlW8p10t\nOv0eFgzEmRhOi7U47doGAaPLV4lUomGT8adm5gtVUXKjTTBLMA4GA1UdDwEB/wQE\nAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIMtVdsovg2z+4cAmRo1i+hJu\nRvXWXZY/9yM0G/pziHZwMAoGCCqGSM49BAMCA0cAMEQCIB77D98pQJG5JmxLRKKj\n7C0mCGotfBrYFevPBg5b74rNAiBkPw49vodGEcAO4Qz65v3xZaQ3+ms4WImQwpX4\nRN3y2Q==\n-----END CERTIFICATE-----\n",
-            "name": "Admin"
+            "name": "Admin",
+            "enrollments": [
+              {
+                "keyString": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgJRvWXpEUSLfLzc65\no7zh44u4hd71CNUBpoAhc8AaQ2ChRANCAASnc+h/OHGWuLRxg3xWCcSQebxkCFVC\ndkVVNWAXVVpKjq4S3EJYh7jUSks+Buvkf/k7ADu4fzq6lsU/NyzQy5Zk\n-----END PRIVATE KEY-----\n",
+                "certString": "-----BEGIN CERTIFICATE-----\nMIICEDCCAbegAwIBAgIQAOFwGxtyLKkaIIxrjy0cYTAKBggqhkjOPQQDAjBjMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzERMA8GA1UEChMIb3JnMS5jb20xFDASBgNVBAMTC2NhLm9yZzEuY29t\nMB4XDTIwMTAyMTE0NTQwMFoXDTMwMTAxOTE0NTQwMFowYzELMAkGA1UEBhMCVVMx\nEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xDjAM\nBgNVBAsTBWFkbWluMRcwFQYDVQQDDA5BZG1pbkBvcmcxLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABKdz6H84cZa4tHGDfFYJxJB5vGQIVUJ2RVU1YBdVWkqO\nrhLcQliHuNRKSz4G6+R/+TsAO7h/OrqWxT83LNDLlmSjTTBLMA4GA1UdDwEB/wQE\nAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIIT5a/d0OcH7l0sppubpR3eU\nuGt5k3ZGFkKne3GTsQcbMAoGCCqGSM49BAMCA0cAMEQCIDfxfp4zQA/qnqjPwrWB\nDjcG7/GHVBRTsNyPlwGNPS2cAiATWQuW96zIfqarPis2uiSMRsO/2F6x5abWCrID\nSAKLuQ==\n-----END CERTIFICATE-----\n",
+                "type": 0
+              },
+              {
+                "keyString": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgJRvWXpEUSLfLzc65\no7zh44u4hd71CNUBpoAhc8AaQ2ChRANCAASnc+h/OHGWuLRxg3xWCcSQebxkCFVC\ndkVVNWAXVVpKjq4S3EJYh7jUSks+Buvkf/k7ADu4fzq6lsU/NyzQy5Zk\n-----END PRIVATE KEY-----\n",
+                "certString": "-----BEGIN CERTIFICATE-----\nMIICEDCCAbegAwIBAgIQAOFwGxtyLKkaIIxrjy0cYTAKBggqhkjOPQQDAjBjMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzERMA8GA1UEChMIb3JnMS5jb20xFDASBgNVBAMTC2NhLm9yZzEuY29t\nMB4XDTIwMTAyMTE0NTQwMFoXDTMwMTAxOTE0NTQwMFowYzELMAkGA1UEBhMCVVMx\nEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xDjAM\nBgNVBAsTBWFkbWluMRcwFQYDVQQDDA5BZG1pbkBvcmcxLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABKdz6H84cZa4tHGDfFYJxJB5vGQIVUJ2RVU1YBdVWkqO\nrhLcQliHuNRKSz4G6+R/+TsAO7h/OrqWxT83LNDLlmSjTTBLMA4GA1UdDwEB/wQE\nAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIIT5a/d0OcH7l0sppubpR3eU\nuGt5k3ZGFkKne3GTsQcbMAoGCCqGSM49BAMCA0cAMEQCIDfxfp4zQA/qnqjPwrWB\nDjcG7/GHVBRTsNyPlwGNPS2cAiATWQuW96zIfqarPis2uiSMRsO/2F6x5abWCrID\nSAKLuQ==\n-----END CERTIFICATE-----\n",
+                "type": 0
+              }
+            ]
           }
         ],
         "peers": [
@@ -41,9 +62,19 @@
         "mspId": "Org3MSP",
         "users": [
           {
-            "keyString": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgxwqaDdBEjaZPBLi6\nKznU5YXsSGsDJWNzRChu/sUuvUWhRANCAAT3aFRngAxNIFWynlub0bOp5oGNHDWS\nYi9RO2LrhcG9In8vnRfouo1HnSFxA2G1vBHZF6wb7L0mxR6aSbXMhEfY\n-----END PRIVATE KEY-----\n",
-            "certString": "-----BEGIN CERTIFICATE-----\nMIICEDCCAbegAwIBAgIQMi4Jaaw0w4dEnK6XXzb8OjAKBggqhkjOPQQDAjBjMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzERMA8GA1UEChMIb3JnMy5jb20xFDASBgNVBAMTC2NhLm9yZzMuY29t\nMB4XDTIwMTAyMTE0NTQwMFoXDTMwMTAxOTE0NTQwMFowYzELMAkGA1UEBhMCVVMx\nEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xDjAM\nBgNVBAsTBWFkbWluMRcwFQYDVQQDDA5BZG1pbkBvcmczLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABPdoVGeADE0gVbKeW5vRs6nmgY0cNZJiL1E7YuuFwb0i\nfy+dF+i6jUedIXEDYbW8EdkXrBvsvSbFHppJtcyER9ijTTBLMA4GA1UdDwEB/wQE\nAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAICbeijSjdL0g41eVp1AXrl/P\nHPOv6VLUXaRXU+OWM1DuMAoGCCqGSM49BAMCA0cAMEQCIBjovYTZUQ73MmKkiC79\nk8lG2+VQI3oelOrWBfYDbw3YAiAVgyZ15RiABv3XT+KvIY1xdvXXiJXy5WhIwmEY\n+na7dg==\n-----END CERTIFICATE-----\n",
-            "name": "Admin"
+            "name": "Admin",
+            "enrollments": [
+              {
+                "keyString": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgJRvWXpEUSLfLzc65\no7zh44u4hd71CNUBpoAhc8AaQ2ChRANCAASnc+h/OHGWuLRxg3xWCcSQebxkCFVC\ndkVVNWAXVVpKjq4S3EJYh7jUSks+Buvkf/k7ADu4fzq6lsU/NyzQy5Zk\n-----END PRIVATE KEY-----\n",
+                "certString": "-----BEGIN CERTIFICATE-----\nMIICEDCCAbegAwIBAgIQAOFwGxtyLKkaIIxrjy0cYTAKBggqhkjOPQQDAjBjMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzERMA8GA1UEChMIb3JnMS5jb20xFDASBgNVBAMTC2NhLm9yZzEuY29t\nMB4XDTIwMTAyMTE0NTQwMFoXDTMwMTAxOTE0NTQwMFowYzELMAkGA1UEBhMCVVMx\nEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xDjAM\nBgNVBAsTBWFkbWluMRcwFQYDVQQDDA5BZG1pbkBvcmcxLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABKdz6H84cZa4tHGDfFYJxJB5vGQIVUJ2RVU1YBdVWkqO\nrhLcQliHuNRKSz4G6+R/+TsAO7h/OrqWxT83LNDLlmSjTTBLMA4GA1UdDwEB/wQE\nAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIIT5a/d0OcH7l0sppubpR3eU\nuGt5k3ZGFkKne3GTsQcbMAoGCCqGSM49BAMCA0cAMEQCIDfxfp4zQA/qnqjPwrWB\nDjcG7/GHVBRTsNyPlwGNPS2cAiATWQuW96zIfqarPis2uiSMRsO/2F6x5abWCrID\nSAKLuQ==\n-----END CERTIFICATE-----\n",
+                "type": 0
+              },
+              {
+                "keyString": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgJRvWXpEUSLfLzc65\no7zh44u4hd71CNUBpoAhc8AaQ2ChRANCAASnc+h/OHGWuLRxg3xWCcSQebxkCFVC\ndkVVNWAXVVpKjq4S3EJYh7jUSks+Buvkf/k7ADu4fzq6lsU/NyzQy5Zk\n-----END PRIVATE KEY-----\n",
+                "certString": "-----BEGIN CERTIFICATE-----\nMIICEDCCAbegAwIBAgIQAOFwGxtyLKkaIIxrjy0cYTAKBggqhkjOPQQDAjBjMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzERMA8GA1UEChMIb3JnMS5jb20xFDASBgNVBAMTC2NhLm9yZzEuY29t\nMB4XDTIwMTAyMTE0NTQwMFoXDTMwMTAxOTE0NTQwMFowYzELMAkGA1UEBhMCVVMx\nEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xDjAM\nBgNVBAsTBWFkbWluMRcwFQYDVQQDDA5BZG1pbkBvcmcxLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABKdz6H84cZa4tHGDfFYJxJB5vGQIVUJ2RVU1YBdVWkqO\nrhLcQliHuNRKSz4G6+R/+TsAO7h/OrqWxT83LNDLlmSjTTBLMA4GA1UdDwEB/wQE\nAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIIT5a/d0OcH7l0sppubpR3eU\nuGt5k3ZGFkKne3GTsQcbMAoGCCqGSM49BAMCA0cAMEQCIDfxfp4zQA/qnqjPwrWB\nDjcG7/GHVBRTsNyPlwGNPS2cAiATWQuW96zIfqarPis2uiSMRsO/2F6x5abWCrID\nSAKLuQ==\n-----END CERTIFICATE-----\n",
+                "type": 0
+              }
+            ]
           }
         ],
         "peers": [
@@ -55,9 +86,19 @@
         "mspId": "Org4MSP",
         "users": [
           {
-            "keyString": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgcMXdKusxCer20ZNV\n8bnI2XCLd0PjjpZGcR/t5sdthl6hRANCAASy9txUBAnknfYwh9/yEnZ5W0aV6lP0\nD1slOiCmn1DPERPyjR/uBMTZJX7whkhEscyQFSPLfCmSxoBsM0zrDck7\n-----END PRIVATE KEY-----\n",
-            "certString": "-----BEGIN CERTIFICATE-----\nMIICETCCAbigAwIBAgIRANHtFX2OKoRToiMf8RCByagwCgYIKoZIzj0EAwIwYzEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xETAPBgNVBAoTCG9yZzQuY29tMRQwEgYDVQQDEwtjYS5vcmc0LmNv\nbTAeFw0yMDEwMjExNDU0MDBaFw0zMDEwMTkxNDU0MDBaMGMxCzAJBgNVBAYTAlVT\nMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJhbmNpc2NvMQ4w\nDAYDVQQLEwVhZG1pbjEXMBUGA1UEAwwOQWRtaW5Ab3JnNC5jb20wWTATBgcqhkjO\nPQIBBggqhkjOPQMBBwNCAASy9txUBAnknfYwh9/yEnZ5W0aV6lP0D1slOiCmn1DP\nERPyjR/uBMTZJX7whkhEscyQFSPLfCmSxoBsM0zrDck7o00wSzAOBgNVHQ8BAf8E\nBAMCB4AwDAYDVR0TAQH/BAIwADArBgNVHSMEJDAigCAzgPY8yYjxV3EIkzSVVf3O\nXtQFRxDyc21eglHj9JGX0zAKBggqhkjOPQQDAgNHADBEAiB/BjLsgttz6He7rEh+\numw+GM2hsdlRlX0BmByWve1DhQIgHd1PaJiHLbmpt6uV21Znycp93A+F05AOrceW\nZNNZCmw=\n-----END CERTIFICATE-----\n",
-            "name": "Admin"
+            "name": "Admin",
+            "enrollments": [
+              {
+                "keyString": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgJRvWXpEUSLfLzc65\no7zh44u4hd71CNUBpoAhc8AaQ2ChRANCAASnc+h/OHGWuLRxg3xWCcSQebxkCFVC\ndkVVNWAXVVpKjq4S3EJYh7jUSks+Buvkf/k7ADu4fzq6lsU/NyzQy5Zk\n-----END PRIVATE KEY-----\n",
+                "certString": "-----BEGIN CERTIFICATE-----\nMIICEDCCAbegAwIBAgIQAOFwGxtyLKkaIIxrjy0cYTAKBggqhkjOPQQDAjBjMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzERMA8GA1UEChMIb3JnMS5jb20xFDASBgNVBAMTC2NhLm9yZzEuY29t\nMB4XDTIwMTAyMTE0NTQwMFoXDTMwMTAxOTE0NTQwMFowYzELMAkGA1UEBhMCVVMx\nEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xDjAM\nBgNVBAsTBWFkbWluMRcwFQYDVQQDDA5BZG1pbkBvcmcxLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABKdz6H84cZa4tHGDfFYJxJB5vGQIVUJ2RVU1YBdVWkqO\nrhLcQliHuNRKSz4G6+R/+TsAO7h/OrqWxT83LNDLlmSjTTBLMA4GA1UdDwEB/wQE\nAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIIT5a/d0OcH7l0sppubpR3eU\nuGt5k3ZGFkKne3GTsQcbMAoGCCqGSM49BAMCA0cAMEQCIDfxfp4zQA/qnqjPwrWB\nDjcG7/GHVBRTsNyPlwGNPS2cAiATWQuW96zIfqarPis2uiSMRsO/2F6x5abWCrID\nSAKLuQ==\n-----END CERTIFICATE-----\n",
+                "type": 0
+              },
+              {
+                "keyString": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgJRvWXpEUSLfLzc65\no7zh44u4hd71CNUBpoAhc8AaQ2ChRANCAASnc+h/OHGWuLRxg3xWCcSQebxkCFVC\ndkVVNWAXVVpKjq4S3EJYh7jUSks+Buvkf/k7ADu4fzq6lsU/NyzQy5Zk\n-----END PRIVATE KEY-----\n",
+                "certString": "-----BEGIN CERTIFICATE-----\nMIICEDCCAbegAwIBAgIQAOFwGxtyLKkaIIxrjy0cYTAKBggqhkjOPQQDAjBjMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzERMA8GA1UEChMIb3JnMS5jb20xFDASBgNVBAMTC2NhLm9yZzEuY29t\nMB4XDTIwMTAyMTE0NTQwMFoXDTMwMTAxOTE0NTQwMFowYzELMAkGA1UEBhMCVVMx\nEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xDjAM\nBgNVBAsTBWFkbWluMRcwFQYDVQQDDA5BZG1pbkBvcmcxLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABKdz6H84cZa4tHGDfFYJxJB5vGQIVUJ2RVU1YBdVWkqO\nrhLcQliHuNRKSz4G6+R/+TsAO7h/OrqWxT83LNDLlmSjTTBLMA4GA1UdDwEB/wQE\nAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIIT5a/d0OcH7l0sppubpR3eU\nuGt5k3ZGFkKne3GTsQcbMAoGCCqGSM49BAMCA0cAMEQCIDfxfp4zQA/qnqjPwrWB\nDjcG7/GHVBRTsNyPlwGNPS2cAiATWQuW96zIfqarPis2uiSMRsO/2F6x5abWCrID\nSAKLuQ==\n-----END CERTIFICATE-----\n",
+                "type": 0
+              }
+            ]
           }
         ],
         "peers": [
@@ -69,9 +110,19 @@
         "mspId": "Org5MSP",
         "users": [
           {
-            "keyString": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQg2vU2to3GOgqfiBD9\nTiJhnknnoMWk9bwcpJ2DHHKtRGyhRANCAASuUi5wWEeFYKowGw0ovvUJzvas9uw/\nJtiQ7KsfrGjF9RIu8nwD4M9vjqTTNFd4HQILhHC29bvKPI8zhs73lTGe\n-----END PRIVATE KEY-----\n",
-            "certString": "-----BEGIN CERTIFICATE-----\nMIICETCCAbegAwIBAgIQfUM2JgKCtCJWFmRPVrvbvTAKBggqhkjOPQQDAjBjMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzERMA8GA1UEChMIb3JnNS5jb20xFDASBgNVBAMTC2NhLm9yZzUuY29t\nMB4XDTIwMTAyMTE0NTQwMFoXDTMwMTAxOTE0NTQwMFowYzELMAkGA1UEBhMCVVMx\nEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xDjAM\nBgNVBAsTBWFkbWluMRcwFQYDVQQDDA5BZG1pbkBvcmc1LmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABK5SLnBYR4VgqjAbDSi+9QnO9qz27D8m2JDsqx+saMX1\nEi7yfAPgz2+OpNM0V3gdAguEcLb1u8o8jzOGzveVMZ6jTTBLMA4GA1UdDwEB/wQE\nAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIP+f45Od32QDh96E7s4TSRoz\ndQ61nWCjMcLJggDsxPfjMAoGCCqGSM49BAMCA0gAMEUCIQCyophxFf05OoS5/0Sp\nC4Ab3jr+/DXX0xNEjCTZxGvyLwIgSOajgSSzPJNI5ETr0HSDAtHtIZCTRxT4E/fZ\nPMqH9pg=\n-----END CERTIFICATE-----\n",
-            "name": "Admin"
+            "name": "Admin",
+            "enrollments": [
+              {
+                "keyString": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgJRvWXpEUSLfLzc65\no7zh44u4hd71CNUBpoAhc8AaQ2ChRANCAASnc+h/OHGWuLRxg3xWCcSQebxkCFVC\ndkVVNWAXVVpKjq4S3EJYh7jUSks+Buvkf/k7ADu4fzq6lsU/NyzQy5Zk\n-----END PRIVATE KEY-----\n",
+                "certString": "-----BEGIN CERTIFICATE-----\nMIICEDCCAbegAwIBAgIQAOFwGxtyLKkaIIxrjy0cYTAKBggqhkjOPQQDAjBjMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzERMA8GA1UEChMIb3JnMS5jb20xFDASBgNVBAMTC2NhLm9yZzEuY29t\nMB4XDTIwMTAyMTE0NTQwMFoXDTMwMTAxOTE0NTQwMFowYzELMAkGA1UEBhMCVVMx\nEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xDjAM\nBgNVBAsTBWFkbWluMRcwFQYDVQQDDA5BZG1pbkBvcmcxLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABKdz6H84cZa4tHGDfFYJxJB5vGQIVUJ2RVU1YBdVWkqO\nrhLcQliHuNRKSz4G6+R/+TsAO7h/OrqWxT83LNDLlmSjTTBLMA4GA1UdDwEB/wQE\nAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIIT5a/d0OcH7l0sppubpR3eU\nuGt5k3ZGFkKne3GTsQcbMAoGCCqGSM49BAMCA0cAMEQCIDfxfp4zQA/qnqjPwrWB\nDjcG7/GHVBRTsNyPlwGNPS2cAiATWQuW96zIfqarPis2uiSMRsO/2F6x5abWCrID\nSAKLuQ==\n-----END CERTIFICATE-----\n",
+                "type": 0
+              },
+              {
+                "keyString": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgJRvWXpEUSLfLzc65\no7zh44u4hd71CNUBpoAhc8AaQ2ChRANCAASnc+h/OHGWuLRxg3xWCcSQebxkCFVC\ndkVVNWAXVVpKjq4S3EJYh7jUSks+Buvkf/k7ADu4fzq6lsU/NyzQy5Zk\n-----END PRIVATE KEY-----\n",
+                "certString": "-----BEGIN CERTIFICATE-----\nMIICEDCCAbegAwIBAgIQAOFwGxtyLKkaIIxrjy0cYTAKBggqhkjOPQQDAjBjMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzERMA8GA1UEChMIb3JnMS5jb20xFDASBgNVBAMTC2NhLm9yZzEuY29t\nMB4XDTIwMTAyMTE0NTQwMFoXDTMwMTAxOTE0NTQwMFowYzELMAkGA1UEBhMCVVMx\nEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xDjAM\nBgNVBAsTBWFkbWluMRcwFQYDVQQDDA5BZG1pbkBvcmcxLmNvbTBZMBMGByqGSM49\nAgEGCCqGSM49AwEHA0IABKdz6H84cZa4tHGDfFYJxJB5vGQIVUJ2RVU1YBdVWkqO\nrhLcQliHuNRKSz4G6+R/+TsAO7h/OrqWxT83LNDLlmSjTTBLMA4GA1UdDwEB/wQE\nAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIIT5a/d0OcH7l0sppubpR3eU\nuGt5k3ZGFkKne3GTsQcbMAoGCCqGSM49BAMCA0cAMEQCIDfxfp4zQA/qnqjPwrWB\nDjcG7/GHVBRTsNyPlwGNPS2cAiATWQuW96zIfqarPis2uiSMRsO/2F6x5abWCrID\nSAKLuQ==\n-----END CERTIFICATE-----\n",
+                "type": 0
+              }
+            ]
           }
         ],
         "peers": [
@@ -99,8 +150,34 @@
         "channelId": "demochannel",
         "channelConfigPath": "artifacts/demochannel.tx",
         "needListOnBlockEvent": false,
+        "type": 0,
         "orderers": [
-          "orderer.demo.com"
+          {
+            "domain": "orderer.demo.com",
+            "type": 0
+          }
+        ],
+        "peers": [
+          {
+            "domain": "peer0.org1.com",
+            "type": 0
+          },
+          {
+            "domain": "peer0.org2.com",
+            "type": 0
+          },
+          {
+            "domain": "peer0.org3.com",
+            "type": 0
+          },
+          {
+            "domain": "peer0.org4.com",
+            "type": 0
+          },
+          {
+            "domain": "peer0.org5.com",
+            "type": 0
+          }
         ]
       }
     ]
@@ -114,9 +191,6 @@
         "anchorPeer": true,
         "chainCodes": [
           "democc"
-        ],
-        "channels": [
-          "demochannel"
         ]
       },
       {
@@ -126,9 +200,6 @@
         "anchorPeer": true,
         "chainCodes": [
           "democc"
-        ],
-        "channels": [
-          "demochannel"
         ]
       },
       {
@@ -138,9 +209,6 @@
         "anchorPeer": true,
         "chainCodes": [
           "democc"
-        ],
-        "channels": [
-          "demochannel"
         ]
       },
       {
@@ -150,9 +218,6 @@
         "anchorPeer": true,
         "chainCodes": [
           "democc"
-        ],
-        "channels": [
-          "demochannel"
         ]
       },
       {
@@ -162,9 +227,6 @@
         "anchorPeer": true,
         "chainCodes": [
           "democc"
-        ],
-        "channels": [
-          "demochannel"
         ]
       }
     ]
@@ -181,5 +243,13 @@
     ]
   },
   "caConfiguration": {
+    "caNodes": [
+      {
+        "caName": "ca1",
+        "url": "http://localhost:7054",
+        "adminUserName": "admin",
+        "adminPassword": "adminpw"
+      }
+    ]
   }
 }

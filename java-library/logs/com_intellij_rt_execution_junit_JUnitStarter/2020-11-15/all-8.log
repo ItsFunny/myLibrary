@@ -1,0 +1,14 @@
+2020/11/15 14:58:52,386 (FabricNetworkContainer.java:110) [COMMON][W] - Reconfiguring log filter finished, version: 1
+2020/11/15 14:58:52,392 (FabricNetworkContainer.java:110) [COMMON][E] - more than one or no slf4j static bindings were found, third party logs may not be logged.
+2020/11/15 14:58:52,393 (FabricNetworkContainer.java:110) [COMMON][E] - binding: [jar:file:/Users/joker/.m2/repository/cn/bidsun/bidsun-common/0.0.1-SNAPSHOT/bidsun-common-0.0.1-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+2020/11/15 14:58:52,393 (FabricNetworkContainer.java:110) [COMMON][E] - binding: [jar:file:/Users/joker/.m2/repository/org/slf4j/slf4j-log4j12/1.7.30/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+2020/11/15 14:58:52,395 (FabricNetworkContainer.java:110) [THIRD_PARTY][I] - 开始初始化区块链网络
+2020/11/15 14:58:55,783 (FabricNetworkContainer.java:176) [THIRD_PARTY][I] - 查询已经存在的channel
+2020/11/15 14:58:55,789 (FabricNetworkContainer.java:183) [THIRD_PARTY][I] - 开始组装当前组织的admin用户信息,organizationId为:Org1MSP
+2020/11/15 14:59:00,042 (FabricNetworkContainer.java:193) [THIRD_PARTY][I] - adminUser:UserInfo(name=Admin, enrollSecret=null, mspId=Org1MSP, roles=null, account=null, affiliation=null, enrollment=org.hyperledger.fabric.sdk.identity.X509Enrollment@30b9eadd, gmEnrollment=org.hyperledger.fabric.sdk.identity.X509Enrollment@497570fb)
+2020/11/15 14:59:00,046 (FabricNetworkContainer.java:195) [THIRD_PARTY][I] - 结束组装admin用户信息
+2020/11/15 14:59:00,049 (FabricNetworkContainer.java:199) [THIRD_PARTY][I] - 开始初始化组织id为[Org1MSP]的相关区块链信息
+2020/11/15 14:59:00,050 (FabricNetworkContainer.java:202) [THIRD_PARTY][I] - 该组织Org1MSP加入的channel数量为:1
+2020/11/15 14:59:00,051 (FabricNetworkContainer.java:210) [THIRD_PARTY][I] - anchorPeer:PeerConfiguration.PeerNode(domain=peer0.org1.com, url=grpcs://47.103.60.250:11051, tlsCertFile=/Users/joker/go/src/myLibrary/java-library/src/main/resources/crypto-config/peerOrganizations/org1.com/peers/peer0.org1.com/tls/ca.crt, chainCodes=[democc], anchorPeer=true, endorsingPeer=true, chaincodeQuery=true, ledgerQuery=true, eventSource=true, type=0)
+2020/11/15 14:59:00,933 (InternalLoggerFactory.java:43) [NETTY][D] - Using SLF4J as the default logging framework
+2020/11/15 14:59:07,365 (FabricNetworkContainer.java:215) [THIRD_PARTY][I] - begin 查询该组织[demochannel]已经加入的channel信息

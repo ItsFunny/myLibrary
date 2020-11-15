@@ -1,0 +1,136 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.charlie:myLibrary:jar:1.0
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: commons-net:commons-net:jar -> duplicate declaration of version 3.6 @ line 144, column 21
+[WARNING] 'dependencies.dependency.systemPath' for gdca:cesecore-common:jar should use a variable instead of a hard-coded path /Users/joker/.m2/repository/gdca/cesecore-common/6.8.0/cesecore-common-6.8.0.jar @ line 282, column 25
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: gdca:cesecore-common:jar -> duplicate declaration of version 6.8.0 @ line 277, column 21
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: commons-configuration:commons-configuration:jar -> duplicate declaration of version 1.8 @ line 284, column 21
+[WARNING] 'dependencies.dependency.systemPath' for cn.sanwei:bxcrypto:jar should use a variable instead of a hard-coded path /Users/joker/.m2/repository/cn/sanwei/bxcrypto/3.0.0/bxcrypto-3.0.0.jar @ line 307, column 25
+[WARNING] 'dependencies.dependency.systemPath' for com.sjsm:sjsm-sm2:jar should use a variable instead of a hard-coded path /Users/joker/.m2/repository/com/sjsm/sjsm-sm2/1.0.0/sjsm-sm2-1.0.0.jar @ line 314, column 25
+[WARNING] 'dependencies.dependency.systemPath' for com.sjsm:sjsm-sm2-cert:jar should use a variable instead of a hard-coded path /Users/joker/.m2/repository/com/sjsm/sjsm-sm2-cert/1.0.0/sjsm-sm2-cert-1.0.0.jar @ line 321, column 25
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] -----------------------< com.charlie:myLibrary >------------------------
+[INFO] Building myLibrary 1.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ myLibrary ---
+[INFO] com.charlie:myLibrary:jar:1.0
+[INFO] +- myLibrary:fabric-sdk-gm:jar:0.0.1-SNAPSHOT:compile
+[INFO] |  +- io.grpc:grpc-netty:jar:1.23.0:compile
+[INFO] |  |  +- io.grpc:grpc-core:jar:1.23.0:compile (version selected from constraint [1.23.0,1.23.0])
+[INFO] |  |  |  +- com.google.android:annotations:jar:4.1.1.4:compile
+[INFO] |  |  |  +- io.perfmark:perfmark-api:jar:0.17.0:compile
+[INFO] |  |  |  +- io.opencensus:opencensus-api:jar:0.21.0:compile
+[INFO] |  |  |  \- io.opencensus:opencensus-contrib-grpc-metrics:jar:0.21.0:compile
+[INFO] |  |  +- io.netty:netty-codec-http2:jar:4.1.38.Final:compile (version selected from constraint [4.1.38.Final,4.1.38.Final])
+[INFO] |  |  |  \- io.netty:netty-codec-http:jar:4.1.38.Final:compile
+[INFO] |  |  \- io.netty:netty-handler-proxy:jar:4.1.38.Final:compile
+[INFO] |  |     \- io.netty:netty-codec-socks:jar:4.1.38.Final:compile
+[INFO] |  +- io.grpc:grpc-protobuf:jar:1.23.0:compile
+[INFO] |  |  +- io.grpc:grpc-api:jar:1.23.0:compile
+[INFO] |  |  |  +- io.grpc:grpc-context:jar:1.23.0:compile
+[INFO] |  |  |  +- com.google.errorprone:error_prone_annotations:jar:2.3.2:compile
+[INFO] |  |  |  \- org.codehaus.mojo:animal-sniffer-annotations:jar:1.17:compile
+[INFO] |  |  +- com.google.api.grpc:proto-google-common-protos:jar:1.12.0:compile
+[INFO] |  |  \- io.grpc:grpc-protobuf-lite:jar:1.23.0:compile
+[INFO] |  +- io.grpc:grpc-stub:jar:1.23.0:compile
+[INFO] |  +- io.netty:netty-handler:jar:4.1.53.Final:compile
+[INFO] |  |  +- io.netty:netty-common:jar:4.1.53.Final:compile
+[INFO] |  |  +- io.netty:netty-resolver:jar:4.1.53.Final:compile
+[INFO] |  |  +- io.netty:netty-buffer:jar:4.1.53.Final:compile
+[INFO] |  |  +- io.netty:netty-transport:jar:4.1.53.Final:compile
+[INFO] |  |  \- io.netty:netty-codec:jar:4.1.53.Final:compile
+[INFO] |  +- com.google.protobuf:protobuf-java:jar:3.5.1:compile
+[INFO] |  +- com.google.protobuf:protobuf-java-util:jar:3.6.1:compile
+[INFO] |  +- org.bouncycastle:bcpkix-jdk15on:jar:1.60:compile
+[INFO] |  +- commons-cli:commons-cli:jar:1.4:compile
+[INFO] |  +- org.apache.commons:commons-compress:jar:1.19:compile
+[INFO] |  +- log4j:apache-log4j-extras:jar:1.2.17:compile
+[INFO] |  +- org.apache.httpcomponents:httpclient:jar:4.5.6:compile
+[INFO] |  |  +- org.apache.httpcomponents:httpcore:jar:4.4.10:compile
+[INFO] |  |  \- commons-codec:commons-codec:jar:1.10:compile
+[INFO] |  +- org.glassfish:javax.json:jar:1.1.4:compile
+[INFO] |  +- org.yaml:snakeyaml:jar:1.25:compile
+[INFO] |  +- org.miracl.milagro.amcl:milagro-crypto-java:jar:0.4.0:compile
+[INFO] |  |  \- org.apache.commons:commons-math3:jar:3.6.1:compile
+[INFO] |  +- javax.xml.bind:jaxb-api:jar:2.3.1:compile
+[INFO] |  |  \- javax.activation:javax.activation-api:jar:1.2.0:compile
+[INFO] |  +- javax.annotation:javax.annotation-api:jar:1.3.2:compile
+[INFO] |  +- org.junit.jupiter:junit-jupiter:jar:5.7.0:compile
+[INFO] |  |  +- org.junit.jupiter:junit-jupiter-api:jar:5.7.0:compile
+[INFO] |  |  |  +- org.apiguardian:apiguardian-api:jar:1.1.0:compile
+[INFO] |  |  |  +- org.opentest4j:opentest4j:jar:1.2.0:compile
+[INFO] |  |  |  \- org.junit.platform:junit-platform-commons:jar:1.7.0:compile
+[INFO] |  |  +- org.junit.jupiter:junit-jupiter-params:jar:5.7.0:compile
+[INFO] |  |  \- org.junit.jupiter:junit-jupiter-engine:jar:5.7.0:runtime
+[INFO] |  |     \- org.junit.platform:junit-platform-engine:jar:1.7.0:runtime
+[INFO] |  \- org.slf4j:slf4j-api:jar:1.7.30:compile
+[INFO] +- io.netty:netty-tcnative-boringssl-static:jar:2.0.20.Final:compile
+[INFO] +- org.projectlombok:lombok:jar:1.18.0:compile
+[INFO] +- org.slf4j:slf4j-log4j12:jar:1.7.30:test
+[INFO] +- log4j:log4j:jar:1.2.17:compile
+[INFO] +- org.springframework:spring-web:jar:5.0.5.RELEASE:provided
+[INFO] |  +- org.springframework:spring-beans:jar:5.0.5.RELEASE:provided
+[INFO] |  \- org.springframework:spring-core:jar:5.0.5.RELEASE:provided
+[INFO] |     \- org.springframework:spring-jcl:jar:5.0.5.RELEASE:provided
+[INFO] +- commons-net:commons-net:jar:3.6:compile
+[INFO] +- junit:junit:jar:4.12:test
+[INFO] |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] +- org.mybatis:mybatis:jar:3.4.1:compile
+[INFO] +- javax.servlet:javax.servlet-api:jar:3.1.0:provided
+[INFO] +- org.apache.commons:commons-lang3:jar:3.7:compile
+[INFO] +- com.sun.mail:javax.mail:jar:1.5.4:compile
+[INFO] |  \- javax.activation:activation:jar:1.1:compile
+[INFO] +- javax.mail:mail:jar:1.4.7:compile
+[INFO] +- com.google.code.gson:gson:jar:2.8.0:compile
+[INFO] +- com.rabbitmq:amqp-client:jar:5.2.0:provided
+[INFO] +- org.springframework.amqp:spring-rabbit:jar:2.0.1.RELEASE:provided
+[INFO] |  +- org.springframework.amqp:spring-amqp:jar:2.0.1.RELEASE:provided
+[INFO] |  +- com.rabbitmq:http-client:jar:1.3.0.RELEASE:provided
+[INFO] |  +- org.springframework:spring-context:jar:5.0.2.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-aop:jar:5.0.2.RELEASE:provided
+[INFO] |  |  \- org.springframework:spring-expression:jar:5.0.2.RELEASE:provided
+[INFO] |  +- org.springframework:spring-messaging:jar:5.0.2.RELEASE:provided
+[INFO] |  +- org.springframework:spring-tx:jar:5.0.2.RELEASE:provided
+[INFO] |  \- org.springframework.retry:spring-retry:jar:1.2.1.RELEASE:provided
+[INFO] +- org.springframework.boot:spring-boot:jar:2.0.6.RELEASE:provided
+[INFO] +- commons-collections:commons-collections:jar:3.2.1:compile
+[INFO] +- commons-io:commons-io:jar:2.4:provided
+[INFO] +- com.fasterxml.jackson.core:jackson-databind:jar:2.9.8:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.9.0:compile
+[INFO] |  \- com.fasterxml.jackson.core:jackson-core:jar:2.9.8:compile
+[INFO] +- org.springframework:spring-test:jar:5.2.1.RELEASE:test
+[INFO] +- com.jcraft:jsch:jar:0.1.54:compile
+[INFO] +- com.google.zxing:core:jar:2.2:compile
+[INFO] +- com.google.zxing:javase:jar:2.2:compile
+[INFO] +- org.jpedal:OpenViewerFX:jar:6.6.14:compile
+[INFO] |  +- org.eclipse.birt.runtime.3_7_1:org.mozilla.javascript:jar:1.7.2:compile
+[INFO] |  \- bouncycastle:bcmail-jdk16:jar:140:compile
+[INFO] +- org.bouncycastle:bcprov-jdk15on:jar:1.60:compile
+[INFO] +- org.bouncycastle:bcprov-ext-jdk15on:jar:1.60:compile
+[INFO] +- gdca:cesecore-common:jar:6.8.0:system
+[INFO] +- commons-configuration:commons-configuration:jar:1.8:compile
+[INFO] |  +- commons-lang:commons-lang:jar:2.6:compile
+[INFO] |  \- commons-logging:commons-logging:jar:1.1.1:compile
+[INFO] +- org.apache.lucene:lucene-core:jar:4.0.0:compile
+[INFO] +- com.github.rholder:guava-retrying:jar:2.0.0:compile
+[INFO] |  +- com.google.guava:guava:jar:30.0-jre:compile (version selected from constraint [10.+,))
+[INFO] |  |  +- com.google.guava:failureaccess:jar:1.0.1:compile
+[INFO] |  |  +- com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile
+[INFO] |  |  +- org.checkerframework:checker-qual:jar:3.5.0:compile
+[INFO] |  |  \- com.google.j2objc:j2objc-annotations:jar:1.3:compile
+[INFO] |  \- com.google.code.findbugs:jsr305:jar:2.0.2:compile
+[INFO] +- cn.sanwei:bxcrypto:jar:3.0.0:system
+[INFO] +- com.sjsm:sjsm-sm2:jar:1.0.0:system
+[INFO] \- com.sjsm:sjsm-sm2-cert:jar:1.0.0:system
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.970 s
+[INFO] Finished at: 2020-11-15T17:57:19+08:00
+[INFO] ------------------------------------------------------------------------

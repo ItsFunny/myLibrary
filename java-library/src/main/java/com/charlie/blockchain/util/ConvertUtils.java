@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
  */
 public class ConvertUtils
 {
-    public static List<Peer> convPeerNodes2TPeers(List<PeerConfiguration.PeerNode> nodes, boolean tls, HFClient client)
+    public static List<Peer> convPeerNodes2TPeers(List<PeerConfiguration.PeerChannelBO> nodes, boolean tls, HFClient client)
     {
         return  nodes.stream().map(c->c.conv2TPeer(tls,client)).collect(Collectors.toList());
     }

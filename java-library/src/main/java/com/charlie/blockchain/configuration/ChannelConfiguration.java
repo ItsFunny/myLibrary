@@ -2,6 +2,7 @@ package com.charlie.blockchain.configuration;
 
 import com.charlie.exception.ConfigException;
 import com.charlie.service.IValidater;
+import com.charlie.utils.CollectionUtils;
 import com.charlie.utils.FileUtils;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
@@ -9,6 +10,7 @@ import org.hyperledger.fabric.sdk.HFClient;
 import org.hyperledger.fabric.sdk.Orderer;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author Charlie
@@ -48,13 +50,19 @@ public class ChannelConfiguration implements IValidater
         private String channelConfigPath;
         private boolean needListOnBlockEvent;
 
+        private byte type;
+
         // 该channel下的所有orderer组织,默认是只有1个的
-        private List<String> orderers;
+        private List<ChannelOrderInfo> orderers;
+
+        // 该channel下的所有peer
+        private List<ChannelPeerInfo> peers;
 
 //        // 该channel下的所有peer
 //        private List<String>peers;
 
         @Override
+
         public void valid()
         {
             if (StringUtils.isEmpty(this.channelId))
@@ -67,13 +75,51 @@ public class ChannelConfiguration implements IValidater
             }
             this.channelConfigPath = FileUtils.cutPathIfStartWith(this.channelConfigPath);
             this.channelConfigPath = ConfigurationFactory.getInstance().getBlockChainConfiguration().getPrefixPath() + this.channelConfigPath;
-            if (!ConfigurationFactory.getInstance().getBlockChainConfiguration().containsOrderers(this.orderers))
+            if (!CollectionUtils.isEmpty(this.orderers))
             {
-                throw new ConfigException("orderer不匹配");
+                List<String> collect = this.orderers.stream().map(o -> o.getDomain()).collect(Collectors.toList());
+                if (!ConfigurationFactory.getInstance().getBlockChainConfiguration().containsOrderers(collect))
+                {
+                    throw new ConfigException("orderer不匹配");
+                }
+            }
+            if (!CollectionUtils.isEmpty(this.peers))
+            {
+                List<String> collect = this.peers.stream().map(p -> p.getDomain()).collect(Collectors.toList());
+                if (!ConfigurationFactory.getInstance().getBlockChainConfiguration().containsPeers(collect))
+                {
+                    throw new ConfigException("channel 配置,peer不匹配");
+                }
             }
         }
     }
 
+
+    @Data
+    public static class ChannelOrderInfo implements IValidater
+    {
+        private String domain;
+        private byte type;
+
+        @Override
+        public void valid()
+        {
+
+        }
+    }
+
+    @Data
+    public static class ChannelPeerInfo implements IValidater
+    {
+        private String domain;
+        private byte type;
+
+        @Override
+        public void valid()
+        {
+
+        }
+    }
 //    @Deprecated
 //    private String channelId;
 //    @Deprecated

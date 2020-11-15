@@ -5,15 +5,18 @@ import com.charlie.exception.ConfigException;
 import com.charlie.service.IValidater;
 import lombok.Data;
 import org.hyperledger.fabric.sdk.HFClient;
+import org.hyperledger.fabric.sdk.IDataDecorator;
 import org.hyperledger.fabric.sdk.Peer;
 import org.hyperledger.fabric.sdk.exception.InvalidArgumentException;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 /**
  * @author Charlie
@@ -80,15 +83,15 @@ public class PeerConfiguration implements IValidater
 
         protected List<String> chainCodes;
 
-        // 属于哪些channel
-        protected List<String> channels;
-
         protected boolean anchorPeer;
 
         protected boolean endorsingPeer = true;
         protected boolean chaincodeQuery = true;
         protected boolean ledgerQuery = true;
         protected boolean eventSource = true;
+
+//        // 2020-11-13 22:38 add ,判断算法类型,是国密还是ecdsa,默认为0,代表的是ecdsa
+//        private byte type;
 
 
         @Override
@@ -104,33 +107,6 @@ public class PeerConfiguration implements IValidater
         public int hashCode()
         {
             return Objects.hash(domain);
-        }
-
-        public Properties buildProperties()
-        {
-            Properties properties = null;
-            try
-            {
-                properties = TLSUtils.loadTLSFile(this.tlsCertFile, this.domain);
-            } catch (IOException e)
-            {
-                throw new ConfigException("无法解析tls证书");
-            }
-            return properties;
-        }
-
-        public Peer conv2TPeer(boolean tls, HFClient client)
-        {
-            String grpcUrl =this.getUrl();
-            Peer peer = null;
-            try
-            {
-                peer = client.newPeer(this.getDomain(), grpcUrl, this.buildProperties());
-            } catch (InvalidArgumentException e)
-            {
-                throw new ConfigException("解析peer失败:" + e.getMessage());
-            }
-            return peer;
         }
 
         @Override
@@ -153,10 +129,93 @@ public class PeerConfiguration implements IValidater
             {
                 throw new ConfigException("chaincode 不匹配");
             }
-            if (!ConfigurationFactory.getInstance().getBlockChainConfiguration().containsChannels(this.channels))
+//            if (!CollectionUtils.isEmpty(this.channels))
+//            {
+//                List<String> names = this.channels.stream().map(t -> t.getChannelName()).collect(Collectors.toList());
+//                if (!ConfigurationFactory.getInstance().getBlockChainConfiguration().containsChannels(names))
+//                {
+//                    throw new ConfigException("channels 不匹配,该peer所属的channel在配置中并不存在");
+//                }
+//            }
+        }
+        public Properties buildProperties()
+        {
+            Properties properties = null;
+            try
             {
-                throw new ConfigException("channels 不匹配,该peer所属的channel在配置中并不存在");
+                properties = TLSUtils.loadTLSFile(this.tlsCertFile, this.domain);
+            } catch (IOException e)
+            {
+                throw new ConfigException("无法解析tls证书");
             }
+            return properties;
+        }
+    }
+
+    @Data
+    public static class PeerChannelBO {
+        // 域名
+        protected String domain;
+        protected String url;
+        //        private Integer port;
+        protected String tlsCertFile;
+
+        protected List<String> chainCodes;
+
+        protected boolean anchorPeer;
+
+        protected boolean endorsingPeer = true;
+        protected boolean chaincodeQuery = true;
+        protected boolean ledgerQuery = true;
+        protected boolean eventSource = true;
+
+        // 2020-11-13 22:38 add ,判断算法类型,是国密还是ecdsa,默认为0,代表的是ecdsa
+        private byte type;
+        public Peer conv2TPeer(boolean tls, HFClient client)
+        {
+            String grpcUrl = this.getUrl();
+            Peer peer = null;
+            try
+            {
+                peer = client.newPeer(this.getDomain(), grpcUrl, this.buildProperties());
+                peer.decorate(Arrays.asList((IDataDecorator<Peer>) peer1 ->
+                {
+                    peer1.setType(type);
+                    return peer1;
+                }));
+            } catch (InvalidArgumentException e)
+            {
+                throw new ConfigException("解析peer失败:" + e.getMessage());
+            }
+            return peer;
+        }
+
+        public Properties buildProperties()
+        {
+            Properties properties = null;
+            try
+            {
+                properties = TLSUtils.loadTLSFile(this.tlsCertFile, this.domain);
+            } catch (IOException e)
+            {
+                throw new ConfigException("无法解析tls证书");
+            }
+            return properties;
+        }
+
+
+    }
+
+    @Data
+    public static class PeerChannelTypeInfo implements IValidater
+    {
+        private String channelName;
+        private byte type;
+
+        @Override
+        public void valid()
+        {
+
         }
     }
 

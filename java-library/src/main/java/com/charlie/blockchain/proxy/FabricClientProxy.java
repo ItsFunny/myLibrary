@@ -52,4 +52,23 @@ public class FabricClientProxy<T> extends AbstractInitOnce
         return INSTANTCE;
     }
 
+    public static FabricClientProxy getINSTANTCE()
+    {
+        return INSTANTCE;
+    }
+
+    public static void setINSTANTCE(FabricClientProxy INSTANTCE)
+    {
+        FabricClientProxy.INSTANTCE = INSTANTCE;
+    }
+
+    public AbstractFabricClient getHandler()
+    {
+        return handler;
+    }
+
+    public void setHandler(AbstractFabricClient handler)
+    {
+        this.handler = handler;
+    }
 }

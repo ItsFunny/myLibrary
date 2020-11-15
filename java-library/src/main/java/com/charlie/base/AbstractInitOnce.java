@@ -1,7 +1,17 @@
 package com.charlie.base;
 
+import com.charlie.blockchain.configuration.BlockChainConfiguration;
+import com.charlie.blockchain.configuration.ChannelConfiguration;
+import com.charlie.blockchain.configuration.PeerConfiguration;
+import com.charlie.blockchain.util.ConvertUtils;
 import com.charlie.exception.ConfigException;
 import lombok.Data;
+import org.hyperledger.fabric.sdk.Channel;
+import org.hyperledger.fabric.sdk.HFClient;
+import org.hyperledger.fabric.sdk.Orderer;
+import org.hyperledger.fabric.sdk.Peer;
+
+import java.util.List;
 
 /**
  * @author Charlie
@@ -28,4 +38,5 @@ public abstract class AbstractInitOnce implements IInitOnce
     }
 
     protected abstract void init() throws ConfigException;
+
 }

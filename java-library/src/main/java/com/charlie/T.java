@@ -4,6 +4,7 @@ import io.netty.util.concurrent.CompleteFuture;
 
 import java.lang.ref.PhantomReference;
 import java.lang.ref.WeakReference;
+import java.util.Calendar;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 
@@ -32,23 +33,30 @@ public class T
 
     }
 
-    public static void main(String[] args) throws Exception
-    {
-        System.out.println(Thread.currentThread().getId());
-        final  CompletableFuture<String> completeFuture=new CompletableFuture<>();
-        new Thread(()->{
-            try
-            {
-                TimeUnit.SECONDS.sleep(5);
-                completeFuture.complete("ok");
-            } catch (InterruptedException e)
-            {
-            }
-        }).start();
+//    public static void main(String[] args) throws Exception
+//    {
+//        Calendar instance = Calendar.getInstance();
+//        instance.add(Calendar.MONTH,3);
+//        long time = instance.getTime().getTime();
+//        System.out.println(time);
+//
+////        System.out.println(Thread.currentThread().getId());
+////        final  CompletableFuture<String> completeFuture=new CompletableFuture<>();
+////        new Thread(()->{
+////            try
+////            {
+////                TimeUnit.SECONDS.sleep(5);
+////                completeFuture.complete("ok");
+////            } catch (InterruptedException e)
+////            {
+////            }
+////        }).start();
+////
+////        String s = completeFuture.get();
+////        System.out.println(s);
+////        System.out.println(Thread.currentThread().getId());
+//    }
 
-        String s = completeFuture.get();
-        System.out.println(s);
-        System.out.println(Thread.currentThread().getId());
-    }
+
 
 }

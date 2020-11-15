@@ -2,9 +2,11 @@ package com.charlie.blockchain.model;
 
 import com.charlie.base.IKeyImporter;
 import lombok.Data;
+import org.hyperledger.fabric.cache.GMCache;
 import org.hyperledger.fabric.sdk.Enrollment;
 import org.hyperledger.fabric.sdk.User;
 import org.hyperledger.fabric.sdk.identity.X509Enrollment;
+import org.hyperledger.fabric.sdk.security.BccspContainer;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -31,6 +33,31 @@ public class UserInfo implements User
     private String affiliation;
     private Enrollment enrollment;
 
+    private Enrollment gmEnrollment;
+
+
+    public Enrollment getEnrollment()
+    {
+        if (GMCache.isGm())
+        {
+            return gmEnrollment;
+        }
+        return enrollment;
+    }
+
+    public void setEnrollment(Enrollment enrollment)
+    {
+        this.enrollment = enrollment;
+    }
+
+    public UserInfo(String name, String affiliation, String mspId, Enrollment enrollment)
+    {
+        this.name = name;
+        this.affiliation = affiliation;
+        this.mspId = mspId;
+        this.enrollment = enrollment;
+    }
+
     public UserInfo(IKeyImporter keyImporter, String mspId, String name, String keyFile, String certFile)
     {
         this.name = name;
@@ -44,19 +71,26 @@ public class UserInfo implements User
         }
     }
 
-    public UserInfo(IKeyImporter keyImporter, String mspId, String name, byte[] keyBytes, byte[] certBytes)
+    public UserInfo(String mspId, String name, byte[] keyBytes, byte[] certBytes, byte[] gmBytes, byte[] gmCertBytes)
     {
         this.name = name;
         this.mspId = mspId;
-        try
+        this.enrollment = new X509Enrollment(BccspContainer.parsePrivateKey(keyBytes), new String(certBytes));
+        if (gmBytes != null && gmBytes.length > 0)
         {
-            this.enrollment = new X509Enrollment(keyImporter.bytes2PrivateKey(keyBytes), new String(certBytes));
-        } catch (Exception e)
-        {
-            throw new RuntimeException(e);
+            this.gmEnrollment = new X509Enrollment(BccspContainer.parsePrivateKey(gmBytes), new String(gmCertBytes));
         }
-    }
 
+//        this.name = name;
+//        this.mspId = mspId;
+//        try
+//        {
+//            this.enrollment = new X509Enrollment(keyImporter.bytes2PrivateKey(keyBytes), new String(certBytes));
+//        } catch (Exception e)
+//        {
+//            throw new RuntimeException(e);
+//        }
+    }
 
 
     private Enrollment loadFromPemFile(IKeyImporter keyImporter, String keyFile, String certFile) throws Exception

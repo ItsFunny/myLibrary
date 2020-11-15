@@ -7,10 +7,12 @@ import com.charlie.utils.FileUtils;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 import org.hyperledger.fabric.sdk.HFClient;
+import org.hyperledger.fabric.sdk.IDataDecorator;
 import org.hyperledger.fabric.sdk.Orderer;
 import org.hyperledger.fabric.sdk.exception.InvalidArgumentException;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -67,7 +69,6 @@ public class OrdererConfiguration implements IValidater
         {
             ordererNode.valid();
         }
-
     }
 
     @Data
@@ -77,26 +78,6 @@ public class OrdererConfiguration implements IValidater
         private String url;
         private String tlsCertFile;
 
-        public Orderer buildOrderer(boolean tls, HFClient client)
-        {
-            String grpcUrl=this.getUrl();
-            Properties properties = null;
-            try
-            {
-                properties = TLSUtils.loadTLSFile(this.tlsCertFile, this.domain);
-            } catch (IOException e)
-            {
-                throw new ConfigException("无法解析tls证书");
-            }
-            try
-            {
-                Orderer orderer = client.newOrderer(this.domain, grpcUrl, properties);
-                return orderer;
-            } catch (InvalidArgumentException e)
-            {
-                throw new ConfigException("配置获取ordrer信息失败");
-            }
-        }
 
         @Override
         public void valid()
@@ -114,6 +95,40 @@ public class OrdererConfiguration implements IValidater
                 throw new ConfigException("证书不可为空");
             }
             this.tlsCertFile = ConfigurationFactory.getInstance().getBlockChainConfiguration().getPrefixPath() + FileUtils.appendFilePathIfNone(this.tlsCertFile);
+        }
+    }
+
+    @Data
+    public static class OrdererChannelBO {
+        private String domain;
+        private String url;
+        private String tlsCertFile;
+        private byte type;
+
+        public Orderer buildOrderer(boolean tls, HFClient client)
+        {
+            String grpcUrl=this.getUrl();
+            Properties properties = null;
+            try
+            {
+                properties = TLSUtils.loadTLSFile(this.tlsCertFile, this.domain);
+            } catch (IOException e)
+            {
+                throw new ConfigException("无法解析tls证书");
+            }
+            try
+            {
+                Orderer orderer = client.newOrderer(this.domain, grpcUrl, properties);
+                orderer.decorate(Arrays.asList((IDataDecorator<Orderer>) orderer1 ->
+                {
+                    orderer1.setType(type);
+                    return orderer1;
+                }));
+                return orderer;
+            } catch (InvalidArgumentException e)
+            {
+                throw new ConfigException("配置获取ordrer信息失败");
+            }
         }
     }
 }

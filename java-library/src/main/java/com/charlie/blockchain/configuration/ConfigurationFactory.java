@@ -31,8 +31,6 @@ public class ConfigurationFactory extends AbstractInitOnce
         this.blockChainConfiguration = blockChainConfiguration;
 
 //         加载配置文件
-//        ConfigurationFactory blockchain = SystemUtils.parseConfigFile(ConfigConstants.CONFIG_BLOCKCHAIN_CONFIGURAITION, this.getClass());
-//        this.copy(blockchain);
     }
 
     public void slowInit() throws ConfigException
