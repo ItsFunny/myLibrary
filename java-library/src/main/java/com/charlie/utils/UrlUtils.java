@@ -5,6 +5,7 @@
 package com.charlie.utils;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
 
 /**
  *
@@ -43,4 +44,18 @@ public class UrlUtils
         return request.getScheme() + "://" + request.getServerName()
                 + ":" + request.getServerPort();
     }
+
+    public static String decode(String str) {
+        String result = "";
+        if (null == str) {
+            return "";
+        }
+        try {
+            result = java.net.URLDecoder.decode(str, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
 }

@@ -1,7 +1,7 @@
 package com.charlie.blockchain.configuration;
 
 import com.charlie.exception.ConfigException;
-import com.charlie.service.IValidater;
+import com.charlie.service.IValidator;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
@@ -16,7 +16,7 @@ import java.util.Properties;
  * @Attention:
  * @Date 创建时间：2020-10-20 23:03
  */
-public class CaConfiguration implements IValidater
+public class CaConfiguration implements IValidator
 {
     private CaConfiguration() {}
 
@@ -47,7 +47,7 @@ public class CaConfiguration implements IValidater
         this.caNodes = caNodes;
     }
 
-    public static class CaNode implements IValidater
+    public static class CaNode implements IValidator
     {
         // 可以认为与组织的mspid相同
         private String caName;

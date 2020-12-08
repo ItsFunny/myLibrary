@@ -64,4 +64,23 @@ public class AESUtilsTest
         String s = Base64.encodeBase64String(AESUtils.encryptByCFBWithBytes(text.getBytes("UTF-8"), keyBytes, ivBytes));
         System.out.println(s);
     }
+
+    @Test
+    public void ecbEncryptByKey()
+    {
+        String body1 = "{\"orderId\": \"BIAOXIN7793792099979100166300165\",\"payResult\": \"success\",\"timeStamp\": \"1579082454\"}";
+        String password = "poiGslCuKcpiQoyx";
+        byte[] encrypt = AESUtils.encrypt(body1, password);
+        System.out.println(new String(encrypt));
+    }
+
+    @Test
+    public void encryptByCFB1()
+    {
+    }
+
+    @Test
+    public void encryptByCFBWithBytes()
+    {
+    }
 }

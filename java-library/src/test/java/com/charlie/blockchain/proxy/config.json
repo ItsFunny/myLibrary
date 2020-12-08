@@ -1,0 +1,142 @@
+{
+  "version": "1",
+  "tls": true,
+  "deploy": false,
+  "algorithmJudgeByChannel": true,
+  "prefixPath": "/Users/joker/Java/fabric-sdk-gm/demo/src/main/resources/",
+  "chainCodeRootDir": "/Users/joker/go",
+  "clientConfiguration": {
+    "organizationMspId": "BidsunMSP"
+  },
+  "organizationConfiguration": {
+    "organizations": [
+      {
+        "mspId": "BidsunMSP",
+        "users": [
+          {
+            "name": "Admin",
+            "enrollments": [
+              {
+                "keyString": "-----BEGIN PRIVATE KEY-----\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgtqlSoKP1ErvjoCJP\nz2FKndPqg2BhSRIoFE/WsrSml6ihRANCAARwUAGlTosMHckeTozxCi3DXaBzitVG\n1MuhxpOLstipUZ6R4RJ2ljtNulLlPeC43t2HeUTPNLftY+upwL3RyjrG\n-----END PRIVATE KEY-----\n",
+                "certString": "-----BEGIN CERTIFICATE-----\nMIICbzCCAhWgAwIBAgIRAJFyYbTEN+04UqKCVaDjVn4wCgYIKoZIzj0EAwIwZzEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xEzARBgNVBAoTCmJpZHN1bi5jb20xFjAUBgNVBAMTDWNhLmJpZHN1\nbi5jb20wHhcNMjAwNzE2MTEyNjAwWhcNMzAwNzE0MTEyNjAwWjBdMQswCQYDVQQG\nEwJDTjEQMA4GA1UECBMHQmVpamluZzEQMA4GA1UEBxMHQmVpamluZzEPMA0GA1UE\nCxMGY2xpZW50MRkwFwYDVQQDDBBBZG1pbkBiaWRzdW4uY29tMFkwEwYHKoZIzj0C\nAQYIKoZIzj0DAQcDQgAEcFABpU6LDB3JHk6M8Qotw12gc4rVRtTLocaTi7LYqVGe\nkeESdpY7TbpS5T3guN7dh3lEzzS37WPrqcC90co6xqOBqzCBqDAOBgNVHQ8BAf8E\nBAMCB4AwDAYDVR0TAQH/BAIwADArBgNVHSMEJDAigCDU7yOodePETB5vS9K7Cv/6\nB+t3FLOP2OChQZ51DgX8ITBbBggqAwQFBgcIAQRPeyJhdHRycyI6eyJJc0ViaWRj\naGFpbkF1dGhvcml0eSI6InRydWUiLCJJc0ViaWRjaGFpbk9yZ2FuaXphdGlvbkFk\nbWluIjoidHJ1ZSJ9fTAKBggqhkjOPQQDAgNIADBFAiEA8TDdz8Ed5FbJb5TU9D7M\nEWeC/Eer6xRXDFUwYYycCAoCIGwwT9ATIE4ixePwhQ5+pKVfUFavIuVavOD2AkkN\nwkIY\n-----END CERTIFICATE-----\n",
+                "type": 0
+              },
+              {
+                "keyString": "-----BEGIN PRIVATE KEY-----\nNcRv3UwxSYfBDYs+qhMuZSuLF+qYDGQSBWMuVx9XU7w=\n-----END PRIVATE KEY-----\n",
+                "certString": "-----BEGIN CERTIFICATE-----\nMIICBTCCAaygAwIBAgIQQZ9Hhxz4aTZBkg2SizyXkjAKBggqgRzPVQGDdTBeMQsw\nCQYDVQQGEwJDTjEQMA4GA1UECBMHQmVpamluZzEQMA4GA1UEBxMHQmVpamluZzET\nMBEGA1UEChMKYmlkc3VuLmNvbTEWMBQGA1UEAxMNY2EuYmlkc3VuLmNvbTAeFw0y\nMDEwMjMwMjMxMDBaFw0zMDEwMjEwMjMxMDBaMF0xCzAJBgNVBAYTAkNOMRAwDgYD\nVQQIEwdCZWlqaW5nMRAwDgYDVQQHEwdCZWlqaW5nMQ8wDQYDVQQLEwZjbGllbnQx\nGTAXBgNVBAMMEEFkbWluQGJpZHN1bi5jb20wWTATBgcqhkjOPQIBBggqgRzPVQGC\nLQNCAATNgwM63FUDn/DQWhIzY5G654/E+i3rvMpeVNvRc1dgnjC6nNiZbNdxnaS4\nkLFsLl3qorMEytOoJHrX6xV7+B8Ao00wSzAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0T\nAQH/BAIwADArBgNVHSMEJDAigCAwskzdALYN4KxAhHoIH5NvU679BOS7FcUGdWt3\nSXfqATAKBggqgRzPVQGDdQNHADBEAiAF5UjfxSAaxEUrVTNkbo6jrC53iIbYQVMw\nZdCydE8GTAIgbTc1NSwUeugaJtzpMfPdAL/v7sXXzBFOFQDdpcbigDA=\n-----END CERTIFICATE-----\n",
+                "type": 1
+              }
+            ]
+          }
+        ],
+        "peers": [
+          "peer0.bidsun.com"
+        ],
+        "ca": ""
+      }
+    ]
+  },
+  "ordererConfigurations": [
+    {
+      "orderMspId": "OrdererMSP",
+      "orderers": [
+        {
+          "domain": "orderer.bidsun.com",
+          "url": "grpcs://124.70.207.27:7050",
+          "tlsCertFile": "crypto-config/ordererOrganizations/bidsun.com/orderers/orderer.bidsun.com/tls/ca.crt"
+        }
+      ]
+    }
+  ],
+  "channelConfiguration": {
+    "channels": [
+      {
+        "channelId": "ebidsun-alpha",
+        "channelConfigPath": "artifacts/demochannel.tx",
+        "needListOnBlockEvent": true,
+        "type": 1,
+        "orderers": [
+          {
+            "domain": "orderer.bidsun.com",
+            "type": 0
+          }
+        ],
+        "peers": [
+          {
+            "domain": "peer0.bidsun.com",
+            "type": 0
+          },
+          {
+            "domain": "peer0.guangzhou.com",
+            "type": 1
+          }
+        ]
+      },
+      {
+        "channelId": "ebidsun-global",
+        "channelConfigPath": "artifacts/demochannel.tx",
+        "needListOnBlockEvent": true,
+        "type": 1,
+        "orderers": [
+          {
+            "domain": "orderer.bidsun.com",
+            "type": 0
+          }
+        ],
+        "peers": [
+          {
+            "domain": "peer0.bidsun.com",
+            "type": 0
+          },
+          {
+            "domain": "peer0.guangzhou.com",
+            "type": 1
+          }
+        ]
+      }
+    ]
+  },
+  "peerConfiguration": {
+    "peers": [
+      {
+        "domain": "peer0.bidsun.com",
+        "url": "grpcs://124.70.207.27:7051",
+        "tlsCertFile": "crypto-config/peerOrganizations/bidsun.com/peers/peer0.bidsun.com/tls/ca.crt",
+        "anchorPeer": true,
+        "chainCodes": [
+          "democc"
+        ]
+      },
+      {
+        "domain": "peer0.guangzhou.com",
+        "url": "grpcs://124.70.207.27:9051",
+        "tlsCertFile": "crypto-config/peerOrganizations/guangzhou.com/peers/peer0.guangzhou.com/tls/ca.crt",
+        "anchorPeer": true,
+        "chainCodes": [
+          "democc"
+        ]
+      }
+    ]
+  }
+//  "chaincodeConfiguration": {
+//    "chainCodes": [
+//      {
+//        "chainCodeId": "democc",
+//        "chainCodePath": "myLibrary/java-library/src/main/resources/chaincodes/",
+//        "needUpdate": true,
+//        "version": "0.01",
+//        "policyFile": ""
+//      }
+//    ]
+//  },
+//  "caConfiguration": {
+//    "caNodes": [
+//      {
+//        "caName": "ca1",
+//        "url": "http://localhost:7054",
+//        "adminUserName": "admin",
+//        "adminPassword": "adminpw"
+//      }
+//    ]
+//  }
+}

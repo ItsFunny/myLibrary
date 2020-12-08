@@ -1,7 +1,7 @@
 package com.charlie.blockchain.configuration;
 
 import com.charlie.exception.ConfigException;
-import com.charlie.service.IValidater;
+import com.charlie.service.IValidator;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 
@@ -14,7 +14,7 @@ import org.apache.commons.lang3.StringUtils;
  * @Date 创建时间：2020-10-25 06:43
  */
 @Data
-public class ClientConfiguration implements IValidater
+public class ClientConfiguration implements IValidator
 {
     // 这个客户端以哪个为主
     private String organizationMspId;

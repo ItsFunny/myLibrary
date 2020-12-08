@@ -1,7 +1,7 @@
 package com.charlie.blockchain.configuration;
 
 import com.charlie.exception.ConfigException;
-import com.charlie.service.IValidater;
+import com.charlie.service.IValidator;
 import com.charlie.utils.CollectionUtils;
 import com.charlie.utils.FileUtils;
 import lombok.Data;
@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
  * @Date 创建时间：2020-10-20 23:06
  */
 @Data
-public class ChannelConfiguration implements IValidater
+public class ChannelConfiguration implements IValidator
 {
     private ChannelConfiguration() {}
 
@@ -44,7 +44,7 @@ public class ChannelConfiguration implements IValidater
     }
 
     @Data
-    public static class ChannelNode implements IValidater
+    public static class ChannelNode implements IValidator
     {
         private String channelId;
         private String channelConfigPath;
@@ -96,7 +96,7 @@ public class ChannelConfiguration implements IValidater
 
 
     @Data
-    public static class ChannelOrderInfo implements IValidater
+    public static class ChannelOrderInfo implements IValidator
     {
         private String domain;
         private byte type;
@@ -109,7 +109,7 @@ public class ChannelConfiguration implements IValidater
     }
 
     @Data
-    public static class ChannelPeerInfo implements IValidater
+    public static class ChannelPeerInfo implements IValidator
     {
         private String domain;
         private byte type;

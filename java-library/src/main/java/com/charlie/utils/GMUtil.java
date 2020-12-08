@@ -1,27 +1,37 @@
 package com.charlie.utils;
 
 import com.charlie.model.CertInfo;
+import com.sansec.mobileshield.bx.asym.impl.SM2Impl;
+import com.sm2.SM2Utils;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.lang3.StringUtils;
 import org.bouncycastle.asn1.ASN1InputStream;
 import org.bouncycastle.asn1.DERBitString;
+import org.bouncycastle.asn1.gm.GMNamedCurves;
 import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;
 import org.bouncycastle.asn1.sec.ECPrivateKey;
 import org.bouncycastle.asn1.x509.Certificate;
 import org.bouncycastle.asn1.x509.SubjectPublicKeyInfo;
+import org.bouncycastle.asn1.x9.X9ECParameters;
 import org.bouncycastle.crypto.params.ECDomainParameters;
 import org.bouncycastle.crypto.params.ECPrivateKeyParameters;
 import org.bouncycastle.jcajce.provider.asymmetric.ec.BCECPrivateKey;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.jce.spec.ECParameterSpec;
+import org.bouncycastle.math.ec.ECPoint;
+import org.bouncycastle.math.ec.custom.gm.SM2P256V1Curve;
 import org.bouncycastle.util.BigIntegers;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigInteger;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
-import java.security.Security;
+import java.security.*;
+import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
 
 /**
@@ -35,6 +45,38 @@ import java.util.Arrays;
 @Slf4j
 public class GMUtil
 {
+    private static SM2Impl impl = new SM2Impl();
+
+    public static byte[] encrypt(byte[] pubKey, byte[] data) {
+        return impl.publicKeyEncrypt(pubKey, data);
+    }
+
+    public static byte[] encrypt(String pubKeyBase64, byte[] data) {
+        byte[] pubKey = base64Decode(pubKeyBase64);
+        return encrypt(pubKey, data);
+    }
+
+    public static byte[] decrypt(byte[] priKey, byte[] encData) {
+        return impl.privateKeyDecrypt(priKey, encData);
+    }
+
+    public static byte[] decrypt(String priKeyBase64, byte[] encData) {
+        byte[] priKey = base64Decode(priKeyBase64);
+        return impl.privateKeyDecrypt(priKey, encData);
+    }
+
+    public static CertInfo parseSM2CertStrFromFile(String path)
+    {
+        try
+        {
+            byte[] bytes = FileUtils.readFileToByteArray(new File(path));
+            return parseSM2CertStr(new String(bytes));
+        } catch (IOException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
+
     // 将pem 证书转换为公钥
     @SuppressWarnings("resource")
     public static CertInfo parseSM2CertStr(String sm2Cert)
@@ -140,6 +182,12 @@ public class GMUtil
         return BigIntegers.asUnsignedByteArray(32, ecPrivateKey.getKey());
     }
 
+
+    public static byte[] formatPubKey(String pubKeyStr)
+    {
+        byte[] decode = Base64Utils.decode(pubKeyStr);
+        return formatPubKey(0, decode);
+    }
 
     public static byte[] formatPubKey(int byteEnum, byte[] pubKey)
     {
@@ -373,6 +421,60 @@ public class GMUtil
         return str;
     }
 
+    public static byte[] sign(byte[] prvKey, byte[] content)
+    {
+        return SM2Utils.sign(USERID, prvKey, content).getBytes();
+    }
+
+    // 用于与fabric 交互,会hex 转码
+    public static boolean verify(byte[] pubKey, byte[] content, byte[] sign)
+    {
+        pubKey = formatPubKey((byte) 0, pubKey);
+        return SM2Utils.verifySign_ZA(USERID, pubKey, content, Hex.encodeHexString(sign));
+    }
+    // 用于自验自签
+    public static boolean verifyOwner(byte[] pubKey, byte[] content, byte[] sign)
+    {
+        pubKey = formatPubKey((byte) 0, pubKey);
+        return SM2Utils.verifySign_ZA(USERID, pubKey, content, new String(sign));
+    }
+    // 用于与fabric 交互,会hex 转码
+    public static boolean verify(String base64Pubkey, byte[] content, byte[] sign)
+    {
+        return verify(Base64Utils.decode(base64Pubkey), content, sign);
+    }
+    // 用于自验自签
+    public static boolean verifyOwner(String base64Pubkey, byte[] content, byte[] sign)
+    {
+        return verifyOwner(Base64Utils.decode(base64Pubkey), content, sign);
+    }
+
 
     // 将字节转换为私钥
+
+
+
+    private static X9ECParameters x9ECParameters = GMNamedCurves.getByName("sm2p256v1");
+    private static ECDomainParameters ecDomainParameters = new ECDomainParameters(x9ECParameters.getCurve(), x9ECParameters.getG(), x9ECParameters.getN());
+    public static final SM2P256V1Curve CURVE = new SM2P256V1Curve();
+    public final static BigInteger SM2_ECC_GX = new BigInteger(
+            "32C4AE2C1F1981195F9904466A39C9948FE30BBFF2660BE1715A4589334C74C7", 16);
+    public final static BigInteger SM2_ECC_GY = new BigInteger(
+            "BC3736A2F4F6779C59BDCEE36B692153D0A9877CC62A474002DF32E52139F0A0", 16);
+    public static final ECPoint G_POINT = CURVE.createPoint(SM2_ECC_GX, SM2_ECC_GY);
+    public static  final ECParameterSpec ecParameterSpec=new ECParameterSpec(ecDomainParameters.getCurve(),ecDomainParameters.getG(),ecDomainParameters.getN(),ecDomainParameters.getH() );
+
+    // 将标准的32位的byte转换为私钥
+    public static PrivateKey parseStandard32SM2PrivateKey(byte[] privatekey)
+            throws InvalidKeySpecException, NoSuchAlgorithmException, NoSuchProviderException
+    {
+        KeyFactory factory = KeyFactory.getInstance("EC", BouncyCastleProvider.PROVIDER_NAME);
+        if (privatekey.length != 32)
+            throw new RuntimeException("err key length,must be 32");
+        org.bouncycastle.jce.spec.ECPrivateKeySpec  keySpec = new  org.bouncycastle.jce.spec.ECPrivateKeySpec (new BigInteger(1, privatekey),ecParameterSpec);
+        return factory.generatePrivate(keySpec);
+    }
+
+
+
 }

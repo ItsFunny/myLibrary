@@ -31,7 +31,7 @@ public abstract class AbstractChannleAppeventConsumer extends AbstractBaseConsum
 		log.info("获取到消息:{}",message);
 		long startTime=System.currentTimeMillis();
 		String json=new String(message.getBody(),"utf-8");
-		AppEvent event = JSONUtil.json2Object(json,AppEvent.class);
+		AppEvent event = JSONUtil.json2Obj(json,AppEvent.class);
 		doConsume(event,message.getMessageProperties().getDeliveryTag(),channel);
 		log.info("[{}]结束消费信息,耗时{}秒",name,(System.currentTimeMillis()-startTime)/1000.0);
 	}

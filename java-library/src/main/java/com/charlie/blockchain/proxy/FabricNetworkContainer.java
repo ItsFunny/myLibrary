@@ -574,7 +574,7 @@ public class FabricNetworkContainer extends AbstractInitOnce
                             {
                                 logger.info("成功实例化链码,往orderer发起交易请求");
                                 // FIXME 抽出来
-                                CompletableFuture<BlockEvent.TransactionEvent> cf = channel.sendTransaction(successful);
+                                CompletableFuture<BlockEvent.TransactionEvent> cf = channel.sendTransaction(successful,null);
                                 List<String> msgList = new ArrayList<>();
                                 cf.thenApply((event) ->
                                 {
@@ -655,7 +655,7 @@ public class FabricNetworkContainer extends AbstractInitOnce
 
     private void send2Orderer(String msg, Channel channel, Collection<ProposalResponse> successful) throws ExecutionException, InterruptedException
     {
-        CompletableFuture<BlockEvent.TransactionEvent> cf = channel.sendTransaction(successful);
+        CompletableFuture<BlockEvent.TransactionEvent> cf = channel.sendTransaction(successful,null);
         List<String> msgList = new ArrayList<>();
         cf.thenApply((event) ->
         {
@@ -710,6 +710,10 @@ public class FabricNetworkContainer extends AbstractInitOnce
 
     private void initHFCaClient(BlockChainConfiguration blockChainConfiguration) throws ConfigException
     {
+        if (blockChainConfiguration.getCaConfiguration() == null)
+        {
+            return;
+        }
         this.caClientWrapper = new HFCaClientWrapper();
         HFClient alphaClient = this.clientWrapper.getAlphaClient();
         String mspId = alphaClient.getUserContext().getMspId();
@@ -740,6 +744,11 @@ public class FabricNetworkContainer extends AbstractInitOnce
             for (ChannelConfiguration.ChannelNode channelNode : channels)
             {
                 Channel channel = alphaClient.newChannel(channelNode.getChannelId());
+                channel.decorate(Arrays.asList((IDataDecorator<Channel>) channel1 ->
+                {
+                    channel1.setType(channelNode.getType());
+                    return channel1;
+                }));
                 List<ChannelConfiguration.ChannelOrderInfo> orderInfos = channelNode.getOrderers();
                 List<String> orderers = orderInfos.stream().map(o -> o.getDomain()).collect(Collectors.toList());
                 List<Orderer> channelAllOrderers = blockChainConfiguration.getChannelAllOrderers(channelNode.getChannelId(), alphaClient);

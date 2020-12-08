@@ -13,6 +13,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
+import org.springframework.http.HttpEntity;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -143,6 +144,10 @@ public class HttpUtils
      * @throws Exception
      */
     public static HttpClientResult doPost(String url, Map<String, String> params) throws Exception
+    {
+        return doPost(url, null, params, null);
+    }
+    public static HttpClientResult doPostJson(String url, Map<String, String> params) throws Exception
     {
         return doPost(url, null, params, null);
     }
@@ -324,7 +329,6 @@ public class HttpUtils
             {
                 nvps.add(new BasicNameValuePair(entry.getKey(), entry.getValue()));
             }
-
             // 设置到请求的http对象中
             httpMethod.setEntity(new UrlEncodedFormEntity(nvps, ENCODING));
         }
@@ -443,5 +447,18 @@ public class HttpUtils
             ip = request.getRemoteAddr();
         }
         return ip;
+    }
+
+    public static String getBody(Object params) {
+		if (params == null)
+        {
+            return null;
+        }
+
+        if (params instanceof String)
+        {
+            return (String) params;
+        }
+        return JSONUtil.toJsonString(params);
     }
 }

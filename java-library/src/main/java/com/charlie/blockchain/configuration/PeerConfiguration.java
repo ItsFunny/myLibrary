@@ -2,7 +2,7 @@ package com.charlie.blockchain.configuration;
 
 import com.charlie.blockchain.util.TLSUtils;
 import com.charlie.exception.ConfigException;
-import com.charlie.service.IValidater;
+import com.charlie.service.IValidator;
 import lombok.Data;
 import org.hyperledger.fabric.sdk.HFClient;
 import org.hyperledger.fabric.sdk.IDataDecorator;
@@ -16,7 +16,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.Properties;
-import java.util.stream.Collectors;
 
 /**
  * @author Charlie
@@ -27,7 +26,7 @@ import java.util.stream.Collectors;
  * @Date 创建时间：2020-10-20 22:58
  */
 @Data
-public class PeerConfiguration implements IValidater
+public class PeerConfiguration implements IValidator
 {
     private PeerConfiguration() {}
 
@@ -73,7 +72,7 @@ public class PeerConfiguration implements IValidater
     }
 
     @Data
-    public static class PeerNode implements IValidater
+    public static class PeerNode implements IValidator
     {
         // 域名
         protected String domain;
@@ -207,7 +206,7 @@ public class PeerConfiguration implements IValidater
     }
 
     @Data
-    public static class PeerChannelTypeInfo implements IValidater
+    public static class PeerChannelTypeInfo implements IValidator
     {
         private String channelName;
         private byte type;

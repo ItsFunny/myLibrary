@@ -1,6 +1,7 @@
 package com.charlie.blockchain.util;
 
 
+import com.alibaba.fastjson.JSON;
 import com.google.gson.*;
 
 import java.io.Serializable;
@@ -98,7 +99,6 @@ public class JSONUtil
 
     public static <T> T json2Object(String json, Type c)
     {
-        T t = gson.fromJson(json, c);
-        return t;
+        return JSON.parseObject(json, c);
     }
 }

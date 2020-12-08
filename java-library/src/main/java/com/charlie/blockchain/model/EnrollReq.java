@@ -2,7 +2,7 @@ package com.charlie.blockchain.model;
 
 
 import com.charlie.blockchain.IKeyPairGenerator;
-import com.charlie.service.IValidater;
+import com.charlie.service.IValidator;
 
 /**
  * @author Charlie
@@ -12,7 +12,7 @@ import com.charlie.service.IValidater;
  * @Attention:
  * @Date 创建时间：2020-10-28 23:29
  */
-public class EnrollReq implements IValidater
+public class EnrollReq implements IValidator
 {
     private String userName;
     private String password;

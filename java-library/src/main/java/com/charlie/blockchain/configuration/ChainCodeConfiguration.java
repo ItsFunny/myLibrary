@@ -1,7 +1,7 @@
 package com.charlie.blockchain.configuration;
 
 import com.charlie.exception.ConfigException;
-import com.charlie.service.IValidater;
+import com.charlie.service.IValidator;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 
@@ -16,7 +16,7 @@ import java.util.List;
  * @Date 创建时间：2020-10-25 06:49
  */
 @Data
-public class ChainCodeConfiguration implements IValidater
+public class ChainCodeConfiguration implements IValidator
 {
     private List<ChainCodeNode> chainCodes;
 
@@ -31,7 +31,7 @@ public class ChainCodeConfiguration implements IValidater
 
 
     @Data
-    public static class ChainCodeNode implements IValidater
+    public static class ChainCodeNode implements IValidator
     {
         private String chainCodeId;
         private String chainCodePath;

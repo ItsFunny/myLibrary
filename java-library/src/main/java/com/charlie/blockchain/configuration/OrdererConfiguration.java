@@ -2,7 +2,7 @@ package com.charlie.blockchain.configuration;
 
 import com.charlie.blockchain.util.TLSUtils;
 import com.charlie.exception.ConfigException;
-import com.charlie.service.IValidater;
+import com.charlie.service.IValidator;
 import com.charlie.utils.FileUtils;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
@@ -12,7 +12,6 @@ import org.hyperledger.fabric.sdk.Orderer;
 import org.hyperledger.fabric.sdk.exception.InvalidArgumentException;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -24,7 +23,7 @@ import java.util.*;
  * @Date 创建时间：2020-10-20 23:07
  */
 @Data
-public class OrdererConfiguration implements IValidater
+public class OrdererConfiguration implements IValidator
 {
     private OrdererConfiguration() {}
 
@@ -72,7 +71,7 @@ public class OrdererConfiguration implements IValidater
     }
 
     @Data
-    class OrdererNode implements IValidater
+    class OrdererNode implements IValidator
     {
         private String domain;
         private String url;

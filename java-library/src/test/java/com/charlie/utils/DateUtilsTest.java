@@ -18,4 +18,10 @@ public class DateUtilsTest
         String s = DateUtils.formatStandardTemplate(new Date(date));
         System.out.println(s);
     }
+
+    @Test
+    public void formatDateAll()
+    {
+        System.out.println(DateUtils.formatDateAll(new Date()));
+    }
 }

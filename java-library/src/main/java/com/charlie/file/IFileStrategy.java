@@ -5,7 +5,7 @@
 package com.charlie.file;
 
 
-import com.charlie.service.IValidater;
+import com.charlie.service.IValidator;
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -42,7 +42,7 @@ public interface IFileStrategy
     UploadResponse upload(InputStream inputStream, String storePath, String newFileName, String key) throws IOException;
 
     @Data
-    class BatchFileUploadWrapper implements IValidater
+    class BatchFileUploadWrapper implements IValidator
     {
         private Integer uniqueKey;
         private List<InputStream> streams;

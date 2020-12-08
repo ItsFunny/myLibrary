@@ -151,10 +151,10 @@ public class DefaultFabricClientHandler extends AbstractFabricClient
         CompletableFuture<BlockEvent.TransactionEvent> future = null;
         if (userContext == null)
         {
-            future = channel.sendTransaction(successful);
+            future = channel.sendTransaction(successful,null);
         } else
         {
-            future = channel.sendTransaction(successful, userContext);
+            future = channel.sendTransaction(successful, userContext,null);
         }
         BlockEvent.TransactionEvent transactionEvent = future.thenApply(event ->
         {

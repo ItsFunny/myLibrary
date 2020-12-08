@@ -244,4 +244,55 @@ public class FileUtils
         return path;
     }
 
+    /**
+     *
+     * 描述:写入text到文件。如果文件存在，之前的内容将被替换。
+     *
+     * @param pathFile
+     * @param text
+     * @throws UnsupportedEncodingException
+     * @throws FileNotFoundException
+     * @time 2016年8月17日-下午3:42:07
+     */
+    public static void setFileText(String pathFile, String text)
+            throws FileNotFoundException, UnsupportedEncodingException {
+        PrintWriter writer = new PrintWriter(pathFile, "UTF-8");
+        writer.println(text);
+        writer.close();
+    }
+
+
+    /**
+     *
+     * 描述:将文件的内容作为String 读出
+     *
+     * @param pathFile
+     * @return
+     * @throws FileNotFoundException
+     * @throws UnsupportedEncodingException
+     * @time 2016年8月17日-下午3:40:41
+     */
+    public static String getFileText(String pathFile) throws FileNotFoundException, UnsupportedEncodingException {
+
+        InputStream is = new FileInputStream(pathFile);
+        String fileContext = "";
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is, "utf-8"));
+        String line;
+        try {
+            line = reader.readLine();
+            while (line != null) { // 如果 line 为空说明读完了
+                fileContext += line;
+                fileContext += '\n';
+                line = reader.readLine(); // 读取下一行
+            }
+            reader.close();
+            is.close();
+        } catch (IOException e) {
+            return "";
+        } // 读取第一行
+
+        return fileContext;
+    }
+
+
 }

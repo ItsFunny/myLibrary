@@ -5,7 +5,7 @@ import com.charlie.blockchain.constants.AlgorithmConstants;
 import com.charlie.blockchain.model.UserInfo;
 import com.charlie.blockchain.util.StringUtils;
 import com.charlie.exception.ConfigException;
-import com.charlie.service.IValidater;
+import com.charlie.service.IValidator;
 import com.charlie.utils.FileUtils;
 import lombok.Data;
 
@@ -22,7 +22,7 @@ import java.util.List;
  * @Date 创建时间：2020-10-20 22:57
  */
 @Data
-public class OrganizationConfiguration implements IValidater
+public class OrganizationConfiguration implements IValidator
 {
     private OrganizationConfiguration() {}
 
@@ -53,7 +53,7 @@ public class OrganizationConfiguration implements IValidater
 
 
     @Data
-    public static class OrganizationNode implements IValidater
+    public static class OrganizationNode implements IValidator
     {
         private String mspId;
         //        private boolean alpha;
@@ -180,7 +180,7 @@ public class OrganizationConfiguration implements IValidater
     }
 
     @Data
-    public static class OrganizationPeerNode implements IValidater
+    public static class OrganizationPeerNode implements IValidator
     {
         private String address;
         private byte type;
@@ -193,7 +193,7 @@ public class OrganizationConfiguration implements IValidater
     }
 
     @Data
-    public static class UserNode implements IValidater
+    public static class UserNode implements IValidator
     {
         //        private String keyFile;
 //        private String certFile;
@@ -245,7 +245,7 @@ public class OrganizationConfiguration implements IValidater
     }
 
     @Data
-    public static class Enrollment implements IValidater
+    public static class Enrollment implements IValidator
     {
         private String keyFile;
         private String certFile;

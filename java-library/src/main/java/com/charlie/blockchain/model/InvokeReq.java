@@ -1,7 +1,7 @@
 package com.charlie.blockchain.model;
 
 import com.charlie.blockchain.filter.IPeerFilter;
-import com.charlie.service.IValidater;
+import com.charlie.service.IValidator;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 import org.hyperledger.fabric.sdk.ChaincodeID;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * @Date 创建时间：2020-10-24 09:34
  */
 @Data
-public class InvokeReq implements IValidater
+public class InvokeReq implements IValidator
 {
     private String channelName;
     private String chainCodeName;

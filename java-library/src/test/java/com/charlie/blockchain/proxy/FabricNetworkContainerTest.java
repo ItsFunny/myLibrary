@@ -16,16 +16,16 @@ import java.util.concurrent.TimeUnit;
 
 public class FabricNetworkContainerTest
 {
-    private String channelName = "demochannel";
-    private String chaincodeName = "democc";
-    private String setFunc = "setvalue";
-    private String getFunc = "getvalue";
+    private String channelName = "ebidsun-alpha";
+    private String chaincodeName = "tt_example";
+    private String getFunc = "GetValue";
+    private String setFunc= "SetValue";
 
     @Test
     public void testCreateChannel() throws Exception
     {
 
-        SystemUtils.setEnviroment(ConfigConstants.CONFIG_BLOCKCHAIN_CONFIGURAITION, "/Users/joker/go/src/myLibrary/java-library/src/main/resources/config_47_103_samecc.json");
+        SystemUtils.setEnviroment(ConfigConstants.CONFIG_BLOCKCHAIN_CONFIGURAITION, "/Users/joker/go/src/myLibrary/java-library/src/test/java/com/charlie/blockchain/proxy/config.json");
 //        SystemUtils.setEnviroment(ConfigConstants.CONFIG_BLOCKCHAIN_CONFIGURAITION, "/Users/joker/go/src/myLibrary/java-library/src/main/resources/config_47_103_samecc.json");
         ConfigurationFactory.getInstance().slowInit();
         IFabricClientService fabricClientService = new DefaultFabricClientHandler();
@@ -45,12 +45,10 @@ public class FabricNetworkContainerTest
     @Test
     public void testQuery() throws Exception
     {
-        SystemUtils.setEnviroment(ConfigConstants.CONFIG_BLOCKCHAIN_CONFIGURAITION, "/Users/joker/company/go/src/github.com/hyperledger/fabric-demo/bidsun-fabric-benchmark/src/main/resources/config_47_103_samecc.json");
+        SystemUtils.setEnviroment(ConfigConstants.CONFIG_BLOCKCHAIN_CONFIGURAITION, "/Users/joker/go/src/myLibrary/java-library/src/test/java/com/charlie/blockchain/proxy/config.json");
         ConfigurationFactory.getInstance().slowInit();
         IFabricClientService fabricClientService = new DefaultFabricClientHandler();
-
         QueryResp queryResp = fabricClientService.queryBlockChain(buildQueryReq(), null);
-
         String s = new String(queryResp.getReturnBytes());
         System.out.println(s);
     }
@@ -59,18 +57,20 @@ public class FabricNetworkContainerTest
     {
         QueryReq req = new QueryReq();
         ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("key");
+        arrayList.add("kkk");
         req.setArgs(arrayList);
         req.setChainCodeName(chaincodeName);
         req.setChannelName(channelName);
         req.setFuncName(getFunc);
-        req.setPeerFilter((p) ->
-        {
-            if (p.getName().contains("org1"))
-            {
-                return false;
-            }
-            return true;
-        });
+//        req.setPeerFilter((p) ->
+//        {
+//            if (p.getName().contains("guangzhou"))
+//            {
+//                return false;
+//            }
+//            return true;
+//        });
         return req;
     }
 

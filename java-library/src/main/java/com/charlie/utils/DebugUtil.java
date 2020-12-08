@@ -3,6 +3,7 @@ package com.charlie.utils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
+import javax.crypto.MacSpi;
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
@@ -77,5 +78,27 @@ public class DebugUtil
             }
         }
         return sb.toString();
+    }
+
+    public static void infoPrint(String msg,Object obj)
+    {
+        StringBuilder sb=new StringBuilder();
+        sb.append("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< \n");
+        sb.append( "当前线程:" + Thread.currentThread().getId() + "," );
+        if (msg!=null){
+            sb.append(msg);
+        }
+        if (obj instanceof String){
+            sb.append(obj);
+        }else {
+            sb.append(JSONUtil.toFormattedJson(obj));
+        }
+        sb.append("\n");
+        sb.append(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        log.info(sb.toString());
+    }
+    public static void infoPrint(Object obj)
+    {
+        infoPrint(null,obj);
     }
 }

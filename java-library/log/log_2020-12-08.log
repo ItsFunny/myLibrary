@@ -1,0 +1,286 @@
+2020-12-08 18:39:29 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageCreatorImpl Method: com.charlie.crypt.impl.AbsCryptoMessageCreatorImpl.create(AbsCryptoMessageCreatorImpl.java:33) ]
+WARN:1. 获取到原始的数据,base64为:MTIz
+2020-12-08 18:39:41 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageCreatorImpl Method: com.charlie.crypt.impl.AbsCryptoMessageCreatorImpl.create(AbsCryptoMessageCreatorImpl.java:36) ]
+WARN:2. hash方法进行加密,hash函数为:MD5,结果为:MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=
+2020-12-08 18:40:45 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageCreatorImpl Method: com.charlie.crypt.impl.AbsCryptoMessageCreatorImpl.create(AbsCryptoMessageCreatorImpl.java:33) ]
+WARN:1. 获取到原始的数据,base64为:MTIz
+2020-12-08 18:40:46 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageCreatorImpl Method: com.charlie.crypt.impl.AbsCryptoMessageCreatorImpl.create(AbsCryptoMessageCreatorImpl.java:36) ]
+WARN:2. hash方法进行加密,hash函数为:MD5,结果为:MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=
+2020-12-08 18:42:36 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageCreatorImpl Method: com.charlie.crypt.impl.AbsCryptoMessageCreatorImpl.create(AbsCryptoMessageCreatorImpl.java:33) ]
+WARN:1. 获取到原始的数据,base64为:MTIz
+2020-12-08 18:42:37 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageCreatorImpl Method: com.charlie.crypt.impl.AbsCryptoMessageCreatorImpl.create(AbsCryptoMessageCreatorImpl.java:36) ]
+WARN:2. hash方法进行加密,hash函数为:MD5,结果为:MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=
+2020-12-08 18:42:40 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageCreatorImpl Method: com.charlie.crypt.impl.AbsCryptoMessageCreatorImpl.create(AbsCryptoMessageCreatorImpl.java:39) ]
+WARN:3. 对称加密,对originData进行对称加密,对称方法为:AES_CFB,返回的数据为:A35P
+2020-12-08 18:42:48 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageCreatorImpl Method: com.charlie.crypt.impl.AbsCryptoMessageCreatorImpl.create(AbsCryptoMessageCreatorImpl.java:43) ]
+WARN:4. 非对称加密,对对称加密后的数据进行非对称加密,非对称方法为:SM2_256,返回的数据为:{
+	"description":"description:S7Jio",
+	"encryptMethod":"SM2_256",
+	"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+	"envelopeData":"nVHbroro4WcN7p7CPibwRyJiqaC5Ic5iWguVI8ej0cIulhYz8Qerr+cJG7wcGfZtPxSzGOI+HiLHKExw1/ZimDFfgClmNi6UP+59mXBIDiQhLL/GEDv1RAVJAbpsi5t6bM+f",
+	"extension":"extension:S6RCf"
+}
+2020-12-08 18:42:59 下午 [Thread: main][ Class:com.charlie.utils.DebugUtil  Method: com.charlie.utils.DebugUtil.infoPrint(DebugUtil.java:98) ]
+INFO:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+当前线程:1,加密message为:{
+	"encryptMethod":"AES_CFB",
+	"envelopInfo":{
+		"description":"description:S7Jio",
+		"encryptMethod":"SM2_256",
+		"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+		"envelopeData":"nVHbroro4WcN7p7CPibwRyJiqaC5Ic5iWguVI8ej0cIulhYz8Qerr+cJG7wcGfZtPxSzGOI+HiLHKExw1/ZimDFfgClmNi6UP+59mXBIDiQhLL/GEDv1RAVJAbpsi5t6bM+f",
+		"extension":"extension:S6RCf"
+	},
+	"hashBeforeEncrypt":"MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=",
+	"hashMethod":"MD5"
+}
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-12-08 23:35:28 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:36) ]
+WARN:1. 获取到原始的数据,base64为:MTIz
+2020-12-08 23:35:28 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:39) ]
+WARN:2. hash方法进行加密,hash函数为:MD5,结果为:MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=
+2020-12-08 23:35:29 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:42) ]
+WARN:3. 对称加密,对originData进行对称加密,对称方法为:AES_CFB,返回的数据为:A35P
+2020-12-08 23:35:29 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:46) ]
+WARN:4. 非对称加密,对对称加密后的数据进行非对称加密,非对称方法为:SM2_256,返回的数据为:{
+	"description":"description:VrYE7",
+	"encryptMethod":"SM2_256",
+	"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+	"envelopeData":"5BhM9B77VAcWjwkPP7HSj7tI9CXBR7wIYfwSRZlAFrw6ZrDJbdYCAJFQwH/qGxYHHAD1/blvnRuL91WWC2aH4eRrCTwdxxtYFRPV8gPwX0fjYns17RPZVrAT+qQTfNf2190A",
+	"extension":"extension:t4XbU"
+}
+2020-12-08 23:35:29 下午 [Thread: main][ Class:com.charlie.utils.DebugUtil  Method: com.charlie.utils.DebugUtil.infoPrint(DebugUtil.java:98) ]
+INFO:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+当前线程:1,加密message为:{
+	"envelopInfo":{
+		"description":"description:VrYE7",
+		"encryptMethod":"SM2_256",
+		"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+		"envelopeData":"5BhM9B77VAcWjwkPP7HSj7tI9CXBR7wIYfwSRZlAFrw6ZrDJbdYCAJFQwH/qGxYHHAD1/blvnRuL91WWC2aH4eRrCTwdxxtYFRPV8gPwX0fjYns17RPZVrAT+qQTfNf2190A",
+		"extension":"extension:t4XbU"
+	},
+	"hashBeforeEncrypt":"MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=",
+	"hashMethod":"MD5",
+	"symmEncryptMethod":"AES_CFB"
+}
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-12-08 23:36:42 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:36) ]
+WARN:1. 获取到原始的数据,base64为:MTIz
+2020-12-08 23:36:42 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:39) ]
+WARN:2. hash方法进行加密,hash函数为:MD5,结果为:MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=
+2020-12-08 23:36:42 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:42) ]
+WARN:3. 对称加密,对originData进行对称加密,对称方法为:AES_CFB,返回的数据为:A35P
+2020-12-08 23:36:42 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:46) ]
+WARN:4. 非对称加密,对对称加密后的数据进行非对称加密,非对称方法为:SM2_256,返回的数据为:{
+	"description":"description:OKt9I",
+	"encryptMethod":"SM2_256",
+	"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+	"envelopeData":"tlVAS7yOCl4ve9BY1cGg882Jnr67hfjjp/L679//tCDS8duLk3VO/r9BbhoIBm8siJmRtK+DLABtT8fvog/IjaFqX8eGpun0LxNYjh4HVcDItbLg5kGrNHHZKvIf2bGiNyHy",
+	"extension":"extension:on0bq"
+}
+2020-12-08 23:36:42 下午 [Thread: main][ Class:com.charlie.utils.DebugUtil  Method: com.charlie.utils.DebugUtil.infoPrint(DebugUtil.java:98) ]
+INFO:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+当前线程:1,加密message为:{
+	"envelopInfo":{
+		"description":"description:OKt9I",
+		"encryptMethod":"SM2_256",
+		"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+		"envelopeData":"tlVAS7yOCl4ve9BY1cGg882Jnr67hfjjp/L679//tCDS8duLk3VO/r9BbhoIBm8siJmRtK+DLABtT8fvog/IjaFqX8eGpun0LxNYjh4HVcDItbLg5kGrNHHZKvIf2bGiNyHy",
+		"extension":"extension:on0bq"
+	},
+	"hashBeforeEncrypt":"MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=",
+	"hashMethod":"MD5",
+	"symmEncryptMethod":"AES_CFB"
+}
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-12-08 23:36:50 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsEnvelopeCreatorImpl Method: com.charlie.crypt.impl.AbsEnvelopeCreatorImpl.decrypt(AbsEnvelopeCreatorImpl.java:44) ]
+WARN:1. 非对称密钥解密,非对称方法为:SM2_256,信封数据为:{
+	"description":"description:OKt9I",
+	"encryptMethod":"SM2_256",
+	"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+	"envelopeData":"tlVAS7yOCl4ve9BY1cGg882Jnr67hfjjp/L679//tCDS8duLk3VO/r9BbhoIBm8siJmRtK+DLABtT8fvog/IjaFqX8eGpun0LxNYjh4HVcDItbLg5kGrNHHZKvIf2bGiNyHy",
+	"extension":"extension:on0bq"
+}
+2020-12-08 23:37:07 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:36) ]
+WARN:1. 获取到原始的数据,base64为:MTIz
+2020-12-08 23:37:07 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:39) ]
+WARN:2. hash方法进行加密,hash函数为:MD5,结果为:MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=
+2020-12-08 23:37:07 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:42) ]
+WARN:3. 对称加密,对originData进行对称加密,对称方法为:AES_CFB,返回的数据为:A35P
+2020-12-08 23:37:07 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:46) ]
+WARN:4. 非对称加密,对对称加密后的数据进行非对称加密,非对称方法为:SM2_256,返回的数据为:{
+	"description":"description:OIalD",
+	"encryptMethod":"SM2_256",
+	"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+	"envelopeData":"B5HiLRaLpCFIyzWmwvzhepm7DAICDz+/7UW590xuzP1/GTQldErIMUAuWTCbLVMMVfhLPCtUtz2+NUrKYHcDWPpJxPulGBH8ieHT9dpugJ2jrWEEmfeqPg/FT/jBkdshcKYY",
+	"extension":"extension:YxFuV"
+}
+2020-12-08 23:37:07 下午 [Thread: main][ Class:com.charlie.utils.DebugUtil  Method: com.charlie.utils.DebugUtil.infoPrint(DebugUtil.java:98) ]
+INFO:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+当前线程:1,加密message为:{
+	"envelopInfo":{
+		"description":"description:OIalD",
+		"encryptMethod":"SM2_256",
+		"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+		"envelopeData":"B5HiLRaLpCFIyzWmwvzhepm7DAICDz+/7UW590xuzP1/GTQldErIMUAuWTCbLVMMVfhLPCtUtz2+NUrKYHcDWPpJxPulGBH8ieHT9dpugJ2jrWEEmfeqPg/FT/jBkdshcKYY",
+		"extension":"extension:YxFuV"
+	},
+	"hashBeforeEncrypt":"MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=",
+	"hashMethod":"MD5",
+	"symmEncryptMethod":"AES_CFB"
+}
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-12-08 23:37:11 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsEnvelopeCreatorImpl Method: com.charlie.crypt.impl.AbsEnvelopeCreatorImpl.decrypt(AbsEnvelopeCreatorImpl.java:44) ]
+WARN:1. 非对称密钥解密,非对称方法为:SM2_256,信封数据为:{
+	"description":"description:OIalD",
+	"encryptMethod":"SM2_256",
+	"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+	"envelopeData":"B5HiLRaLpCFIyzWmwvzhepm7DAICDz+/7UW590xuzP1/GTQldErIMUAuWTCbLVMMVfhLPCtUtz2+NUrKYHcDWPpJxPulGBH8ieHT9dpugJ2jrWEEmfeqPg/FT/jBkdshcKYY",
+	"extension":"extension:YxFuV"
+}
+2020-12-08 23:38:38 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:36) ]
+WARN:1. 获取到原始的数据,base64为:MTIz
+2020-12-08 23:38:38 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:39) ]
+WARN:2. hash方法进行加密,hash函数为:MD5,结果为:MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=
+2020-12-08 23:38:38 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:42) ]
+WARN:3. 对称加密,对originData进行对称加密,对称方法为:AES_CFB,返回的数据为:A35P
+2020-12-08 23:38:39 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:46) ]
+WARN:4. 非对称加密,对对称加密后的数据进行非对称加密,非对称方法为:SM2_256,返回的数据为:{
+	"description":"description:DpINP",
+	"encryptMethod":"SM2_256",
+	"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+	"envelopeData":"PIiT62JSLrB/eGZLIp0tf+gVF+LN6JGd4onDeD7CTjzJmLFJWNbwtpkN746mUEzc0k9DPYwaLIPOKShvur3F1MGZdvJzCKENW0maYbyhMUSbHsTYasnD4TroLKvkysBviYaX",
+	"extension":"extension:yHLkt"
+}
+2020-12-08 23:38:39 下午 [Thread: main][ Class:com.charlie.utils.DebugUtil  Method: com.charlie.utils.DebugUtil.infoPrint(DebugUtil.java:98) ]
+INFO:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+当前线程:1,加密message为:{
+	"envelopInfo":{
+		"description":"description:DpINP",
+		"encryptMethod":"SM2_256",
+		"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+		"envelopeData":"PIiT62JSLrB/eGZLIp0tf+gVF+LN6JGd4onDeD7CTjzJmLFJWNbwtpkN746mUEzc0k9DPYwaLIPOKShvur3F1MGZdvJzCKENW0maYbyhMUSbHsTYasnD4TroLKvkysBviYaX",
+		"extension":"extension:yHLkt"
+	},
+	"hashBeforeEncrypt":"MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=",
+	"hashMethod":"MD5",
+	"symmEncryptMethod":"AES_CFB"
+}
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-12-08 23:38:41 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsEnvelopeCreatorImpl Method: com.charlie.crypt.impl.AbsEnvelopeCreatorImpl.decrypt(AbsEnvelopeCreatorImpl.java:44) ]
+WARN:1. 非对称密钥解密,非对称方法为:SM2_256,信封数据为:{
+	"description":"description:DpINP",
+	"encryptMethod":"SM2_256",
+	"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+	"envelopeData":"PIiT62JSLrB/eGZLIp0tf+gVF+LN6JGd4onDeD7CTjzJmLFJWNbwtpkN746mUEzc0k9DPYwaLIPOKShvur3F1MGZdvJzCKENW0maYbyhMUSbHsTYasnD4TroLKvkysBviYaX",
+	"extension":"extension:yHLkt"
+}
+2020-12-08 23:38:55 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsEnvelopeCreatorImpl Method: com.charlie.crypt.impl.AbsEnvelopeCreatorImpl.decrypt(AbsEnvelopeCreatorImpl.java:47) ]
+WARN:2. 非对称解密获取得到的对称加密后的数据为:A35P
+2020-12-08 23:38:59 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsEnvelopeCreatorImpl Method: com.charlie.crypt.impl.AbsEnvelopeCreatorImpl.decrypt(AbsEnvelopeCreatorImpl.java:55) ]
+WARN:信封数据为:{
+	"certAlgorithm":"SM2_256",
+	"description":"description:DpINP",
+	"extension":"extension:yHLkt",
+	"originData":"A35P"
+}
+2020-12-08 23:39:23 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.decrypt(AbsCryptoMessageHandlerImpl.java:65) ]
+WARN: 对称密钥解内部数据,最初的数据为:MTIz
+2020-12-08 23:39:47 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:36) ]
+WARN:1. 获取到原始的数据,base64为:MTIz
+2020-12-08 23:39:47 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:39) ]
+WARN:2. hash方法进行加密,hash函数为:MD5,结果为:MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=
+2020-12-08 23:39:47 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:42) ]
+WARN:3. 对称加密,对originData进行对称加密,对称方法为:AES_CFB,返回的数据为:A35P
+2020-12-08 23:39:48 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:46) ]
+WARN:4. 非对称加密,对对称加密后的数据进行非对称加密,非对称方法为:SM2_256,返回的数据为:{
+	"description":"description:BOjl3",
+	"encryptMethod":"SM2_256",
+	"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+	"envelopeData":"3dP7uZl0ltP8wNdRF4ffAQpzTWAvgd75LzOInPz5S/hakfuQm77eJO+BSsQuXEdV/VrwAeS4Za6i3r7rSjdMqLOOPA1Mw071jksndNeLChIAAWBRmL1NNx45l0HmsRLuMsjW",
+	"extension":"extension:rdR8i"
+}
+2020-12-08 23:39:48 下午 [Thread: main][ Class:com.charlie.utils.DebugUtil  Method: com.charlie.utils.DebugUtil.infoPrint(DebugUtil.java:98) ]
+INFO:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+当前线程:1,加密message为:{
+	"envelopInfo":{
+		"description":"description:BOjl3",
+		"encryptMethod":"SM2_256",
+		"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+		"envelopeData":"3dP7uZl0ltP8wNdRF4ffAQpzTWAvgd75LzOInPz5S/hakfuQm77eJO+BSsQuXEdV/VrwAeS4Za6i3r7rSjdMqLOOPA1Mw071jksndNeLChIAAWBRmL1NNx45l0HmsRLuMsjW",
+		"extension":"extension:rdR8i"
+	},
+	"hashBeforeEncrypt":"MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=",
+	"hashMethod":"MD5",
+	"symmEncryptMethod":"AES_CFB"
+}
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-12-08 23:39:54 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsEnvelopeCreatorImpl Method: com.charlie.crypt.impl.AbsEnvelopeCreatorImpl.decrypt(AbsEnvelopeCreatorImpl.java:44) ]
+WARN:1. 非对称密钥解密,非对称方法为:SM2_256,信封数据为:{
+	"description":"description:BOjl3",
+	"encryptMethod":"SM2_256",
+	"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+	"envelopeData":"3dP7uZl0ltP8wNdRF4ffAQpzTWAvgd75LzOInPz5S/hakfuQm77eJO+BSsQuXEdV/VrwAeS4Za6i3r7rSjdMqLOOPA1Mw071jksndNeLChIAAWBRmL1NNx45l0HmsRLuMsjW",
+	"extension":"extension:rdR8i"
+}
+2020-12-08 23:39:57 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsEnvelopeCreatorImpl Method: com.charlie.crypt.impl.AbsEnvelopeCreatorImpl.decrypt(AbsEnvelopeCreatorImpl.java:47) ]
+WARN:2. 非对称解密获取得到的对称加密后的数据为:A35P
+2020-12-08 23:39:57 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsEnvelopeCreatorImpl Method: com.charlie.crypt.impl.AbsEnvelopeCreatorImpl.decrypt(AbsEnvelopeCreatorImpl.java:55) ]
+WARN:信封数据为:{
+	"certAlgorithm":"SM2_256",
+	"description":"description:BOjl3",
+	"extension":"extension:rdR8i",
+	"originData":"A35P"
+}
+2020-12-08 23:40:00 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.decrypt(AbsCryptoMessageHandlerImpl.java:65) ]
+WARN: 对称密钥解内部数据,最初的数据为:123
+2020-12-08 23:40:17 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:36) ]
+WARN:1. 获取到原始的数据,base64为:MTIz
+2020-12-08 23:40:17 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:39) ]
+WARN:2. hash方法进行加密,hash函数为:MD5,结果为:MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=
+2020-12-08 23:40:17 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:42) ]
+WARN:3. 对称加密,对originData进行对称加密,对称方法为:AES_CFB,返回的数据为:A35P
+2020-12-08 23:40:18 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.create(AbsCryptoMessageHandlerImpl.java:46) ]
+WARN:4. 非对称加密,对对称加密后的数据进行非对称加密,非对称方法为:SM2_256,返回的数据为:{
+	"description":"description:hWoLA",
+	"encryptMethod":"SM2_256",
+	"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+	"envelopeData":"Iqp+G5gCmaEro3XxtmXWj9OWRMWLEwWRasiXYigqBZkYrcUHiNe7qPEJLT2QxuY1lOAz15pgdHgiJQvXiG2NsqgUUw+E8LgWhQUJ6iu+0oyiigVfGYUv3QnRiWxd/VDhvjQt",
+	"extension":"extension:DGH9M"
+}
+2020-12-08 23:40:18 下午 [Thread: main][ Class:com.charlie.utils.DebugUtil  Method: com.charlie.utils.DebugUtil.infoPrint(DebugUtil.java:98) ]
+INFO:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+当前线程:1,加密message为:{
+	"envelopInfo":{
+		"description":"description:hWoLA",
+		"encryptMethod":"SM2_256",
+		"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+		"envelopeData":"Iqp+G5gCmaEro3XxtmXWj9OWRMWLEwWRasiXYigqBZkYrcUHiNe7qPEJLT2QxuY1lOAz15pgdHgiJQvXiG2NsqgUUw+E8LgWhQUJ6iu+0oyiigVfGYUv3QnRiWxd/VDhvjQt",
+		"extension":"extension:DGH9M"
+	},
+	"hashBeforeEncrypt":"MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=",
+	"hashMethod":"MD5",
+	"symmEncryptMethod":"AES_CFB"
+}
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2020-12-08 23:40:19 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsEnvelopeCreatorImpl Method: com.charlie.crypt.impl.AbsEnvelopeCreatorImpl.decrypt(AbsEnvelopeCreatorImpl.java:44) ]
+WARN:1. 非对称密钥解密,非对称方法为:SM2_256,信封数据为:{
+	"description":"description:hWoLA",
+	"encryptMethod":"SM2_256",
+	"encryptPublicKey":"Mgrmbof+ChEn2x0GX48fPq84Wm7E+kaqvdlc+cg0AShGS6GOXg/ALMngE7T0/CgM5l959LZlfex3QyNNFucbGw==",
+	"envelopeData":"Iqp+G5gCmaEro3XxtmXWj9OWRMWLEwWRasiXYigqBZkYrcUHiNe7qPEJLT2QxuY1lOAz15pgdHgiJQvXiG2NsqgUUw+E8LgWhQUJ6iu+0oyiigVfGYUv3QnRiWxd/VDhvjQt",
+	"extension":"extension:DGH9M"
+}
+2020-12-08 23:40:21 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsEnvelopeCreatorImpl Method: com.charlie.crypt.impl.AbsEnvelopeCreatorImpl.decrypt(AbsEnvelopeCreatorImpl.java:47) ]
+WARN:2. 非对称解密获取得到的对称加密后的数据为:A35P
+2020-12-08 23:40:21 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsEnvelopeCreatorImpl Method: com.charlie.crypt.impl.AbsEnvelopeCreatorImpl.decrypt(AbsEnvelopeCreatorImpl.java:55) ]
+WARN:信封数据为:{
+	"certAlgorithm":"SM2_256",
+	"description":"description:hWoLA",
+	"extension":"extension:DGH9M",
+	"originData":"A35P"
+}
+2020-12-08 23:40:21 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.decrypt(AbsCryptoMessageHandlerImpl.java:65) ]
+WARN: 对称密钥解内部数据,最初的数据为:123
+2020-12-08 23:40:25 下午 [Thread: main][ Class:com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl Method: com.charlie.crypt.impl.AbsCryptoMessageHandlerImpl.decrypt(AbsCryptoMessageHandlerImpl.java:69) ]
+WARN: hash算法校验数据是否一致,校验后的hash码为:MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=,之前的hash码为:MjAyY2I5NjJhYzU5MDc1Yjk2NGIwNzE1MmQyMzRiNzA=,是否一致:true

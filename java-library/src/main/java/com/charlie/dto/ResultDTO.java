@@ -74,4 +74,22 @@ public class ResultDTO<T> implements Serializable
         return success(data, "success");
     }
 
+
+    public static <T> ResultDTO<T> sucess(T data, String msg) {
+        ResultDTO<T> ResultDTO = new ResultDTO();
+        ResultDTO.setCode(RestAPIStatus.SUCESS.ordinal());
+        ResultDTO.setData(data);
+        ResultDTO.setMsg(msg);
+        return ResultDTO;
+    }
+
+
+
+    public static <T> ResultDTO<T> fail(T data, String msg) {
+        ResultDTO<T> ResultDTO = new ResultDTO();
+        ResultDTO.setData(data);
+        ResultDTO.setCode(RestAPIStatus.FAIL.ordinal());
+        ResultDTO.setMsg(msg);
+        return ResultDTO;
+    }
 }

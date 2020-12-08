@@ -4,18 +4,16 @@ import com.charlie.base.AbstractInitOnce;
 import com.charlie.blockchain.constants.AlgorithmConstants;
 import com.charlie.blockchain.model.UserInfo;
 import com.charlie.exception.ConfigException;
-import com.charlie.service.IValidater;
+import com.charlie.service.IValidator;
 import com.charlie.utils.FileUtils;
 import lombok.Data;
 import lombok.extern.java.Log;
 import org.apache.commons.lang3.StringUtils;
+import org.hyperledger.fabric.config.FabricNetworkConfig;
 import org.hyperledger.fabric.sdk.*;
-import org.hyperledger.fabric.sdk.config.FabricNetworkConfig;
-import org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.CollectionUtils;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -31,7 +29,7 @@ import java.util.stream.Collectors;
 
 @Data
 @Log
-public class BlockChainConfiguration extends AbstractInitOnce implements IValidater
+public class BlockChainConfiguration extends AbstractInitOnce implements IValidator
 {
     // 是否需要deploy 区块链网络 ,true的话,部署整个网络,否则只是初始化channel等信息
     private boolean deploy;
@@ -117,7 +115,10 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
         }
         this.channelConfiguration.valid();
         this.peerConfiguration.valid();
-        this.chaincodeConfiguration.valid();
+        if (null != this.chaincodeConfiguration)
+        {
+            this.chaincodeConfiguration.valid();
+        }
     }
 
     public boolean containsOrderers(List<String> orderers)
@@ -175,13 +176,16 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
         }
 
         ChainCodeConfiguration chaincodeConfiguration = this.getChaincodeConfiguration();
-        List<ChainCodeConfiguration.ChainCodeNode> chaincodes = chaincodeConfiguration.getChainCodes();
-        Map<String, ChainCodeConfiguration> collect = chaincodes.stream().collect(Collectors.toMap(c -> c.getChainCodeId(), chainCodeNode -> chaincodeConfiguration));
-        for (String c : cs)
+        if (chaincodeConfiguration != null)
         {
-            if (!collect.containsKey(c))
+            List<ChainCodeConfiguration.ChainCodeNode> chaincodes = chaincodeConfiguration.getChainCodes();
+            Map<String, ChainCodeConfiguration> collect = chaincodes.stream().collect(Collectors.toMap(c -> c.getChainCodeId(), chainCodeNode -> chaincodeConfiguration));
+            for (String c : cs)
             {
-                return false;
+                if (!collect.containsKey(c))
+                {
+                    return false;
+                }
             }
         }
         return true;
@@ -290,7 +294,7 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
         return result;
     }
 
-    public List<Orderer> getChannelAllOrderers(String cid,HFClient client)
+    public List<Orderer> getChannelAllOrderers(String cid, HFClient client)
     {
         List<OrdererConfiguration.OrdererChannelBO> result = new ArrayList<>();
         List<ChannelConfiguration.ChannelNode> channels = this.channelConfiguration.getChannels();
@@ -438,17 +442,24 @@ public class BlockChainConfiguration extends AbstractInitOnce implements IValida
                 continue;
             }
             List<ChannelConfiguration.ChannelPeerInfo> peers = channel.getPeers();
+            Map<String, ChannelConfiguration.ChannelPeerInfo> collect = peers.stream().collect(Collectors.toMap(m -> m.getDomain(), m ->
+                    m));
             List<PeerConfiguration.PeerNode> peers1 = this.peerConfiguration.getPeers();
             for (PeerConfiguration.PeerNode peerNode : peers1)
             {
-                if (peers.contains(peerNode.getDomain()))
+                ChannelConfiguration.ChannelPeerInfo info = collect.get(peerNode.getDomain());
+                if (info != null)
                 {
                     PeerConfiguration.PeerChannelBO bo = new PeerConfiguration.PeerChannelBO();
                     BeanUtils.copyProperties(peerNode, bo);
-                    BeanUtils.copyProperties(peerNode, bo);
+                    BeanUtils.copyProperties(info, bo);
                     result.add(bo);
                 }
             }
+        }
+        if (CollectionUtils.isEmpty(result))
+        {
+            throw new ConfigException("channel中的peer不可为空");
         }
         return result;
 //
