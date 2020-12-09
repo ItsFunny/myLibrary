@@ -15,14 +15,15 @@ public class EnvelopBO
     private String envelopeIdentifier;
     private String extension;
     private String description;
-    private EnumCertAlgorithm certAlgorithm;
+    // 非对称加密方法
+    private EnumAsymmetricAlgorithm certAlgorithm;
 
-    public EnumCertAlgorithm getCertAlgorithm()
+    public EnumAsymmetricAlgorithm getCertAlgorithm()
     {
         return certAlgorithm;
     }
 
-    public void setCertAlgorithm(EnumCertAlgorithm certAlgorithm)
+    public void setCertAlgorithm(EnumAsymmetricAlgorithm certAlgorithm)
     {
         this.certAlgorithm = certAlgorithm;
     }

@@ -22,7 +22,7 @@ public class CryptoMessageContainerTest
     public EnvelopBO newEnvelope(byte[] originData){
         EnvelopBO envelopBO=new EnvelopBO();
         envelopBO.setOriginData(originData);
-        envelopBO.setCertAlgorithm(EnumCertAlgorithm.SM2_256);
+        envelopBO.setCertAlgorithm(EnumAsymmetricAlgorithm.SM2_256);
         envelopBO.setDescription("description:"+ RandomUtils.randomString(5));
         envelopBO.setExtension("extension:"+RandomUtils.randomString(5));
         return envelopBO;

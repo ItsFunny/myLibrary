@@ -6,10 +6,9 @@ package com.charlie.crypt;
  * @Description
  * @Detail
  * @Attention:
- * @Date 创建时间：2020-12-08 08:49
+ * @Date 创建时间：2020-12-09 09:36
  */
-public class CryptoMessageUtil
+public interface IEnvelopeIdentity
 {
-
 
 }

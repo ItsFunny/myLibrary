@@ -8,7 +8,7 @@ public class Envelope  {
     // 加密信封信息
     byte[] envelopeData;
     // 创建加密信封的加密方法,既非对称加解密
-    EnumCertAlgorithm encryptMethod;
+    EnumAsymmetricAlgorithm encryptMethod;
     // 生成加密信封使用时用到的加密公钥(方便用户找到匹配的私钥进行进行解密)(可选，根据实际业务)
     String encryptPublicKey;
     // 信封标识符 (可选,根据实际业务需要设置, 保函业务需要)
@@ -22,13 +22,13 @@ public class Envelope  {
     public Envelope() {
     }
 
-    public Envelope(byte[] envelopeData, EnumCertAlgorithm encryptMethod, String encryptPublicKey) {
+    public Envelope(byte[] envelopeData, EnumAsymmetricAlgorithm encryptMethod, String encryptPublicKey) {
         setEnvelopeData(envelopeData);
         setEncryptMethod(encryptMethod);
         setEncryptPublicKey(encryptPublicKey);
     }
 
-    public Envelope(byte[] envelopeData, EnumCertAlgorithm encryptMethod, String encryptPublicKey, String envelopeIdentifier, String extension,
+    public Envelope(byte[] envelopeData, EnumAsymmetricAlgorithm encryptMethod, String encryptPublicKey, String envelopeIdentifier, String extension,
                       String description) {
         setEnvelopeData(envelopeData);
         setEncryptMethod(encryptMethod);
@@ -49,11 +49,11 @@ public class Envelope  {
         this.envelopeData = envelopeData;
     }
 
-    public EnumCertAlgorithm getEncryptMethod() {
+    public EnumAsymmetricAlgorithm getEncryptMethod() {
         return encryptMethod;
     }
 
-    public void setEncryptMethod(EnumCertAlgorithm encryptMethod) {
+    public void setEncryptMethod(EnumAsymmetricAlgorithm encryptMethod) {
         if (encryptMethod == null) {
             throw new RuntimeException("Required value [encryptMethod] should not be set to null.");
         }

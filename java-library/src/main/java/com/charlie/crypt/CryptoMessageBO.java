@@ -1,6 +1,6 @@
 package com.charlie.crypt;
 
-import java.util.List;
+import com.charlie.crypt.opts.IHashOpts;
 
 /**
  * @author Charlie
@@ -13,10 +13,17 @@ import java.util.List;
 public class CryptoMessageBO
 {
     String platformId;
+
+    IHashOpts hashOpts;
+
+
+
+
     // 对加密前密文hash的hash方法
     EnumHashMethod hashMethod;
-    // 对密文信息的加密方法
+    // 对密文信息的加密方法,对称加密
     EnumSymmetryEncryptionType symmEncryptMethod;
+
 
 
     private EnvelopBO envelope;
