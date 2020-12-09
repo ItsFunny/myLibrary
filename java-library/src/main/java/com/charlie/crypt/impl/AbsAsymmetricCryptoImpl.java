@@ -1,6 +1,7 @@
 package com.charlie.crypt.impl;
 
 import com.charlie.crypt.EnumAsymmetricAlgorithm;
+import com.charlie.crypt.EnumBaseType;
 import com.charlie.crypt.IAsymmetricCrypto;
 import com.charlie.crypt.IAsymmetricCryptoChain;
 import com.charlie.crypt.opts.IAsymmetricOpts;
@@ -18,7 +19,7 @@ import java.io.Serializable;
  * @Attention:
  * @Date 创建时间：2020-12-08 09:47
  */
-public abstract class AbsAsymmetricCryptoImpl extends BaseTemplatePatternV3<Serializable> implements IAsymmetricCryptoChain
+public abstract class AbsAsymmetricCryptoImpl extends BaseTemplatePatternV3<EnumBaseType> implements IAsymmetricCryptoChain
 {
     protected String pubKey;
     protected String prvKey;
@@ -86,7 +87,7 @@ public abstract class AbsAsymmetricCryptoImpl extends BaseTemplatePatternV3<Seri
     }
 
     @Override
-    public String getPublicKey(Serializable serializable)
+    public String getPublicKey(EnumBaseType serializable)
     {
         if (this.validIsMine(serializable))
         {

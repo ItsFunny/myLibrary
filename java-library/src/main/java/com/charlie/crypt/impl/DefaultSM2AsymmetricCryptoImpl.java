@@ -2,12 +2,11 @@ package com.charlie.crypt.impl;
 
 import com.charlie.constants.PemConstant;
 import com.charlie.crypt.EnumAsymmetricAlgorithm;
+import com.charlie.crypt.EnumBaseType;
 import com.charlie.exception.EncryptException;
 import com.charlie.model.CertInfo;
 import com.charlie.utils.Base64Utils;
 import com.charlie.utils.GMUtil;
-
-import java.io.Serializable;
 
 /**
  * @author Charlie
@@ -61,8 +60,8 @@ public class DefaultSM2AsymmetricCryptoImpl extends  AbsAsymmetricCryptoImpl
     }
 
     @Override
-    public Boolean validIsMine(Serializable type)
+    public Boolean validIsMine(EnumBaseType type)
     {
-        return EnumAsymmetricAlgorithm.SM2_256.equals(type);
+        return EnumBaseType.ENUM_ASYMMETRIC_SM2.equals(type);
     }
 }

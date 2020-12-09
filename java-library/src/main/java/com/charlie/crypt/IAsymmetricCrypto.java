@@ -17,7 +17,7 @@ import java.io.Serializable;
  */
 public interface IAsymmetricCrypto extends IInitOnce
 {
-    String getPublicKey(Serializable serializable);
+    String getPublicKey(EnumBaseType serializable);
 
     byte[] asymmEncrypt(IAsymmetricOpts asymmetricOpts, byte[] origin) throws EncryptException;
     byte[] asymmDecrypt(IAsymmetricOpts asymmetricCrypto,byte[] encrypt) throws DecoderException;

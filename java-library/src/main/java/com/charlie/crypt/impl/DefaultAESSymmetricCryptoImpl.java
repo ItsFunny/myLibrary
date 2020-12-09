@@ -19,7 +19,6 @@ public class DefaultAESSymmetricCryptoImpl extends AbsSymmetricCryptoImpl
 {
     private DefaultAESSymmetricCryptoImpl()
     {
-
     }
 
     public static DefaultAESSymmetricCryptoImpl newInstance()
@@ -51,7 +50,6 @@ public class DefaultAESSymmetricCryptoImpl extends AbsSymmetricCryptoImpl
     @Override
     public byte[] decrypt(EnumSymmetryEncryptionType type, byte[] encrypt) throws DecryptException
     {
-
         try
         {
             switch (type)

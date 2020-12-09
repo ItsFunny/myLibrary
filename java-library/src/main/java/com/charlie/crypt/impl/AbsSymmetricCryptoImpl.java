@@ -1,14 +1,13 @@
 package com.charlie.crypt.impl;
 
-import com.charlie.crypt.*;
+import com.charlie.crypt.EnumBaseType;
+import com.charlie.crypt.EnumSymmetryEncryptionType;
+import com.charlie.crypt.ISymmetricCryptoChain;
 import com.charlie.crypt.opts.ISymmetricOpts;
 import com.charlie.exception.DecryptException;
 import com.charlie.exception.EncryptException;
 import com.charlie.template.BaseTemplatePatternV3;
-import com.charlie.utils.AesCFBUtil;
 import io.netty.handler.codec.DecoderException;
-
-import java.io.Serializable;
 
 /**
  * @author Charlie
