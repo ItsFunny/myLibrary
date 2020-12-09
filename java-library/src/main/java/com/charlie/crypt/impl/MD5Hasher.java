@@ -1,5 +1,6 @@
 package com.charlie.crypt.impl;
 
+import com.charlie.crypt.EnumBaseType;
 import com.charlie.crypt.EnumHashMethod;
 import com.charlie.utils.MD5Utils;
 
@@ -16,7 +17,7 @@ import java.io.Serializable;
 public class MD5Hasher extends AbsHasher
 {
     @Override
-    protected byte[] hash(byte[] originData)
+    protected byte[] hash(EnumHashMethod hashMethod,byte[] originData)
     {
         return MD5Utils.getMD5(originData).getBytes();
     }
@@ -27,8 +28,8 @@ public class MD5Hasher extends AbsHasher
     }
 
     @Override
-    public Boolean validIsMine(Serializable type)
+    public Boolean validIsMine(EnumBaseType type)
     {
-        return EnumHashMethod.MD5.equals(type);
+        return EnumBaseType.ENUM_HASH_MD5.equals(type);
     }
 }

@@ -1,6 +1,7 @@
 package com.charlie.crypt;
 
 import com.charlie.base.IInitOnce;
+import com.charlie.crypt.opts.IHashOpts;
 import com.charlie.exception.HashException;
 
 import java.io.Serializable;
@@ -15,5 +16,5 @@ import java.io.Serializable;
  */
 public interface IHash extends IInitOnce
 {
-    byte[] hash(Serializable serializable,byte[] originData)throws HashException;
+    byte[] hash(IHashOpts hashOpts, byte[] originData)throws HashException;
 }

@@ -1,7 +1,10 @@
 package com.charlie.crypt.impl;
 
+import com.charlie.crypt.EnumBaseType;
+import com.charlie.crypt.EnumHashMethod;
 import com.charlie.crypt.IHash;
 import com.charlie.crypt.IHashChain;
+import com.charlie.crypt.opts.IHashOpts;
 import com.charlie.exception.HashException;
 import com.charlie.template.BaseTemplatePatternV3;
 import org.apache.commons.collections.map.HashedMap;
@@ -16,27 +19,27 @@ import java.io.Serializable;
  * @Attention:
  * @Date 创建时间：2020-12-08 10:21
  */
-public abstract class AbsHasher extends BaseTemplatePatternV3<Serializable> implements IHashChain
+public abstract class AbsHasher extends BaseTemplatePatternV3<EnumBaseType> implements IHashChain
 {
     private boolean inited;
     protected IHashChain next;
 
     @Override
-    public byte[] hash(Serializable serializable, byte[] originData) throws HashException
+    public byte[] hash(IHashOpts hashOpts, byte[] originData) throws HashException
     {
-        if (this.validIsMine(serializable))
+        if (this.validIsMine(hashOpts.getBaseType()))
         {
-            return this.hash(originData);
+            return this.hash(hashOpts.getDetailHashOpts(),originData);
         } else if (null != this.next)
         {
-            return this.next.hash(serializable, originData);
+            return this.next.hash(hashOpts, originData);
         } else
         {
             throw new HashException("找不到匹配的hash消费者");
         }
     }
 
-    protected abstract byte[] hash(byte[] originData);
+    protected abstract byte[] hash(EnumHashMethod hashMethod, byte[] originData);
 
     @Override
     public void initOnce() throws Exception
