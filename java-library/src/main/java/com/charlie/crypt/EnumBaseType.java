@@ -14,7 +14,7 @@ public enum EnumBaseType
     ENUM_ASYMMETRIC_SM2(2,"sm2非对称加密"),
     ENUM_ASYMMETRIC_RSA(3,"rsa非对称加密"),
 
-    ENUM_SYMMETRIC_SHA(10,"sha对称加密"),
+    ENUM_SYMMETRIC_AES(10,"AES对称加密"),
     ENUM_SYMMETRIC_SM3(11,"SM3对称几秒"),
 
 

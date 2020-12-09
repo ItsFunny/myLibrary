@@ -17,7 +17,7 @@ import java.io.Serializable;
  * @Attention:
  * @Date 创建时间：2020-12-08 10:01
  */
-public class DefaultSM2AsymmetricCryptoImpl extends  AsymmetricCryptoImpl
+public class DefaultSM2AsymmetricCryptoImpl extends  AbsAsymmetricCryptoImpl
 {
     public static DefaultSM2AsymmetricCryptoImpl newInstance(){
         DefaultSM2AsymmetricCryptoImpl defaultSM2AsymmetricCrypto=new DefaultSM2AsymmetricCryptoImpl();
@@ -49,13 +49,13 @@ public class DefaultSM2AsymmetricCryptoImpl extends  AsymmetricCryptoImpl
     }
 
     @Override
-    protected byte[] encrypt(byte[] origin) throws EncryptException
+    protected byte[] encrypt(EnumAsymmetricAlgorithm algorithm,byte[] origin) throws EncryptException
     {
         return GMUtil.encrypt(this.pubKeyBytes,origin);
     }
 
     @Override
-    protected byte[] decrypt(byte[] encrypt) throws EncryptException
+    protected byte[] decrypt(EnumAsymmetricAlgorithm algorithm,byte[] encrypt) throws EncryptException
     {
         return GMUtil.decrypt(this.prvKeyBytes,encrypt);
     }

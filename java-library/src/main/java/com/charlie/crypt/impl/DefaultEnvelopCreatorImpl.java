@@ -8,7 +8,7 @@ package com.charlie.crypt.impl;
  * @Attention:
  * @Date 创建时间：2020-12-08 11:03
  */
-public class DefaultEnvelopCreatorImpl extends  AbsEnvelopeCreatorImpl
+public class DefaultEnvelopCreatorImpl extends  AbsEnvelopeHandlerImpl
 {
     private DefaultEnvelopCreatorImpl(){
 

@@ -18,9 +18,9 @@ import org.slf4j.LoggerFactory;
  * @Attention:
  * @Date 创建时间：2020-12-08 10:04
  */
-public abstract  class AbsEnvelopeCreatorImpl implements IEnvelopeHandler
+public abstract  class AbsEnvelopeHandlerImpl implements IEnvelopeHandler
 {
-    private Logger logger= LoggerFactory.getLogger(AbsEnvelopeCreatorImpl.class);
+    private Logger logger= LoggerFactory.getLogger(AbsEnvelopeHandlerImpl.class);
     protected  boolean inited;
     protected IAsymmetricCrypto asymmetricCrypto;
 

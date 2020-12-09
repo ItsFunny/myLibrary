@@ -1,6 +1,7 @@
 package com.charlie.crypt.impl;
 
 import com.charlie.crypt.IHash;
+import com.charlie.crypt.IHashChain;
 import com.charlie.exception.HashException;
 import com.charlie.template.BaseTemplatePatternV3;
 import org.apache.commons.collections.map.HashedMap;
@@ -15,10 +16,10 @@ import java.io.Serializable;
  * @Attention:
  * @Date 创建时间：2020-12-08 10:21
  */
-public abstract class AbsHasher extends BaseTemplatePatternV3<Serializable> implements IHash
+public abstract class AbsHasher extends BaseTemplatePatternV3<Serializable> implements IHashChain
 {
     private boolean inited;
-    protected AbsHasher next;
+    protected IHashChain next;
 
     @Override
     public byte[] hash(Serializable serializable, byte[] originData) throws HashException
@@ -46,4 +47,16 @@ public abstract class AbsHasher extends BaseTemplatePatternV3<Serializable> impl
     }
 
     protected abstract void init();
+
+    @Override
+    public IHashChain getNextHash()
+    {
+        return this.next;
+    }
+
+    @Override
+    public void setNextHash(IHashChain hash)
+    {
+        this.next=hash;
+    }
 }

@@ -15,7 +15,6 @@ import java.io.Serializable;
  */
 public class MD5Hasher extends AbsHasher
 {
-
     @Override
     protected byte[] hash(byte[] originData)
     {
