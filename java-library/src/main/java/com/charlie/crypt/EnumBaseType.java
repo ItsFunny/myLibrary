@@ -15,11 +15,13 @@ public enum EnumBaseType
     ENUM_ASYMMETRIC_RSA(3,"rsa非对称加密"),
 
     ENUM_SYMMETRIC_AES(10,"AES对称加密"),
-    ENUM_SYMMETRIC_SM3(11,"SM3对称几秒"),
+    ENUM_SYMMETRIC_SM4(11,"SM4对称加密"),
 
 
     ENUM_HASH_MD5(100,"MD5哈希算法"),
     ENUM_HASH_SHA(101,"SHA哈希算法"),
+    ENUM_HASH_SM3(102,"SM3哈希算法"),
+
 
     ;
     private int value;

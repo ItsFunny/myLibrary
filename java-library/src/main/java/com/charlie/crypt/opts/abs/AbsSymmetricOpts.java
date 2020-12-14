@@ -15,13 +15,16 @@ import com.charlie.crypt.opts.ISymmetricOpts;
 public abstract  class AbsSymmetricOpts implements ISymmetricOpts
 {
     protected EnumSymmetryEncryptionType encryptionType;
+    public AbsSymmetricOpts(){
+
+    }
     public AbsSymmetricOpts(EnumSymmetryEncryptionType enumSymmetryEncryptionType){
         this.encryptionType=enumSymmetryEncryptionType;
     }
     @Override
     public EnumBaseType getBaseType()
     {
-        return EnumBaseType.ENUM_SYMMETRIC_SHA;
+        return EnumBaseType.ENUM_SYMMETRIC_AES;
     }
 
     @Override

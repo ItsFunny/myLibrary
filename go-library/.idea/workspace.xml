@@ -2,466 +2,107 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="298ffa7f-3e1a-43e9-893b-1040a5cb3fd4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/exception/QueryException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/model/QueryReq.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/model/QueryResp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/proxy/IQueryOption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/blockchain/proxy/FabricNetworkContainerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/go-library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go-library.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go/utils/gmutils.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go/utils/unsafe.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go/utils/unsafe_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/zap/zap_log.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/ering-base.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/base/IBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/base/IBaseByteFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/base/IBaseFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/base/IFactortyTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/base/IFactoryBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/base/IFactoryFrom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/base/IFrom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/base/ITO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/exception/DeserializeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/exception/SerializeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-modelandview/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/ering/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/CryptoMessageJSONObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/CryptoMessageUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/cache/OptsCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/factory/CryptoMessageFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/exception/DeserializeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/exception/SerializeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/factory/IFactortyTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ering/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ering/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ering/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Ering/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blockchain/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blockchain/blockchian.go" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/blockchian.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blockchain/blockchian_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/blockchian_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blockchain/property.go" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/property.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/go/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/go/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go/utils/PemUtils.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/PemUtils.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go/utils/base64utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/base64utils.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/base/dto/result.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/base/dto/result.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/token/token.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/token/token.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/utils/aes.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/aes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/utils/date_utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/date_utils.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/utils/date_utils_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/date_utils_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/utils/logic_util.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/logic_util.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/utils/orgcode_util.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/orgcode_util.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go/utils/smutils.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/smutils.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/utils/smutils_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/smutils_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/log/log_2020-12-09.log" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/log/log_2020-12-09.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/QueueLogin/AbstractLoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/QueueLogin/AbstractLoginServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/QueueLogin/Exception/QueueLoginRangeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/QueueLogin/Exception/QueueLoginRangeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/QueueLogin/LoginThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/QueueLogin/LoginThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/QueueLogin/QueueConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/QueueLogin/QueueConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/QueueLogin/QueueLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/QueueLogin/QueueLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/QueueLogin/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/QueueLogin/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/QueueLogin/model/BaseObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/QueueLogin/model/BaseObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/QueueLogin/model/QueueLoginResultInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/QueueLogin/model/QueueLoginResultInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/QueueLogin/service/BackLoginThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/QueueLogin/service/BackLoginThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/QueueLogin/service/QueueLoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/QueueLogin/service/QueueLoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/QueueLogin/service/impl/QueueLoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/QueueLogin/service/impl/QueueLoginServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/base/AbstractInitOnce.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/base/AbstractInitOnce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/base/IDataDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/base/IDataDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/base/IDataReadDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/base/IDataReadDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/base/IDataUnserialize.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/base/IDataUnserialize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/base/IInitOnce.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/base/IInitOnce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/base/IKeyImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/base/IKeyImporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/base/KeySerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/base/KeySerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/bigfile/AbstractBigFileProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/bigfile/AbstractBigFileProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/bigfile/BigFileConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/bigfile/BigFileConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/bigfile/BigFileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/bigfile/BigFileServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/bigfile/BigFileUploadProcessInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/bigfile/BigFileUploadProcessInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/bigfile/ChunkCreateResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/bigfile/ChunkCreateResp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/bigfile/ChunkHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/bigfile/ChunkHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/bigfile/ChunkInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/bigfile/ChunkInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/bigfile/DefaultBigFileProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/bigfile/DefaultBigFileProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/bigfile/FileChunkDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/bigfile/FileChunkDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/bigfile/FileChunkProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/bigfile/FileChunkProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/bigfile/FileInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/bigfile/FileInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/bigfile/MemoryChunkHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/bigfile/MemoryChunkHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/bigfile/ProcessResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/bigfile/ProcessResp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/IInvokeResultDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/IInvokeResultDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/ResultInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/ResultInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/configuration/BlockChainConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/configuration/BlockChainConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/configuration/CaConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/configuration/CaConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/configuration/ChainCodeConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/configuration/ChainCodeConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/configuration/ChannelConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/configuration/ChannelConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/configuration/ClientConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/configuration/ClientConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/configuration/ConfigurationFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/configuration/ConfigurationFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/configuration/OrdererConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/configuration/OrdererConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/configuration/OrganizationConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/configuration/OrganizationConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/configuration/PeerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/configuration/PeerConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/configuration/UserConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/configuration/UserConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/constants/ConfigConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/constants/ConfigConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/constants/InvokeConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/constants/InvokeConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/constants/ResultConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/constants/ResultConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/exception/BaseFabricException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/exception/BaseFabricException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/exception/InvokeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/exception/InvokeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/filter/IPeerFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/filter/IPeerFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/model/IUnserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/model/IUnserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/model/InstallChaincodeReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/model/InstallChaincodeReq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/model/InstallChaincodeResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/model/InstallChaincodeResp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/model/InvokeReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/model/InvokeReq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/model/InvokeResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/model/InvokeResp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/model/NewClientReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/model/NewClientReq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/model/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/model/Pair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/model/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/model/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/proxy/AbstractFabricClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/proxy/AbstractFabricClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/proxy/ChannelWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/proxy/ChannelWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/proxy/DefaultFabricClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/proxy/DefaultFabricClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/proxy/FabricClientProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/proxy/FabricClientProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/proxy/FabricNetworkContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/proxy/FabricNetworkContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/proxy/IFabricClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/proxy/IFabricClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/proxy/IInvokeOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/proxy/IInvokeOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/util/ConvertUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/util/ConvertUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/util/ProposalUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/util/ProposalUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/util/TLSUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/util/TLSUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/wrapper/ChannelContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/wrapper/ChannelContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/wrapper/ChannelWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/wrapper/ChannelWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/blockchain/wrapper/HFClientWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/wrapper/HFClientWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/cache/AbstractReferenceCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/cache/AbstractReferenceCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/cache/ClearStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/cache/ClearStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/cache/IReferenceCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/cache/IReferenceCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/cache/ObjectCreateStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/cache/ObjectCreateStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/cache/ObjectInfoThreadLocalCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/cache/ObjectInfoThreadLocalCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/cache/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/cache/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/cache/SFTHCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/cache/SFTHCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/cache/soft/AbstractCHMSoftReferenceCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/cache/soft/AbstractCHMSoftReferenceCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/cache/soft/CHMSoftReferenceCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/cache/soft/CHMSoftReferenceCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/cache/soft/SofReferenceCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/cache/soft/SofReferenceCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/cache/soft/SoftReferenceInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/cache/soft/SoftReferenceInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/constants/PemConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/constants/PemConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/dao/IManualDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/dao/IManualDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/dto/BaseWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/dto/BaseWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/dto/BatchInsertReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/dto/BatchInsertReq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/dto/BatchInsertReqWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/dto/BatchInsertReqWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/dto/CommonDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/dto/CommonDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/dto/ResultDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/dto/ResultDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/dto/SelectReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/dto/SelectReq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/dto/SelectReqWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/dto/SelectReqWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/enums/RestAPIStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/enums/RestAPIStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/event/AppEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/event/AppEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/event/IAppEventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/event/IAppEventPublisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/event/WebAppEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/event/WebAppEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/exception/BaseBussException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/exception/BaseBussException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/exception/ConfigException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/exception/ConfigException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/exception/FTPBusynessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/exception/FTPBusynessException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/exception/FTPConfigException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/exception/FTPConfigException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/exception/SFTPDataTransferException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/exception/SFTPDataTransferException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/exception/SFTPLoginException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/exception/SFTPLoginException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/AbstractFIleStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/file/AbstractFIleStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/BlockingPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/file/BlockingPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/DefaultFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/file/DefaultFileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/FTPClientPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/file/FTPClientPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/FTPFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/file/FTPFileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/FastDFSConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/file/FastDFSConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/FastDFSServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/file/FastDFSServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/FileStrategyContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/file/FileStrategyContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/IFileStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/file/IFileStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/file/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/SFTPFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/file/SFTPFileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/file/UploadResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/file/UploadResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/framework/BeanSelefAwarePostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/framework/BeanSelefAwarePostProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/framework/IBeanSelfAware.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/framework/IBeanSelfAware.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/json/GsonInterfaceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/json/GsonInterfaceAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mail/AbstractEmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mail/AbstractEmailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mail/DefalutEmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mail/DefalutEmailServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mail/IEmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mail/IEmailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mail/factory/AbstractEmailFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mail/factory/AbstractEmailFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mail/factory/DefaultEmailServiceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mail/factory/DefaultEmailServiceFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mail/property/EmailProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mail/property/EmailProperty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/model/CertInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/model/CertInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/model/HttpClientResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/model/HttpClientResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/model/TwoTuple.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/model/TwoTuple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mq/AbstractConfirmCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mq/AbstractConfirmCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mq/AbstractMQConfirmCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mq/AbstractMQConfirmCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mq/AppEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mq/AppEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mq/AppEventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mq/AppEventConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mq/AppEventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mq/AppEventPublisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mq/AppEventRabbitMQPublish.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mq/AppEventRabbitMQPublish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mq/BaseCorrelationData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mq/BaseCorrelationData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mq/LogEventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mq/LogEventPublisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mq/MicroCorrelationData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mq/MicroCorrelationData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mq/consumer/abs/AbstractAppeventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mq/consumer/abs/AbstractAppeventConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mq/consumer/abs/AbstractBaseConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mq/consumer/abs/AbstractBaseConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mq/consumer/abs/AbstractChannleAppeventConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mq/consumer/abs/AbstractChannleAppeventConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/mq/converters/JSONMessageConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/mq/converters/JSONMessageConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/page/AbstractMultipartDBPageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/page/AbstractMultipartDBPageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/page/AbstractPageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/page/AbstractPageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/page/PageBaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/page/PageBaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/page/PageExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/page/PageExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/page/PageRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/page/PageRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/page/PageResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/page/PageResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/page/SingleDBPageRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/page/SingleDBPageRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/page/SingleDBPageResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/page/SingleDBPageResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/service/IValidater.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/service/IValidater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/service/IdWorkerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/service/IdWorkerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/service/IdWorkerServiceTwitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/service/IdWorkerServiceTwitter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/source/ReentrantLockSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/source/ReentrantLockSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/sqlextention/AbstractSQLExtentionModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/sqlextention/AbstractSQLExtentionModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/sqlextention/AbstractSQLExtentionpProxyBaseCRUDDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/sqlextention/AbstractSQLExtentionpProxyBaseCRUDDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/sqlextention/ISQLExtentionBaseCRUDDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/sqlextention/ISQLExtentionBaseCRUDDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/sqlextention/ISQLExtentionConfigBaseCRUDDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/sqlextention/ISQLExtentionConfigBaseCRUDDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/sqlextention/SQLExtentionConfigProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/sqlextention/SQLExtentionConfigProperty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/sqlextention/SQLExtentionDaoWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/sqlextention/SQLExtentionDaoWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/sqlextention/SQLExtentionHolderV3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/sqlextention/SQLExtentionHolderV3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/sqlextention/SQLExtentionInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/sqlextention/SQLExtentionInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/sqlextention/SQLExtentionResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/sqlextention/SQLExtentionResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/sqlextention/service/ISQLExtentionBaseCRUDService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/sqlextention/service/ISQLExtentionBaseCRUDService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/sqlextention/service/abs/AbstractSQLExtentionProxyBaseCRUDService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/sqlextention/service/abs/AbstractSQLExtentionProxyBaseCRUDService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/template/BaseTemplatePattern.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/template/BaseTemplatePattern.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/template/BaseTemplatePatternV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/template/BaseTemplatePatternV2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/template/BaseTemplatePatternV3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/template/BaseTemplatePatternV3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/tree/TreeComposite.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/tree/TreeComposite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/AESUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/AESUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/BCECUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/BCECUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/Base64Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/Base64Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/CollectionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/CollectionUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/CommonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/CommonUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/CryptUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/CryptUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/DateUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/DateUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/DebugUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/DebugUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/FileUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/GMUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/GMUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/HexUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/HexUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/HttpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/HttpUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/IDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/IDGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/IDNoChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/IDNoChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/IPUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/IPUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/ImgUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/ImgUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/JSONUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/JSONUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/KeyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/KeyUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/MD5Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/MD5Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/PageResultUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/PageResultUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/PemUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/PemUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/QRCodeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/QRCodeUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/RSAUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/RSAUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/RegexUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/RegexUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/ResultUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/ResultUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/SFTPUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/SFTPUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/SystemUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/SystemUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/UrlUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/UrlUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charile/utils/VUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/VUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/resources/chaincodes/demo_chaincode.go" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/resources/chaincodes/demo_chaincode.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/resources/config_47_103_samecc.json" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/resources/config_47_103_samecc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/bigfile/AbstractBigFileProcessorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/bigfile/AbstractBigFileProcessorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/blockchain/configuration/BlockChainConfigurationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/blockchain/configuration/BlockChainConfigurationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/blockchain/proxy/FabricNetworkContainerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/dto/BatchInsertReqWrapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/dto/BatchInsertReqWrapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/dto/SelectReqWrapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/dto/SelectReqWrapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/file/FTPFileServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/file/FTPFileServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/file/SFTPFileServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/file/SFTPFileServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/utils/AESUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/utils/AESUtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/utils/CommonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/utils/CommonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/utils/CryptUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/utils/CryptUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/utils/DateUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/utils/DateUtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/utils/FileUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/utils/FileUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charile/utils/ImgUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/utils/ImgUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/chaincodes/demo_chaincode.go" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/chaincodes/demo_chaincode.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/AbstractLoginServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/Exception/QueueLoginRangeException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/QueueConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/QueueLogin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/model/BaseObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/model/QueueLoginResultInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/service/BackLoginThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/service/QueueLoginService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/QueueLogin/service/impl/QueueLoginServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/base/AbstractInitOnce.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/base/IDataDecorator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/base/IDataReadDecorator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/base/IDataUnserialize.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/base/IInitOnce.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/base/IKeyImporter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/base/KeySerializer$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/base/KeySerializer$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/base/KeySerializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/AbstractBigFileProcessor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/BigFileConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/BigFileServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/BigFileUploadProcessInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/ChunkCreateResp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/ChunkHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/ChunkInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/DefaultBigFileProcessor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/FileChunkDecorator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/FileChunkProcessor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/FileInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/MemoryChunkHandler$ChunkHolder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/MemoryChunkHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/bigfile/ProcessResp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/IInvokeResultDecorator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/ResultInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/BlockChainConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/CaConfiguration$CaNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/CaConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/ChainCodeConfiguration$ChainCodeNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/ChainCodeConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/ChannelConfiguration$ChannelNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/ChannelConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/ClientConfiguration$ConnectionConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/ClientConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/ConfigurationFactory$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/ConfigurationFactory$ConfigurationHolder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/ConfigurationFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/OrdererConfiguration$OrdererNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/OrdererConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/OrganizationConfiguration$OrganizationNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/OrganizationConfiguration$UserNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/OrganizationConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/PeerConfiguration$PeerNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/configuration/PeerConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/constants/ConfigConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/constants/InvokeConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/constants/ResultConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/exception/BaseFabricException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/exception/InvokeException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/filter/IPeerFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/model/IUnserializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/model/InstallChaincodeReq.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/model/InstallChaincodeResp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/model/InvokeReq.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/model/InvokeResp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/model/NewClientReq.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/model/Pair.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/model/UserInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/proxy/AbstractFabricClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/proxy/ChannelWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/proxy/DefaultFabricClientHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/proxy/FabricClientProxy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/proxy/FabricNetworkContainer$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/proxy/FabricNetworkContainer$FabricClientProxyFactoryHolder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/proxy/FabricNetworkContainer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/proxy/IFabricClientService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/proxy/IInvokeOption.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/util/ConvertUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/util/ProposalUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/util/TLSUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/wrapper/ChannelContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/wrapper/ChannelWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/blockchain/wrapper/HFClientWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/AbstractReferenceCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/ClearStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/IReferenceCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/ObjectCreateStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/ObjectInfoThreadLocalCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/SFTHCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/soft/AbstractCHMSoftReferenceCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/soft/AbstractCHMSoftReferenchCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/soft/CHMSoftReferenceCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/soft/SofReferenceCache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/cache/soft/SoftReferenceInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/constants/PemConstant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dao/IManualDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/BaseWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/BatchInsertReq.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/BatchInsertReqWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/CommonDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/ResultDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/SelectReq.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/dto/SelectReqWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/enums/RestAPIStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/event/AppEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/event/IAppEventPublisher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/event/WebAppEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/exception/BaseBussException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/exception/ConfigException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/exception/FTPBusynessException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/exception/FTPConfigException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/exception/SFTPDataTransferException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/exception/SFTPLoginException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/AbstractFIleStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/BlockingPool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/DefaultFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FTPClientPool$FTPBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FTPClientPool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FTPFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FastDFSConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/FileStrategyContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/IFileStrategy$BatchFileUploadWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/IFileStrategy$BatchFileUploadWrapperResp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/IFileStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/SFTPFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/file/UploadResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/framework/BeanSelefAwarePostProcessor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/framework/IBeanSelfAware.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/json/GsonInterfaceAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mail/AbstractEmailService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mail/DefalutEmailServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mail/IEmailService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mail/factory/AbstractEmailFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mail/factory/DefaultEmailServiceFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mail/property/EmailProperty.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/model/CertInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/model/HttpClientResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/model/TwoTuple.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/AbstractMQConfirmCallback.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/AppEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/AppEventConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/AppEventPublisher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/AppEventRabbitMQPublish.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/BaseCorrelationData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/LogEventPublisher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/MicroCorrelationData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/consumer/abs/AbstractAppeventConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/consumer/abs/AbstractBaseConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/consumer/abs/AbstractChannleAppeventConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/mq/converters/JSONMessageConverter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/AbstractMultipartDBPageService$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/AbstractMultipartDBPageService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/AbstractPageService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/PageBaseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/PageExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/PageRequestDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/PageResponseDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/SingleDBPageRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/page/SingleDBPageResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/service/IValidater.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/service/IdWorkerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/service/IdWorkerServiceTwitter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/source/ReentrantLockSource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/AbstractSQLExtentionModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/AbstractSQLExtentionpProxyBaseCRUDDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/ISQLExtentionBaseCRUDDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/ISQLExtentionConfigBaseCRUDDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionConfigProperty.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionDaoWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionHolderV3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionInfo$DBInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionInfo$TableInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/SQLExtentionResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/service/ISQLExtentionBaseCRUDService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/sqlextention/service/abs/AbstractSQLExtentionProxyBaseCRUDService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/template/BaseTemplatePattern.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/template/BaseTemplatePatternV2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/template/BaseTemplatePatternV3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/tree/TreeComposite.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/AESUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/BCECUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/Base64Utils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/CollectionUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/CommonUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/CryptUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/DateUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/DebugUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/FileUtils$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/FileUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/GMUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/HexUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/HttpUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/IDGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/IDNoChecker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/IPUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/ImgUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/JSONUtil$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/JSONUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/KeyUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/MD5Utils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/PageResultUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/PemUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/QRCodeUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/RSAUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/RegexUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/ResultUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/SFTPUtil$SFTPWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/SFTPUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/SystemUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/UrlUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charile/utils/VUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/config_47_103_samecc.json" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/config_47_103_samecc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/myLibrary-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/myLibrary-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/bigfile/AbstractBigFileProcessorTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/blockchain/configuration/BlockChainConfigurationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/blockchain/proxy/FabricNetworkContainerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/dto/BatchInsertReqWrapperTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/dto/SelectReqWrapperTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/file/FTPFileServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/file/SFTPFileServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/utils/AESUtilsTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/utils/CommonTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/utils/CryptUtilTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/utils/DateUtilsTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/utils/FileUtilTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charile/utils/ImgUtilTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/CryptoMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/CryptoMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/CryptoMessageBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/CryptoMessageBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnumAsymmetricAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnumAsymmetricAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnumBaseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnumBaseType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnumHashMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnumHashMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnumSymmetryEncryptionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnumSymmetryEncryptionType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnvelopBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnvelopBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/Envelope.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/Envelope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/container/CryptoContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/container/CryptoContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/container/CryptoContainerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/container/CryptoContainerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/factory/EnvelopeCreatorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/factory/EnvelopeCreatorFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/factory/SymmetricCryptoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/factory/SymmetricCryptoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/AbsCryptoMessageHandlerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/AbsCryptoMessageHandlerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/AbsEnvelopeHandlerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/AbsEnvelopeHandlerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/DefaultAESSymmetricCryptoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/DefaultAESSymmetricCryptoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/DefaultCryptoMessageHandlerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/DefaultCryptoMessageHandlerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/DefaultEnvelopCreatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/DefaultEnvelopHandlerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/abs/AbsAsymmetricOpts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/abs/AbsAsymmetricOpts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/abs/AbsHashOpts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/abs/AbsHashOpts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/abs/AbsSymmetricOpts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/abs/AbsSymmetricOpts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/impl/DefaultAsymmetricOpts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/impl/DefaultAsymmetricOpts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/impl/DefaultHashOpts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/impl/DefaultHashOpts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/impl/DefaultSymmetricOpts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/impl/DefaultSymmetricOpts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/crypt/container/CryptoMessageContainerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/crypt/container/CryptoMessageContainerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/CryptoMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/CryptoMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/CryptoMessageBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/CryptoMessageBO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnumAsymmetricAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnumAsymmetricAlgorithm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnumBaseType.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnumBaseType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnumHashMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnumHashMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnumSymmetryEncryptionType.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnumSymmetryEncryptionType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnvelopBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnvelopBO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/Envelope.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/Envelope.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/IAsymmetricCrypto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/IAsymmetricCrypto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/IHash.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/IHash.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/ISymmetricCrypto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/ISymmetricCrypto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/container/CryptoContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/container/CryptoContainer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/factory/EnvelopeCreatorFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/factory/EnvelopeCreatorFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/factory/SymmetricCryptoFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/factory/SymmetricCryptoFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/AbsCryptoMessageHandlerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/AbsCryptoMessageHandlerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/AbsEnvelopeCreatorImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/AbsHasher.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/AbsHasher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/AsymmetricCryptoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/DefaultAESCFBSymmetricCryptoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/DefaultCryptoMessageHandlerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/DefaultCryptoMessageHandlerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/DefaultEnvelopCreatorImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/DefaultSM2AsymmetricCryptoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/DefaultSM2AsymmetricCryptoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/MD5Hasher.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/MD5Hasher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/SymmetricCryptoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/opts/abs/AbsAsymmetricOpts.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/opts/abs/AbsAsymmetricOpts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/opts/abs/AbsSymmetricOpts.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/opts/abs/AbsSymmetricOpts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/opts/impl/DefaultAsymmetricOpts.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/opts/impl/DefaultAsymmetricOpts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/crypt/container/CryptoMessageContainerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/crypt/container/CryptoMessageContainerTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -472,96 +113,70 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go/utils/smutils_test.go">
+        <entry file="file://$PROJECT_DIR$/go/utils/gmutils.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1728">
-              <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+            <state relative-caret-position="14">
+              <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+              <folding>
+                <element signature="e#146#200#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/blockchain/blockchian.go">
+        <entry file="file://$PROJECT_DIR$/log/zap/zap_log.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="630" selection-start-line="630" selection-end-line="630" />
+            <state relative-caret-position="517">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
               <folding>
-                <element signature="e#20472#21787#0" />
-                <element signature="e#21793#22272#0" />
-                <element signature="e#21901#22046#0" />
+                <element signature="e#145#157#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../github.com/hyperledger/fabric-sdk-go/third_party/github.com/hyperledger/fabric/common/cauthdsl/cauthdsl_builder.go">
+        <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/zapcore/hook.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2412">
-              <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+            <state relative-caret-position="204">
+              <caret line="64" selection-start-line="64" selection-end-line="64" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../github.com/hyperledger/fabric-sdk-go/pkg/gateway/contract.go">
+        <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/logger.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2088">
-              <caret line="61" column="19" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
+            <state relative-caret-position="205">
+              <caret line="186" selection-start-line="186" selection-end-line="186" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../github.com/hyperledger/fabric-sdk-go/pkg/gateway/transaction.go">
+        <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/zapcore/entry.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+            <state relative-caret-position="313">
+              <caret line="214" selection-start-line="214" selection-end-line="214" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../github.com/hyperledger/fabric-sdk-go/pkg/gateway/gateway.go">
+        <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/options.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2160">
-              <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+            <state relative-caret-position="202">
+              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../github.com/hyperledger/fabric-sdk-go/pkg/client/resmgmt/opts.go">
+        <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/zapcore/core.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1044">
-              <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../github.com/hyperledger/fabric-sdk-go/pkg/client/resmgmt/resmgmt.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24336">
-              <caret line="705" column="18" selection-start-line="705" selection-start-column="18" selection-end-line="705" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../github.com/hyperledger/fabric-sdk-go/pkg/fab/resource/resource.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9036">
-              <caret line="269" column="5" selection-start-line="269" selection-start-column="5" selection-end-line="269" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go/utils/smutils.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+            <state relative-caret-position="-38">
+              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -577,7 +192,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>NewDefaultCheckerParameter</find>
       <find>sdk</find>
       <find>blockEventExecutor</find>
       <find>html</find>
@@ -607,6 +221,7 @@
       <find>clientWrapper</find>
       <find>register</find>
       <find>o</find>
+      <find>iv</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;github.com/hyperledger/fabric/protos/peer&quot;</replace>
@@ -654,24 +269,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/chaincode/base/security.go" />
-        <option value="$PROJECT_DIR$/blockchain/model/enroll.go" />
-        <option value="$PROJECT_DIR$/chaincode/base/config.go" />
-        <option value="$PROJECT_DIR$/chaincode/security.go" />
-        <option value="$PROJECT_DIR$/chaincode/tx.go" />
-        <option value="$PROJECT_DIR$/chaincode/tx_base_test.go" />
-        <option value="$PROJECT_DIR$/chaincode/base_cc.go" />
-        <option value="$PROJECT_DIR$/chaincode/base.go" />
-        <option value="$PROJECT_DIR$/chaincode/tx_base.go" />
-        <option value="$PROJECT_DIR$/common/blockchain/base/type_alalies.go" />
-        <option value="$PROJECT_DIR$/../../vlink.com/v2/vlink-common/base/fabric/cc/base_logic_service.go" />
-        <option value="$PROJECT_DIR$/common/blockchain/security.go" />
-        <option value="$PROJECT_DIR$/chaincode/fabric_base_facaded_cc.go" />
-        <option value="$PROJECT_DIR$/chaincode/main.go" />
-        <option value="$PROJECT_DIR$/chaincode/cmd/main.go" />
-        <option value="$PROJECT_DIR$/blockchain/blockchain-config-local.yaml" />
-        <option value="$PROJECT_DIR$/chaincode/args.go" />
-        <option value="$PROJECT_DIR$/blockchain/handler/block.go" />
         <option value="$PROJECT_DIR$/go/utils/pdf_test.go" />
         <option value="$PROJECT_DIR$/go/utils/scraptch.go" />
         <option value="$PROJECT_DIR$/go/utils/scrape_test.go" />
@@ -705,12 +302,31 @@
         <option value="$PROJECT_DIR$/blockchain/blockchian_test.go" />
         <option value="$PROJECT_DIR$/blockchain/property.go" />
         <option value="$PROJECT_DIR$/blockchain/blockchian.go" />
+        <option value="$PROJECT_DIR$/blockchain/utils/randutil.go" />
+        <option value="$PROJECT_DIR$/go/utils/logic_util_test.go" />
+        <option value="$PROJECT_DIR$/go/utils/logic_util.go" />
+        <option value="$PROJECT_DIR$/go/utils/orgcode_util_test.go" />
+        <option value="$PROJECT_DIR$/go/utils/orgcode_util.go" />
+        <option value="$PROJECT_DIR$/go/base/dto/result.go" />
+        <option value="$PROJECT_DIR$/go/utils/date_utils.go" />
+        <option value="$PROJECT_DIR$/go/utils/smutils_test.go" />
+        <option value="$PROJECT_DIR$/go/utils/smutils.go" />
+        <option value="$PROJECT_DIR$/go/token/token.go" />
+        <option value="$PROJECT_DIR$/go/utils/randutil_test.go" />
+        <option value="$PROJECT_DIR$/go/utils/date_utils_test.go" />
+        <option value="$PROJECT_DIR$/go/utils/aes.go" />
+        <option value="$PROJECT_DIR$/go/utils/aes_test.go" />
+        <option value="$PROJECT_DIR$/go/utils/unsafe.go" />
+        <option value="$PROJECT_DIR$/go/utils/unsafe_test.go" />
+        <option value="$PROJECT_DIR$/go/utils/gmutils.go" />
+        <option value="$PROJECT_DIR$/log/zap/zap_log.go" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="806" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -730,7 +346,13 @@
             <path>
               <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
               <item name="go-library" type="462c0819:PsiDirectoryNode" />
-              <item name="blockchain" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-library" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="zap" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -754,18 +376,18 @@
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/common/blockchain" />
-      <recent name="$PROJECT_DIR$/chaincode" />
-      <recent name="$PROJECT_DIR$/common/blockchain/base" />
-      <recent name="$PROJECT_DIR$/chaincode/base" />
-      <recent name="$PROJECT_DIR$/chaincode/error" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/go/utils" />
       <recent name="$PROJECT_DIR$/blockchain/internal" />
       <recent name="$PROJECT_DIR$/blockchain" />
       <recent name="$PROJECT_DIR$/blockchain/utils" />
       <recent name="$PROJECT_DIR$/chaincode" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/go/grpc" />
+      <recent name="$PROJECT_DIR$/common/blockchain" />
+      <recent name="$PROJECT_DIR$/chaincode" />
+      <recent name="$PROJECT_DIR$/common/blockchain/base" />
       <recent name="$PROJECT_DIR$/chaincode/base" />
     </key>
   </component>
@@ -781,41 +403,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestParseSMKeyPairFromFile in myLibrary/go-library/go/utils">
-    <configuration name="go build ebidchain.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.go build zap_log.go">
+    <configuration name="go build zap_log.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go-library" />
       <working_directory value="$PROJECT_DIR$/" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/blockchain/ebidsun/ebidchain.go" />
+      <filePath value="$PROJECT_DIR$/log/zap/zap_log.go" />
       <package value="myLibrary/go-library" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="TestConfig in myLibrary/go-library/blockchain" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-library" />
-      <working_directory value="$PROJECT_DIR$/blockchain" />
-      <envs>
-        <env name="GO111MODULE" value="on" />
-      </envs>
-      <EXTENSION ID="net.ashald.envfile">
-        <option name="IS_ENABLED" value="false" />
-        <option name="IS_SUBST" value="false" />
-        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
-        <option name="IS_IGNORE_MISSING_FILES" value="false" />
-        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
-        <ENTRIES>
-          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
-        </ENTRIES>
-      </EXTENSION>
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="myLibrary/go-library/blockchain" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestConfig$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestParseSMKeyPairFromFile in myLibrary/go-library/go/utils" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestAesEncryptCBC in myLibrary/go-library/go/utils" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-library" />
       <working_directory value="$PROJECT_DIR$/go/utils" />
       <framework value="gotest" />
@@ -823,10 +421,10 @@
       <package value="myLibrary/go-library/go/utils" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestParseSMKeyPairFromFile$" />
+      <pattern value="^TestAesEncryptCBC$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestReadSM2CertFromFile in myLibrary/go-library/go/utils" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="Test_A in myLibrary/go-library/go/utils" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-library" />
       <working_directory value="$PROJECT_DIR$/go/utils" />
       <framework value="gotest" />
@@ -834,91 +432,105 @@
       <package value="myLibrary/go-library/go/utils" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestReadSM2CertFromFile$" />
+      <pattern value="^Test_A$" />
       <method v="2" />
     </configuration>
-    <configuration name="ebidsun_blockchain_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="Test_AA in myLibrary/go-library/go/utils" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-library" />
-      <working_directory value="$PROJECT_DIR$/blockchain" />
+      <working_directory value="$PROJECT_DIR$/go/utils" />
       <framework value="gotest" />
-      <kind value="FILE" />
-      <package value="myLibrary/go-library" />
+      <kind value="PACKAGE" />
+      <package value="myLibrary/go-library/go/utils" />
       <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/blockchain/ebidsun_blockchain_test.go" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^Test_AA$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_ABS in myLibrary/go-library/go/utils" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-library" />
+      <working_directory value="$PROJECT_DIR$/go/utils" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="myLibrary/go-library/go/utils" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^Test_ABS$" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Build.go build ebidchain.go" />
-      <item itemvalue="Go Test.TestConfig in myLibrary/go-library/blockchain" />
-      <item itemvalue="Go Test.ebidsun_blockchain_test.go" />
-      <item itemvalue="Go Test.TestReadSM2CertFromFile in myLibrary/go-library/go/utils" />
-      <item itemvalue="Go Test.TestParseSMKeyPairFromFile in myLibrary/go-library/go/utils" />
+      <item itemvalue="Go Test.Test_A in myLibrary/go-library/go/utils" />
+      <item itemvalue="Go Test.TestAesEncryptCBC in myLibrary/go-library/go/utils" />
+      <item itemvalue="Go Test.Test_AA in myLibrary/go-library/go/utils" />
+      <item itemvalue="Go Test.Test_ABS in myLibrary/go-library/go/utils" />
+      <item itemvalue="Go Build.go build zap_log.go" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestParseSMKeyPairFromFile in myLibrary/go-library/go/utils" />
-        <item itemvalue="Go Test.TestReadSM2CertFromFile in myLibrary/go-library/go/utils" />
-        <item itemvalue="Go Build.go build ebidchain.go" />
-        <item itemvalue="Go Test.TestConfig in myLibrary/go-library/blockchain" />
-        <item itemvalue="Go Test.ebidsun_blockchain_test.go" />
+        <item itemvalue="Go Build.go build zap_log.go" />
+        <item itemvalue="Go Test.Test_ABS in myLibrary/go-library/go/utils" />
+        <item itemvalue="Go Test.Test_AA in myLibrary/go-library/go/utils" />
+        <item itemvalue="Go Test.TestAesEncryptCBC in myLibrary/go-library/go/utils" />
+        <item itemvalue="Go Test.Test_A in myLibrary/go-library/go/utils" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="Test_scrapeDetail_in_myLibrary_go-library_go_utils - 2020.07.17 at 13h 48m 37s.xml">
-      <configuration name="Test_scrapeDetail in myLibrary/go-library/go/utils" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_AA_in_myLibrary_go-library_go_utils - 2020.12.11 at 11h 53m 56s.xml">
+      <configuration name="Test_AA in myLibrary/go-library/go/utils" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="Test_scrape_in_myLibrary_go-library_go_utils - 2020.07.17 at 13h 49m 25s.xml">
-      <configuration name="Test_scrape in myLibrary/go-library/go/utils" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_AA_in_myLibrary_go-library_go_utils - 2020.12.11 at 11h 55m 20s.xml">
+      <configuration name="Test_AA in myLibrary/go-library/go/utils" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="Test_scrape_in_myLibrary_go-library_go_utils - 2020.07.17 at 14h 01m 43s.xml">
-      <configuration name="Test_scrape in myLibrary/go-library/go/utils" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_AA_in_myLibrary_go-library_go_utils - 2020.12.11 at 11h 57m 17s.xml">
+      <configuration name="Test_AA in myLibrary/go-library/go/utils" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestHDWallet_GetAddress_in_myLibrary_go-library_go_wallet - 2020.08.02 at 09h 27m 50s.xml">
-      <configuration name="TestHDWallet_GetAddress in myLibrary/go-library/go/wallet" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_AA_in_myLibrary_go-library_go_utils - 2020.12.11 at 11h 58m 01s.xml">
+      <configuration name="Test_AA in myLibrary/go-library/go/utils" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestConfig_in_myLibrary_go-library_blockchain - 2020.09.03 at 08h 50m 52s.xml">
-      <configuration name="TestConfig in myLibrary/go-library/blockchain" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_ABS_in_myLibrary_go-library_go_utils - 2020.12.11 at 12h 01m 34s.xml">
+      <configuration name="Test_ABS in myLibrary/go-library/go/utils" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestConfig_in_myLibrary_go-library_blockchain - 2020.09.03 at 09h 03m 50s.xml">
-      <configuration name="TestConfig in myLibrary/go-library/blockchain" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_ABS_in_myLibrary_go-library_go_utils - 2020.12.11 at 12h 02m 01s.xml">
+      <configuration name="Test_ABS in myLibrary/go-library/go/utils" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestConfig_in_myLibrary_go-library_blockchain - 2020.09.03 at 09h 05m 15s.xml">
-      <configuration name="TestConfig in myLibrary/go-library/blockchain" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_ABS_in_myLibrary_go-library_go_utils - 2020.12.11 at 12h 02m 34s.xml">
+      <configuration name="Test_ABS in myLibrary/go-library/go/utils" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestConfig_in_myLibrary_go-library_blockchain - 2020.09.03 at 09h 05m 57s.xml">
-      <configuration name="TestConfig in myLibrary/go-library/blockchain" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_ABS_in_myLibrary_go-library_go_utils - 2020.12.11 at 12h 04m 19s.xml">
+      <configuration name="Test_ABS in myLibrary/go-library/go/utils" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestConfig_in_myLibrary_go-library_blockchain - 2020.09.03 at 09h 06m 37s.xml">
-      <configuration name="TestConfig in myLibrary/go-library/blockchain" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_ABS_in_myLibrary_go-library_go_utils - 2020.12.11 at 12h 40m 14s.xml">
+      <configuration name="Test_ABS in myLibrary/go-library/go/utils" configurationId="GoTestRunConfiguration" />
     </history-entry>
-    <history-entry file="TestParseSMKeyPairFromFile_in_myLibrary_go-library_go_utils - 2020.10.22 at 18h 58m 55s.xml">
-      <configuration name="TestParseSMKeyPairFromFile in myLibrary/go-library/go/utils" configurationId="GoTestRunConfiguration" />
+    <history-entry file="Test_ABS_in_myLibrary_go-library_go_utils - 2020.12.11 at 12h 41m 02s.xml">
+      <configuration name="Test_ABS in myLibrary/go-library/go/utils" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22103004" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49819493" visible="true" weight="0.19170243" />
+      <window_info id="Structure" order="1" sideWeight="0.50180507" side_tool="true" weight="0.22389127" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.50240964" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.19036144" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3313253" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.33012047" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.44216868" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.21204819" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="GenProtobuf" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="make" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -985,264 +597,67 @@
           <line>60</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/go/utils/logic_util.go</url>
+          <line>132</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/go/utils/logic_util.go</url>
+          <line>123</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/go/utils/logic_util.go</url>
+          <line>82</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/go/utils/date_utils_test.go</url>
+          <line>66</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/go/utils/aes_test.go</url>
+          <line>18</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/go/utils/unsafe_test.go</url>
+          <line>49</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/go/utils/unsafe_test.go</url>
+          <line>52</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/go/utils/unsafe_test.go</url>
+          <line>55</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/go/utils/unsafe_test.go</url>
+          <line>87</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/log/zap/zap_log.go</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/log/zap/zap_log.go</url>
+          <line>23</line>
+          <properties />
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/go/src/runtime/panic.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="1188" selection-start-line="1188" selection-end-line="1188" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/event.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29">
-          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/ebidsun_blockchain_test.go" />
-    <entry file="file://$PROJECT_DIR$/blockchain/ebidsun_blockchain.go" />
-    <entry file="file://$PROJECT_DIR$/blockchain/fabric_info_local.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="39" column="71" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="71" />
-          <folding>
-            <element signature="n#!!block;n#GuangzhouMSP#0;n#!!block;n#MSP#0;n#!!top" />
-            <element signature="e#3637#3984#0" />
-            <element signature="e#3998#4035#0" />
-            <element signature="e#4054#7192#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/ebidsun-application-blockchain-local-test.yaml" />
-    <entry file="file://$PROJECT_DIR$/go/utils/date_utils.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/constants/blockchain.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chaincode/fabric_base_facaded_cc.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/internal/pkg/comm/creds.go" />
-    <entry file="file://$PROJECT_DIR$/blockchain/internal/pkg/comm/config.go" />
-    <entry file="file://$PROJECT_DIR$/blockchain/internal/pkg/comm/client.go" />
-    <entry file="file://$PROJECT_DIR$/blockchain/internal/pkg/comm/testpb/test.pb.go" />
-    <entry file="file://$PROJECT_DIR$/blockchain/internal/configtxgen/encoder/encoder.go" />
-    <entry file="file://$PROJECT_DIR$/blockchain/ebidsun/ebidchain.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/error/base_error.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../github.com/hyperledger/fabric/protoutil/configtxutils.go" />
-    <entry file="file://$USER_HOME$/ebidsun/src/github.com/hyperledger/fabric/common/viperutil/config_util.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="310" column="5" selection-start-line="310" selection-start-column="5" selection-end-line="310" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../github.com/spf13/viper/viper.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="210" column="5" selection-start-line="210" selection-start-column="5" selection-end-line="210" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/ebidsun/src/github.com/hyperledger/fabric/core/config/config.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1264">
-          <caret line="89" column="5" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/utils/proto.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="841">
-          <caret line="331" selection-start-line="331" selection-end-line="331" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/internal/genesisconfig/config_test.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/ebidsun/src/github.com/hyperledger/fabric/common/tools/configtxgen/localconfig/config.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4572">
-          <caret line="140" column="4" selection-start-line="140" selection-start-column="4" selection-end-line="140" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/internal/genesisconfig/config.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3996">
-          <caret line="124" column="4" selection-start-line="124" selection-start-column="4" selection-end-line="124" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/internal/fabric.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-          <folding>
-            <element signature="e#148#562#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/ebidsun/ebidsun-application-blockchain-local-test.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="72" column="15" lean-forward="true" selection-start-line="72" selection-start-column="15" selection-end-line="72" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chaincode/config.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3384">
-          <caret line="106" column="38" selection-start-line="106" selection-start-column="38" selection-end-line="106" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chaincode/base_cc.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-33">
-          <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go/tjfoc/gmsm/sm3/sm3.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-          <folding>
-            <element signature="e#634#671#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go/tjfoc/gmsm/sm2/sm2_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="40" column="4" selection-start-line="31" selection-start-column="2" selection-end-line="40" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chaincode/base_logic_service.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="82" column="44" selection-start-line="82" selection-start-column="44" selection-end-line="82" selection-end-column="44" />
-          <folding>
-            <element signature="e#162#531#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../github.com/hyperledger/fabric-sdk-go/pkg/common/providers/msp/identity.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../github.com/hyperledger/fabric-sdk-go/pkg/client/msp/client.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="487" column="24" lean-forward="true" selection-start-line="487" selection-start-column="24" selection-end-line="487" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/wrapper/msp.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../github.com/hyperledger/fabric-sdk-go/pkg/fabsdk/fabsdk.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/blockchain-config-local.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/application-blockchain-local-test.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/blockchian_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="13" selection-start-line="10" selection-start-column="20" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/property.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="87" column="5" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go/go.sum">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go/GO-MOD.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/go/utils/smutils_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1728">
-          <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../github.com/hyperledger/fabric-sdk-go/third_party/github.com/hyperledger/fabric/common/cauthdsl/cauthdsl_builder.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2412">
-          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../github.com/hyperledger/fabric-sdk-go/pkg/gateway/contract.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2088">
-          <caret line="61" column="19" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../github.com/hyperledger/fabric-sdk-go/pkg/gateway/transaction.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
@@ -1278,13 +693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go/utils/smutils.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blockchain/blockchian.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -1293,6 +701,300 @@
             <element signature="e#20472#21787#0" />
             <element signature="e#21793#22272#0" />
             <element signature="e#21901#22046#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blockchain/utils/randutil.go" />
+    <entry file="file:///usr/local/go/src/regexp/regexp.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="540" column="5" selection-start-line="540" selection-start-column="5" selection-end-line="540" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/strconv/itoa.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/bytes/bytes.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/grpc/server.go" />
+    <entry file="file://$PROJECT_DIR$/go/grpc/http_json_test.go" />
+    <entry file="file://$PROJECT_DIR$/go/grpc/http_json.go" />
+    <entry file="file://$PROJECT_DIR$/go/grpc/grpc_pb_test.go" />
+    <entry file="file://$PROJECT_DIR$/go/utils/orgcode_util.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/utils/orgcode_util_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/utils/logic_util.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2592">
+          <caret line="77" column="29" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/base/dto/result.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="16" column="1" selection-start-line="11" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/utils/date_utils.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/tjfoc/gmsm/sm2/sm2.go" />
+    <entry file="file://$PROJECT_DIR$/go/go.mod">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/utils/logic_util_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+          <folding>
+            <element signature="e#146#174#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/utils/sql.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/token/token.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/utils/randutil.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="49" column="15" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/crypto/rand/util.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3636">
+          <caret line="105" column="5" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/utils/randutil_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/utils/date_utils_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2196">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/crypto/cipher/cipher.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1404">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/crypto/cipher/cfb.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1872">
+          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/crypto/aes/cipher.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/utils/aes_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/utils/aes.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="124" column="49" lean-forward="true" selection-start-line="124" selection-start-column="49" selection-end-line="124" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/utils/unsafe.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+          <folding>
+            <element signature="e#145#176#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/utils/unsafe_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="89" column="1" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!block;n#Test_AA#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/reflect/value.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="856" column="15" selection-start-line="856" selection-start-column="15" selection-end-line="856" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/crypto/x509/x509.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="1568" column="5" selection-start-line="1568" selection-start-column="5" selection-end-line="1568" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/crypto/x509/cert_pool.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/utils/base64utils.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/crypto/cipher/cbc.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="118" selection-start-line="118" selection-end-line="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/runtime/panic.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="1188" selection-start-line="1188" selection-end-line="1188" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/testing/testing.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="982" selection-start-line="982" selection-end-line="982" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/utils/smutils_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/utils/smutils.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/zapcore/core.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/utils/gmutils.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding>
+            <element signature="e#146#200#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/options.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/logger.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="186" selection-start-line="186" selection-end-line="186" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/zapcore/entry.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="214" selection-start-line="214" selection-end-line="214" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/zapcore/hook.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/zap/zap_log.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#145#157#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -23,9 +23,9 @@ public abstract class AbsCryptoMessageHandlerImpl implements ICryptoMessageHandl
     protected  final Logger logger = LoggerFactory.getLogger(AbsCryptoMessageHandlerImpl.class);
     private boolean inited;
 
-    protected IHash hash;
+//    protected IHash hash;
     protected IEnvelopeHandler  envelopeHandler;
-    protected ISymmetricCrypto symmetricCrypto;
+//    protected ISymmetricCrypto symmetricCrypto;
 
     @Override
     public CryptoMessage encrypt(CryptoMessageBO req)

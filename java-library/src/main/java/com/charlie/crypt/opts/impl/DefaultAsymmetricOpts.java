@@ -14,8 +14,12 @@ import com.charlie.crypt.opts.abs.AbsAsymmetricOpts;
  */
 public class DefaultAsymmetricOpts extends AbsAsymmetricOpts
 {
-    public DefaultAsymmetricOpts(EnumAsymmetricAlgorithm enumAsymmetricAlgorithm, EnumBaseType baseType)
+    public  DefaultAsymmetricOpts()
     {
-        super(enumAsymmetricAlgorithm, baseType);
+
+    }
+    public DefaultAsymmetricOpts(EnumBaseType baseType,EnumAsymmetricAlgorithm enumAsymmetricAlgorithm)
+    {
+        super( baseType,enumAsymmetricAlgorithm);
     }
 }

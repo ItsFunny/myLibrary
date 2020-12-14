@@ -1,7 +1,7 @@
 package com.charlie.crypt.factory;
 
 import com.charlie.crypt.IEnvelopeHandler;
-import com.charlie.crypt.impl.DefaultEnvelopCreatorImpl;
+import com.charlie.crypt.impl.DefaultEnvelopHandlerImpl;
 
 /**
  * @author Charlie
@@ -14,7 +14,7 @@ import com.charlie.crypt.impl.DefaultEnvelopCreatorImpl;
 public class EnvelopeCreatorFactory
 {
     public static IEnvelopeHandler defaultEnvelopeCreator(){
-        DefaultEnvelopCreatorImpl defaultEnvelopCreator = DefaultEnvelopCreatorImpl.newInstance();
+        DefaultEnvelopHandlerImpl defaultEnvelopCreator = DefaultEnvelopHandlerImpl.newInstance();
         return defaultEnvelopCreator;
     }
 

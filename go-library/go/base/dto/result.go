@@ -8,8 +8,26 @@
 */
 package dto
 
+import "myLibrary/go-library/go/constants"
+
 type ResultDTO struct {
 	Data interface{} `json:"data"`
 	Code int         `json:"code"`
 	Msg  string      `json:"msg"`
+}
+
+func SuccessWithDetail(data interface{}, code int, msg string) ResultDTO {
+	return ResultDTO{
+		Data: data,
+		Code: code,
+		Msg:  msg,
+	}
+}
+
+func Success(data interface{}) ResultDTO {
+	return ResultDTO{
+		Data: data,
+		Code: constants.SUCCESS,
+		Msg:  "success",
+	}
 }

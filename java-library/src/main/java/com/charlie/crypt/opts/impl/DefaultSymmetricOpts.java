@@ -13,6 +13,10 @@ import com.charlie.crypt.opts.abs.AbsSymmetricOpts;
  */
 public class DefaultSymmetricOpts extends AbsSymmetricOpts
 {
+    public DefaultSymmetricOpts()
+    {
+
+    }
     public DefaultSymmetricOpts(EnumSymmetryEncryptionType enumSymmetryEncryptionType)
     {
         super(enumSymmetryEncryptionType);

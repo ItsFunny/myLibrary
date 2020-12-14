@@ -1,7 +1,7 @@
 package com.charlie.crypt.factory;
 
 import com.charlie.crypt.ISymmetricCrypto;
-import com.charlie.crypt.impl.DefaultAESCFBSymmetricCryptoImpl;
+import com.charlie.crypt.impl.DefaultAESSymmetricCryptoImpl;
 
 /**
  * @author Charlie
@@ -14,6 +14,6 @@ import com.charlie.crypt.impl.DefaultAESCFBSymmetricCryptoImpl;
 public class SymmetricCryptoFactory
 {
     public static ISymmetricCrypto defaultSymmetricCryptoChain(){
-        return DefaultAESCFBSymmetricCryptoImpl.newInstance();
+        return DefaultAESSymmetricCryptoImpl.newInstance();
     }
 }

@@ -1,6 +1,8 @@
 package com.charlie.crypt;
 
+import com.charlie.crypt.opts.IAsymmetricOpts;
 import com.charlie.crypt.opts.IHashOpts;
+import com.charlie.crypt.opts.ISymmetricOpts;
 
 /**
  * @author Charlie
@@ -13,30 +15,55 @@ import com.charlie.crypt.opts.IHashOpts;
 public class CryptoMessageBO
 {
     String platformId;
-
-    IHashOpts hashOpts;
-
-
-
-
     // 对加密前密文hash的hash方法
-    EnumHashMethod hashMethod;
+//    EnumHashMethod hashMethod;
     // 对密文信息的加密方法,对称加密
-    EnumSymmetryEncryptionType symmEncryptMethod;
-
-
-
+//    EnumSymmetryEncryptionType symmEncryptMethod;
     private EnvelopBO envelope;
 
-    public EnumSymmetryEncryptionType getSymmEncryptMethod()
+    IHashOpts hashOpts;
+    ISymmetricOpts symmetricOpts;
+    IAsymmetricOpts asymmetricOpts;
+
+    public IHashOpts getHashOpts()
     {
-        return symmEncryptMethod;
+        return hashOpts;
     }
 
-    public void setSymmEncryptMethod(EnumSymmetryEncryptionType symmEncryptMethod)
+    public void setHashOpts(IHashOpts hashOpts)
     {
-        this.symmEncryptMethod = symmEncryptMethod;
+        this.hashOpts = hashOpts;
     }
+
+    public ISymmetricOpts getSymmetricOpts()
+    {
+        return symmetricOpts;
+    }
+
+    public void setSymmetricOpts(ISymmetricOpts symmetricOpts)
+    {
+        this.symmetricOpts = symmetricOpts;
+    }
+
+    public IAsymmetricOpts getAsymmetricOpts()
+    {
+        return asymmetricOpts;
+    }
+
+    public void setAsymmetricOpts(IAsymmetricOpts asymmetricOpts)
+    {
+        this.asymmetricOpts = asymmetricOpts;
+    }
+
+//    public EnumSymmetryEncryptionType getSymmEncryptMethod()
+//    {
+//        return symmEncryptMethod;
+//    }
+//
+//    public void setSymmEncryptMethod(EnumSymmetryEncryptionType symmEncryptMethod)
+//    {
+//        this.symmEncryptMethod = symmEncryptMethod;
+//    }
 
     public String getPlatformId()
     {
@@ -49,15 +76,15 @@ public class CryptoMessageBO
     }
 
 
-    public EnumHashMethod getHashMethod()
-    {
-        return hashMethod;
-    }
-
-    public void setHashMethod(EnumHashMethod hashMethod)
-    {
-        this.hashMethod = hashMethod;
-    }
+//    public EnumHashMethod getHashMethod()
+//    {
+//        return hashMethod;
+//    }
+//
+//    public void setHashMethod(EnumHashMethod hashMethod)
+//    {
+//        this.hashMethod = hashMethod;
+//    }
 
 
     public EnvelopBO getEnvelope()

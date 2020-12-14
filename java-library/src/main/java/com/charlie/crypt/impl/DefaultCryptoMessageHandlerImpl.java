@@ -4,9 +4,9 @@ import com.charlie.crypt.CryptoMessage;
 import com.charlie.crypt.CryptoMessageBO;
 import com.charlie.crypt.EnvelopBO;
 import com.charlie.crypt.Envelope;
+import com.charlie.crypt.container.CryptoContainer;
+import com.charlie.crypt.container.CryptoContainerFactory;
 import com.charlie.crypt.factory.EnvelopeCreatorFactory;
-import com.charlie.crypt.factory.HashFactory;
-import com.charlie.crypt.factory.SymmetricCryptoFactory;
 import com.charlie.exception.DecryptException;
 import com.charlie.utils.Base64Utils;
 import com.charlie.utils.DebugUtil;
@@ -30,9 +30,8 @@ public class DefaultCryptoMessageHandlerImpl extends AbsCryptoMessageHandlerImpl
     public static DefaultCryptoMessageHandlerImpl newInstance(){
         DefaultCryptoMessageHandlerImpl defaultCryptoMessageCreator = new DefaultCryptoMessageHandlerImpl();
 
-        defaultCryptoMessageCreator.hash=HashFactory.defaultHashChain();
         defaultCryptoMessageCreator.envelopeHandler= EnvelopeCreatorFactory.defaultEnvelopeCreator();
-        defaultCryptoMessageCreator.symmetricCrypto= SymmetricCryptoFactory.defaultSymmetricCryptoChain();
+//        defaultCryptoMessageCreator.symmetricCrypto= SymmetricCryptoFactory.defaultSymmetricCryptoChain();
 
         return defaultCryptoMessageCreator;
     }
@@ -40,25 +39,26 @@ public class DefaultCryptoMessageHandlerImpl extends AbsCryptoMessageHandlerImpl
     @Override
     protected CryptoMessage doEncrypt(CryptoMessageBO req)
     {
+        CryptoContainer cryptoContainer = CryptoContainerFactory.getInstance().getCryptoContainer();
         CryptoMessage result = new CryptoMessage();
 
         byte[] originData = req.getEnvelope().getOriginData();
         logger.warn("1. 获取到原始的数据,base64为:" + Base64Utils.encode(originData));
 
-        byte[] hashBeforeEncrypt = this.hash.hash(req.getHashMethod(), originData);
-        logger.warn("2. hash方法进行加密,hash函数为:{},结果为:{}", req.getHashMethod(), Base64Utils.encode(hashBeforeEncrypt));
+        byte[] hashBeforeEncrypt = cryptoContainer.hash(req.getHashOpts(), originData);
+        logger.warn("2. hash方法进行加密,hash函数为:{},结果为:{}", req.getHashOpts(), Base64Utils.encode(hashBeforeEncrypt));
 
-        byte[] symmData = this.symmetricCrypto.encrypt(req.getSymmEncryptMethod(), originData);
-        logger.warn("3. 对称加密,对originData进行对称加密,对称方法为:{},返回的数据为:{}", req.getSymmEncryptMethod(), Base64Utils.encode(symmData));
+        byte[] symmData = cryptoContainer.symmEncrypt(req.getSymmetricOpts(), originData);
+        logger.warn("3. 对称加密,对originData进行对称加密,对称方法为:{},返回的数据为:{}", req.getSymmetricOpts(), Base64Utils.encode(symmData));
 
         req.getEnvelope().setOriginData(symmData);
         Envelope envelope = envelopeHandler.create(req.getEnvelope());
-        logger.warn("4. 非对称加密,对对称加密后的数据进行非对称加密,非对称方法为:{},返回的数据为:{}", req.getEnvelope().getCertAlgorithm(), JSONUtil.toFormattedJson(envelope));
+        logger.warn("4. 非对称加密,对对称加密后的数据进行非对称加密,非对称方法为:{},返回的数据为:{}", req.getEnvelope().getAsymmetricOpts(), JSONUtil.toFormattedJson(envelope));
 
         result.setPlatformId(req.getPlatformId());
         result.setHashBeforeEncrypt(hashBeforeEncrypt);
-        result.setEncryptMethod(req.getSymmEncryptMethod());
-        result.setHashMethod(req.getHashMethod());
+        result.setSymmetricOpts(req.getSymmetricOpts());
+        result.setHashOpts(req.getHashOpts());
         result.setEnvelopInfo(envelope);
         DebugUtil.infoPrint("加密message为:", result);
         return result;
@@ -67,14 +67,15 @@ public class DefaultCryptoMessageHandlerImpl extends AbsCryptoMessageHandlerImpl
     @Override
     protected CryptoMessageBO doDecrypt(CryptoMessage cryptoMessage)
     {
+        CryptoContainer cryptoContainer = CryptoContainerFactory.getInstance().getCryptoContainer();
         Envelope envelopInfo = cryptoMessage.getEnvelopInfo();
 
         EnvelopBO envelopBO = this.envelopeHandler.decrypt(envelopInfo);
 
-        byte[] originData = this.symmetricCrypto.decrypt(cryptoMessage.getSymmEncryptMethod(), envelopBO.getOriginData());
+        byte[] originData = cryptoContainer.symmDecrypt(cryptoMessage.getSymmetricOpts(), envelopBO.getOriginData());
         logger.warn(" 对称密钥解内部数据,最初的数据为:{}",new String(originData));
 
-        byte[] hashAfterDecrypt = this.hash.hash(cryptoMessage.getHashMethod(), originData);
+        byte[] hashAfterDecrypt = cryptoContainer.hash(cryptoMessage.getHashOpts(), originData);
         byte[] hashBeforeEncrypt = cryptoMessage.getHashBeforeEncrypt();
         logger.warn(" hash算法校验数据是否一致,校验后的hash码为:{},之前的hash码为:{},是否一致:{}",Base64Utils.encode(hashAfterDecrypt),Base64Utils.encode(hashBeforeEncrypt), Arrays.equals(hashAfterDecrypt, hashBeforeEncrypt));
         if (!Arrays.equals(hashAfterDecrypt,hashBeforeEncrypt))
@@ -86,8 +87,8 @@ public class DefaultCryptoMessageHandlerImpl extends AbsCryptoMessageHandlerImpl
 
         CryptoMessageBO result=new CryptoMessageBO();
         result.setEnvelope(envelopBO);
-        result.setSymmEncryptMethod(cryptoMessage.getSymmEncryptMethod());
-        result.setHashMethod(cryptoMessage.getHashMethod());
+        result.setSymmetricOpts(cryptoMessage.getSymmetricOpts());
+        result.setHashOpts(cryptoMessage.getHashOpts());
         result.setPlatformId(cryptoMessage.getPlatformId());
 
         return result;
@@ -97,7 +98,5 @@ public class DefaultCryptoMessageHandlerImpl extends AbsCryptoMessageHandlerImpl
     protected void init() throws Exception
     {
         this.envelopeHandler.initOnce();
-        this.symmetricCrypto.initOnce();
     }
-
 }

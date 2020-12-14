@@ -1,5 +1,7 @@
 package com.charlie.crypt;
 
+import com.charlie.crypt.opts.IAsymmetricOpts;
+
 /**
  * @author Charlie
  * @When
@@ -16,17 +18,29 @@ public class EnvelopBO
     private String extension;
     private String description;
     // 非对称加密方法
-    private EnumAsymmetricAlgorithm certAlgorithm;
+//    private EnumAsymmetricAlgorithm certAlgorithm;
 
-    public EnumAsymmetricAlgorithm getCertAlgorithm()
+    private IAsymmetricOpts asymmetricOpts;
+
+    public IAsymmetricOpts getAsymmetricOpts()
     {
-        return certAlgorithm;
+        return asymmetricOpts;
     }
 
-    public void setCertAlgorithm(EnumAsymmetricAlgorithm certAlgorithm)
+    public void setAsymmetricOpts(IAsymmetricOpts asymmetricOpts)
     {
-        this.certAlgorithm = certAlgorithm;
+        this.asymmetricOpts = asymmetricOpts;
     }
+
+//    public EnumAsymmetricAlgorithm getCertAlgorithm()
+//    {
+//        return certAlgorithm;
+//    }
+//
+//    public void setCertAlgorithm(EnumAsymmetricAlgorithm certAlgorithm)
+//    {
+//        this.certAlgorithm = certAlgorithm;
+//    }
 
     public byte[] getOriginData()
     {

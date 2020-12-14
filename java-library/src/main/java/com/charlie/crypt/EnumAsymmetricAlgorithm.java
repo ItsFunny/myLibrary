@@ -6,13 +6,16 @@ import java.util.Map;
 
 public enum EnumAsymmetricAlgorithm
 {
-    SM2_256(1, "SM2_256"), RSA_1024(2, "RSA_1024"), RSA_2048(3, "RSA_2048");
+    SM2_256(1, "SM2_256",EnumBaseType.ENUM_ASYMMETRIC_SM2.getValue()), RSA_1024(2, "RSA_1024",EnumBaseType.ENUM_ASYMMETRIC_RSA.getValue()), RSA_2048(3, "RSA_2048",EnumBaseType.ENUM_ASYMMETRIC_RSA.getValue());
     private int value;
     private String desc;
+    private int baseType;
 
-    private EnumAsymmetricAlgorithm(int value, String desc) {
+
+    private EnumAsymmetricAlgorithm(int value, String desc,int baseType) {
         this.value = value;
         this.desc = desc;
+        this.baseType=baseType;
     }
 
     public int getValue() {

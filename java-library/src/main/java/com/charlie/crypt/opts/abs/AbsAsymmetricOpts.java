@@ -17,6 +17,10 @@ public abstract class AbsAsymmetricOpts implements IAsymmetricOpts
     private EnumAsymmetricAlgorithm enumAsymmetricAlgorithm;
     private EnumBaseType baseType;
 
+    public AbsAsymmetricOpts()
+    {
+
+    }
     @Override
     public EnumAsymmetricAlgorithm getDetailAsymmetricAlgorithm()
     {
@@ -29,7 +33,7 @@ public abstract class AbsAsymmetricOpts implements IAsymmetricOpts
         return baseType;
     }
 
-    public AbsAsymmetricOpts(EnumAsymmetricAlgorithm enumAsymmetricAlgorithm, EnumBaseType baseType)
+    public AbsAsymmetricOpts( EnumBaseType baseType,EnumAsymmetricAlgorithm enumAsymmetricAlgorithm)
     {
         this.enumAsymmetricAlgorithm = enumAsymmetricAlgorithm;
         this.baseType = baseType;

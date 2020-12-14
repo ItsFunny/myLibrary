@@ -1,6 +1,12 @@
 package com.charlie.crypt.container;
 
+import com.charlie.crypt.IAsymmetricCrypto;
+import com.charlie.crypt.IHash;
+import com.charlie.crypt.ISymmetricCrypto;
 import com.charlie.crypt.container.CryptoContainer;
+import com.charlie.crypt.factory.AsymmetricCryptoFactory;
+import com.charlie.crypt.factory.HashFactory;
+import com.charlie.crypt.factory.SymmetricCryptoFactory;
 
 /**
  * @author Charlie
@@ -14,22 +20,28 @@ public class CryptoContainerFactory
 {
     private CryptoContainer cryptoContainer;
 
-    private CryptoContainerFactory()
-    {
-        this.cryptoContainer = new CryptoContainer();
+    private CryptoContainerFactory(){
     }
 
     private static class CryptoContainerHolder
     {
         private static CryptoContainerFactory INSTANCE = new CryptoContainerFactory();
     }
-
-    public static CryptoContainerFactory getInstance()
-    {
+    public static CryptoContainerFactory getInstance(){
         return CryptoContainerHolder.INSTANCE;
     }
-    public  void initSlow() throws Exception
+
+    public CryptoContainer getCryptoContainer()
     {
-        cryptoContainer.initOnce();
+        return cryptoContainer;
+    }
+
+
+    public static void defaultInit()throws Exception{
+        IHash iHash = HashFactory.defaultHashChain();
+        ISymmetricCrypto iSymmetricCrypto = SymmetricCryptoFactory.defaultSymmetricCryptoChain();
+        IAsymmetricCrypto iAsymmetricCrypto = AsymmetricCryptoFactory.defaultAsymmetricCryptoChain();
+        CryptoContainerFactory.getInstance().cryptoContainer=new CryptoContainer(iHash,iSymmetricCrypto,iAsymmetricCrypto);
+        CryptoContainerFactory.getInstance().cryptoContainer.initOnce();
     }
 }

@@ -1,4 +1,4 @@
-package orgcode_util
+package utils
 
 import (
 	"errors"

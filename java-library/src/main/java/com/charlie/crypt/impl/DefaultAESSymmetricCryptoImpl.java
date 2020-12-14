@@ -55,9 +55,9 @@ public class DefaultAESSymmetricCryptoImpl extends AbsSymmetricCryptoImpl
             switch (type)
             {
                 case AES_CFB:
-                    AesCFBUtil.decryptBytes(symmKey, encrypt);
+                    return AesCFBUtil.decryptBytes(symmKey, encrypt);
                 case AES_CBC:
-                    AesCBCUtil.decrypt(encrypt, symmKey);
+                    return AesCBCUtil.decrypt(encrypt, symmKey).getBytes();
                 default:
                     throw new EncryptException("找不到匹配的aes算法");
             }

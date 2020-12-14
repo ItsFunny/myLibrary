@@ -1,6 +1,7 @@
 package com.charlie.crypt;
 
 
+import com.charlie.crypt.opts.IAsymmetricOpts;
 import com.charlie.exception.MessageNotCompleteException;
 
 
@@ -8,7 +9,8 @@ public class Envelope  {
     // 加密信封信息
     byte[] envelopeData;
     // 创建加密信封的加密方法,既非对称加解密
-    EnumAsymmetricAlgorithm encryptMethod;
+//    EnumAsymmetricAlgorithm encryptMethod;
+    private IAsymmetricOpts asymmetricOpts;
     // 生成加密信封使用时用到的加密公钥(方便用户找到匹配的私钥进行进行解密)(可选，根据实际业务)
     String encryptPublicKey;
     // 信封标识符 (可选,根据实际业务需要设置, 保函业务需要)
@@ -22,21 +24,21 @@ public class Envelope  {
     public Envelope() {
     }
 
-    public Envelope(byte[] envelopeData, EnumAsymmetricAlgorithm encryptMethod, String encryptPublicKey) {
-        setEnvelopeData(envelopeData);
-        setEncryptMethod(encryptMethod);
-        setEncryptPublicKey(encryptPublicKey);
-    }
+//    public Envelope(byte[] envelopeData, EnumAsymmetricAlgorithm encryptMethod, String encryptPublicKey) {
+//        setEnvelopeData(envelopeData);
+//        setEncryptMethod(encryptMethod);
+//        setEncryptPublicKey(encryptPublicKey);
+//    }
 
-    public Envelope(byte[] envelopeData, EnumAsymmetricAlgorithm encryptMethod, String encryptPublicKey, String envelopeIdentifier, String extension,
-                      String description) {
-        setEnvelopeData(envelopeData);
-        setEncryptMethod(encryptMethod);
-        setEncryptPublicKey(encryptPublicKey);
-        setEnvelopeIdentifier(envelopeIdentifier);
-        setExtension(extension);
-        setDescription(description);
-    }
+//    public Envelope(byte[] envelopeData, EnumAsymmetricAlgorithm encryptMethod, String encryptPublicKey, String envelopeIdentifier, String extension,
+//                      String description) {
+//        setEnvelopeData(envelopeData);
+//        setEncryptMethod(encryptMethod);
+//        setEncryptPublicKey(encryptPublicKey);
+//        setEnvelopeIdentifier(envelopeIdentifier);
+//        setExtension(extension);
+//        setDescription(description);
+//    }
 
     public byte[] getEnvelopeData() {
         return envelopeData;
@@ -49,16 +51,16 @@ public class Envelope  {
         this.envelopeData = envelopeData;
     }
 
-    public EnumAsymmetricAlgorithm getEncryptMethod() {
-        return encryptMethod;
-    }
+//    public EnumAsymmetricAlgorithm getEncryptMethod() {
+//        return encryptMethod;
+//    }
 
-    public void setEncryptMethod(EnumAsymmetricAlgorithm encryptMethod) {
-        if (encryptMethod == null) {
-            throw new RuntimeException("Required value [encryptMethod] should not be set to null.");
-        }
-        this.encryptMethod = encryptMethod;
-    }
+//    public void setEncryptMethod(EnumAsymmetricAlgorithm encryptMethod) {
+//        if (encryptMethod == null) {
+//            throw new RuntimeException("Required value [encryptMethod] should not be set to null.");
+//        }
+//        this.encryptMethod = encryptMethod;
+//    }
 
     public String getEncryptPublicKey() {
         return encryptPublicKey;
@@ -100,7 +102,7 @@ public class Envelope  {
     public Envelope shallowCopy() {
         Envelope obj = new Envelope();
         obj.envelopeData = this.envelopeData;
-        obj.encryptMethod = this.encryptMethod;
+        obj.asymmetricOpts = this.asymmetricOpts;
         obj.encryptPublicKey = this.encryptPublicKey;
         obj.envelopeIdentifier = this.envelopeIdentifier;
         obj.extension = this.extension;
@@ -115,12 +117,21 @@ public class Envelope  {
     {
         if (this.getEnvelopeData() == null)
             throw new MessageNotCompleteException("Required value [EnvelopeData] should not be set to null.");
-        if (this.getEncryptMethod() == null)
+        if (this.getAsymmetricOpts() == null)
             throw new MessageNotCompleteException("Required value [EncryptMethod] should not be set to null.");
         if (this.getEncryptPublicKey() == null)
             throw new MessageNotCompleteException("Required value [EncryptPublicKey] should not be set to null.");
     }
 
+    public IAsymmetricOpts getAsymmetricOpts()
+    {
+        return asymmetricOpts;
+    }
+
+    public void setAsymmetricOpts(IAsymmetricOpts asymmetricOpts)
+    {
+        this.asymmetricOpts = asymmetricOpts;
+    }
     /********************************************************************************
      * 以下为自定义函数
      ********************************************************************************/

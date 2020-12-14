@@ -13,6 +13,11 @@ import com.charlie.crypt.opts.abs.AbsHashOpts;
  */
 public class DefaultHashOpts extends AbsHashOpts
 {
+    public  DefaultHashOpts()
+    {
+        super();
+    }
+
     public DefaultHashOpts(EnumHashMethod hashMethod)
     {
         super(hashMethod);

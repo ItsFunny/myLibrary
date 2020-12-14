@@ -16,6 +16,9 @@ public abstract  class AbsHashOpts implements IHashOpts
 {
     protected  EnumHashMethod hashMethod;
 
+    public AbsHashOpts(){
+
+    }
     public AbsHashOpts(EnumHashMethod hashMethod)
     {
         this.hashMethod = hashMethod;

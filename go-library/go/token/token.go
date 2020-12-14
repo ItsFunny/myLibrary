@@ -7,3 +7,10 @@
 # @Attention : 
 */
 package token
+
+type SToken struct {
+
+}
+type TokenFactory struct {
+
+}

@@ -8,14 +8,14 @@ package com.charlie.crypt.impl;
  * @Attention:
  * @Date 创建时间：2020-12-08 11:03
  */
-public class DefaultEnvelopCreatorImpl extends  AbsEnvelopeHandlerImpl
+public class DefaultEnvelopHandlerImpl extends  AbsEnvelopeHandlerImpl
 {
-    private DefaultEnvelopCreatorImpl(){
+    private DefaultEnvelopHandlerImpl(){
 
     }
 
-    public static  DefaultEnvelopCreatorImpl newInstance(){
-        DefaultEnvelopCreatorImpl impl=new DefaultEnvelopCreatorImpl();
+    public static  DefaultEnvelopHandlerImpl newInstance(){
+        DefaultEnvelopHandlerImpl impl=new DefaultEnvelopHandlerImpl();
         impl.asymmetricCrypto=DefaultSM2AsymmetricCryptoImpl.newInstance();
         return impl;
     }

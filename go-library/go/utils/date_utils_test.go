@@ -1,15 +1,18 @@
 /*
 # -*- coding: utf-8 -*-
 # @Author : joker
-# @Time : 2020-04-16 14:55 
+# @Time : 2020-04-16 14:55
 # @File : date_utils_test.go
-# @Description : 
-# @Attention : 
+# @Description :
+# @Attention :
 */
 package utils
 
 import (
+	"encoding/json"
+	"fmt"
 	"testing"
+	"time"
 )
 
 func TestGetCurrentTimeStrByTemplate(t *testing.T) {
@@ -29,4 +32,38 @@ func TestGetCurrentTimeStrByTemplate(t *testing.T) {
 	type tempStr struct {
 		Names *[]Name
 	}
+}
+
+func TestFormyAsyyyyMMddHHmmssSSS(t *testing.T) {
+	now := time.Now()
+	sss := FormtAsyyyyMMddHHmmssSSS(now)
+	fmt.Println(sss)
+}
+
+type AStruct struct {
+	Name string
+	AlgT int
+}
+
+type PAStruct struct {
+	*AStruct
+	VVV string
+}
+
+func Test_A(t *testing.T) {
+	pa := &PAStruct{
+		AStruct: &AStruct{
+			Name: "1111",
+			AlgT: 111,
+		},
+		VVV: "vvv",
+	}
+	bytes, _ := json.Marshal(pa)
+	fmt.Println(string(bytes))
+
+	paa := PAStruct{}
+
+	json.Unmarshal(bytes, &paa)
+	fmt.Println(paa)
+
 }
