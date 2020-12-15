@@ -4,9 +4,10 @@
  */
 package com.charlie.dto;
 
-import java.io.Serializable;
 
-import com.charlie.enums.RestAPIStatus;
+import com.charlie.error.ResultInfo;
+
+import java.io.Serializable;
 
 
 /**
@@ -24,11 +25,6 @@ public class ResultDTO<T> implements Serializable
     private String msg;
     private Integer code;
 
-
-    public boolean success()
-    {
-        return this.code == RestAPIStatus.SUCESS.ordinal();
-    }
 
     public String getMsg()
     {
@@ -63,32 +59,47 @@ public class ResultDTO<T> implements Serializable
     public static <T> ResultDTO<T> success(T data, String msg)
     {
         ResultDTO<T> ResultDTO = new ResultDTO<>();
-        ResultDTO.setCode(RestAPIStatus.SUCESS.ordinal());
+        ResultDTO.setCode(1);
         ResultDTO.setData(data);
         ResultDTO.setMsg(msg);
         return ResultDTO;
     }
 
-    public static <T> ResultDTO<T> sucess(T data)
+    public static <T> ResultDTO<T> success(T data)
     {
         return success(data, "success");
     }
 
 
-    public static <T> ResultDTO<T> sucess(T data, String msg) {
+    public static <T> ResultDTO<T> result(T data, ResultInfo resultInfo)
+    {
         ResultDTO<T> ResultDTO = new ResultDTO();
-        ResultDTO.setCode(RestAPIStatus.SUCESS.ordinal());
         ResultDTO.setData(data);
+        ResultDTO.setCode(resultInfo.getCode());
+        ResultDTO.setMsg(resultInfo.getMsg());
+        return ResultDTO;
+    }
+
+    public static <T> ResultDTO<T> result(T data, ResultInfo resultInfo, String msg)
+    {
+        resultInfo.setMsg(resultInfo.getMsg() + "," + msg);
+        return result(data, resultInfo);
+    }
+
+
+    public static <T> ResultDTO<T> fail(T data, String msg)
+    {
+        ResultDTO<T> ResultDTO = new ResultDTO();
+        ResultDTO.setData(data);
+        ResultDTO.setCode(2);
         ResultDTO.setMsg(msg);
         return ResultDTO;
     }
 
-
-
-    public static <T> ResultDTO<T> fail(T data, String msg) {
+    public static <T> ResultDTO<T> unauth(String msg)
+    {
         ResultDTO<T> ResultDTO = new ResultDTO();
-        ResultDTO.setData(data);
-        ResultDTO.setCode(RestAPIStatus.FAIL.ordinal());
+        ResultDTO.setCode(ResultInfo.ILLEGAL_ARGUMENT_ERROR.getCode());
         ResultDTO.setMsg(msg);
         return ResultDTO;
     }

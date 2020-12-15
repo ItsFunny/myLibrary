@@ -11,6 +11,7 @@ import org.apache.commons.lang3.RandomUtils;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 
@@ -87,4 +88,11 @@ public class FabricNetworkContainerTest
         return req;
     }
 
+    @Test
+    public void test111(){
+        char[]bys=new char[123];
+        Arrays.fill(bys,  'a');
+
+        System.out.println(new String(bys));
+    }
 }

@@ -2,107 +2,59 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="298ffa7f-3e1a-43e9-893b-1040a5cb3fd4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/go/utils/gmutils.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go/utils/unsafe.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go/utils/unsafe_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/zap/zap_log.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/ering-base.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/base/IBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/base/IBaseByteFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/base/IBaseFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/base/IFactortyTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/base/IFactoryBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/base/IFactoryFrom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/base/IFrom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/base/ITO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/exception/DeserializeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/src/main/java/com/charlie/exception/SerializeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/ering-modelandview/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/ering/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/CryptoMessageJSONObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/CryptoMessageUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/cache/OptsCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/factory/CryptoMessageFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/exception/DeserializeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/exception/SerializeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/factory/IFactortyTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ering/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ering/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ering/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Ering/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go/utils/cmd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/error/ResultInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go/base/dto/result.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/base/dto/result.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go/token/token.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/token/token.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go/utils/aes.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/aes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go/utils/date_utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/date_utils.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go/utils/date_utils_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/date_utils_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go/utils/logic_util.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/logic_util.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go/utils/orgcode_util.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/orgcode_util.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go/utils/smutils.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/smutils.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go/utils/smutils_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/go/utils/smutils_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/log/log_2020-12-09.log" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/log/log_2020-12-09.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/ering/ering-base/ering-base.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/base/IBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/base/IBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/base/IBaseByteFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/base/IBaseByteFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/base/IBaseFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/base/IBaseFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/base/IFactortyTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/base/IFactortyTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/base/IFactoryBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/base/IFactoryBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/base/IFactoryFrom.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/base/IFactoryFrom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/base/IFrom.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/base/IFrom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/base/ITO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/base/ITO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/exception/DeserializeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/exception/DeserializeException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/exception/SerializeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/target/classes/com/charlie/exception/SerializeException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/ering/ering-base/target/test-classes/com/charlie/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/ering/ering-base/target/test-classes/com/charlie/AppTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/CryptoMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/CryptoMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/CryptoMessageBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/CryptoMessageBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnumAsymmetricAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnumAsymmetricAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnumBaseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnumBaseType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnumHashMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnumHashMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnumSymmetryEncryptionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnumSymmetryEncryptionType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnvelopBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/EnvelopBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/Envelope.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/Envelope.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/container/CryptoContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/container/CryptoContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/container/CryptoContainerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/container/CryptoContainerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/factory/EnvelopeCreatorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/factory/EnvelopeCreatorFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/factory/SymmetricCryptoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/factory/SymmetricCryptoFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/AbsCryptoMessageHandlerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/AbsCryptoMessageHandlerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/AbsEnvelopeHandlerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/AbsEnvelopeHandlerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/DefaultAESSymmetricCryptoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/DefaultAESSymmetricCryptoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/DefaultCryptoMessageHandlerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/DefaultCryptoMessageHandlerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/DefaultEnvelopCreatorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/impl/DefaultEnvelopHandlerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/abs/AbsAsymmetricOpts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/abs/AbsAsymmetricOpts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/abs/AbsHashOpts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/abs/AbsHashOpts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/abs/AbsSymmetricOpts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/abs/AbsSymmetricOpts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/impl/DefaultAsymmetricOpts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/impl/DefaultAsymmetricOpts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/impl/DefaultHashOpts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/impl/DefaultHashOpts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/impl/DefaultSymmetricOpts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/crypt/opts/impl/DefaultSymmetricOpts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/crypt/container/CryptoMessageContainerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/crypt/container/CryptoMessageContainerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/blockchain/util/SystemUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/dto/ResultDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/dto/ResultDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/SystemUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/main/java/com/charlie/utils/SystemUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/blockchain/proxy/FabricNetworkContainerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/src/test/java/com/charlie/blockchain/proxy/FabricNetworkContainerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/META-INF/java-library.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/base/IBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/blockchain/util/SystemUtils.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/CryptoMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/CryptoMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/CryptoMessageBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/CryptoMessageBO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnumAsymmetricAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnumAsymmetricAlgorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnumBaseType.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnumBaseType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnumHashMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnumHashMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnumSymmetryEncryptionType.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnumSymmetryEncryptionType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnvelopBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/EnvelopBO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/Envelope.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/Envelope.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/IAsymmetricCrypto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/IAsymmetricCrypto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/IHash.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/IHash.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/ISymmetricCrypto.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/ISymmetricCrypto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/container/CryptoContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/container/CryptoContainer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/factory/EnvelopeCreatorFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/factory/EnvelopeCreatorFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/factory/SymmetricCryptoFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/factory/SymmetricCryptoFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/AbsCryptoMessageHandlerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/AbsCryptoMessageHandlerImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/AbsEnvelopeCreatorImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/AbsHasher.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/AbsHasher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/AsymmetricCryptoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/DefaultAESCFBSymmetricCryptoImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/DefaultCryptoMessageHandlerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/DefaultCryptoMessageHandlerImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/DefaultEnvelopCreatorImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/DefaultSM2AsymmetricCryptoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/DefaultSM2AsymmetricCryptoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/MD5Hasher.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/MD5Hasher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/impl/SymmetricCryptoImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/opts/abs/AbsAsymmetricOpts.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/opts/abs/AbsAsymmetricOpts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/opts/abs/AbsHashOpts.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/opts/abs/AbsHashOpts.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/opts/abs/AbsSymmetricOpts.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/opts/abs/AbsSymmetricOpts.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/opts/impl/DefaultAsymmetricOpts.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/opts/impl/DefaultAsymmetricOpts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/crypt/container/CryptoMessageContainerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/crypt/container/CryptoMessageContainerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/opts/impl/DefaultHashOpts.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/opts/impl/DefaultHashOpts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/opts/impl/DefaultSymmetricOpts.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/crypt/opts/impl/DefaultSymmetricOpts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/dto/ResultDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/dto/ResultDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/utils/SystemUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/com/charlie/utils/SystemUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/classes/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-library/target/classes/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/Other.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/bigfile/AbstractBigFileProcessorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/blockchain/configuration/BlockChainConfigurationTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/blockchain/proxy/FabricNetworkContainerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/crypt/container/CryptoMessageContainerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/dto/BatchInsertReqWrapperTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/dto/SelectReqWrapperTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/file/FTPFileServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/file/SFTPFileServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/utils/AESUtilsTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/utils/AesCFBUtilTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/utils/CommonTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/utils/CryptUtilTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/utils/DateUtilsTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/utils/FileUtilTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/utils/ImgUtilTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-library/target/test-classes/com/charlie/utils/KeyUtilsTest.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,71 +64,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/go/utils/gmutils.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14">
-              <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-              <folding>
-                <element signature="e#146#200#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/log/zap/zap_log.go">
+        <entry file="file://$PROJECT_DIR$/go/utils/cmd.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="900">
+              <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
               <folding>
-                <element signature="e#145#157#0" expanded="true" />
+                <element signature="e#142#174#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/zapcore/hook.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/logger.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="186" selection-start-line="186" selection-end-line="186" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/zapcore/entry.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="214" selection-start-line="214" selection-end-line="214" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/options.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/zapcore/core.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
-              <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -192,7 +87,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sdk</find>
       <find>blockEventExecutor</find>
       <find>html</find>
       <find>gocheck</find>
@@ -222,6 +116,7 @@
       <find>register</find>
       <find>o</find>
       <find>iv</find>
+      <find>cmd</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;github.com/hyperledger/fabric/protos/peer&quot;</replace>
@@ -253,9 +148,9 @@
       <dir>$PROJECT_DIR$/blockchain/base</dir>
       <dir>$PROJECT_DIR$/chaincode/base</dir>
       <dir>$PROJECT_DIR$/chaincode</dir>
-      <dir>$PROJECT_DIR$/go/utils</dir>
       <dir>$PROJECT_DIR$/blockchain</dir>
       <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/go/utils</dir>
     </dirStrings>
   </component>
   <component name="GOROOT" path="/usr/local/go" />
@@ -269,7 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/go/utils/pdf_test.go" />
         <option value="$PROJECT_DIR$/go/utils/scraptch.go" />
         <option value="$PROJECT_DIR$/go/utils/scrape_test.go" />
         <option value="$PROJECT_DIR$/go/utils/scrape.go" />
@@ -320,6 +214,7 @@
         <option value="$PROJECT_DIR$/go/utils/unsafe_test.go" />
         <option value="$PROJECT_DIR$/go/utils/gmutils.go" />
         <option value="$PROJECT_DIR$/log/zap/zap_log.go" />
+        <option value="$PROJECT_DIR$/go/utils/cmd.go" />
       </list>
     </option>
   </component>
@@ -336,12 +231,24 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
               <item name="go-library" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-library" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-library" type="462c0819:PsiDirectoryNode" />
+              <item name="go" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="go-library" type="b2602c69:ProjectViewProjectNode" />
@@ -358,7 +265,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -458,11 +364,11 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Go Build.go build zap_log.go" />
       <item itemvalue="Go Test.Test_A in myLibrary/go-library/go/utils" />
       <item itemvalue="Go Test.TestAesEncryptCBC in myLibrary/go-library/go/utils" />
       <item itemvalue="Go Test.Test_AA in myLibrary/go-library/go/utils" />
       <item itemvalue="Go Test.Test_ABS in myLibrary/go-library/go/utils" />
-      <item itemvalue="Go Build.go build zap_log.go" />
     </list>
     <recent_temporary>
       <list>
@@ -510,13 +416,13 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49819493" visible="true" weight="0.19170243" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49819493" visible="true" weight="0.19456366" />
       <window_info id="Structure" order="1" sideWeight="0.50180507" side_tool="true" weight="0.22389127" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3313253" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.33012047" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.33012047" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -645,26 +551,17 @@
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/log/zap/zap_log.go</url>
           <line>26</line>
-          <properties />
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/log/zap/zap_log.go</url>
           <line>23</line>
-          <properties />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../github.com/hyperledger/fabric-sdk-go/pkg/gateway/transaction.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../github.com/hyperledger/fabric-sdk-go/pkg/gateway/gateway.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2160">
@@ -854,13 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/go/utils/aes.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="124" column="49" lean-forward="true" selection-start-line="124" selection-start-column="49" selection-end-line="124" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/go/utils/unsafe.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -944,57 +834,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/zapcore/core.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/go/utils/gmutils.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
+        <state relative-caret-position="360">
           <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="e#146#200#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/options.go">
+    <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/zapcore/hook.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        <state relative-caret-position="2304">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/logger.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
+        <state relative-caret-position="6372">
           <caret line="186" selection-start-line="186" selection-end-line="186" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/zapcore/entry.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
+        <state relative-caret-position="7344">
           <caret line="214" selection-start-line="214" selection-end-line="214" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/zapcore/hook.go">
+    <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/options.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="1800">
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../go.uber.org/zap/zapcore/core.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/log/zap/zap_log.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="279">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/utils/aes.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="124" column="49" lean-forward="true" selection-start-line="124" selection-start-column="49" selection-end-line="124" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/go/utils/cmd.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
           <folding>
-            <element signature="e#145#157#0" expanded="true" />
+            <element signature="e#142#174#0" expanded="true" />
           </folding>
         </state>
       </provider>

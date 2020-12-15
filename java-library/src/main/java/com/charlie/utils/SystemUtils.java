@@ -5,6 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -19,9 +20,15 @@ public class SystemUtils
 {
     public static Properties getOSEnveiroments()
     {
-        Properties properties = System.getProperties();
+        Map<String, String> envs = System.getenv();
+        Properties properties=new Properties();
+        for (String s : envs.keySet())
+        {
+            properties.put(s,envs.get(s));
+        }
         return properties;
     }
+
 
     public static void setEnviroment(String key, String value)
     {

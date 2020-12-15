@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ering-base" />
         <module name="ering-modelandview" />
+        <module name="java-library" />
       </profile>
     </annotationProcessing>
   </component>

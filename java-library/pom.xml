@@ -6,7 +6,7 @@
 
     <groupId>com.charlie</groupId>
     <artifactId>myLibrary</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <version>1.0</version>
 
     <dependencies>
@@ -163,13 +163,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.springframework/org.springframework.web -->
-        <!--<dependency>-->
-        <!--<groupId>org.springframework</groupId>-->
-        <!--<artifactId>org.springframework.web</artifactId>-->
-        <!--<version>3.1.0.RELEASE</version>-->
-        <!--<scope>provided</scope>-->
-        <!--</dependency>-->
 
 
 
@@ -275,8 +268,34 @@
             <version>1.2.75</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
+            <version>4.5.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpasyncclient</artifactId>
+            <version>4.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.13.3</version>
+        </dependency>
+
+
+
 
         <!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- -->
+        <dependency>
+            <groupId>cn.jnta</groupId>
+            <artifactId>hsmGeneralFinance</artifactId>
+            <version>2.1.2</version>
+            <scope>system</scope>
+            <systemPath>/Users/joker/.m2/repository/cn/jnta/hsmGeneralFinance/2.1.2/hsmGeneralFinance-2.1.2.jar</systemPath>
+        </dependency>
+
         <dependency>
             <groupId>gdca</groupId>
             <artifactId>cesecore-common</artifactId>
@@ -323,23 +342,6 @@
             <scope>system</scope>
             <systemPath>/Users/joker/.m2/repository/com/sjsm/sjsm-sm2-cert/1.0.0/sjsm-sm2-cert-1.0.0.jar</systemPath>
         </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpmime</artifactId>
-            <version>4.5.12</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpasyncclient</artifactId>
-            <version>4.1.4</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.13.3</version>
-        </dependency>
-
-
     </dependencies>
     <build>
         <plugins>
