@@ -1,8 +1,6 @@
 package com.charlie.crypt;
 
 
-import com.charlie.base.IInitOnce;
-
 /**
  * @author Charlie
  * @When

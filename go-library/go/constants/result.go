@@ -11,6 +11,7 @@ package constants
 const (
 	// 成功
 	SUCCESS = 1
+
 	// 需要显示描述的错误,如用户重复上链等信息
 	OUT_PUT_ERROR_CODE = 1 << 1
 

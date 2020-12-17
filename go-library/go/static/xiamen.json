@@ -1,0 +1,10 @@
+{
+  "serverId": "xiamen-3016",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "xiamen",
+    "ou": "xiamen",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.ebidsun.com/cloudshieldca/clientServerReceive"
+}

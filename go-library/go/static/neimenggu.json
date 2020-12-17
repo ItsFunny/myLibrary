@@ -1,0 +1,10 @@
+{
+  "serverId": "neimenggu-3010",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "neimenggu",
+    "ou": "neimenggu",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.ebidsun.com/cloudshieldca/clientServerReceive"
+}

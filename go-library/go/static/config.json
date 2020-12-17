@@ -1,0 +1,10 @@
+{
+  "serverId": "{{.serverId}}",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "{{.serverO}}",
+    "ou": "{{.serverOu}}",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.ebidsun.com/cloudshieldca/clientServerReceive"
+}

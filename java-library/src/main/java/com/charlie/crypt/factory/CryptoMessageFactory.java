@@ -1,6 +1,5 @@
 package com.charlie.crypt.factory;
 
-import com.charlie.base.IBaseByteFactory;
 import com.charlie.crypt.CryptoMessage;
 import com.charlie.exception.DeserializeException;
 import com.charlie.exception.SerializeException;

@@ -1,7 +1,6 @@
 package com.charlie.blockchain.exception;
 
 import com.charlie.blockchain.ResultInfo;
-import com.charlie.blockchain.exception.BaseFabricException;
 
 /**
  * @author Charlie

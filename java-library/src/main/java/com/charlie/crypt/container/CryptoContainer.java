@@ -6,12 +6,9 @@ import com.charlie.crypt.opts.IAsymmetricOpts;
 import com.charlie.crypt.opts.IHashOpts;
 import com.charlie.crypt.opts.ISymmetricOpts;
 import com.charlie.exception.ConfigException;
-import com.charlie.exception.DecryptException;
 import com.charlie.exception.EncryptException;
 import com.charlie.exception.HashException;
 import io.netty.handler.codec.DecoderException;
-
-import java.io.Serializable;
 
 /**
  * @author Charlie

@@ -2,14 +2,11 @@ package com.charlie.crypt.impl;
 
 import com.charlie.crypt.EnumAsymmetricAlgorithm;
 import com.charlie.crypt.EnumBaseType;
-import com.charlie.crypt.IAsymmetricCrypto;
 import com.charlie.crypt.IAsymmetricCryptoChain;
 import com.charlie.crypt.opts.IAsymmetricOpts;
 import com.charlie.exception.EncryptException;
 import com.charlie.template.BaseTemplatePatternV3;
 import io.netty.handler.codec.DecoderException;
-
-import java.io.Serializable;
 
 /**
  * @author Charlie

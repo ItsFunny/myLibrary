@@ -1,18 +1,10 @@
 package com.charlie;
 
 import com.charlie.utils.Base64Utils;
-import com.charlie.utils.DateUtils;
-import io.netty.util.concurrent.CompleteFuture;
 
 import javax.crypto.KeyGenerator;
-import java.lang.ref.PhantomReference;
-import java.lang.ref.WeakReference;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author Charlie

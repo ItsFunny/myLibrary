@@ -1,12 +1,7 @@
 package com.charlie.utils;
 
 import com.charlie.model.CertInfo;
-import com.sun.deploy.security.CertUtils;
-import org.apache.commons.codec.binary.Hex;
-import org.hyperledger.fabric.util.SMUtil;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class KeyUtilsTest
 {

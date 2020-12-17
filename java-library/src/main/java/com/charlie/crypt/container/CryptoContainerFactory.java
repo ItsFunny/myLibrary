@@ -3,7 +3,6 @@ package com.charlie.crypt.container;
 import com.charlie.crypt.IAsymmetricCrypto;
 import com.charlie.crypt.IHash;
 import com.charlie.crypt.ISymmetricCrypto;
-import com.charlie.crypt.container.CryptoContainer;
 import com.charlie.crypt.factory.AsymmetricCryptoFactory;
 import com.charlie.crypt.factory.HashFactory;
 import com.charlie.crypt.factory.SymmetricCryptoFactory;

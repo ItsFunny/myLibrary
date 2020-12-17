@@ -1,0 +1,145 @@
+
+version: '2'
+
+
+networks:
+  bidchain:
+services:
+
+  peer0.{{.OrgName}}.com:
+    container_name: peer0.{{.OrgName}}.com
+    extends:
+      file: base/peer-base.yaml
+      service: peer-base
+    environment:
+      #      - FABRIC_LOGGING_SPEC=DEBUG
+      - FABRIC_LOGGING_SPEC=INFO
+      - CORE_PEER_ID=peer0.{{.OrgName}}.com
+      - CORE_PEER_ADDRESS=peer0.{{.OrgName}}.com:{{.OrgPort}}
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:{{.OrgPort}}
+      - CORE_PEER_CHAINCODEADDRESS=peer0.{{.OrgName}}.com:${PEER_CHAINCODE_PORT}
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:${PEER_CHAINCODE_PORT}
+      #- CORE_PEER_GOSSIP_BOOTSTRAP=peer1.{{.OrgName}}.com:8051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.{{.OrgName}}.com:{{.OrgPort}}
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.{{.OrgName}}.com:{{.OrgPort}}
+      - CORE_PEER_LOCALMSPID={{.OrgMsp}}
+    volumes:
+      - /var/run/docker.sock:/host/var/run/docker.sock
+      - ~/{{.OrgName}}/bidchain/bidchain_configs/peer0.{{.OrgName}}.com:/etc/hyperledger/fabric
+      - ./crypto-config/peerOrganizations/{{.OrgName}}.com/peers/peer0.{{.OrgName}}.com/msp:/etc/hyperledger/fabric/msp
+      - ./crypto-config/peerOrganizations/{{.OrgName}}.com/peers/peer0.{{.OrgName}}.com/tls:/etc/hyperledger/fabric/tls
+      - ~/{{.OrgName}}/bidchain/bidchain_db/peer0.{{.OrgName}}.com:/var/hyperledger/production
+      - ./scripts:/opt/workspace/scripts
+    ports:
+      - {{.OrgPort}}:7050
+    networks:
+      bidchain:
+
+      # peer1.{{.OrgName}}.com:
+      #   container_name: peer1.{{.OrgName}}.com
+      #   extends:
+      #     file: base/docker-compose-base.yaml
+      #     service: peer1.{{.OrgName}}.com
+      #   networks:
+      #     bidchain:
+      #       ipv4_address: 192.168.176.101
+      #   extra_hosts:
+      #      - "peer1.zhuhai.com:192.168.6.5"
+
+
+      #  peer0.guangzhou.com:
+      #    container_name: peer0.guangzhou.com
+      #    extends:
+      #      file:  base/docker-compose-base.yaml
+      #      service: peer0.guangzhou.com
+      #    networks:
+      #      bidchain:
+      #ipv4_address: 192.168.176.102
+
+  # peer1.guangzhou.com:
+  #   container_name: peer1.guangzhou.com
+  #   extends:
+  #     file:  base/docker-compose-base.yaml
+  #     service: peer1.guangzhou.com
+  #   networks:
+  #     bidchain:
+  #       ipv4_address: 192.168.176.103
+  #   extra_hosts:
+  #      - "peer1.zhuhai.com:192.168.6.5"
+  #
+
+
+
+  cli:
+    container_name: cli
+    #image: swr.cn-east-3.myhuaweicloud.com/e{{.OrgName}}/fabric-tools
+    image: hyperledger/fabric-tools
+    tty: true
+    stdin_open: true
+    environment:
+      - GODEBUG=netdns=go
+      - GOPATH=/opt/gopath
+      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      #- FABRIC_LOGGING_SPEC=DEBUG
+      - FABRIC_LOGGING_SPEC=INFO
+      - CORE_PEER_ID=cli
+      - CORE_PEER_ADDRESS=peer0.{{.OrgName}}.com:{{.OrgPort}}
+      - CORE_PEER_LOCALMSPID={{.OrgMsp}}
+      - CORE_PEER_TLS_ENABLED=true
+      - CORE_PEER_TLS_CERT_FILE=/opt/workspace/crypto/peerOrganizations/org${ORG_INDEX}.com/peers/peer0.{{.OrgName}}.com/tls/server.crt
+      - CORE_PEER_TLS_KEY_FILE=/opt/workspace/crypto/peerOrganizations/org${ORG_INDEX}.com/peers/peer0.{{.OrgName}}.com/tls/server.key
+      - CORE_PEER_TLS_ROOTCERT_FILE=/opt/workspace/crypto/peerOrganizations/org${ORG_INDEX}.com/peers/peer0.{{.OrgName}}.com/tls/ca.crt
+      - CORE_PEER_MSPCONFIGPATH=/opt/workspace/crypto/peerOrganizations/org${ORG_INDEX}.com/users/Admin@org${ORG_INDEX}.com/msp
+      - FABRIC_AES_KEY_GET_PATH=/opt/gopath/src/bidchain/chaincode/cipher_msp_test.json
+      - SIGNATURE_CRET_CONFIG_FOLDER_PATH=/opt/gopath/src/bidchain/chaincode
+      - SIGNATURE_CERT_CONFIG_FILENAME=signatureCertInfo_test.config
+    working_dir: /opt/workspace
+    command: /bin/bash
+    volumes:
+      - /var/run/:/host/var/run/
+      - ./workspace:/opt/workspace
+      - ~/go:/opt/gopath
+      - ./crypto-config:/opt/workspace/crypto/
+      - ./scripts:/opt/workspace/scripts
+      - ./channel-artifacts:/opt/workspace/channel-artifacts
+    networks:
+      bidchain:
+      ipv4_address: 192.168.176.201
+
+
+  gzCli:
+    container_name: gzCli
+    #image: swr.cn-east-3.myhuaweicloud.com/e{{.OrgName}}/fabric-tools
+    image: hyperledger/fabric-tools
+    tty: true
+    stdin_open: true
+    environment:
+      - GODEBUG=netdns=go
+      - GOPATH=/opt/gopath
+      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      #- FABRIC_LOGGING_SPEC=DEBUG
+      - FABRIC_LOGGING_SPEC=INFO
+      - CORE_PEER_ID=gzCli
+      - CORE_PEER_ADDRESS=peer0.guangzhou.com:9051
+      - CORE_PEER_LOCALMSPID=GuangzhouMSP
+      - CORE_PEER_TLS_ENABLED=true
+      - CORE_PEER_TLS_CERT_FILE=/opt/workspace/crypto/peerOrganizations/guangzhou.com/peers/peer0.guangzhou.com/tls/server.crt
+      - CORE_PEER_TLS_KEY_FILE=/opt/workspace/crypto/peerOrganizations/guangzhou.com/peers/peer0.guangzhou.com/tls/server.key
+      - CORE_PEER_TLS_ROOTCERT_FILE=/opt/workspace/crypto/peerOrganizations/guangzhou.com/peers/peer0.guangzhou.com/tls/ca.crt
+      - CORE_PEER_MSPCONFIGPATH=/opt/workspace/crypto/peerOrganizations/guangzhou.com/users/Admin@guangzhou.com/msp
+      - FABRIC_AES_KEY_GET_PATH=/opt/gopath/src/bidchain/chaincode/cipher_msp_test.json
+      - SIGNATURE_CRET_CONFIG_FOLDER_PATH=/opt/gopath/src/bidchain/chaincode
+      - SIGNATURE_CERT_CONFIG_FILENAME=signatureCertInfo_test.config
+    working_dir: /opt/workspace
+    command: /bin/bash
+    volumes:
+      - /var/run/:/host/var/run/
+      - ./workspace:/opt/workspace
+      - ~/go:/opt/gopath
+      - ./crypto-config:/opt/workspace/crypto/
+      - ./scripts:/opt/workspace/scripts
+      - ./channel-artifacts:/opt/workspace/channel-artifacts
+    networks:
+      bidchain:
+      ipv4_address: 192.168.176.202
+

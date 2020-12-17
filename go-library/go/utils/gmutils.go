@@ -16,8 +16,8 @@ import (
 )
 
 // 签名(兼容java客户端，世纪数码签名验签接口)
-func SM2Sign(privateKey *sm2.PrivateKey, rawMessage []byte) (string, error) {
-	r, s, err := sm2.Sm2Sign(privateKey, rawMessage, nil)
+func SM2Sign(privateKey *sm2.PrivateKey, rawMessage ,uid[]byte) (string, error) {
+	r, s, err := sm2.Sm2Sign(privateKey, rawMessage, uid)
 	if err != nil {
 		return "", err
 	}
@@ -25,7 +25,7 @@ func SM2Sign(privateKey *sm2.PrivateKey, rawMessage []byte) (string, error) {
 }
 
 // 验签
-func SM2Verify(publicKey *sm2.PublicKey, rawMessage []byte, signature string) (bool, error) {
+func SM2Verify(publicKey *sm2.PublicKey, rawMessage ,uid[]byte, signature string) (bool, error) {
 	// fmt.Println("xx signature len:", len(signature))
 	// fmt.Println("xx signature:", signature)
 	// if len(signature) < 128 {
@@ -36,7 +36,7 @@ func SM2Verify(publicKey *sm2.PublicKey, rawMessage []byte, signature string) (b
 	if err != nil {
 		return false, err
 	}
-	verify := sm2.Sm2Verify(publicKey, rawMessage, nil, r, s)
+	verify := sm2.Sm2Verify(publicKey, rawMessage, uid, r, s)
 	// fmt.Println(r.Text(16), s.Text(16))
 	return verify, nil
 }

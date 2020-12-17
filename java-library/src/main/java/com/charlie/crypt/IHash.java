@@ -4,8 +4,6 @@ import com.charlie.base.IInitOnce;
 import com.charlie.crypt.opts.IHashOpts;
 import com.charlie.exception.HashException;
 
-import java.io.Serializable;
-
 /**
  * @author Charlie
  * @When

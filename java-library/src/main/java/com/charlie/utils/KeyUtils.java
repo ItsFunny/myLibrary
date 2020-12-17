@@ -4,7 +4,6 @@
  */
 package com.charlie.utils;
 
-import com.sm2.SM2;
 import com.sm2.SM2Utils;
 import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;
 import org.bouncycastle.asn1.sec.ECPrivateKey;

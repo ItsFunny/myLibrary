@@ -2,14 +2,10 @@ package com.charlie.crypt.impl;
 
 import com.charlie.crypt.EnumBaseType;
 import com.charlie.crypt.EnumHashMethod;
-import com.charlie.crypt.IHash;
 import com.charlie.crypt.IHashChain;
 import com.charlie.crypt.opts.IHashOpts;
 import com.charlie.exception.HashException;
 import com.charlie.template.BaseTemplatePatternV3;
-import org.apache.commons.collections.map.HashedMap;
-
-import java.io.Serializable;
 
 /**
  * @author Charlie

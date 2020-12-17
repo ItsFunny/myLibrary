@@ -1,7 +1,6 @@
 package com.charlie.crypt.opts;
 
 import com.charlie.crypt.EnumSymmetryEncryptionType;
-import com.charlie.crypt.opts.IBaseOpts;
 
 /**
  * @author Charlie

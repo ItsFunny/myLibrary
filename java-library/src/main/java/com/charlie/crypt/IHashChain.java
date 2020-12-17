@@ -1,10 +1,5 @@
 package com.charlie.crypt;
 
-import com.charlie.base.IInitOnce;
-import com.charlie.exception.HashException;
-
-import java.io.Serializable;
-
 /**
  * @author Charlie
  * @When

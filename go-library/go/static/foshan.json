@@ -1,0 +1,10 @@
+{
+  "serverId": "foshan-3003",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "foshan",
+    "ou": "foshan",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.ebidsun.com/cloudshieldca/clientServerReceive"
+}

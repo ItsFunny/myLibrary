@@ -4,8 +4,6 @@ import com.charlie.crypt.EnumBaseType;
 import com.charlie.crypt.EnumHashMethod;
 import com.charlie.utils.MD5Utils;
 
-import java.io.Serializable;
-
 /**
  * @author Charlie
  * @When

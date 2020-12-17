@@ -1,12 +1,6 @@
 package com.charlie.blockchain.wrapper;
 
-import org.hyperledger.fabric.sdk.HFClient;
-import org.hyperledger.fabric.sdk.User;
 import org.hyperledger.fabric_ca.sdk.HFCAClient;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author Charlie

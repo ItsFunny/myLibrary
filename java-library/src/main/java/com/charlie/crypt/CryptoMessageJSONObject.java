@@ -1,11 +1,5 @@
 package com.charlie.crypt;
 
-import com.charlie.base.IBase;
-import com.charlie.crypt.opts.IHashOpts;
-import com.charlie.crypt.opts.ISymmetricOpts;
-import com.charlie.exception.MessageNotCompleteException;
-import org.apache.commons.lang3.builder.Builder;
-
 public class CryptoMessageJSONObject
 {
     private String hashClazzName;

@@ -2,8 +2,6 @@ package com.charlie.crypt;
 
 import com.charlie.base.IInitOnce;
 
-import java.io.Serializable;
-
 /**
  * @author Charlie
  * @When

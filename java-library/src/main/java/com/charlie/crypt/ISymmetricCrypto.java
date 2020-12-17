@@ -5,8 +5,6 @@ import com.charlie.crypt.opts.ISymmetricOpts;
 import com.charlie.exception.EncryptException;
 import io.netty.handler.codec.DecoderException;
 
-import java.io.Serializable;
-
 /**
  * @author Charlie
  * @When

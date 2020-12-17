@@ -221,6 +221,21 @@ public class JSONUtil
             throws FileNotFoundException, UnsupportedEncodingException {
         return (JSONObject) JSON.parse(FileUtils.getFileText(jsonFile));
     }
+    /**
+     * 将json 格式的文件转化为响应的对象
+     *
+     * @param jsonFile 要转化为对象的json文件
+     * @param t        对象的class类型
+     * @return
+     * @throws FileNotFoundException
+     * @throws UnsupportedEncodingException
+     */
+    public static <T> T jsonFileToObj(String jsonFile, Class<T> t)
+            throws FileNotFoundException, UnsupportedEncodingException {
+
+        return JSON.parseObject(FileUtils.getFileText(jsonFile), t);
+    }
+
 
     public static String toJsonString(Map<String, Object> map){
         return JSON.toJSONString(map,

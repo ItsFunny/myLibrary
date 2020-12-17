@@ -16,6 +16,14 @@ type ResultDTO struct {
 	Msg  string      `json:"msg"`
 }
 
+func Fail(msg string) ResultDTO {
+	return ResultDTO{
+		Data: nil,
+		Code: constants.FAIL,
+		Msg:  msg,
+	}
+}
+
 func SuccessWithDetail(data interface{}, code int, msg string) ResultDTO {
 	return ResultDTO{
 		Data: data,
