@@ -7,10 +7,14 @@
 */
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/sirupsen/logrus"
+)
 
 func main() {
 	fmt.Println(1)
+	logrus.Info()
 	// niuniu := make([]int, 4)
 	// nn := make([]int, 4)
 	// a := 0

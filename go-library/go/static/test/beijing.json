@@ -1,10 +1,10 @@
 {
-  "serverId": "beijing-3000",
+  "serverId": "beijing-7000",
   "DN": {
     "cn": "bidsun.cn",
     "o": "beijing",
     "ou": "beijing",
     "surname": "91330110MA2GLDG66X"
   },
-  "clientServerReceiveUrl": "https://api.ebidsun.com/cloudshieldca/clientServerReceive"
+  "clientServerReceiveUrl": "http://api.ebidsun.com/cloudshieldca/clientServerReceive"
 }

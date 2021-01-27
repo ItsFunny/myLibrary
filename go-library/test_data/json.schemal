@@ -1,0 +1,117 @@
+{
+  "$schema": "123",
+  "type": "object",
+  "properties":{
+    "schema_version": {
+      "type": "string"
+     },
+    "service": {
+      "$ref": "#/definitions/service"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "service"
+  ],
+  "definitions": {
+    "service": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/service_name"
+        },
+        "runtime": {
+          "$ref": "#/definitions/runtime_location"
+        },
+        "labels": {
+          "$ref": "#/definitions/service_labels"
+        },
+        "selector": {
+          "$ref": "#/definitions/service_selector"
+        },
+        "ports": {
+          "$ref": "#/definitions/service_ports"
+        }
+      },
+      "required": [
+        "name",
+        "runtime",
+        "labels",
+        "selector",
+        "ports"
+      ]
+    },
+    "service_name": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+.[a-z0-9-]+$"
+    },
+    "service_labels": {
+      "type": "object",
+      "properties": {
+        "group": { "type": "string" },
+        "balance_strategy": { "enum": [ "source", "roundrobin", "leastconn" ]}
+      }
+    },
+    "service_ports": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "domain_name": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "port": {
+            "type": "integer",
+            "minimum": 0,
+            "exclusiveMinimum": true
+          },
+          "protocol": {
+            "enum": [
+              "tcp",
+              "udp",
+              "http"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "protocol",
+          "port"
+        ]
+      }
+    },
+    "label_value": {
+      "type": "string",
+      "pattern": "(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])"
+    },
+    "version": {
+      "type": "string",
+      "pattern": ",^\\d+(\\.\\d+)+"
+    },
+    "service_selector": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
+      },
+      "patternProperties": {
+        "[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*": {
+          "$ref":"#/definitions/label_value"
+        }
+      }
+    },
+    "runtime_location": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9-_]+\\.[a-zA-Z0-9-_]+\\.[a-z0-9-_]+$"
+    }
+  }
+}　　

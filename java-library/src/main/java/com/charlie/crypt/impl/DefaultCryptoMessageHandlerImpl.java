@@ -90,6 +90,7 @@ public class DefaultCryptoMessageHandlerImpl extends AbsCryptoMessageHandlerImpl
         result.setSymmetricOpts(cryptoMessage.getSymmetricOpts());
         result.setHashOpts(cryptoMessage.getHashOpts());
         result.setPlatformId(cryptoMessage.getPlatformId());
+        result.setAsymmetricOpts(envelopBO.getAsymmetricOpts());
 
         return result;
     }

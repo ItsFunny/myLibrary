@@ -1,13 +1,17 @@
 package com.charlie.crypt;
 
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.TypeReference;
+import com.charlie.base.IFrom;
 import com.charlie.base.ITO;
+import com.charlie.crypt.opts.IAsymmetricOpts;
 import com.charlie.crypt.opts.IHashOpts;
 import com.charlie.crypt.opts.ISymmetricOpts;
 import com.charlie.exception.MessageNotCompleteException;
 import com.charlie.utils.JSONUtil;
 import org.apache.commons.lang3.builder.Builder;
 
-public class CryptoMessage implements Builder<CryptoMessage>, ITO<byte[]>
+public class CryptoMessage implements Builder<CryptoMessage>, ITO<byte[]>, IFrom<byte[], CryptoMessage>
 {
     String platformId;
     // 加密前hash
@@ -150,18 +154,8 @@ public class CryptoMessage implements Builder<CryptoMessage>, ITO<byte[]>
     public String toJson()
     {
         final CryptoMessage message = this;
-        CryptoMessageJSONObject res = new CryptoMessageJSONObject();
-        String hashClazzName = message.getHashOpts().getClass().getName();
-        String symmClazzName = message.getSymmetricOpts().getClass().getName();
-        String asymmClazzName = message.getEnvelopInfo().getAsymmetricOpts().getClass().getName();
-        String messageJson = JSONUtil.toFormattedJson(message);
-        res.setMessageJson(messageJson);
-        res.setHashClazzName(hashClazzName);
-        res.setSymmClazzName(symmClazzName);
-        res.setAsymmClazzName(asymmClazzName);
-        return JSONUtil.toFormattedJson(res);
+        return JSONUtil.toFormattedJson(message);
     }
-
 
 
     @Override
@@ -171,5 +165,23 @@ public class CryptoMessage implements Builder<CryptoMessage>, ITO<byte[]>
     }
 
 
-
+    @Override
+    public CryptoMessage from(byte[] bytes)
+    {
+        JSONObject jsonObject = JSONObject.parseObject(new String(bytes));
+        this.setHashOpts(jsonObject.getObject("hashOpts", new TypeReference<IHashOpts>() {}));
+        JSONObject envelopObject = jsonObject.getJSONObject("envelopInfo");
+        Envelope envelope = new Envelope();
+        envelope.setEnvelopeData(envelopObject.getBytes("envelopeData"));
+        envelope.setDescription(envelopObject.getString("description"));
+        envelope.setEncryptPublicKey(envelopObject.getString("encryptPublicKey"));
+        envelope.setEnvelopeIdentifier(envelopObject.getString("envelopeIdentifier"));
+        envelope.setExtension(envelopObject.getString("extension"));
+        envelope.setAsymmetricOpts(envelopObject.getObject("asymmetricOpts", new TypeReference<IAsymmetricOpts>() {}));
+        this.setEnvelopInfo(envelope);
+        this.setPlatformId(jsonObject.getObject("platformId", String.class));
+        this.setHashBeforeEncrypt(jsonObject.getBytes("hashBeforeEncrypt"));
+        this.setSymmetricOpts(jsonObject.getObject("symmetricOpts", new TypeReference<ISymmetricOpts>() {}));
+        return this;
+    }
 }

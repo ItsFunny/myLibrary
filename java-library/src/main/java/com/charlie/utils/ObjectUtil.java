@@ -12,14 +12,15 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package io.netty.util.internal;
+package com.charlie.utils;
 
 import java.util.Collection;
 
 /**
  * A grab-bag of useful utility methods.
  */
-public final class ObjectUtil {
+public final class ObjectUtil
+{
 
     private ObjectUtil() {
     }

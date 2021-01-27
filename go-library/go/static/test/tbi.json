@@ -1,0 +1,10 @@
+{
+  "serverId": "tbi-7013",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "tbi",
+    "ou": "tbi",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "http://api.ebidsun.com/cloudshieldca/clientServerReceive"
+}

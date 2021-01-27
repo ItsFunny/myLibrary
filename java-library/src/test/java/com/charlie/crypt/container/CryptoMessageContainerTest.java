@@ -1,6 +1,7 @@
 package com.charlie.crypt.container;
 
 import com.charlie.crypt.*;
+import com.charlie.crypt.factory.CryptoMessageFactory;
 import com.charlie.crypt.opts.impl.DefaultAsymmetricOpts;
 import com.charlie.crypt.opts.impl.DefaultHashOpts;
 import com.charlie.crypt.opts.impl.DefaultSymmetricOpts;
@@ -36,17 +37,28 @@ public class CryptoMessageContainerTest
     public void testCreate() throws Exception
     {
         byte[] originData = "123".getBytes();
+
         CryptoMessageContainer container = new CryptoMessageContainer();
         container.initOnce();
+
         CryptoContainerFactory.defaultInit();
+
         CryptoMessageBO cryptoMessageBO = newMessageBO(originData);
         CryptoMessage cryptoMessage = container.buildCryptoMessage(cryptoMessageBO);
-        String s=JSONUtil.toFormattedJson(cryptoMessage);
-        cryptoMessage= JSONUtil.json2Obj(s, CryptoMessage.class);
+        byte[] bytes = CryptoMessageFactory.toBytes(cryptoMessage);
+        cryptoMessage = CryptoMessageFactory.fromBytes(bytes);
         System.out.println(JSONUtil.toFormattedJson(cryptoMessage));
 
         CryptoMessageBO decrypt = container.decrypt(cryptoMessage);
         System.out.println(decrypt);
+        if (decrypt.getHashOpts() instanceof DefaultHashOpts)
+        {
+            System.out.println(1);
+        }
+        DefaultHashOpts defaultHashOpts= (DefaultHashOpts) decrypt.getHashOpts();
+        System.out.println(decrypt.getSymmetricOpts().getClass().getName());
+        System.out.println(decrypt.getAsymmetricOpts().getClass().getName());
+        System.out.println(decrypt.getHashOpts().getClass().getName());
 
     }
 

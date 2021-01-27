@@ -33,24 +33,36 @@ public class T
 
     public static void main(String[] args)
     {
-
-        KeyGenerator gen = null;
-        try
-        {
-            gen = KeyGenerator.getInstance("AES");
-        } catch (NoSuchAlgorithmException e)
-        {
-            throw new RuntimeException("not likely:" + e.getMessage());
-        }
-        gen.init(256, new SecureRandom());
-        byte[] trueAesKey = gen.generateKey().getEncoded();
-        System.out.println(Base64Utils.encode(trueAesKey));
+        int maxPeerSize = 10;
+        int minPeerSize =3;
+        double percent = 0.6;
+        int checkPeerCount = getCheckPeerCount(4, minPeerSize, maxPeerSize, percent);
+        System.out.println(checkPeerCount);
+//        KeyGenerator gen = null;
+//        try
+//        {
+//            gen = KeyGenerator.getInstance("AES");
+//        } catch (NoSuchAlgorithmException e)
+//        {
+//            throw new RuntimeException("not likely:" + e.getMessage());
+//        }
+//        gen.init(256, new SecureRandom());
+//        byte[] trueAesKey = gen.generateKey().getEncoded();
+//        System.out.println(Base64Utils.encode(trueAesKey));
 //        Calendar cal = Calendar.getInstance();
 //        cal.set(2020, 10, 11);
 //        Date time = cal.getTime();
 //        int timeTillSeconds = DateUtils.getTimeTillSeconds(time);
 //        System.out.println(timeTillSeconds);
     }
+    public static int getCheckPeerCount(int peerCount, int minPeerCount, int maxPeerCount, double participatePercent) {
+        int result = Double.valueOf(Math.ceil((double)peerCount * participatePercent)).intValue();
+        result = result > maxPeerCount ? maxPeerCount : result;
+        result = result < minPeerCount ? minPeerCount : result;
+        result = result > peerCount ? peerCount : result;
+        return result;
+    }
+
 //    public static void main(String[] args) throws Exception
 //    {
 //        Calendar instance = Calendar.getInstance();

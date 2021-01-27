@@ -7,10 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ering-base" />
-        <module name="ering-modelandview" />
         <module name="java-library" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ering" target="1.5" />
+      <module name="ering-base" target="1.7" />
+      <module name="ering-modelandview" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

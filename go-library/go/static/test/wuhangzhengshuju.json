@@ -1,10 +1,10 @@
 {
-  "serverId": "wuhangzhengshuju-3015",
+  "serverId": "wuhangzhengshuju-7015",
   "DN": {
     "cn": "bidsun.cn",
     "o": "wuhangzhengshuju",
     "ou": "wuhangzhengshuju",
     "surname": "91330110MA2GLDG66X"
   },
-  "clientServerReceiveUrl": "https://api.ebidsun.com/cloudshieldca/clientServerReceive"
+  "clientServerReceiveUrl": "http://api.ebidsun.com/cloudshieldca/clientServerReceive"
 }

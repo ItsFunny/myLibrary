@@ -4,6 +4,7 @@ import com.charlie.blockchain.exception.CAException;
 import com.charlie.blockchain.exception.InvokeException;
 import com.charlie.blockchain.exception.QueryException;
 import com.charlie.blockchain.model.*;
+import org.hyperledger.fabric.sdk.Channel;
 
 import java.util.List;
 import java.util.concurrent.Future;
@@ -28,6 +29,9 @@ public interface IFabricClientService
 
 
 
+
     RegisterEnrollResp registerAndEnroll(cn.bidsun.blockchain.model.RegisterEnrollReq req, List<IRegisterOption>registerOptions, List<IEnrollOption>enrollOptions)throws CAException;
 
+    // FIXME 抽成helper接口
+//    Channel getChannelByName(String name);
 }

@@ -18,9 +18,10 @@ public class CommonTest
 {
     public static void main(String[] args)
     {
-        ArrayList<Integer>arrayList=new ArrayList<>();
+        ArrayList<Integer> arrayList = new ArrayList<>();
         arrayList.remove(1);
     }
+
     @Test
     public void testEmpty()
     {
@@ -40,5 +41,13 @@ public class CommonTest
         }
         System.out.println(storePath);
     }
+
+    @Test
+    public void test11()
+    {
+        System.out.println(1<<0);
+        System.out.println((2 & 8194) >= 1);
+    }
+
 
 }

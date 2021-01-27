@@ -13,8 +13,9 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package io.netty.util.internal;
+package com.charlie.utils;
 
+import io.netty.util.internal.ObjectUtil;
 import io.netty.util.internal.logging.InternalLogger;
 import io.netty.util.internal.logging.InternalLoggerFactory;
 
@@ -24,9 +25,10 @@ import java.security.PrivilegedAction;
 /**
  * A collection of utility methods to retrieve and parse the values of the Java system properties.
  */
-public final class SystemPropertyUtil {
+public final class SystemPropertyUtil
+{
 
-    private static final InternalLogger logger = InternalLoggerFactory.getInstance(SystemPropertyUtil.class);
+    private static final InternalLogger logger = InternalLoggerFactory.getInstance(io.netty.util.internal.SystemPropertyUtil.class);
 
     /**
      * Returns {@code true} if and only if the system property with the specified {@code key}
