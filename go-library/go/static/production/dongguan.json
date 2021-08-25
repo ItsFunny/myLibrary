@@ -1,0 +1,10 @@
+{
+  "serverId": "dongguan-19002",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "dongguan",
+    "ou": "dongguan",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

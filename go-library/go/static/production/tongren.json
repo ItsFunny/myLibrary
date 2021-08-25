@@ -1,0 +1,10 @@
+{
+  "serverId": "tongren-19039",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "tongren",
+    "ou": "tongren",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

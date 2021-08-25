@@ -1,0 +1,10 @@
+{
+  "serverId": "loudi-19041",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "loudi",
+    "ou": "loudi",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

@@ -1,0 +1,10 @@
+{
+  "serverId": "xiangxi-19021",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "xiangxi",
+    "ou": "xiangxi",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

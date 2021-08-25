@@ -1,0 +1,10 @@
+{
+  "serverId": "nanjing-19009",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "nanjing",
+    "ou": "nanjing",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

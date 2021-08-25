@@ -8,21 +8,21 @@
 package utils
 
 var jsonT = `
-	{
+{
   "appId": "88888",
-  "bidsunTicketUrl": "http://api.ebidsun.com/cloudshieldca/clientServerGenTicket",
-  "cryptKeyLabel": "AAE5w9GlJLRDeqKNbPSnlBE91Ct6hUZMTtaumSmhpyhskQ==",
-  "cryptLicToken": "AAHUK3qFRkxO1q6ZKaGnKGyRVm7prM63R+mlQHmU9InDnTnD0aUktEN6oo1s9KeUET05w9GlJLRDeqKNbPSnlBE9",
-  "cryptPubKey": "XEMArBPNh59pwxp5XPKyrbK4WVT0uaCvnktboahfMZfpbDA6FDU7LYDSRK/C4rfMl7Luk4wMCugxTkvs6P1rHA==",
-  "doeDecUrl": "http://101.133.144.179:2159/doe/client/decData",
-  "encData": "91Q7M+FgIYCVOzlHGDF5Qgwk82Nak1ljbQaQKRPrCwCqYu4JoMft4kueykE29AvGzQOWotGiWien6RuvKa3CHZt79Es7Fu/Qp3zjNj6z6EJa5FOz0Fxwkjw69zvCz5Y1yQvg",
-  "serverId": "bidsun-7001",
-  "serverUserKey": "AAA5w9GlJLRDeqKNbPSnlBE9AJ4w9OXe5cgkwPXXRfgdtHL85h1n1f88cZa18HbJepbq",
-  "signKeyLabel": "AAE5w9GlJLRDeqKNbPSnlBE9zAc2CTd/TPS7af2s1mJW1A==",
-  "signLicToken": "AAHMBzYJN39M9Ltp/azWYlbUOfXb80XjTJaZfF9pGWi6jDnD0aUktEN6oo1s9KeUET05w9GlJLRDeqKNbPSnlBE9",
-  "signPubKey": "jT/M95J/Vqnoq6+5PNFwRgYpE0RpPllxyKbpLWUwXPA9r7u49rVz8q7AUj+9h0sfO0FipFJBnkSL52pWP0RM7Q==",
-  "ticket": "CmcKIQPZcjY3BZa8HR3gMJRtGU2xhU3fTnqJ+mabqlNuzg79pBIgPLtuhIrrk1B/wl+Qhu2sxY2tA+ex6TwkdvRuaRKTsoAaID8LshQo3VFwVDE1DSKiSvlShBb4Dxp/d+vGvHOS0hNyEnDbqdysFJrh19LEw9MaxR19TLBT7TQO1YaQaxgI4YumDY/aIqbWt7fqfTRsbf+v0RUjDUVNFPumZNgRbG6uCCM9iaIChKkFvL1xcbDRbkXRYYpcc1M0q1a8aJrfh8zCUSx7GGEpcG+puOv53fe7VNKB",
-  "ticketPrivateKey": "L2k65kiWzXRqwCNQbGp6Eo7sJEbOIrhzJt8kKRCpvz0=",
-  "ticketPublicKey": "BCCtt3MywUYDWs+1O4RGZTNFDpwbFbdcIOHazzbVjF0pSsQEtW6AgDUIURO5LUbunopG+RT9mZwnQyzmIGgn/hY="
+  "bidsunTicketUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerGenTicket",
+  "cryptKeyLabel": "AAHH6JhY2TRF1Im7UzyDzM+OxBHCLD0EQcumjTMT8meq/g==",
+  "cryptLicToken": "AAHEEcIsPQRBy6aNMxPyZ6r+NDYT/OrKQuqxQkbzoQZAlcfomFjZNEXUibtTPIPMz47H6JhY2TRF1Im7UzyDzM+O",
+  "cryptPubKey": "+Gc/mY4RJyP9LO/ZYuUBTqQCz2GGoVOhxcYu6ouNaE/KtrOnuDOb9/RzBgoq/3cu1KnYGZO27simUNyAmFfS9w==",
+  "doeDecUrl": "http://doeclient.ebidsun.com/doe/client/decData",
+  "encData": "Cl/tqHHCO9Fd29lniYiXY80MCSVgErySOxWHDAJyHUr3IyrNuAigKTb4EAUIHEcJPqHBj6ZUuGsIT2TqBUvC7DLh2jf3IkyIP0jrNCfSoSpEns3Hro+tqUGYZl0TDz/fW5+q",
+  "serverId": "zhuhai-19017",
+  "serverUserKey": "AADH6JhY2TRF1Im7UzyDzM+OAASMp8IJ+tUWXggXy6hWxngdjewJLpk1J5HmB7gOrxUo",
+  "signKeyLabel": "AAHH6JhY2TRF1Im7UzyDzM+Osrd3Qx5PRB6OB9my3EPADA==",
+  "signLicToken": "AAGyt3dDHk9EHo4H2bLcQ8AMU0SCXI3qSLOVnSYPrEBPD8fomFjZNEXUibtTPIPMz47H6JhY2TRF1Im7UzyDzM+O",
+  "signPubKey": "A0nvkhpRFqL9AY3p/E7t6qOztw55AkQAoSg9+FHK00lELmFkrCFxRN2V5X+yruGCRoYVKPFzB2VZ/do2D5fF0g==",
+  "ticket": "CmcKIQPBlHFyoVNMDQf6KrDZlfaDvDbonyp6aA2a8gn2Z64k/hIgXRvrBpQ8aEdfe0ezZabBMjttaot9/Bc/AsZePsCkdWoaIIc72O8e3ljwVYRARMW3DLDX7AoKjrBDGvh5PYWTHwWpEnAAh7O18FIotrhx6gBulBrZvLh557O77Fi9tjXk3xCK9UTpt3Ob3IuaYEuUKogL+NqFmaxoToCbTVJceDlqHgezd3C1qa41Ws0aGZZi9ZA8+wDZjC39E1ejFxONXP5O4tcnfVlAwGdbxS6jUzyCav0e",
+  "ticketPrivateKey": "ff1qm3D6hpofhcFWMDSP0zUsQB9KJSeetqOtJG6LR98=",
+  "ticketPublicKey": "BEDHStjeOhkqMEZhF7l64x0T8s0vDfl957xihD+V5BGvKCswXsIg89wYA2F7E6oF4NoDV2/sOdPSFSD80uEPkPQ="
 }
 `

@@ -1,0 +1,10 @@
+{
+  "serverId": "hangzhou-19007",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "hangzhou",
+    "ou": "hangzhou",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

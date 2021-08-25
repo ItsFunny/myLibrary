@@ -1,0 +1,10 @@
+{
+  "serverId": "bijie-19035",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "bijie",
+    "ou": "bijie",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

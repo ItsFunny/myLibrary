@@ -1,0 +1,10 @@
+{
+  "serverId": "hunan-19018",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "hunan",
+    "ou": "hunan",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

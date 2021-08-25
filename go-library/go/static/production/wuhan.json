@@ -1,0 +1,10 @@
+{
+  "serverId": "wuhan-19014",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "wuhan",
+    "ou": "wuhan",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

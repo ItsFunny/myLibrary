@@ -9,26 +9,12 @@
 package testdata
 
 import (
-	"bytes"
-	"crypto/hmac"
-	"crypto/sha256"
-	"encoding/base64"
 	"encoding/hex"
-	"encoding/json"
-	"fmt"
-	"github.com/tjfoc/gmsm/sm2"
-	"io/ioutil"
 	"log"
-	"math/big"
 	"myLibrary/go-library/go/internal/bccsp"
 	"myLibrary/go-library/go/internal/bccsp/base"
 	"myLibrary/go-library/go/internal/bccsp/opts"
-	_ "myLibrary/go-library/go/internal/bccsp/sw"
-	"net/http"
-	"strconv"
-	"strings"
 	"testing"
-	"time"
 )
 
 func TestSKI(t *testing.T) {

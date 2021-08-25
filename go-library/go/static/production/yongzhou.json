@@ -1,0 +1,10 @@
+{
+  "serverId": "yongzhou-19044",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "yongzhou",
+    "ou": "yongzhou",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

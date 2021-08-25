@@ -1,7 +1,0 @@
-2020/11/15 14:41:07,643 (FabricNetworkContainer.java:110) [COMMON][W] - Reconfiguring log filter finished, version: 1
-2020/11/15 14:41:07,649 (FabricNetworkContainer.java:110) [COMMON][E] - more than one or no slf4j static bindings were found, third party logs may not be logged.
-2020/11/15 14:41:07,650 (FabricNetworkContainer.java:110) [COMMON][E] - binding: [jar:file:/Users/joker/.m2/repository/cn/bidsun/bidsun-common/0.0.1-SNAPSHOT/bidsun-common-0.0.1-SNAPSHOT.jar!/org/slf4j/impl/StaticLoggerBinder.class]
-2020/11/15 14:41:07,650 (FabricNetworkContainer.java:110) [COMMON][E] - binding: [jar:file:/Users/joker/.m2/repository/org/slf4j/slf4j-log4j12/1.7.30/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
-2020/11/15 14:41:07,652 (FabricNetworkContainer.java:110) [THIRD_PARTY][I] - 开始初始化区块链网络
-2020/11/15 14:41:12,048 (FabricNetworkContainer.java:176) [THIRD_PARTY][I] - 查询已经存在的channel
-2020/11/15 14:41:12,051 (FabricNetworkContainer.java:183) [THIRD_PARTY][I] - 开始组装当前组织的admin用户信息,organizationId为:Org1MSP

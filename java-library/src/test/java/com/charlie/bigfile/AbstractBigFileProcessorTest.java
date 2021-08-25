@@ -37,7 +37,7 @@ public class AbstractBigFileProcessorTest
     public void process() throws IOException, InterruptedException
     {
         // 1. 先拆分文件  1.46G
-        String originlName = "阳光电影www.ygdy8.com.勇者斗恶龙：你的故事.BD.1080p.日语中英双字.mkv";
+        String originlName = "阳光电影www.ygdy8.com.扎克·施奈德版正义联盟.2021.BD.1080P.中英双字.mkv";
 
 
         // 碎片存储路径
@@ -45,9 +45,9 @@ public class AbstractBigFileProcessorTest
         // 合并的文件路径
         String mergeFile = "/Users/joker/Desktop/split";
         // 每个文件分100m
-        String originFile = "/Users/joker/Downloads/阳光电影www.ygdy8.com.勇者斗恶龙：你的故事.BD.1080p.日语中英双字.mkv";
+        String originFile = "/Users/joker/Downloads/zylm/阳光电影www.ygdy8.com.扎克·施奈德版正义联盟.2021.BD.1080P.中英双字.mkv";
         logger.debug("1. 拆分文件");
-        FileUtils.splitFiles(originFile, 100, chunkOutPutDirectroy, false);
+        FileUtils.splitFiles(originFile, 400*1024, chunkOutPutDirectroy, false);
 
         // 创建多线程,用于进度条展示
         logger.info("根据文件数量创建多线程,开始分片上传碎片");

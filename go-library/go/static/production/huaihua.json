@@ -1,0 +1,10 @@
+{
+  "serverId": "huaihua-19019",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "huaihua",
+    "ou": "huaihua",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

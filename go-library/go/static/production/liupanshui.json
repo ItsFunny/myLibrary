@@ -1,0 +1,10 @@
+{
+  "serverId": "liupanshui-19025",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "liupanshui",
+    "ou": "liupanshui",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

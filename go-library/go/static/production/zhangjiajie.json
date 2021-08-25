@@ -1,0 +1,10 @@
+{
+  "serverId": "zhangjiajie-19045",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "zhangjiajie",
+    "ou": "zhangjiajie",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

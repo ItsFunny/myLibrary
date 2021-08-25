@@ -491,7 +491,6 @@ func (setUp *BlockChainConfiguration) initialize(p BlockChainProperties) error3.
 					// 	resmgmt.WithOrdererEndpoint("orderer5.0"))
 					endPoints = append(endPoints, resmgmt.WithOrdererEndpoint(orderP.OrdererAddress))
 					endPoints = append(endPoints, channel.GetChannelAllPeersTarget())
-
 					saveChanResp, e := admin.SaveChannel(saveChanReq, endPoints...)
 					if nil != e || saveChanResp.TransactionID == "" {
 						setUp.Log.Error("创建channel失败,可能是因为已经存在了channel,所以直接加入")

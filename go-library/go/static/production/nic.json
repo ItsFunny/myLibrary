@@ -1,0 +1,10 @@
+{
+  "serverId": "nic-19011",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "nic",
+    "ou": "nic",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

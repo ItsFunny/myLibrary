@@ -1,0 +1,10 @@
+{
+  "serverId": "qingdao-19012",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "qingdao",
+    "ou": "qingdao",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

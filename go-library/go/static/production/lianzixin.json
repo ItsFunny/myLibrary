@@ -1,0 +1,10 @@
+{
+  "serverId": "lianzixin-19008",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "lianzixin",
+    "ou": "lianzixin",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

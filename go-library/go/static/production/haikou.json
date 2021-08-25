@@ -1,0 +1,10 @@
+{
+  "serverId": "haikou-19006",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "haikou",
+    "ou": "haikou",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

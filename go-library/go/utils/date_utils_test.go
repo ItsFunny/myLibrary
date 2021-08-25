@@ -67,3 +67,16 @@ func Test_A(t *testing.T) {
 	fmt.Println(paa)
 
 }
+
+func calcTimes(send, recv int64) float64 {
+	return float64((387) / 1000.0)
+}
+func TestCalc(t *testing.T) {
+	sendUnix:=1616129917491
+	//           1616130134766182000  纳秒
+	//           1616130174076 毫秒
+	nowUnix := time.Now().UnixNano() / 1e6
+	fmt.Println(nowUnix)
+	times := calcTimes(int64(sendUnix), nowUnix)
+	fmt.Println(times)
+}

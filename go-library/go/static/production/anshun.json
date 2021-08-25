@@ -1,0 +1,10 @@
+{
+  "serverId": "anshun-19038",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "anshun",
+    "ou": "anshun",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

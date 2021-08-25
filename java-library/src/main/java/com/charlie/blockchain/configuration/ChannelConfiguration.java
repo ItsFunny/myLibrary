@@ -62,7 +62,6 @@ public class ChannelConfiguration implements IValidator
 //        private List<String>peers;
 
         @Override
-
         public void valid()
         {
             if (StringUtils.isEmpty(this.channelId))

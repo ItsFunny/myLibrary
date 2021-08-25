@@ -1,0 +1,10 @@
+{
+  "serverId": "chaozhou-19022",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "chaozhou",
+    "ou": "chaozhou",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}

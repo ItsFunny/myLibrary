@@ -208,11 +208,13 @@ func httpttt() {
 	}
 	req.Data = []string{keyConfiguration.EncData}
 	// 测试 加密的文件
-	bytes, e := ioutil.ReadFile("/Users/joker/go/src/myLibrary/go-library/go/utils/7118e71767108f71c85ae47ff504d29541e6034ef82d4dd591ee7eeba30142a0_sk")
+	target:="/Users/joker/go/src/myLibrary/go-library/go/utils/crypto-config/peerOrganizations/zhuhai.com/peers/peer0.zhuhai.com/msp/sm2/signcerts/peer0.zhuhai.com-cert.pem"
+	bytes, e := ioutil.ReadFile(target)
 	if nil != e {
 		panic(e)
 	}
 	fmt.Println(string(bytes))
+	// 深思解密
 	req.Data=[]string{Base64Encode(bytes)}
 
 	fmt.Println("加密数据为:" + req.Data[0])

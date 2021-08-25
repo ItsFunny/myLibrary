@@ -1,9 +1,9 @@
 /*
 # -*- coding: utf-8 -*-
 # @Author : joker
-# @Time : 2019-06-27 13:39 
+# @Time : 2019-06-27 13:39
 # @File : http_test.go
-# @Description : 
+# @Description :
 */
 package utils
 
@@ -91,24 +91,57 @@ type PeerOrganization struct {
 // 生成加密机
 func TestGenerateEncryptMachine(t *testing.T) {
 	reqs := make([]StaticDynamicHtmlReq, 0)
-	reqs = append(reqs, NewEncryptoMachine("beijing", 7000),
-		NewEncryptoMachine("bidsun", 7001),
-		NewEncryptoMachine("dongguan", 7002),
-		NewEncryptoMachine("foshan", 7003),
-		NewEncryptoMachine("guangzhou", 7004),
-		NewEncryptoMachine("guizhou", 7005),
-		NewEncryptoMachine("haikou", 7006),
-		NewEncryptoMachine("hangzhou", 7007),
-		NewEncryptoMachine("lianzixin", 7008),
-		NewEncryptoMachine("nanjing", 7009),
-		NewEncryptoMachine("neimenggu", 7010),
-		NewEncryptoMachine("nic", 7011),
-		NewEncryptoMachine("qingdao", 7012),
-		NewEncryptoMachine("tbi", 7013),
-		NewEncryptoMachine("wuhan", 7014),
-		NewEncryptoMachine("wuhangzhengshuju", 7015),
-		NewEncryptoMachine("xiamen", 7016),
-		NewEncryptoMachine("zhuhai", 7017), )
+	reqs = append(reqs,
+		// NewEncryptoMachine("beijing", 19000),
+		// NewEncryptoMachine("bidsun", 19001),
+		// NewEncryptoMachine("dongguan", 19002),
+		// NewEncryptoMachine("foshan", 19003),
+		// NewEncryptoMachine("guangzhou", 19004),
+		// NewEncryptoMachine("guizhou", 19005),
+		// NewEncryptoMachine("haikou", 19006),
+		// NewEncryptoMachine("hangzhou", 19007),
+		// NewEncryptoMachine("lianzixin", 19008),
+		// NewEncryptoMachine("nanjing", 19009),
+		// NewEncryptoMachine("neimenggu", 19010),
+		// NewEncryptoMachine("nic", 19011),
+		// NewEncryptoMachine("qingdao", 19012),
+		// NewEncryptoMachine("tbi", 19013),
+		// NewEncryptoMachine("wuhan", 19014),
+		// NewEncryptoMachine("wuhanzhengshuju", 19015),
+		// NewEncryptoMachine("xiamen", 19016),
+		// NewEncryptoMachine("zhuhai", 19017),
+		// NewEncryptoMachine("hunan", 19018),
+		// NewEncryptoMachine("huaihua", 19019),
+		// NewEncryptoMachine("xiangximiaozu", 19020),
+		// NewEncryptoMachine("xiangxi", 19021),
+		// NewEncryptoMachine("chaozhou", 19022),
+		// NewEncryptoMachine("baotou", 19023),
+		// NewEncryptoMachine("guiyang", 19024),
+		// NewEncryptoMachine("liupanshui", 19025),
+		// NewEncryptoMachine("zunyi", 19026),
+		// NewEncryptoMachine("anshun", 19027),
+		// NewEncryptoMachine("bijie", 19028),
+		// NewEncryptoMachine("tongren", 19029),
+		// NewEncryptoMachine("qianxinan", 19030),
+		// NewEncryptoMachine("qiandongnan", 19031),
+		// NewEncryptoMachine("qiannan", 19032),
+		// NewEncryptoMachine("xinjiang", 19033),
+		// NewEncryptoMachine("dawanqu", 19034),
+		// NewEncryptoMachine("bijie", 19035),
+		// NewEncryptoMachine("qiandongnan", 19036),
+		// NewEncryptoMachine("guangzi", 19037),
+		// NewEncryptoMachine("anshun", 19038),
+		// NewEncryptoMachine("tongren", 19039),
+		// NewEncryptoMachine("loudi", 19041),
+		// NewEncryptoMachine("xiangtan", 19042),
+		// NewEncryptoMachine("shaoyang", 19043),
+		// NewEncryptoMachine("yongzhou", 19044),
+		// NewEncryptoMachine("zhangjiajie", 19045),
+		// NewEncryptoMachine("changsha", 19046),
+		// NewEncryptoMachine("qiannan", 19047),
+		// NewEncryptoMachine("zunyi", 19048),
+		NewEncryptoMachine("qianxinan", 19049),
+	)
 	for _, req := range reqs {
 		html, e := StaticDynamicHtml(req)
 		if nil != e {
@@ -127,7 +160,7 @@ func NewEncryptoMachine(serverName string, index int) StaticDynamicHtmlReq {
 		Data: map[string]interface{}{
 			"serverId": serverName + "-" + strconv.Itoa(index),
 			"serverO":  serverName,
-			"serverOu": serverName,},
+			"serverOu": serverName},
 	}
 }
 
@@ -166,7 +199,7 @@ func TestStaticDynamicHtmlWithBatch(t *testing.T) {
 		NewWWStaticDynamicHtmlReq("docker-compose-org4", "org4", "Org4MSP", 14051, 14061),
 		NewWWStaticDynamicHtmlReq("docker-compose-org5", "org5", "Org5MSP", 17051, 17061),
 		NewWWStaticDynamicHtmlReq("docker-compose-org6", "org6", "Org6MSP", 17051, 17061),
-		NewWWStaticDynamicHtmlReq("docker-compose-org7", "org7", "Org7MSP", 17051, 17061), )
+		NewWWStaticDynamicHtmlReq("docker-compose-org7", "org7", "Org7MSP", 17051, 17061))
 	for _, req := range reqs {
 		html, e := StaticDynamicHtml(req)
 		if nil != e {
@@ -198,7 +231,7 @@ func TestStaticDynamicHtml2(t *testing.T) {
 		Data: map[string]interface{}{
 			"OrgName": "org1",
 			"OrgMSP":  "Org1MSP",
-			"OrgPort": 11051,},
+			"OrgPort": 11051},
 	}
 	html, e := StaticDynamicHtml(req)
 	if nil != e {
@@ -219,7 +252,6 @@ func TestStaticDynamicHtml(t *testing.T) {
 	}
 	fmt.Println(html)
 }
-
 
 func Test_ACSD(t *testing.T) {
 	// {{57897044551258231062740198220913455226441901632205615997740090104278067086466 0xc000021140 [536870905 268435455 895 268428288 536870911 268435455 536870911 170994943 268435455] [394377870 220399154 355969936 163370829 236861671 88177300 303341152 24396229 75627569] [137364797 52992271 113266657 202339045 31563580 107393171 24488059 247693942 35835723] [408558522 55895443 311818945 254526569 75270154 203012265 258167614 151236203 209300666]} 78062733970036975656793595378943889026827322737440942312410347708863577709861 25173883307730307121934226407653351122022746290457055470940048998556846361257}

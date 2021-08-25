@@ -1,0 +1,10 @@
+{
+  "serverId": "baotou-19023",
+  "DN": {
+    "cn": "bidsun.cn",
+    "o": "baotou",
+    "ou": "baotou",
+    "surname": "91330110MA2GLDG66X"
+  },
+  "clientServerReceiveUrl": "https://api.app.ebidsun.com/cloudshieldca/clientServerReceive"
+}
